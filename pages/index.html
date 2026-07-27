@@ -1,60 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentHub-Home</title>
+
+    <title>StudentHub | Smart Learning Platform</title>
+
+    <meta name="description"
+        content="StudentHub - Notes, Previous Papers, Coding Resources and Student Learning Platform.">
+<link rel="stylesheet" href="../css/style.css">
+
 </head>
+
 <body>
-    
+
+    <!-- Skip Link -->
+
+    <a href="#main-content" class="skip-link">
+        Skip to Main Content
+    </a>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container header-container">
+
+            <!-- Logo -->
+
+            <div class="logo">
+
+                <h1>
+                    <span class="student">Student</span><span class="hub">Hub.</span>
+                </h1>
+
+                <div class="logo-line"></div>
+
+            </div>
+
+            <!-- Navigation -->
+
+            <nav aria-label="Main Navigation">
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+
+                    <li><a href="#courses">Courses</a></li>
+
+                    <li><a href="#resources">Resources</a></li>
+
+                    <li><a href="#about">About</a></li>
+
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <main id="main-content">
+
+        <section id="home" class="hero">
+
+            <div class="hero-text">
+
+                <h2>
+                    Learn Smarter.<br>
+                    Study Better.
+                </h2>
+
+                <p>
+
+                    StudentHub is an all-in-one academic platform where students
+                    can access semester notes, coding resources, previous year
+                    papers, practical files and placement preparation material.
+
+                </p>
+
+                <a href="#courses" class="btn">
+                    Explore Courses
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+                    alt="Student Learning">
+
+            </div>
+
+        </section>
+
+        <!-- ================= COURSES ================= -->
+
+        <section id="courses">
+
+            <div class="section-title">
+
+                <h2>Popular Courses</h2>
+
+                <p>
+                    Learn today's most demanded technologies.
+                </p>
+
+            </div>
+
+            <div class="card-container">
+
+                <article class="card">
+
+                    <h3>HTML & CSS</h3>
+
+                    <p>
+
+                        Build modern and responsive websites using
+                        HTML5 and CSS3.
+
+                    </p>
+
+                    <button>Read More</button>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+
+                        Learn DOM, ES6, Events and Interactive
+                        Web Development.
+
+                    </p>
+
+                    <button>Read More</button>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>Python</h3>
+
+                    <p>
+
+                        Learn Python Programming,
+                        Data Science and AI basics.
+
+                    </p>
+
+                    <button>Read More</button>
+
+                </article>
+
+            </div>
+
+        </section>        <!-- ================= RESOURCES ================= -->
+
+        <section id="resources">
+
+            <div class="section-title">
+
+                <h2>Study Resources</h2>
+
+                <p>
+                    Everything you need to succeed in your academics.
+                </p>
+
+            </div>
+
+            <div class="card-container">
+
+                <article class="card">
+
+                    <h3>📘 Semester Notes</h3>
+
+                    <p>
+                        Download unit-wise notes prepared according to the latest
+                        university syllabus.
+                    </p>
+
+                    <button>Download</button>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>📝 Previous Papers</h3>
+
+                    <p>
+                        Practice with previous year question papers and improve
+                        your exam preparation.
+                    </p>
+
+                    <button>View Papers</button>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>💻 Coding Practice</h3>
+
+                    <p>
+                        Learn C, C++, Java, Python, HTML, CSS and JavaScript
+                        with hands-on examples.
+                    </p>
+
+                    <button>Start Learning</button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <div class="section-title">
+
+                <h2>Why Choose StudentHub?</h2>
+
+            </div>
+
+            <div class="features">
+
+                <article class="feature-box">
+                    <h3>🎯 Quality Notes</h3>
+                    <p>
+                        Well-organized notes covering all important topics.
+                    </p>
+                </article>
+
+                <article class="feature-box">
+                    <h3>📚 Updated Resources</h3>
+                    <p>
+                        Latest practicals, coding tutorials and study material.
+                    </p>
+                </article>
+
+                <article class="feature-box">
+                    <h3>📱 Responsive Design</h3>
+                    <p>
+                        Access StudentHub easily on mobile, tablet and desktop.
+                    </p>
+                </article>
+
+                <article class="feature-box">
+                    <h3>🚀 Placement Preparation</h3>
+                    <p>
+                        Aptitude, interview questions and coding practice in one
+                        platform.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <div class="section-title">
+
+                <h2>Contact Us</h2>
+
+                <p>
+                    We'd love to hear from you.
+                </p>
+
+            </div>
+
+            <form>
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                <span class="student">Student</span><span class="hub">Hub.</span>
+            </h2>
+
+            <p>
+                Smart Learning Platform for Students
+            </p>
+
+            <p>
+                © 2026 StudentHub. All Rights Reserved.
+            </p>
+
+            <p>
+                Developed by <strong>Tirth Ladani</strong>
+            </p>
+
+        </div>
+
+    </footer>
+
 </body>
-</html>
- <header>
-    <h1>
-         StudentHub
-        </h1>
-        <p>Your Digital Campus Portal</p>
- </header>
- <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">about</a> |
-    <a href="register.html">register</a> |
-    <a href="login.html">login</a> |
-    <a href="dashboard.html">dashboard</a> |
-    <a href="events.html">events</a> |
-    <a href="profile.html">profile</a> |
-    <a href="contact.html">contact</a> |
-    <a href="admin.html">admin</a> |
-    <a href="faq.html">faq</a> |
-    <a href="feedback.html">feedback</a>
- </nav>
- <main>
-    <section>
-        <h2>Welcome To StudentHub</h2>
-        <p>
-            StudentHub is a digital platform where students can register,
-            participate in events, manage profiles, and access academic information.
-        </p>
 
-    </section>
-
-    <artical>
-        <h3>Upcoming Workshop</h3>
-        <p>
-            A Web Devlopment Workshop will be conducted next week.
-        </p>
-    </artical>
-
-    <aside>
-        <h3> =>Latest Notices</h3>
-  <u1> <li>  ->Lab Submission on Friday</li>
-       <li>  ->Workshop Registration Open</li>
-       <li>  ->Hackethon Next Month</li>
-</u1>
-    </aside>
- </main>
-   <footer>
-    <p>&copy; 2026 StudentHub, All Rights Reserved.</p>
-   </footer>
-</body>
 </html>
