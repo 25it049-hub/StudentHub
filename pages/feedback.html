@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - StudentHub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html" class="active">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Your Feedback Matters</h1>
+
+            <p>
+                Help us improve StudentHub by sharing your experience,
+                suggestions, and ideas. Your feedback helps us provide
+                better learning resources and services.
+            </p>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="../images/studenthub2.png" alt="StudentHub Feedback">
+        </div>
+
+    </section>
+
+    <!-- Feedback Form -->
+    <section class="section">
+
+        <h2>Share Your Feedback</h2>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <select required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ddd; border-radius:10px; font-size:16px;">
+                <option value="">Select Feedback Category</option>
+                <option>Website Design</option>
+                <option>Study Resources</option>
+                <option>Courses</option>
+                <option>Events</option>
+                <option>Technical Issue</option>
+                <option>General Suggestion</option>
+            </select>
+
+            <label style="display:block; margin-bottom:10px; font-weight:bold;">Rate Your Experience</label>
+
+            <div style="margin-bottom:20px;">
+                <label><input type="radio" name="rating" required> ⭐</label>
+                <label><input type="radio" name="rating"> ⭐⭐</label>
+                <label><input type="radio" name="rating"> ⭐⭐⭐</label>
+                <label><input type="radio" name="rating"> ⭐⭐⭐⭐</label>
+                <label><input type="radio" name="rating"> ⭐⭐⭐⭐⭐</label>
+            </div>
+
+            <textarea rows="6" placeholder="Write your feedback or suggestions..." required></textarea>
+
+            <button type="submit" class="btn">Submit Feedback</button>
+
+        </form>
+
+    </section>
+
+    <!-- Why Feedback -->
+    <section class="section">
+
+        <h2>Why Your Feedback Is Important</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>📚 Better Resources</h3>
+                <p>Help us improve study materials and learning content.</p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Better Experience</h3>
+                <p>Suggest new features and improve the portal design.</p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Continuous Improvement</h3>
+                <p>Your ideas help StudentHub become more useful for students.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

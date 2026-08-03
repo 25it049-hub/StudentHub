@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - StudentHub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Welcome Back!</h1>
+
+            <p>
+                Login to your StudentHub account to access notes,
+                previous papers, courses, events, and your personal dashboard.
+            </p>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="../images/studenthub2.png" alt="Student Login">
+        </div>
+
+    </section>
+
+    <!-- Login Form -->
+    <section class="section">
+
+        <h2>Student Login</h2>
+
+        <form class="contact-form">
+
+            <input type="email"
+                   placeholder="Email Address"
+                   required>
+
+            <input type="password"
+                   placeholder="Password"
+                   required>
+
+            <div style="display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        margin-bottom:20px;
+                        flex-wrap:wrap;
+                        gap:10px;">
+
+                <label>
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+                <a href="#"
+                   style="color:#1d8cf8;
+                          text-decoration:none;">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+            <button type="submit"
+                    class="btn"
+                    style="width:100%;">
+                Login
+            </button>
+
+        </form>
+
+        <p style="margin-top:25px;
+                  color:#555;">
+            Don't have an account?
+
+            <a href="register.html"
+               style="color:#1d8cf8;
+                      text-decoration:none;
+                      font-weight:bold;">
+                Register Here
+            </a>
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
