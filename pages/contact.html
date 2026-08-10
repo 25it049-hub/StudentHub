@@ -1,65 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - StudentHub</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reach the StudentHub help desk, the Accounts Office and the Examination Cell. Campus address, phone numbers and office hours.">
+  <title>Contact Student Services — StudentHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
-            <h2>StudentHub</h2>
-        </div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="shell nav__inner">
+      <a class="brand" href="index.html" aria-label="StudentHub home">
+        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
+        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <rect width="48" height="48" rx="13" fill="#1e40af"/>
+          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Student<em>Hub</em></span>
+          <span class="brand__tag">Campus Portal</span>
+        </span>
+      </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="events.html">Events</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="faq.html">FAQ</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <nav aria-label="Main">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
+            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener" aria-current="page">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+        <div class="nav__actions">
+          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener">Login</a>
+          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Contact Section -->
-    <section class="section" style="margin-top: 80px;">
-        <h2>Contact Us</h2>
-        <p class="about-text">
-            Have a question or suggestion? Send us a message and we’ll get back to you as soon as possible.
-        </p>
+  <main id="main">
 
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-
-            <input type="email" placeholder="Your Email" required>
-
-            <input type="text" placeholder="Subject" required>
-
-            <textarea rows="6" placeholder="Your Message" required></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+    <!-- ================= BANNER ================= -->
+    <section class="banner banner--plain">
+      <div class="banner__bg" aria-hidden="true"></div>
+      <div class="shell">
+        <div class="banner__inner">
+          <nav aria-label="Breadcrumb">
+            <ul class="crumbs">
+              <li><a href="index.html">Home</a></li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+          <span class="eyebrow">Student services</span>
+          <h1>Contact the help desk</h1>
+          <p>
+            One desk for portal problems, fee queries and examination paperwork. Written queries are answered
+            within two working days; anything marked urgent is picked up the same day.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+    <!-- ================= FORM + DETAILS ================= -->
+    <section class="section">
+      <div class="shell">
+        <div class="grid grid--split">
 
-        <div class="footer-links">
-            <a href="about.html">About</a> |
-            <a href="contact.html">Contact</a> |
-            <a href="faq.html">FAQ</a> |
-            <a href="login.html">Login</a> |
-            <a href="register.html">Register</a>
+          <div class="card form-wrap" data-reveal>
+            <div class="form-body">
+              <h2>Raise a query</h2>
+              <p class="mb-6">
+                Fields marked with an asterisk are required. Quote your roll number in the message so the desk can
+                open your record while replying.
+              </p>
+
+              <form data-success="contact-success" novalidate>
+                <div class="field">
+                  <label for="ct-name">Full name <span class="req">*</span></label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <input class="input" type="text" id="ct-name" name="name" autocomplete="name" placeholder="Rohit Menon" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="ct-email">Email address <span class="req">*</span></label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                    </svg>
+                    <input class="input" type="email" id="ct-email" name="email" autocomplete="email" placeholder="21ce045@studenthub.edu" required>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="ct-phone">Mobile number</label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+                    </svg>
+                    <input class="input" type="tel" id="ct-phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" placeholder="98250 00000">
+                  </div>
+                  <p class="hint">Optional. Ten digits, or add the country code with a leading plus sign.</p>
+                </div>
+
+                <div class="field">
+                  <label for="ct-subject">What is your query about? <span class="req">*</span></label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 5h16v11H8l-4 4z"/>
+                    </svg>
+                    <select class="select" id="ct-subject" name="subject" required>
+                      <option value="">Select a subject</option>
+                      <option value="login">Login or account access</option>
+                      <option value="attendance">Attendance correction</option>
+                      <option value="examination">Examination, results or transcripts</option>
+                      <option value="fees">Fee payment or receipt</option>
+                      <option value="hostel">Hostel and transport</option>
+                      <option value="events">Event registration</option>
+                      <option value="technical">Technical problem with the portal</option>
+                      <option value="other">Something else</option>
+                    </select>
+                    <span class="control__caret" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="ct-message">Your message <span class="req">*</span></label>
+                  <textarea class="textarea" id="ct-message" name="message" autocomplete="off" placeholder="Roll number 21CE045. The fee receipt for the current semester is not downloading; the button returns an error after payment on 6 August." required></textarea>
+                  <p class="hint">Attachments cannot be sent through this form. The desk will ask for documents by email if they are needed.</p>
+                </div>
+
+                <label class="check mt-5" for="ct-copy">
+                  <input type="checkbox" id="ct-copy" name="copy" value="yes">
+                  <span>Send a copy of this query to my email address.</span>
+                </label>
+
+                <button class="btn btn--primary btn--block mt-5" type="submit">Send query</button>
+              </form>
+            </div>
+
+            <div class="success" id="contact-success">
+              <div class="success__ring">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m5 12.5 4.6 4.6L19 7.7"/>
+                </svg>
+              </div>
+              <h3>Query sent to the help desk</h3>
+              <p>
+                Your ticket number is SH-2026-4418, also sent to your email address. The desk replies within two
+                working days; quote the ticket number if you need to follow up sooner.
+              </p>
+              <button class="btn btn--outline" data-reset type="button">Raise another query</button>
+            </div>
+          </div>
+
+          <div class="stack">
+            <article class="card card--lift contact-card" data-reveal data-reveal-delay="1">
+              <span class="contact-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Email</h4>
+                <p>
+                  Portal and general queries: <a href="mailto:help@studenthub.edu">help@studenthub.edu</a><br>
+                  Fees and receipts: <a href="mailto:accounts@studenthub.edu">accounts@studenthub.edu</a><br>
+                  Results and transcripts: <a href="mailto:exams@studenthub.edu">exams@studenthub.edu</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="card card--lift contact-card" data-reveal data-reveal-delay="2">
+              <span class="contact-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Phone</h4>
+                <p>
+                  Help desk: <a href="tel:+917900000000">+91 79 0000 0000</a>, extension 214<br>
+                  Accounts Office: extension 231<br>
+                  Lines are busiest in the week a fee deadline closes.
+                </p>
+              </div>
+            </article>
+
+            <article class="card card--lift contact-card" data-reveal data-reveal-delay="3">
+              <span class="contact-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Address</h4>
+                <p>
+                  Student Services, Ground Floor, Academic Block A<br>
+                  University Road, Ahmedabad 380015, Gujarat<br>
+                  Entrance next to the main library gate.
+                </p>
+              </div>
+            </article>
+
+            <article class="card card--lift contact-card" data-reveal data-reveal-delay="4">
+              <span class="contact-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+                </svg>
+              </span>
+              <div>
+                <h4>Office hours</h4>
+                <p>
+                  Monday to Friday, 9:00 AM to 5:00 PM<br>
+                  Saturday, 9:00 AM to 1:00 PM<br>
+                  Closed on Sundays and gazetted holidays.
+                </p>
+              </div>
+            </article>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <!-- ================= MAP + HOURS ================= -->
+    <section class="section section--parchment">
+      <div class="shell">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Finding us</span>
+          <h2>Walk in to the Student Services counter</h2>
+          <p>
+            The campus is a 12-minute walk from Gurukul Road and is served by AMTS route 42. Visitor parking is
+            behind Block D.
+          </p>
+        </div>
+
+        <div class="grid grid--split">
+          <div class="map" data-reveal>
+            <div class="map__pin" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="map__body">
+              <h4>Academic Block A, University Campus</h4>
+              <p>
+                University Road, Ahmedabad 380015, Gujarat<br>
+                Counter 1 and 2, ground floor, opposite the notice board.
+              </p>
+              <a class="btn btn--primary btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=University+Road+Ahmedabad+380015" target="_blank" rel="noopener">Get directions</a>
+            </div>
+          </div>
+
+          <div class="card" data-reveal data-reveal-delay="1">
+            <h3>Counter timings</h3>
+            <ul class="hours">
+              <li><span>Student Services desk</span><b>9:00 AM &ndash; 5:00 PM</b></li>
+              <li><span>Accounts Office, Counter 3</span><b>10:00 AM &ndash; 3:00 PM</b></li>
+              <li><span>Examination Cell walk-ins</span><b>2:00 PM &ndash; 4:00 PM</b></li>
+              <li><span>Hostel and transport office</span><b>11:00 AM &ndash; 4:00 PM</b></li>
+              <li><span>Saturday, all counters</span><b>9:00 AM &ndash; 1:00 PM</b></li>
+              <li><span>Sunday and holidays</span><b>Closed</b></li>
+            </ul>
+            <p class="hint mt-4">
+              Counters close 30 minutes early on the last working day of each month for account reconciliation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="StudentHub home">
+            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+              <rect width="48" height="48" rx="13" fill="#1e40af"/>
+              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+            </svg>
+            <span class="brand__text">
+              <span class="brand__name">Student<em>Hub</em></span>
+              <span class="brand__tag">Campus Portal</span>
+            </span>
+          </a>
+          <p class="footer__about">
+            The single portal for academics, events and student services. Built and maintained by the
+            Department of Information Technology.
+          </p>
+          <ul class="social">
+            <li><a href="#" aria-label="StudentHub on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V11H8v3h2v7h3v-7h2.2l.3-3H13v-1.2c0-.5.2-.8.5-.8Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.7 7.6L23 22h-6.8l-4.6-6.1L6 22H2.9l7-8L1.5 2h6.9l4.2 5.6L18.9 2Zm-1.2 18h1.7L7.4 3.8H5.6l12.1 16.2Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
+            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
+            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Reach us</h4>
+          <ul class="footer__contact">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Academic Block A, University Road, Ahmedabad 380015</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+              <a href="mailto:help@studenthub.edu">help@studenthub.edu</a>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              <a href="tel:+917900000000">+91 79 0000 0000</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

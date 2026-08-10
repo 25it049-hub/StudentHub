@@ -1,175 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - StudentHub</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your StudentHub dashboard — Semester 5 attendance, assignment deadlines, results and campus notifications in a single view.">
+  <title>StudentHub — Student Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
-            <h2>StudentHub</h2>
-        </div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="shell nav__inner">
+      <a class="brand" href="index.html" aria-label="StudentHub home">
+        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
+        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <rect width="48" height="48" rx="13" fill="#1e40af"/>
+          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Student<em>Hub</em></span>
+          <span class="brand__tag">Campus Portal</span>
+        </span>
+      </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="faq.html">FAQ</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="profile.html">Profile</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <nav aria-label="Main">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener" aria-current="page">Dashboard</a></li>
+            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
+            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+        <div class="nav__actions">
+          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener">Login</a>
+          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- Dashboard Hero -->
-    <section class="hero">
+  <main id="main">
+    <div class="shell app">
+      <div class="grid grid--sidebar">
 
-        <div class="hero-content">
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="side" data-reveal>
+          <div class="side__user">
+            <img class="avatar" src="images/avatar.jpg" alt="" aria-hidden="true">
+            <div>
+              <b>Aarav Pandya</b>
+              <small>24IT049 · Semester 5</small>
+            </div>
+          </div>
 
-            <h1>Student Dashboard</h1>
+          <nav aria-label="Dashboard sections">
+            <ul class="side__nav">
+              <li>
+                <a class="is-active" href="#overview" aria-current="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="#attendance">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+                  <span>Attendance</span>
+                </a>
+              </li>
+              <li>
+                <a href="#assignments">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14h6M9 18h4"/></svg>
+                  <span>Assignments</span>
+                </a>
+              </li>
+              <li>
+                <a href="#calendar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+                  <span>Timetable</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.6 9 2.6 12 0v-5.5"/></svg>
+                  <span>Results</span>
+                </a>
+              </li>
+              <li>
+                <a href="#notifications">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+                  <span>Notifications</span>
+                  <span class="count">3<span class="sr-only"> unread</span></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M7 15h4"/></svg>
+                  <span>Fees</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M2 12h3m14 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-            <p>
-                Welcome back! Access your courses, notes, assignments,
-                previous papers, and upcoming events from your personal dashboard.
-            </p>
+          <div class="side__note">
+            <b>Placement drive is open</b>
+            <p>27 companies confirmed for the autumn cycle. Minimum eligibility is 6.5 CGPA — you qualify.</p>
+            <a class="btn btn--light btn--sm" href="events.html" target="_blank" rel="noopener">See the list</a>
+          </div>
+        </aside>
+        <!-- ================= MAIN COLUMN ================= -->
+        <div>
 
-            <a href="#overview" class="btn">View Dashboard</a>
+          <!-- page head -->
+          <div class="page-head" data-reveal>
+            <div>
+              <h1>Good morning, Aarav</h1>
+              <p>Sunday, 9 August 2026 · Semester 5 · Department of Information Technology</p>
+            </div>
+            <div class="row">
+              <a class="btn btn--outline btn--sm" href="profile.html" target="_blank" rel="noopener">View profile</a>
+              <a class="btn btn--primary btn--sm" href="events.html" target="_blank" rel="noopener">Book a seat</a>
+            </div>
+          </div>
+
+          <!-- ---------- stat tiles ---------- -->
+          <section aria-labelledby="sum-h" id="overview">
+            <h2 class="sr-only" id="sum-h">Semester summary</h2>
+            <div class="tiles">
+              <article class="card tile" data-reveal data-reveal-delay="1">
+                <div class="tile__top">
+                  <span class="tile__label">Attendance</span>
+                  <span class="tile__icon" aria-hidden="true">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
+                  </span>
+                </div>
+                <b>86%</b>
+                <small><span class="trend trend--up">+2.4%</span> since the July review</small>
+              </article>
+
+              <article class="card tile" data-reveal data-reveal-delay="2">
+                <div class="tile__top">
+                  <span class="tile__label">Assignments due</span>
+                  <span class="tile__icon" aria-hidden="true">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14h6M9 18h4"/></svg>
+                  </span>
+                </div>
+                <b>4</b>
+                <small><span class="trend trend--down">2 overdue</span> in the next seven days</small>
+              </article>
+
+              <article class="card tile" data-reveal data-reveal-delay="3">
+                <div class="tile__top">
+                  <span class="tile__label">CGPA</span>
+                  <span class="tile__icon" aria-hidden="true">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.6 9 2.6 12 0v-5.5M22 9v6"/></svg>
+                  </span>
+                </div>
+                <b>8.42</b>
+                <small><span class="trend trend--up">+0.16</span> after the Semester 4 result</small>
+              </article>
+
+              <article class="card tile" data-reveal data-reveal-delay="4">
+                <div class="tile__top">
+                  <span class="tile__label">Credits earned</span>
+                  <span class="tile__icon" aria-hidden="true">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.1 8.3 22 9.3l-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg>
+                  </span>
+                </div>
+                <b>96</b>
+                <small><span class="trend trend--up">24 added</span> of 180 required to graduate</small>
+              </article>
+            </div>
+          </section>
+
+          <!-- ---------- attendance + calendar ---------- -->
+          <section aria-labelledby="att-h" id="attendance">
+            <h2 class="sr-only" id="att-h">Attendance and schedule</h2>
+            <div class="grid grid--2">
+              <article class="card full-height" data-reveal data-reveal-delay="1">
+                <div class="row row--between mb-5">
+                  <h3 class="mb-0">Attendance this semester</h3>
+                  <span class="pill pill--ok">Above 75%</span>
+                </div>
+
+                <div class="ring-wrap">
+                  <div class="ring-wrap__val">
+                    <svg class="ring" viewBox="0 0 120 120" role="img" aria-label="Overall attendance: 86 percent">
+                      <defs>
+                        <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#2563eb"/>
+                          <stop offset="100%" stop-color="#0ea5e9"/>
+                        </linearGradient>
+                      </defs>
+                      <circle class="ring__track" cx="60" cy="60" r="50"/>
+                      <circle class="ring__bar" data-ring="86" cx="60" cy="60" r="50"/>
+                    </svg>
+                    <b>86%</b>
+                  </div>
+
+                  <ul class="legend">
+                    <li><span>Database Management Systems</span><b>92%</b></li>
+                    <li><span>Operating Systems</span><b>89%</b></li>
+                    <li><span>Data Structures &amp; Algorithms</span><b>87%</b></li>
+                    <li><span>Computer Networks</span><b>81%</b></li>
+                    <li><span>Discrete Mathematics</span><b>74%</b></li>
+                  </ul>
+                </div>
+
+                <p class="hint mt-5">Counted from 128 of 149 lectures held between 15 July and 8 August. Discrete Mathematics is below the 75% bar — three more lectures will clear it.</p>
+              </article>
+
+              <article class="card full-height" id="calendar" data-reveal data-reveal-delay="2">
+                <div class="cal__head">
+                  <h3 class="mb-0">August 2026</h3>
+                  <div class="cal__nav">
+                    <button type="button" aria-label="Show July 2026">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button type="button" aria-label="Show September 2026">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="cal__grid">
+                  <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                  <b class="muted">26</b><b class="muted">27</b><b class="muted">28</b><b class="muted">29</b><b class="muted">30</b><b class="muted">31</b><b>1</b>
+                  <b>2</b><b>3</b><b class="has-event">4</b><b>5</b><b>6</b><b class="has-event">7</b><b>8</b>
+                  <b class="today has-event">9</b><b>10</b><b class="has-event">11</b><b>12</b><b>13</b><b class="has-event">14</b><b>15</b>
+                  <b>16</b><b class="has-event">17</b><b>18</b><b class="has-event">19</b><b>20</b><b>21</b><b class="has-event">22</b>
+                  <b>23</b><b>24</b><b>25</b><b class="has-event">26</b><b>27</b><b>28</b><b>29</b>
+                  <b>30</b><b>31</b><b class="muted">1</b><b class="muted">2</b><b class="muted">3</b><b class="muted">4</b><b class="muted">5</b>
+                </div>
+
+                <ul class="legend mt-5">
+                  <li><span>11 Aug · DBMS internal test</span><b>10:00 AM</b></li>
+                  <li><span>14 Aug · Orientation Week opens</span><b>9:00 AM</b></li>
+                  <li><span>19 Aug · Semester fee deadline</span><b>5:00 PM</b></li>
+                  <li><span>26 Aug · Networks lab viva</span><b>2:30 PM</b></li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <!-- ---------- assignments + notifications ---------- -->
+          <section aria-labelledby="work-h" class="mt-5" id="assignments">
+            <h2 class="sr-only" id="work-h">Assignments and notifications</h2>
+            <div class="grid grid--2">
+              <article class="card full-height" data-reveal data-reveal-delay="1">
+                <div class="row row--between mb-5">
+                  <h3 class="mb-0">Assignments due</h3>
+                  <span class="pill pill--warn">4 open</span>
+                </div>
+
+                <div class="task">
+                  <span class="task__flag task__flag--danger" aria-hidden="true"></span>
+                  <div>
+                    <b>Normalisation case study (1NF to BCNF)</b>
+                    <small>IT501 Database Management Systems · Due Mon, 10 Aug, 11:59 PM</small>
+                  </div>
+                  <a class="btn btn--primary btn--sm" href="#">Submit</a>
+                </div>
+
+                <div class="task">
+                  <span class="task__flag task__flag--danger" aria-hidden="true"></span>
+                  <div>
+                    <b>Page replacement algorithms — LRU vs Optimal</b>
+                    <small>IT503 Operating Systems · Due Tue, 11 Aug, 4:00 PM</small>
+                  </div>
+                  <a class="btn btn--primary btn--sm" href="#">Submit</a>
+                </div>
+
+                <div class="task">
+                  <span class="task__flag task__flag--warn" aria-hidden="true"></span>
+                  <div>
+                    <b>Socket programming lab record</b>
+                    <small>IT505 Computer Networks · Due Fri, 14 Aug, 5:00 PM</small>
+                  </div>
+                  <a class="btn btn--outline btn--sm" href="#">Open brief</a>
+                </div>
+
+                <div class="task">
+                  <span class="task__flag" aria-hidden="true"></span>
+                  <div>
+                    <b>Graph traversal problem set (BFS, DFS, Dijkstra)</b>
+                    <small>IT507 Data Structures &amp; Algorithms · Due Tue, 18 Aug, 11:59 PM</small>
+                  </div>
+                  <a class="btn btn--outline btn--sm" href="#">Open brief</a>
+                </div>
+
+                <div class="mt-5">
+                  <div class="skill-row">
+                    <div class="skill-row__top">
+                      <b>Submitted this semester</b>
+                      <span>14 of 18</span>
+                    </div>
+                    <div class="bar"><i data-fill="78"></i></div>
+                  </div>
+                  <div class="skill-row">
+                    <div class="skill-row__top">
+                      <b>Lab records signed</b>
+                      <span>9 of 15</span>
+                    </div>
+                    <div class="bar bar--warn"><i data-fill="60"></i></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card full-height" id="notifications" data-reveal data-reveal-delay="2">
+                <div class="row row--between mb-5">
+                  <h3 class="mb-0">Notifications</h3>
+                  <a class="link-arrow" href="#">
+                    Mark all read
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+
+                <ul class="feed">
+                  <li class="unread">
+                    <span class="feed__dot feed__dot--warn" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+                    </span>
+                    <div>
+                      <p>Accounts Office: Semester 5 fee of ₹42,500 is payable by 19 August. A ₹500 late charge applies after that.</p>
+                      <time datetime="2026-08-09T08:40">Today, 8:40 AM</time>
+                    </div>
+                  </li>
+
+                  <li class="unread">
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+                    </span>
+                    <div>
+                      <p>Exam Cell: DBMS internal test moved to 11 August, Room B-204. Bring your hall ticket and college ID.</p>
+                      <time datetime="2026-08-08T17:15">Yesterday, 5:15 PM</time>
+                    </div>
+                  </li>
+
+                  <li class="unread">
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    </span>
+                    <div>
+                      <p>Prof. Meera Iyer graded your Operating Systems quiz 3 — you scored 18 out of 20.</p>
+                      <time datetime="2026-08-07T13:02">Fri, 7 Aug, 1:02 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                    </span>
+                    <div>
+                      <p>Training &amp; Placement Cell: aptitude mock round opens for third-year students on 21 August.</p>
+                      <time datetime="2026-08-06T10:30">Thu, 6 Aug, 10:30 AM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot feed__dot--warn" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    </span>
+                    <div>
+                      <p>Attendance alert: Discrete Mathematics has slipped to 74%. Two consecutive absences were recorded last week.</p>
+                      <time datetime="2026-08-05T16:00">Wed, 5 Aug, 4:00 PM</time>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <!-- ---------- progress + activity ---------- -->
+          <section aria-labelledby="prog-h" class="mt-5">
+            <h2 class="sr-only" id="prog-h">Progress and recent activity</h2>
+            <div class="grid grid--2">
+              <article class="card full-height" data-reveal data-reveal-delay="1">
+                <h3>Semester 5 progress</h3>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Semester completed</b>
+                    <span>4 of 16 weeks</span>
+                  </div>
+                  <div class="bar"><i data-fill="25"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — DBMS</b>
+                    <span>72%</span>
+                  </div>
+                  <div class="bar"><i data-fill="72"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — Computer Networks</b>
+                    <span>54%</span>
+                  </div>
+                  <div class="bar bar--warn"><i data-fill="54"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — Discrete Mathematics</b>
+                    <span>38%</span>
+                  </div>
+                  <div class="bar bar--danger"><i data-fill="38"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Credits towards the degree</b>
+                    <span>96 of 180</span>
+                  </div>
+                  <div class="bar"><i data-fill="53"></i></div>
+                </div>
+
+                <p class="hint mt-5">Syllabus coverage is reported by each subject teacher at the end of every teaching week.</p>
+              </article>
+
+              <article class="card full-height" data-reveal data-reveal-delay="2">
+                <h3>Recent activity</h3>
+
+                <ul class="feed">
+                  <li>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+                    </span>
+                    <div>
+                      <p>You submitted <strong>Process scheduling worksheet</strong> for Operating Systems.</p>
+                      <time datetime="2026-08-08T21:48">Yesterday, 9:48 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+                    </span>
+                    <div>
+                      <p>Issued <strong>Computer Networks: A Top-Down Approach</strong> from the Central Library. Return by 22 August.</p>
+                      <time datetime="2026-08-07T15:20">Fri, 7 Aug, 3:20 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    </span>
+                    <div>
+                      <p>Registered for the <strong>36-Hour Campus Hackathon</strong> on 17 August as part of Team Bitwise.</p>
+                      <time datetime="2026-08-06T19:05">Thu, 6 Aug, 7:05 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+                    </span>
+                    <div>
+                      <p>Updated your profile — added the <strong>Oracle SQL Fundamentals</strong> certificate.</p>
+                      <time datetime="2026-08-04T11:12">Tue, 4 Aug, 11:12 AM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot feed__dot--warn" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                    </span>
+                    <div>
+                      <p>Semester 4 fee receipt <strong>#GTU-24-118904</strong> was downloaded from the Accounts tab.</p>
+                      <time datetime="2026-07-30T09:26">Thu, 30 Jul, 9:26 AM</time>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="row row--center mt-5">
+                  <a class="btn btn--outline btn--sm" href="#">See the full log</a>
+                </div>
+              </article>
+            </div>
+          </section>
 
         </div>
 
-        <div class="hero-image">
-            <img src="../images/studenthub2.png" alt="Student Dashboard">
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="StudentHub home">
+            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+              <rect width="48" height="48" rx="13" fill="#1e40af"/>
+              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+            </svg>
+            <span class="brand__text">
+              <span class="brand__name">Student<em>Hub</em></span>
+              <span class="brand__tag">Campus Portal</span>
+            </span>
+          </a>
+          <p class="footer__about">
+            The single portal for academics, events and student services. Built and maintained by the
+            Department of Information Technology.
+          </p>
+          <ul class="social">
+            <li><a href="#" aria-label="StudentHub on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V11H8v3h2v7h3v-7h2.2l.3-3H13v-1.2c0-.5.2-.8.5-.8Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.7 7.6L23 22h-6.8l-4.6-6.1L6 22H2.9l7-8L1.5 2h6.9l4.2 5.6L18.9 2Zm-1.2 18h1.7L7.4 3.8H5.6l12.1 16.2Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+          </ul>
         </div>
 
-    </section>
-
-    <!-- Overview -->
-    <section class="section" id="overview">
-
-        <h2>Dashboard Overview</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>6</h3>
-                <p>Enrolled Courses</p>
-            </div>
-
-            <div class="card">
-                <h3>92%</h3>
-                <p>Attendance</p>
-            </div>
-
-            <div class="card">
-                <h3>14</h3>
-                <p>Assignments</p>
-            </div>
-
-            <div class="card">
-                <h3>28</h3>
-                <p>Study Resources</p>
-            </div>
-
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+          </ul>
         </div>
 
-    </section>
-
-    <!-- Quick Actions -->
-    <section class="section">
-
-        <h2>Quick Actions</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>📚 My Notes</h3>
-                <p>Access semester notes and study materials.</p>
-                <a href="resources.html" class="btn">Open</a>
-            </div>
-
-            <div class="card">
-                <h3>📄 Previous Papers</h3>
-                <p>Download previous year university question papers.</p>
-                <a href="resources.html" class="btn">View</a>
-            </div>
-
-            <div class="card">
-                <h3>💻 Coding Practice</h3>
-                <p>Practice programming and improve your skills.</p>
-                <a href="courses.html" class="btn">Start</a>
-            </div>
-
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
+            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
+            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+          </ul>
         </div>
 
-    </section>
-
-    <!-- Recent Activity -->
-    <section class="section">
-
-        <h2>Recent Activity</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>HTML Assignment</h3>
-                <p>Submitted successfully • Today</p>
-            </div>
-
-            <div class="card">
-                <h3>Java Notes</h3>
-                <p>Downloaded Unit-2 notes • Yesterday</p>
-            </div>
-
-            <div class="card">
-                <h3>Coding Practice</h3>
-                <p>Completed 5 JavaScript exercises • 2 days ago</p>
-            </div>
-
+        <div>
+          <h4>Reach us</h4>
+          <ul class="footer__contact">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Academic Block A, University Road, Ahmedabad 380015</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+              <a href="mailto:help@studenthub.edu">help@studenthub.edu</a>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              <a href="tel:+917900000000">+91 79 0000 0000</a>
+            </li>
+          </ul>
         </div>
+      </div>
 
-    </section>
+      <div class="footer__bar">
+        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Upcoming Deadlines -->
-    <section class="section">
-
-        <h2>Upcoming Deadlines</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>WDF Project</h3>
-                <p>Submission Deadline: 15 August 2026</p>
-            </div>
-
-            <div class="card">
-                <h3>Java Practical</h3>
-                <p>Submission Deadline: 18 August 2026</p>
-            </div>
-
-            <div class="card">
-                <h3>AI Assignment</h3>
-                <p>Submission Deadline: 20 August 2026</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="../js/script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

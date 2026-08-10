@@ -1,154 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - StudentHub</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Who runs StudentHub and the institute behind it — mission, accreditation, the office team and every milestone since 1998.">
+  <title>About — StudentHub, Sabarmati Institute of Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
-            <h2>StudentHub</h2>
-        </div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="shell nav__inner">
+      <a class="brand" href="index.html" aria-label="StudentHub home">
+        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
+        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <rect width="48" height="48" rx="13" fill="#1e40af"/>
+          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Student<em>Hub</em></span>
+          <span class="brand__tag">Campus Portal</span>
+        </span>
+      </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html">Events</a>
-            <a href="faq.html">FAQ</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="login.html">Login</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <nav aria-label="Main">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener" aria-current="page">About</a></li>
+            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
+            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+        <div class="nav__actions">
+          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener">Login</a>
+          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <!-- About Hero -->
-    <section class="hero">
+  <main id="main">
 
-        <div class="hero-content">
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="banner">
+      <div class="banner__bg">
+        <img src="images/about-campus-aerial.jpg" alt="" aria-hidden="true">
+      </div>
 
-            <h1>About StudentHub</h1>
+      <div class="shell">
+        <div class="banner__inner" data-reveal>
+          <nav aria-label="Breadcrumb">
+            <ol class="crumbs">
+              <li><a href="index.html">Home</a></li>
+              <li>About</li>
+            </ol>
+          </nav>
+          <h1>The office behind the portal</h1>
+          <p>
+            StudentHub is the student services portal of Sabarmati Institute of Technology, Ahmedabad.
+            It went live on 15 July 2024 and now carries attendance, results, fee receipts, event
+            registration and grievances for 12,400 students across 38 departments and centres.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= MISSION + VISION ================= -->
+    <section class="section">
+      <div class="shell">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Why we built it</span>
+          <h2>One portal, because four of them was three too many</h2>
+          <p>
+            Until 2024 attendance sat in a desktop application, results in a PDF on the notice board,
+            fees at Counter 3 and everything else in a WhatsApp group. This is what replaced that.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="pillar" data-reveal>
+            <span class="pillar__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.1"/></svg>
+            </span>
+            <h3>Our mission</h3>
             <p>
-                StudentHub is a modern educational portal created to help
-                students access semester notes, previous year papers,
-                coding resources, practical files, and placement
-                preparation materials in one place.
+              Cut the time a student spends walking between offices down to nothing. Every record,
+              form, notice and payment sits behind one login, and every request raised through the
+              portal gets a written reply — with a ticket number — inside two working days.
+            </p>
+          </article>
+
+          <article class="pillar pillar--vision" data-reveal data-reveal-delay="1">
+            <span class="pillar__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.6 12S5.3 5.6 12 5.6 22.4 12 22.4 12 18.7 18.4 12 18.4 1.6 12 1.6 12Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+            </span>
+            <h3>Our vision</h3>
+            <p>
+              By 2028, every departmental circular, examination form and grievance should begin and
+              close inside StudentHub, with paper kept only where a GTU or AICTE statute still demands
+              a wet signature. Nobody should miss a deadline for reading the wrong board.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY STUDENTHUB ================= -->
+    <section class="section section--parchment">
+      <div class="shell">
+        <div class="grid grid--split">
+          <div data-reveal>
+            <span class="eyebrow">Why StudentHub</span>
+            <h2>Five things it does that the old system did not</h2>
+            <p class="lede mb-6">
+              None of this is clever. It is mostly a matter of putting the same information in one
+              place and keeping it current.
             </p>
 
-            <p>
-                Our goal is to make learning easier, smarter, and more
-                organized by providing quality academic resources and
-                career-focused content for students.
-            </p>
+            <ul class="checks">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+                <span>
+                  <b>One login, eight offices</b>
+                  Accounts, Examination, Library, Hostel, Transport, Training &amp; Placement, your
+                  department office and the student council all publish to the same feed.
+                </span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+                <span>
+                  <b>Attendance that warns you early</b>
+                  Subject-wise percentages refresh by 8 PM the same day and flag you at 78%, not at 74%
+                  when the detention list has already gone up.
+                </span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+                <span>
+                  <b>Records that outlive the semester</b>
+                  Marksheets, fee receipts, bonafide letters and workshop certificates stay
+                  downloadable for six years after you graduate.
+                </span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+                <span>
+                  <b>Built here, fixed here</b>
+                  Two full-time developers and four interns from the IT department maintain it. A bug
+                  report joins the same queue as a fee query and is answered the same way.
+                </span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+                <span>
+                  <b>Light enough for hostel Wi-Fi</b>
+                  Every page stays under 400 KB, works without JavaScript for reading, and does not
+                  need an app install to check a result at midnight.
+                </span>
+              </li>
+            </ul>
+          </div>
 
-            <a href="index.html" class="btn">Back to Home</a>
-
+          <div class="media media--ratio" data-reveal data-reveal-delay="2">
+            <img src="images/about-campus.jpg" alt="Students on the steps of the Central Library block during a change of lecture">
+          </div>
         </div>
-
-        <div class="hero-image">
-
-            <img src="../images/studenthub2.png" alt="StudentHub">
-
-        </div>
-
+      </div>
     </section>
 
-    <!-- Mission & Vision -->
+    <!-- ================= TEAM ================= -->
     <section class="section">
-
-        <h2>Our Mission & Vision</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>Our Mission</h3>
-                <p>
-                    To provide students with organized study materials,
-                    coding practice, project guidance, and placement
-                    preparation resources.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Our Vision</h3>
-                <p>
-                    To become a trusted digital learning platform that
-                    supports students throughout their academic and
-                    professional journey.
-                </p>
-            </div>
-
+      <div class="shell">
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Who runs it</span>
+          <h2>The people who answer when you raise a ticket</h2>
+          <p>Office hours are 10:00 AM to 5:00 PM, Monday to Saturday, second Saturday closed.</p>
         </div>
 
+        <div class="grid grid--4">
+          <article class="card card--lift member full-height" data-reveal>
+            <div class="media media--square">
+              <img src="images/team-1.jpg" alt="Dr. Meera Vasavada, Principal">
+            </div>
+            <h4>Dr. Meera Vasavada</h4>
+            <small>Principal</small>
+            <p>Chairs the academic council and still takes the Tuesday 8 AM Structural Analysis lecture for final-year Civil.</p>
+            <ul class="member__social">
+              <li><a href="#" aria-label="Dr. Meera Vasavada on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+              <li><a href="mailto:principal@studenthub.edu" aria-label="Email the Principal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
+            </ul>
+          </article>
+
+          <article class="card card--lift member full-height" data-reveal data-reveal-delay="1">
+            <div class="media media--square">
+              <img src="images/team-2.jpg" alt="Ms. Falguni Shah, Registrar">
+            </div>
+            <h4>Ms. Falguni Shah</h4>
+            <small>Registrar</small>
+            <p>Signs every transcript, bonafide letter and migration certificate the portal issues — roughly 300 a month.</p>
+            <ul class="member__social">
+              <li><a href="#" aria-label="Ms. Falguni Shah on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+              <li><a href="mailto:registrar@studenthub.edu" aria-label="Email the Registrar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
+            </ul>
+          </article>
+
+          <article class="card card--lift member full-height" data-reveal data-reveal-delay="2">
+            <div class="media media--square">
+              <img src="images/team-3.jpg" alt="Prof. Nilesh Patel, Head of the Department of Information Technology">
+            </div>
+            <h4>Prof. Nilesh Patel</h4>
+            <small>Head, Information Technology</small>
+            <p>Owns the portal roadmap and reviews every release before it goes out on a Friday evening.</p>
+            <ul class="member__social">
+              <li><a href="#" aria-label="Prof. Nilesh Patel on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+              <li><a href="mailto:hod.it@studenthub.edu" aria-label="Email the Head of Information Technology"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
+            </ul>
+          </article>
+
+          <article class="card card--lift member full-height" data-reveal data-reveal-delay="3">
+            <div class="media media--square">
+              <img src="images/team-4.jpg" alt="Mr. Arjun Iyer, Training and Placement Officer">
+            </div>
+            <h4>Mr. Arjun Iyer</h4>
+            <small>Training &amp; Placement Officer</small>
+            <p>Handles company invites, eligibility lists and the 27-recruiter autumn cycle out of Block A.</p>
+            <ul class="member__social">
+              <li><a href="#" aria-label="Mr. Arjun Iyer on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+              <li><a href="mailto:tpo@studenthub.edu" aria-label="Email the Training and Placement Officer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Features -->
-    <section class="section">
+    <!-- ================= INSTITUTE AT A GLANCE ================= -->
+    <section class="section section--tight section--surface">
+      <div class="shell">
+        <aside aria-label="Institute at a glance">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">At a glance</span>
+            <h2>Institute record, as filed with GTU</h2>
+            <p>Figures below are from the 2025&ndash;26 self-assessment report submitted in June 2026.</p>
+          </div>
 
-        <h2>Why Choose StudentHub?</h2>
+          <div class="grid grid--4">
+            <dl class="info-card" data-reveal>
+              <dt>Established</dt>
+              <dd>1998</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="1">
+              <dt>Affiliation</dt>
+              <dd>GTU, Ahmedabad</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="2">
+              <dt>Accreditation</dt>
+              <dd>NAAC A+</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="3">
+              <dt>Campus</dt>
+              <dd>42 acres</dd>
+            </dl>
+            <dl class="info-card" data-reveal>
+              <dt>Programmes</dt>
+              <dd>26</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="1">
+              <dt>Teaching staff</dt>
+              <dd>412</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="2">
+              <dt>Students on roll</dt>
+              <dd>12,400</dd>
+            </dl>
+            <dl class="info-card" data-reveal data-reveal-delay="3">
+              <dt>Placed, 2025 batch</dt>
+              <dd>94%</dd>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        <div class="card-container">
-
-            <div class="card">
-                <h3>📚 Semester Notes</h3>
-                <p>Well-organized notes for all major engineering subjects.</p>
-            </div>
-
-            <div class="card">
-                <h3>💻 Coding Practice</h3>
-                <p>C, C++, Java, Python, HTML, CSS, and JavaScript resources.</p>
-            </div>
-
-            <div class="card">
-                <h3>📄 Previous Papers</h3>
-                <p>University question papers for better exam preparation.</p>
-            </div>
-
+    <!-- ================= MILESTONES ================= -->
+    <section class="section section--parchment">
+      <div class="shell shell--narrow">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Milestones</span>
+          <h2>Twenty-eight years, in short</h2>
+          <p>The dates the institute marks in its calendar. Everything else is in the annual report.</p>
         </div>
 
+        <ol class="timeline">
+          <li data-reveal>
+            <time datetime="1998-07">1998</time>
+            <h4>Three branches, one rented block</h4>
+            <p>Founded on Drive-In Road with 180 sanctioned seats in Civil, Mechanical and Electrical Engineering. Eleven faculty members, no library of its own.</p>
+          </li>
+          <li data-reveal data-reveal-delay="1">
+            <time datetime="2003-06">2003</time>
+            <h4>Move to the University Road campus</h4>
+            <p>Forty-two acres, four academic blocks and the first hostel. Computer Engineering and Information Technology admitted their first intake the same July.</p>
+          </li>
+          <li data-reveal data-reveal-delay="2">
+            <time datetime="2008-09">2008</time>
+            <h4>Affiliation transferred to GTU</h4>
+            <p>Along with every other engineering college in the state after Gujarat Technological University was constituted. Semester pattern replaced the annual examination.</p>
+          </li>
+          <li data-reveal data-reveal-delay="3">
+            <time datetime="2016-02">2016</time>
+            <h4>Central Placement Cell set up</h4>
+            <p>Recruitment moved from individual departments to one office in Block A. The 2016 season closed with 214 offers from 31 companies.</p>
+          </li>
+          <li data-reveal data-reveal-delay="4">
+            <time datetime="2024-07-15">2024</time>
+            <h4>StudentHub goes live</h4>
+            <p>Attendance, results, fees, event booking and grievances moved onto one login on 15 July, retiring four separate systems and the paper leave register.</p>
+          </li>
+          <li data-reveal data-reveal-delay="5">
+            <time datetime="2026-01">2026</time>
+            <h4>NAAC A+ in the third cycle</h4>
+            <p>Re-accredited in January with a CGPA of 3.42, and the Innovation Lab in Block D opened to all departments rather than final-year projects alone.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Statistics -->
-    <section class="section">
+  </main>
 
-        <h2>StudentHub Statistics</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>100+</h3>
-                <p>Study Notes</p>
-            </div>
-
-            <div class="card">
-                <h3>50+</h3>
-                <p>Previous Papers</p>
-            </div>
-
-            <div class="card">
-                <h3>30+</h3>
-                <p>Coding Resources</p>
-            </div>
-
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="StudentHub home">
+            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+              <rect width="48" height="48" rx="13" fill="#1e40af"/>
+              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+            </svg>
+            <span class="brand__text">
+              <span class="brand__name">Student<em>Hub</em></span>
+              <span class="brand__tag">Campus Portal</span>
+            </span>
+          </a>
+          <p class="footer__about">
+            The single portal for academics, events and student services. Built and maintained by the
+            Department of Information Technology.
+          </p>
+          <ul class="social">
+            <li><a href="#" aria-label="StudentHub on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V11H8v3h2v7h3v-7h2.2l.3-3H13v-1.2c0-.5.2-.8.5-.8Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.7 7.6L23 22h-6.8l-4.6-6.1L6 22H2.9l7-8L1.5 2h6.9l4.2 5.6L18.9 2Zm-1.2 18h1.7L7.4 3.8H5.6l12.1 16.2Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+          </ul>
         </div>
 
-    </section>
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+          </ul>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-    </footer>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
+            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
+            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+          </ul>
+        </div>
 
-    <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+        <div>
+          <h4>Reach us</h4>
+          <ul class="footer__contact">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Academic Block A, University Road, Ahmedabad 380015</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+              <a href="mailto:help@studenthub.edu">help@studenthub.edu</a>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              <a href="tel:+917900000000">+91 79 0000 0000</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="footer__bar">
+        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,139 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - StudentHub</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Every workshop, placement drive, match and cultural night confirmed for the autumn term. Filter by category and register before the cut-off.">
+  <title>Events — StudentHub Campus Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="../images/studenthublogo.png" alt="StudentHub Logo">
-            <h2>StudentHub</h2>
-        </div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav">
+    <div class="shell nav__inner">
+      <a class="brand" href="index.html" aria-label="StudentHub home">
+        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
+        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <rect width="48" height="48" rx="13" fill="#1e40af"/>
+          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Student<em>Hub</em></span>
+          <span class="brand__tag">Campus Portal</span>
+        </span>
+      </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="events.html" class="active">Events</a>
-            <a href="faq.html">FAQ</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="contact.html">Contact</a>
-            <a href="login.html">Login</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__menu" id="nav-menu">
+        <nav aria-label="Main">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener" aria-current="page">Events</a></li>
+            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
+            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
         </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h1>Upcoming Events</h1>
-
-            <p>
-                Stay updated with workshops, coding competitions, hackathons,
-                placement drives, and university events organized through
-                StudentHub.
-            </p>
-
-            <a href="#events" class="btn">View Events</a>
-
+        <div class="nav__actions">
+          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener">Login</a>
+          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <div class="hero-image">
-            <img src="../images/studenthub2.png" alt="StudentHub Events">
+  <main id="main">
+
+    <!-- ================= PAGE BANNER ================= -->
+    <section class="banner">
+      <div class="banner__bg">
+        <img src="images/events-banner.jpg" alt="" aria-hidden="true">
+      </div>
+
+      <div class="shell">
+        <div class="banner__inner" data-reveal>
+          <nav aria-label="Breadcrumb">
+            <ol class="crumbs">
+              <li><a href="index.html">Home</a></li>
+              <li>Events</li>
+            </ol>
+          </nav>
+          <h1>Campus calendar</h1>
+          <p>
+            Twelve listings confirmed by the departments, the clubs and the placement cell for the
+            autumn term. Registration closes 24 hours before start time, and seats released after
+            that go down the waitlist in order.
+          </p>
         </div>
-
+      </div>
     </section>
 
-    <!-- Upcoming Events -->
-    <section class="section" id="events">
-
-        <h2>Upcoming Events</h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <h3>🚀 Tech Fest 2026</h3>
-                <p><strong>Date:</strong> 12 August 2026</p>
-                <p><strong>Venue:</strong> CHARUSAT Auditorium</p>
-                <p>Innovation showcase, project exhibitions, and startup networking.</p>
-                <a href="#" class="btn">Register</a>
-            </div>
-
-            <div class="card">
-                <h3>💻 Coding Contest</h3>
-                <p><strong>Date:</strong> 18 August 2026</p>
-                <p><strong>Venue:</strong> Computer Lab</p>
-                <p>Competitive programming contest with exciting prizes.</p>
-                <a href="#" class="btn">Register</a>
-            </div>
-
-            <div class="card">
-                <h3>🤖 AI & Machine Learning Workshop</h3>
-                <p><strong>Date:</strong> 25 August 2026</p>
-                <p><strong>Venue:</strong> Seminar Hall</p>
-                <p>Hands-on AI workshop with industry experts.</p>
-                <a href="#" class="btn">Register</a>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Placement Events -->
+    <!-- ================= EVENT LISTING ================= -->
     <section class="section">
+      <div class="shell">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">August &ndash; October 2026</span>
+          <h2>What is on between now and Diwali</h2>
+          <p>
+            Filter by category below. Seat counts are updated by the coordinating department at the
+            close of every working day.
+          </p>
+        </div>
 
-        <h2>Placement & Career Events</h2>
+        <div class="filters" role="group" aria-label="Filter events by category">
+          <button class="chip is-active" type="button" data-filter="all" data-reveal>All events</button>
+          <button class="chip" type="button" data-filter="tech" data-reveal data-reveal-delay="1">Technical</button>
+          <button class="chip" type="button" data-filter="career" data-reveal data-reveal-delay="2">Career</button>
+          <button class="chip" type="button" data-filter="cultural" data-reveal data-reveal-delay="3">Cultural</button>
+          <button class="chip" type="button" data-filter="sports" data-reveal data-reveal-delay="4">Sports</button>
+          <button class="chip" type="button" data-filter="workshop" data-reveal data-reveal-delay="5">Workshops</button>
+        </div>
 
-        <div class="card-container">
+        <div class="grid grid--3">
 
-            <div class="card">
-                <h3>🎯 Resume Building Session</h3>
-                <p>Learn how to create an ATS-friendly professional resume.</p>
+          <!-- 1 -->
+          <article class="card card--flush card--lift event" data-category="tech" data-reveal>
+            <div class="event__media">
+              <img src="images/event-1.jpg" alt="Students working through the night at a campus hackathon">
+              <div class="event__date"><b>17</b><span>Aug</span></div>
+              <span class="pill event__tag">Tech</span>
             </div>
-
-            <div class="card">
-                <h3>🎤 Mock Interview</h3>
-                <p>Practice technical and HR interviews with mentors.</p>
+            <div class="event__body">
+              <h3>36-Hour Campus Hackathon</h3>
+              <p>Build a working prototype on the Ahmedabad civic open-data set. Teams of four; mentors from three product companies stay on site both nights.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  9:00 AM onwards
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Innovation Lab, Block D
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">42 of 120 seats left</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
             </div>
+          </article>
 
-            <div class="card">
-                <h3>🏢 Placement Drive</h3>
-                <p>Campus recruitment drive with leading IT companies.</p>
+          <!-- 2 -->
+          <article class="card card--flush card--lift event" data-category="career" data-reveal data-reveal-delay="1">
+            <div class="event__media">
+              <img src="images/event-2.jpg" alt="Placement officer briefing final-year students in a lecture hall">
+              <div class="event__date"><b>19</b><span>Aug</span></div>
+              <span class="pill pill--live event__tag">Career</span>
             </div>
+            <div class="event__body">
+              <h3>Autumn Placement Drive Briefing</h3>
+              <p>Eligibility rules, the one-offer policy and the shortlisting calendar for the 27 confirmed recruiters. Attendance is compulsory for all final-year students.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  4:30 PM &ndash; 6:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Lecture Hall 4, Block A
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">Compulsory · final year</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="card card--flush card--lift event" data-category="workshop" data-reveal data-reveal-delay="2">
+            <div class="event__media">
+              <img src="images/event-3.jpg" alt="Circuit board layout on a lab computer screen during a design workshop">
+              <div class="event__date"><b>21</b><span>Aug</span></div>
+              <span class="pill pill--gold event__tag">Workshop</span>
+            </div>
+            <div class="event__body">
+              <h3>PCB Design with KiCad</h3>
+              <p>Two sessions, schematic to Gerber export. Bring a laptop with KiCad 8 already installed; the lab has no time to spend on downloads. Open to EC and EE, semester 4 upward.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  10:00 AM &ndash; 1:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Electronics Lab 2, Block B
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">12 of 40 benches left</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="card card--flush card--lift event" data-category="career" data-reveal>
+            <div class="event__media">
+              <img src="images/event-4.jpg" alt="Alumnus speaking to a student across a table at a mentoring session">
+              <div class="event__date"><b>22</b><span>Aug</span></div>
+              <span class="pill event__tag">Career</span>
+            </div>
+            <div class="event__body">
+              <h3>Industry Mentor Meetup</h3>
+              <p>Twenty-minute one-to-one slots with alumni working in product, design and data roles. Carry a printed CV; feedback is verbal and on the spot.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  2:00 PM &ndash; 6:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Seminar Hall, Block C
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">All 96 slots booked</span>
+                <a class="btn btn--outline btn--sm" href="register.html" target="_blank" rel="noopener">Join waitlist</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="card card--flush card--lift event" data-category="sports" data-reveal data-reveal-delay="1">
+            <div class="event__media">
+              <img src="images/event-5.jpg" alt="Inter-department cricket match on the main college ground">
+              <div class="event__date"><b>26</b><span>Aug</span></div>
+              <span class="pill pill--ok event__tag">Sports</span>
+            </div>
+            <div class="event__body">
+              <h3>Inter-Department Cricket League</h3>
+              <p>Fourteen departments, 12-over matches, league then knockout over three weekends. One team per department; squad list to the Sports Office by 23 August.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  7:30 AM, first ball
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Main Ground
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">6 of 14 squads entered</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="card card--flush card--lift event" data-category="tech" data-reveal data-reveal-delay="2">
+            <div class="event__media">
+              <img src="images/event-6.jpg" alt="Line-following robot being tested on a taped track">
+              <div class="event__date"><b>30</b><span>Aug</span></div>
+              <span class="pill event__tag">Tech</span>
+            </div>
+            <div class="event__body">
+              <h3>Line Follower Sprint</h3>
+              <p>Robotics Club's opening event of the term. Chassis under 20&nbsp;cm, no pre-built kits, three runs per team on a taped course with two acute turns.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  11:00 AM &ndash; 4:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Workshop Shed, Block E
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">8 of 24 team slots left</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="card card--flush card--lift event" data-category="cultural" data-reveal>
+            <div class="event__media">
+              <img src="images/event-7.jpg" alt="Dance performance under stage lights at the open air theatre">
+              <div class="event__date"><b>05</b><span>Sep</span></div>
+              <span class="pill event__tag">Cultural</span>
+            </div>
+            <div class="event__body">
+              <h3>Annual Cultural Night</h3>
+              <p>Fourteen departments, one stage, eleven acts. Auditions for music and dance close on 25 August; the running order goes up on the portal three days before.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  6:30 PM onwards
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Open Air Theatre
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">Free entry with ID</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="card card--flush card--lift event" data-category="workshop" data-reveal data-reveal-delay="1">
+            <div class="event__media">
+              <img src="images/event-8.jpg" alt="Student having a printed CV marked up during a resume clinic">
+              <div class="event__date"><b>09</b><span>Sep</span></div>
+              <span class="pill pill--gold event__tag">Workshop</span>
+            </div>
+            <div class="event__body">
+              <h3>Resume &amp; Cover Letter Clinic</h3>
+              <p>Run by the placement cell with two HR volunteers from the alumni network. Every CV is marked up on paper in a fifteen-minute slot. Bring three copies.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  11:00 AM &ndash; 3:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Reading Hall 2, Library
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">All 60 slots taken</span>
+                <button class="btn btn--outline btn--sm" type="button" disabled>Registration closed</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="card card--flush card--lift event" data-category="sports" data-reveal data-reveal-delay="2">
+            <div class="event__media">
+              <img src="images/event-9.jpg" alt="Runners at the start of a 100 metre race on the campus track">
+              <div class="event__date"><b>20</b><span>Sep</span></div>
+              <span class="pill pill--ok event__tag">Sports</span>
+            </div>
+            <div class="event__body">
+              <h3>Annual Athletics Meet</h3>
+              <p>Track and field across one day &mdash; 100 m, 400 m, relay, long jump, shot put. Entries close 16 September and a student may enter no more than three events.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  6:45 AM report time
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Athletics Track
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">Entries open till 16 Sep</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="card card--flush card--lift event" data-category="tech" data-reveal>
+            <div class="event__media">
+              <img src="images/event-10.jpg" alt="Two students reviewing a pull request on a shared monitor">
+              <div class="event__date"><b>27</b><span>Sep</span></div>
+              <span class="pill event__tag">Tech</span>
+            </div>
+            <div class="event__body">
+              <h3>Open Source Contribution Day</h3>
+              <p>FOSS Club walks first-timers through forking, a clean commit message and a pull request that a maintainer will actually read. Four issues are kept aside for beginners.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  9:30 AM &ndash; 5:30 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Computer Centre, Lab 1
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">31 of 80 seats left</span>
+                <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener">Register</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="card card--flush card--lift event" data-category="cultural" data-reveal data-reveal-delay="1">
+            <div class="event__media">
+              <img src="images/event-11.jpg" alt="Students in traditional dress playing garba in a lit courtyard">
+              <div class="event__date"><b>03</b><span>Oct</span></div>
+              <span class="pill pill--live event__tag">Cultural</span>
+            </div>
+            <div class="event__body">
+              <h3>Navratri Garba Night</h3>
+              <p>Live dhol, two rounds of raas and the traditional-dress prize. Gates shut at 9:30 PM and the ground clears by midnight, per the police permission.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  8:00 PM &ndash; 12:00 AM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Central Lawn
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">1,600 passes &mdash; sold out</span>
+                <button class="btn btn--outline btn--sm" type="button" disabled>Passes sold out</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="card card--flush card--lift event" data-category="workshop" data-reveal data-reveal-delay="2">
+            <div class="event__media">
+              <img src="images/event-12.jpg" alt="Control system response plotted on a laboratory computer">
+              <div class="event__date"><b>10</b><span>Oct</span></div>
+              <span class="pill pill--gold event__tag">Workshop</span>
+            </div>
+            <div class="event__body">
+              <h3>MATLAB for Control Systems</h3>
+              <p>Root locus, Bode plots and Simulink models against the semester 5 Instrumentation syllabus. Campus licence keys are handed out at the desk.</p>
+              <div class="event__meta">
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  2:00 PM &ndash; 5:00 PM
+                </span>
+                <span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Computer Centre, Lab 3
+                </span>
+              </div>
+              <div class="event__foot">
+                <span class="event__seats">Waitlist open</span>
+                <a class="btn btn--outline btn--sm" href="register.html" target="_blank" rel="noopener">Join waitlist</a>
+              </div>
+            </div>
+          </article>
 
         </div>
 
+        <!-- ================= REGISTRATION NOTES ================= -->
+        <aside class="card mt-7" data-reveal aria-label="Before you register">
+          <h3>Before you register</h3>
+          <ul class="checks">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+              <span>
+                <b>Registration closes 24 hours before start time</b>
+                There are no spot entries for lab and workshop sessions &mdash; the department has to raise a consumables indent the day before.
+              </span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+              <span>
+                <b>One login, one seat</b>
+                Booking on a friend's behalf is cancelled by the coordinator without notice, and both enrolment numbers lose priority on the next waitlist.
+              </span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+              <span>
+                <b>Waitlists clear in order on the morning of the event</b>
+                You get a portal notification and an SMS on the number in your profile. Confirm within two hours or the seat moves down the list.
+              </span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
+              <span>
+                <b>Certificates take five working days</b>
+                Workshop and drive certificates appear under Profile, in Documents. Nothing is issued at the venue.
+              </span>
+            </li>
+          </ul>
+          <div class="row mt-5">
+            <a class="btn btn--outline btn--sm" href="contact.html" target="_blank" rel="noopener">Ask the events desk</a>
+            <a class="btn btn--ghost btn--sm" href="faq.html" target="_blank" rel="noopener">Read the FAQ</a>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- Event Schedule -->
-    <section class="section">
+  </main>
 
-        <h2>Event Schedule</h2>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="StudentHub home">
+            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+              <rect width="48" height="48" rx="13" fill="#1e40af"/>
+              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
+              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+            </svg>
+            <span class="brand__text">
+              <span class="brand__name">Student<em>Hub</em></span>
+              <span class="brand__tag">Campus Portal</span>
+            </span>
+          </a>
+          <p class="footer__about">
+            The single portal for academics, events and student services. Built and maintained by the
+            Department of Information Technology.
+          </p>
+          <ul class="social">
+            <li><a href="#" aria-label="StudentHub on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H16V6h-2.5C11.6 6 10 7.6 10 9.5V11H8v3h2v7h3v-7h2.2l.3-3H13v-1.2c0-.5.2-.8.5-.8Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.7 7.6L23 22h-6.8l-4.6-6.1L6 22H2.9l7-8L1.5 2h6.9l4.2 5.6L18.9 2Zm-1.2 18h1.7L7.4 3.8H5.6l12.1 16.2Z"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+            <li><a href="#" aria-label="StudentHub on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
+          </ul>
+        </div>
 
-        <div class="card-container">
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
+            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
+            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
+            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+          </ul>
+        </div>
 
-            <div class="card">
-                <h3>12 Aug 2026</h3>
-                <p>Tech Fest 2026</p>
-            </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
+            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
+            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+          </ul>
+        </div>
 
-            <div class="card">
-                <h3>18 Aug 2026</h3>
-                <p>Coding Contest</p>
-            </div>
+        <div>
+          <h4>Reach us</h4>
+          <ul class="footer__contact">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Academic Block A, University Road, Ahmedabad 380015</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
+              <a href="mailto:help@studenthub.edu">help@studenthub.edu</a>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+              <a href="tel:+917900000000">+91 79 0000 0000</a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            <div class="card">
-                <h3>25 Aug 2026</h3>
-                <p>AI Workshop</p>
-            </div>
+      <div class="footer__bar">
+        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-            <div class="card">
-                <h3>30 Aug 2026</h3>
+  <script src="script.js"></script>
+</body>
+</html>
