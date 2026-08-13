@@ -6,6 +6,12 @@
 (function () {
   "use strict";
 
+  /* Guard: index.html lists this script under several possible paths so that
+     whichever one exists gets found. If two of them happen to exist, this
+     stops the file running twice and double-binding every listener. */
+  if (window.__studentHubLoaded) return;
+  window.__studentHubLoaded = true;
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
@@ -349,7 +355,81 @@
     pw.addEventListener("input", check);
   }
 
-  /* --- 14. Footer year -------------------------------------------------- */
+  /* --- 14. Image folder fallback ----------------------------------------
+     Every <img> points at "images/<name>". If your repo keeps pictures in
+     img/ or assets/images/ instead, the browser 404s and you see the CSS
+     gradient behind the slot. This retries the same FILENAME in the other
+     usual folders before giving up.
+
+     Note: this fixes a wrong FOLDER, not a wrong FILENAME. If the file is
+     called campus.jpg and the markup asks for hero.jpg, nothing can guess
+     that — rename the file or edit the src.
+     -------------------------------------------------------------------- */
+  function initImageFallback() {
+    var prefixes = [
+      "../images/", "../img/", "../assets/images/", "../assets/img/", "../",
+      "images/", "img/", "assets/images/", "assets/img/", "./"
+    ];
+
+    $$("img[src]").forEach(function (img) {
+      var src = img.getAttribute("src");
+      if (!src || /^(https?:|data:)/.test(src)) return;
+
+      var file = src.split("/").pop();
+      var tried = 0;
+
+      img.addEventListener("error", function onErr() {
+        if (tried >= prefixes.length) {
+          img.removeEventListener("error", onErr);
+          img.setAttribute("data-img-missing", file);
+          return;
+        }
+        img.src = prefixes[tried++] + file;
+      });
+    });
+  }
+
+  /* --- 16. Login bears: pupils follow the cursor ------------------------
+     Each pupil is nudged a few SVG units toward the pointer, clamped so it
+     never escapes the white of the eye. Runs only on pages that have bears.
+     -------------------------------------------------------------------- */
+  function initBears() {
+    var eyes = $$("[data-eye]");
+    if (!eyes.length || reduceMotion) return;
+
+    var MAX = 3.4;   // how far a pupil may travel from centre, in SVG units
+    var pending = false;
+    var mx = 0, my = 0;
+
+    function track() {
+      pending = false;
+      eyes.forEach(function (eye) {
+        var pupil = $("[data-pupil]", eye);
+        if (!pupil) return;
+
+        var box = eye.getBoundingClientRect();
+        if (!box.width) return;                      // hidden on small screens
+
+        var cx = box.left + box.width / 2;
+        var cy = box.top + box.height / 2;
+        var dx = mx - cx;
+        var dy = my - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        var reach = Math.min(dist / 55, 1) * MAX;    // ease in as it nears
+
+        pupil.style.transform =
+          "translate(" + (dx / dist * reach).toFixed(2) + "px," +
+                         (dy / dist * reach).toFixed(2) + "px)";
+      });
+    }
+
+    window.addEventListener("mousemove", function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!pending) { pending = true; window.requestAnimationFrame(track); }
+    }, { passive: true });
+  }
+
+  /* --- 17. Footer year -------------------------------------------------- */
   function initYear() {
     $$("[data-year]").forEach(function (el) {
       el.textContent = String(new Date().getFullYear());
@@ -371,6 +451,8 @@
     initForms();
     initPassword();
     initConfirm();
+    initImageFallback();
+    initBears();
     initYear();
   }
 
