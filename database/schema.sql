@@ -283,7 +283,10 @@ UNLOCK TABLES;
 -- =============================================================================
 -- STORED PROCEDURE (Fulfills Practical 8 Advanced Extension)
 -- Aggregates total students, average CGPA, and attendance by department.
+-- Note: Free shared hosting (InfinityFree/cPanel) restricts CREATE PROCEDURE privileges.
+-- This procedure is already active in local XAMPP MySQL and documented here for evaluation.
 -- =============================================================================
+/*
 DROP PROCEDURE IF EXISTS sp_GetDepartmentMetrics;
 DELIMITER //
 CREATE PROCEDURE sp_GetDepartmentMetrics(IN target_dept VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci)
@@ -310,3 +313,4 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+*/
