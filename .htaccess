@@ -3,20 +3,33 @@
 # =============================================================================
 
 # 1. Custom Error Pages
-ErrorDocument 404 /studenthub/404.html
+ErrorDocument 404 /404.html
 
-# 2. Prevent Directory Browsing
-Options -Indexes
+# 2. MIME Types for Static Assets (Ensures CSS, JS, Images, and JSON load properly)
+<IfModule mod_mime.c>
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/svg+xml .svg
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/x-icon .ico
+    AddType application/json .json
+</IfModule>
 
-# 3. Security: Block Sensitive Files and Hidden Configs
+# 3. Security: Block Sensitive Files (.env, database dumps, logs)
 <FilesMatch "^\.(env|git|htaccess|system)|(registrations\.json|audit_logs\.json|contacts\.(json|csv)|feedback\.(json|csv)|\.sql)$">
-    Require all denied
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
-# 4. Security Headers (Practical 14 Security Hardening)
+# 4. Security Headers (where supported)
 <IfModule mod_headers.c>
-    Header always set X-Content-Type-Options "nosniff"
-    Header always set X-Frame-Options "SAMEORIGIN"
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

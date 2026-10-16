@@ -3,7 +3,7 @@
 # Blocks script execution and restricts file access to valid image formats.
 # =============================================================================
 
-Options -ExecCGI -Indexes
+# Options disabled to prevent shared hosting 500 error
 
 <IfModule mod_php.c>
     php_flag engine off
