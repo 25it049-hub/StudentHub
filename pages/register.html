@@ -861,15 +861,28 @@
           regFormData.append('confirm_password', confirmPasswordInput.value);
 
           fetch('../backend/csrf_token.php')
-            .then(function (r) { return r.json(); })
-            .then(function (tok) {
-              if (tok && tok.csrf_token) regFormData.append('csrf_token', tok.csrf_token);
+            .then(function (r) { return r.text(); })
+            .then(function (tokTxt) {
+              try {
+                var tok = JSON.parse(tokTxt);
+                if (tok && tok.csrf_token) regFormData.append('csrf_token', tok.csrf_token);
+              } catch (e) {
+                console.warn('Could not parse CSRF token:', tokTxt);
+              }
               return fetch('../backend/register.php', {
                 method: 'POST',
                 body: regFormData
               });
             }).then(function (r) {
-            return r.json().then(function (data) {
+            return r.text().then(function (txt) {
+              var data = {};
+              try {
+                data = JSON.parse(txt);
+              } catch (e) {
+                console.error('Non-JSON registration response:', txt);
+                var clean = txt.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim();
+                data = { success: false, message: 'Server returned: ' + (clean.substring(0, 200) || 'Invalid server response.') };
+              }
               return { status: r.status, ok: r.ok, data: data };
             });
           }).then(function (res) {

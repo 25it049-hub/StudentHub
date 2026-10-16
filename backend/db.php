@@ -7,6 +7,10 @@
  * =============================================================================
  */
 
+// Suppress PHP warnings from corrupting JSON responses
+@ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
 // Auto-load .env configuration if present in project root
 $envFile = __DIR__ . '/../.env';
 if (file_exists($envFile) && is_readable($envFile)) {
@@ -17,20 +21,20 @@ if (file_exists($envFile) && is_readable($envFile)) {
         [$k, $v] = explode('=', $line, 2);
         $k = trim($k);
         $v = trim($v, " \t\n\r\0\x0B\"'");
-        if (!getenv($k) && !isset($_SERVER[$k]) && !isset($_ENV[$k])) {
-            putenv("$k=$v");
-            $_ENV[$k] = $v;
-            $_SERVER[$k] = $v;
+        $_ENV[$k] = $v;
+        $_SERVER[$k] = $v;
+        if (function_exists('putenv')) {
+            @putenv("$k=$v");
         }
     }
 }
 
 // Configuration (Supports .env, system env vars, Docker, or standard defaults)
-define('DB_HOST', $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? (getenv('DB_HOST') ?: '127.0.0.1'));
-define('DB_PORT', $_ENV['DB_PORT'] ?? $_SERVER['DB_PORT'] ?? (getenv('DB_PORT') ?: '3306'));
-define('DB_USER', $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? (getenv('DB_USER') ?: 'root'));
-define('DB_PASS', $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? (getenv('DB_PASS') !== false ? getenv('DB_PASS') : ''));
-define('DB_NAME', $_ENV['DB_NAME'] ?? $_SERVER['DB_NAME'] ?? (getenv('DB_NAME') ?: 'studenthub'));
+define('DB_HOST', $_ENV['DB_HOST'] ?? $_SERVER['DB_HOST'] ?? (function_exists('getenv') && getenv('DB_HOST') ? getenv('DB_HOST') : '127.0.0.1'));
+define('DB_PORT', $_ENV['DB_PORT'] ?? $_SERVER['DB_PORT'] ?? (function_exists('getenv') && getenv('DB_PORT') ? getenv('DB_PORT') : '3306'));
+define('DB_USER', $_ENV['DB_USER'] ?? $_SERVER['DB_USER'] ?? (function_exists('getenv') && getenv('DB_USER') ? getenv('DB_USER') : 'root'));
+define('DB_PASS', $_ENV['DB_PASS'] ?? $_SERVER['DB_PASS'] ?? (function_exists('getenv') && getenv('DB_PASS') !== false ? getenv('DB_PASS') : ''));
+define('DB_NAME', $_ENV['DB_NAME'] ?? $_SERVER['DB_NAME'] ?? (function_exists('getenv') && getenv('DB_NAME') ? getenv('DB_NAME') : 'studenthub'));
 define('DB_CHARSET', 'utf8mb4');
 
 /**
@@ -83,18 +87,23 @@ function getMySQLiConnection(bool $throwException = false): ?mysqli {
     }
 
     mysqli_report(MYSQLI_REPORT_OFF);
-    $conn = @new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, (int)DB_PORT);
-
-    if ($conn->connect_error) {
+    try {
+        $conn = @new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, (int)DB_PORT);
+        if ($conn->connect_error) {
+            if ($throwException) {
+                throw new Exception('MySQLi Connection Error: ' . $conn->connect_error);
+            }
+            return null;
+        }
+        $conn->set_charset(DB_CHARSET);
+        $mysqli = $conn;
+        return $mysqli;
+    } catch (Throwable $e) {
         if ($throwException) {
-            throw new Exception('MySQLi Connection Error: ' . $conn->connect_error);
+            throw $e;
         }
         return null;
     }
-
-    $conn->set_charset(DB_CHARSET);
-    $mysqli = $conn;
-    return $mysqli;
 }
 
 /**

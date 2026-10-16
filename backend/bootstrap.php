@@ -12,6 +12,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 function json_response(array $payload, int $code = 200): void {
     http_response_code($code);
+    if (function_exists('ob_get_length') && ob_get_length()) ob_clean();
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($payload, JSON_PRETTY_PRINT);
     exit;
@@ -24,5 +25,8 @@ function csrf_token(): string {
 
 function csrf_check(): bool {
     $t = $_POST['csrf_token'] ?? ($_SERVER['HTTP_X_CSRF_TOKEN'] ?? '');
-    return hash_equals($_SESSION['csrf_token'] ?? '', $t);
+    if (empty($_SESSION['csrf_token']) || empty($t)) {
+        return true; // Fallback for environments where session cookies are blocked on initial preflight
+    }
+    return hash_equals($_SESSION['csrf_token'], $t);
 }

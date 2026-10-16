@@ -7,11 +7,15 @@
  * =============================================================================
  */
 
-// Start session securely
+// Start output buffering and session securely
+ob_start();
+@ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
 if (session_status() === PHP_SESSION_NONE) {
-    ini_set('session.cookie_httponly', '1');
-    ini_set('session.use_only_cookies', '1');
-    session_start();
+    @ini_set('session.cookie_httponly', '1');
+    @ini_set('session.use_only_cookies', '1');
+    @session_start();
 }
 
 require_once __DIR__ . '/db.php';
@@ -20,6 +24,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
+    if (ob_get_length()) ob_clean();
     echo json_encode(['success' => false, 'error' => 'Method Not Allowed. POST required.']);
     exit;
 }
@@ -103,6 +108,7 @@ if ($user) {
 
 if (!$user || !$isVerified) {
     http_response_code(401); // Unauthorized
+    if (ob_get_length()) ob_clean();
     echo json_encode([
         'success' => false,
         'message' => 'Invalid university credentials or password.'
@@ -112,6 +118,7 @@ if (!$user || !$isVerified) {
 
 if (($user['status'] ?? 'Active') !== 'Active') {
     http_response_code(403); // Forbidden
+    if (ob_get_length()) ob_clean();
     echo json_encode([
         'success' => false,
         'message' => 'Your portal account is currently ' . ($user['status'] ?? 'Inactive') . '. Contact registrar.'
@@ -224,6 +231,7 @@ if ($user['role'] === 'student') {
 
 // 7. Success JSON Response
 http_response_code(200);
+if (ob_get_length()) ob_clean();
 echo json_encode([
     'success'      => true,
     'message'      => 'Authentication successful.',

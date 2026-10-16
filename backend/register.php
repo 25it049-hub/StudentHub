@@ -7,12 +7,17 @@
  * =============================================================================
  */
 
+ob_start();
+@ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING & ~E_DEPRECATED);
+
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
+    if (ob_get_length()) ob_clean();
     echo json_encode(['success' => false, 'error' => 'Method Not Allowed. POST required.']);
     exit;
 }
@@ -20,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // CSRF protection (Practical 9 — advanced extension)
 if (!csrf_check()) {
     http_response_code(403);
+    if (ob_get_length()) ob_clean();
     echo json_encode(['success' => false, 'message' => 'Security check failed. Please reload the page and try again.']);
     exit;
 }
@@ -64,6 +70,7 @@ if ($password !== $confirmPw) {
 
 if (!empty($errors)) {
     http_response_code(422);
+    if (ob_get_length()) ob_clean();
     echo json_encode([
         'success' => false,
         'message' => 'Server validation failed.',
@@ -91,6 +98,7 @@ if ($mysqli !== null) {
         if ($checkStmt->num_rows > 0) {
             $checkStmt->close();
             http_response_code(409); // Conflict
+            if (ob_get_length()) ob_clean();
             echo json_encode([
                 'success' => false,
                 'message' => 'An account with this Roll Number or Email already exists.',
@@ -198,6 +206,7 @@ $records[] = [
 
 // 5. Return Success Response
 http_response_code(201); // Created
+if (ob_get_length()) ob_clean();
 echo json_encode([
     'success'         => true,
     'confirmation_id' => $confirmationId,

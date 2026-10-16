@@ -590,8 +590,14 @@
             method: 'POST',
             body: loginData
           }).then(function (r) {
-            return r.json().catch(function () {
-              return { success: false, message: 'Invalid response from authentication server.' };
+            return r.text().then(function (text) {
+              try {
+                return JSON.parse(text);
+              } catch (e) {
+                console.error("Server raw output:", text);
+                var clean = text.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim();
+                return { success: false, message: 'Server Error: ' + (clean.substring(0, 200) || 'Invalid server response.') };
+              }
             });
           }).then(function (res) {
             if (res && res.success) {
