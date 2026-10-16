@@ -1,0 +1,22 @@
+# =============================================================================
+# CHARUSAT StudentHub — Production Apache Server Configuration (.htaccess)
+# =============================================================================
+
+# 1. Custom Error Pages
+ErrorDocument 404 /studenthub/404.html
+
+# 2. Prevent Directory Browsing
+Options -Indexes
+
+# 3. Security: Block Sensitive Files and Hidden Configs
+<FilesMatch "^\.(env|git|htaccess|system)|(registrations\.json|audit_logs\.json|contacts\.(json|csv)|feedback\.(json|csv)|\.sql)$">
+    Require all denied
+</FilesMatch>
+
+# 4. Security Headers (Practical 14 Security Hardening)
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,0 +1,93 @@
+[
+    {
+        "confirmation_id": "SH-REG-2026-1066",
+        "full_name": "Diya Shah",
+        "roll_no": "25IT102",
+        "email": "diya.shah@charusat.edu.in",
+        "mobile": "9825123456",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Female",
+        "password_hash": "$2y$10$kGTbaduVHzKDGl8Bh2HfS.zlGDkvxnf7ZaYqYXPJXgYmhY10yPwIi",
+        "registered_at": "2026-10-13 14:53:31",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-6953",
+        "full_name": "Kavya Patel",
+        "roll_no": "25IT155",
+        "email": "25it155@charusat.edu.in",
+        "mobile": "9876543210",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Female",
+        "password_hash": "$2y$10$VIevU6DnQE76uW3sV7bLLusuv/Tlqz0X5pxOKn3EHeANGCI5rRTZ.",
+        "registered_at": "2026-10-13 16:11:20",
+        "ip_address": "::1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-9512",
+        "full_name": "Test Student",
+        "roll_no": "25IT789",
+        "email": "teststudent789@charusat.edu.in",
+        "mobile": "9876543210",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Male",
+        "password_hash": "$2y$10$NqkYSWUF4i/roAineUnrdOMx.j0GDAi.quW/m14sZrulb5yGLnc4S",
+        "registered_at": "2026-10-14 06:41:50",
+        "ip_address": "::1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-9448",
+        "full_name": "Test Student",
+        "roll_no": "25IT099",
+        "email": "test25it099@charusat.edu.in",
+        "mobile": "9876543299",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Male",
+        "password_hash": "$2y$10$i5qlz7CXqAQnntONci1wCeT8quiEPxo0QBw.QDIpTtEtMa6ahHEFe",
+        "registered_at": "2026-10-14 16:27:33",
+        "ip_address": "::1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-4467",
+        "full_name": "Tilak Padsumbiya",
+        "roll_no": "25IT057",
+        "email": "25it057@charusat.edu.in",
+        "mobile": "9876543210",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Male",
+        "password_hash": "$2y$10$AEzObtNGG2w/3qtkEJ2tv.EoInworfT6jOSePKyhb2OmnkjNIv/f.",
+        "registered_at": "2026-10-14 16:33:26",
+        "ip_address": "::1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-9751",
+        "full_name": "Diagnostic Test User",
+        "roll_no": "99TT555",
+        "email": "diag55@charusat.edu.in",
+        "mobile": "9876543210",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Male",
+        "password_hash": "$2y$10$hUw7ARuucNNv1RI38zj6e.Yihe/JFnXqfXlFzkyEVgWkWA7vw0rge",
+        "registered_at": "2026-10-14 18:34:01",
+        "ip_address": "::1"
+    },
+    {
+        "confirmation_id": "SH-REG-2026-2223",
+        "full_name": "Diagnostic Test User",
+        "roll_no": "99TT333",
+        "email": "diag33@charusat.edu.in",
+        "mobile": "9876543210",
+        "programme": "B.Tech Information Technology",
+        "academic_year": "3rd Year (Semester 5 & 6)",
+        "gender": "Male",
+        "password_hash": "$2y$10$WGqqK4KtTbQN1R9zrUVSHu5Cj5OR0b.iHRMiXe1gxouzoaDD/P9xe",
+        "registered_at": "2026-10-14 18:40:16",
+        "ip_address": "::1"
+    }
+]

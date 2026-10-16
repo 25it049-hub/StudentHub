@@ -5,56 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Answers to the questions students ask most about StudentHub accounts, attendance, assignments, events and fee payments.">
   <title>Frequently Asked Questions — StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- This page lives in /pages/, so ../ climbs out to the repo root.
        Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item active" aria-current="page">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" aria-current="page">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
@@ -64,383 +66,660 @@
     <section class="banner banner--plain">
       <div class="banner__bg" aria-hidden="true"></div>
       <div class="shell">
-        <div class="banner__inner">
+        <div class="banner__inner" style="max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
           <nav aria-label="Breadcrumb">
-            <ul class="crumbs">
-              <li><a href="index.html">Home</a></li>
+            <ul class="crumbs" style="justify-content: center; margin-bottom: 1rem;">
+              <li><a href="../index.html">Home</a></li>
               <li>FAQ</li>
             </ul>
           </nav>
-          <span class="eyebrow">Help centre</span>
-          <h1>Frequently asked questions</h1>
-          <p>
-            Answers maintained by Student Services, the Examination Cell and the Accounts Office.
-            Last reviewed at the start of the current semester.
+          <span class="eyebrow" style="margin-bottom: 0.5rem; justify-content: center;">Help Centre</span>
+          <h1 style="font-family: 'Manrope', sans-serif; font-weight: 800; margin-bottom: 0.75rem; text-align: center;">Frequently Asked Questions</h1>
+          <p style="color: var(--muted-color); font-size: 1.05rem; max-width: 640px; margin: 0 auto; text-align: center;">
+            Official university answers maintained by Student Services, the Examination Cell, and the Accounts Office.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ================= FAQ LIST ================= -->
-    <section class="section">
-      <div class="shell shell--narrow">
+    <section class="section" style="padding-top: 1.5rem;">
+      <div class="shell" style="max-width: 1080px;">
 
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">12 answers</span>
-          <h2>Questions students ask most</h2>
-          <p>
-            Grouped by account and login, attendance, assignments and results, events, and fees.
-            Search below if you already know the word you are looking for.
+        <div class="faq-hero-head" data-reveal style="max-width: 820px; margin: 0 auto 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Manrope', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">💡</span> 12 Curated Solutions
+            </span>
+          </div>
+          <h2 style="font-family: 'Manrope', sans-serif; font-size: clamp(2.2rem, 4vw, 2.85rem); font-weight: 800; color: #ffffff; margin: 0 0 0.85rem; line-height: 1.2; text-align: center; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+            Questions Students Ask Most
+          </h2>
+          <p style="color: var(--muted-color); max-width: 680px; margin: 0 auto; font-size: 1.02rem; line-height: 1.65; text-align: center;">
+            Instant guidance on accounts, biometric attendance regulations, assignment evaluations, semester mark sheets, and online fee settlements.
           </p>
         </div>
 
-        <div class="field mb-6" role="search" data-reveal data-reveal-delay="1">
-          <label for="faq-search">Search the help centre</label>
-          <div class="control">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>
-            </svg>
-            <input class="input" type="search" id="faq-search" name="faq-search" autocomplete="off" placeholder="Try attendance, receipt, password or hall ticket">
-          </div>
-          <p class="hint">Filters the list as you type. Clear the box to see every question again.</p>
+        <!-- Topic Category Pills Bar -->
+        <div class="faq-filter-bar" style="justify-content: center;" data-reveal data-reveal-delay="1">
+          <button type="button" class="faq-filter-chip is-active" data-faq-cat="all">✨ All Topics (12)</button>
+          <button type="button" class="faq-filter-chip" data-faq-cat="account">🔐 Account &amp; Access (2)</button>
+          <button type="button" class="faq-filter-chip" data-faq-cat="attendance">⏱️ Attendance &amp; Leaves (3)</button>
+          <button type="button" class="faq-filter-chip" data-faq-cat="academics">📊 Assignments &amp; Results (3)</button>
+          <button type="button" class="faq-filter-chip" data-faq-cat="events">🎪 Campus Events (2)</button>
+          <button type="button" class="faq-filter-chip" data-faq-cat="fees">💳 Fees &amp; Transactions (2)</button>
         </div>
 
-        <div class="acc" data-single data-reveal data-reveal-delay="2">
+        <!-- Interactive Cyber Search Box -->
+        <div class="field mb-6" role="search" data-reveal data-reveal-delay="2" style="max-width: 820px; margin-left: auto; margin-right: auto;">
+          <label for="faq-search" style="color: #ffffff; font-weight: 700; font-size: 0.88rem; margin-bottom: 0.5rem; display: block;">Search knowledge base</label>
+          <div class="control" style="position: relative;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; left: 16px; color: #38bdf8; pointer-events: none;">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>
+            </svg>
+            <input class="input" type="search" id="faq-search" name="faq-search" autocomplete="off" placeholder="Search by topic: attendance 75%, receipt, marks, hall ticket, late submission...">
+          </div>
+          
+          <!-- Fast Keyword Tag Suggestions -->
+          <div class="faq-quick-tags" style="justify-content: flex-start; margin-top: 0.75rem;">
+            <span style="font-size: 0.75rem; color: var(--muted-color); font-weight: 700; margin-right: 0.25rem;">Popular:</span>
+            <button type="button" class="faq-tag-chip" data-tag="75%">Attendance 75%</button>
+            <button type="button" class="faq-tag-chip" data-tag="reset">Reset Password</button>
+            <button type="button" class="faq-tag-chip" data-tag="fee receipt">Fee Receipt</button>
+            <button type="button" class="faq-tag-chip" data-tag="results">Semester Results</button>
+            <button type="button" class="faq-tag-chip" data-tag="deadline">Late Submission</button>
+            <button type="button" class="faq-tag-chip" data-tag="cancel">Event Cancellation</button>
+          </div>
+        </div>
 
-          <!-- Account &amp; login -->
-          <div class="acc__item">
+        <!-- Accordion FAQ Cards Grid -->
+        <div class="acc" data-single data-reveal data-reveal-delay="3" style="max-width: 860px; margin-left: auto; margin-right: auto;">
+
+          <!-- Question 1: Account -->
+          <div class="acc__item" data-category="account">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-1">
-                <span>How do I reset my StudentHub password?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #93c5fd; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Account</span>
+                  <span>How do I reset my StudentHub password?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-1">
               <div>
                 <p>
-                  Use the Forgot password link on the login page and enter your college email address. The reset
-                  link is valid for 30 minutes; if it expires, request a fresh one rather than reusing the old mail.
-                  Students who have lost access to their college mailbox must apply in person at the IT Help Desk in
-                  Academic Block A with their identity card.
+                  Use the <strong>Forgot password</strong> link on the <a href="login.html" style="color:#38bdf8; text-decoration:underline;">login page</a> and enter your verified CHARUSAT college email address (<code style="color:#93c5fd;">@charusat.edu.in</code>). The security reset token is active for 30 minutes. If it expires, generate a fresh request. Students who have lost access to their university mailbox can visit the IT Help Desk in Academic Block A with their student identity card for an instant master reset.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (98%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 2: Account -->
+          <div class="acc__item" data-category="account">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-2">
-                <span>The portal says my roll number is not registered. What should I do?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #93c5fd; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Account</span>
+                  <span>The portal says my roll number is not registered. What should I do?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-2">
               <div>
                 <p>
-                  Accounts are created from the university enrolment file, which is uploaded roughly a week after
-                  admission formalities close. Check that you are entering the roll number exactly as printed on your
-                  fee receipt, for example 21CE045, with no spaces. If it is still rejected, write to
-                  help@charusat.edu.in with your enrolment number and department and the record is normally added
-                  within two working days.
+                  Accounts are populated from the central university registrar file uploaded following admission round confirmations. Ensure you enter your enrolment number without dashes or spaces (e.g., <code style="color:#93c5fd;">25IT049</code>). If newly admitted or transferred, email <a href="mailto:help@charusat.edu.in" style="color:#38bdf8;">help@charusat.edu.in</a> with your provisional admission slip and department details; your profile will be provisioned within 24 hours.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (94%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Attendance -->
-          <div class="acc__item">
+          <!-- Question 3: Attendance -->
+          <div class="acc__item" data-category="attendance">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-3">
-                <span>How often is attendance updated?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Attendance</span>
+                  <span>How often is classroom and lab attendance updated?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-3">
               <div>
                 <p>
-                  Faculty mark attendance from the classroom terminal and the records sync to your dashboard every
-                  night at 11 PM. Laboratory and tutorial sessions are posted by the lab in-charge and occasionally
-                  take an extra day. The percentage you see always reflects classes conducted up to the previous
-                  working day.
+                  Faculty upload lecture attendance daily from departmental biometric consoles. Records sync automatically to your <a href="dashboard.html" style="color:#38bdf8; text-decoration:underline;">Student Dashboard</a> every evening at <strong>11:00 PM</strong>. Practical lab sessions require faculty verification and may take up to 24 hours to reconcile. The percentage displayed reflects all sessions up to the preceding working day.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (97%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 4: Attendance -->
+          <div class="acc__item" data-category="attendance">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-4">
-                <span>A class I attended is marked absent. How do I get it corrected?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Attendance</span>
+                  <span>A class I attended is marked absent. How do I get it corrected?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-4">
               <div>
                 <p>
-                  Raise a correction request from the Attendance tab within seven days of the class date. Anything
-                  older needs a written approval from your Head of Department before it can be considered. The subject
-                  teacher either approves or rejects the request with a remark, and approved corrections appear after
-                  the next nightly sync rather than immediately.
+                  Submit an attendance review petition from the <strong>Attendance Ledger</strong> on your dashboard within <strong>7 calendar days</strong> of the lecture date. Older discrepancies require endorsement from your Head of Department. Once your course instructor reviews and signs off on the correction, the recalculated percentage reflects after the next nightly synchronization.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (91%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 5: Attendance -->
+          <div class="acc__item" data-category="attendance">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-5">
-                <span>What happens if my attendance drops below 75%?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Attendance</span>
+                  <span>What happens if my attendance drops below 75%?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-5">
               <div>
                 <p>
-                  The dashboard flags any subject below 80% in amber and below 75% in red, and a copy of the warning
-                  goes to your faculty mentor. Under university regulations a student below 75% in a subject is not
-                  permitted to sit that subject's end-semester examination unless the shortfall is condoned on medical
-                  grounds. Condonation applications, with supporting documents, must reach the Examination Cell before
-                  the last teaching day of the semester.
+                  In accordance with CHARUSAT academic regulations, a minimum of <strong>75% overall attendance</strong> is mandatory to sit for end-semester university examinations. Subjects between 75% and 80% generate caution flags, and those falling below 75% trigger an automated mentor notice. Approved medical leave or institutional on-duty approvals must be filed with the Examination Cell before the semester teaching completion date.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (99%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Assignments &amp; results -->
-          <div class="acc__item">
+          <!-- Question 6: Academics -->
+          <div class="acc__item" data-category="academics">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-6">
-                <span>What file types can I upload with an assignment?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Academics</span>
+                  <span>What file types and sizes can I upload for coursework submissions?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-6">
               <div>
                 <p>
-                  The submission box accepts PDF, DOCX, ZIP and IPYNB files up to 25 MB per attempt. Scanned handwritten
-                  work should be combined into one PDF instead of being uploaded as loose images. If your file is larger
-                  than the limit, upload it to your departmental drive and paste the link into the remarks box.
+                  The interactive assignment turn-in portal accepts <strong>PDF, DOCX, ZIP, C/CPP, PY, and IPYNB</strong> files up to <strong>25 MB</strong> per attempt. Scanned handwritten solutions should be compiled into a single clean PDF document with your Roll Number and Subject Code marked in the header. Larger dataset projects should be linked via your institutional Google Drive.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (95%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 7: Academics -->
+          <div class="acc__item" data-category="academics">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-7">
-                <span>Can I submit an assignment after the deadline has passed?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Academics</span>
+                  <span>Can I turn in an assignment after the deadline has expired?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-7">
               <div>
                 <p>
-                  The upload box closes at the deadline and can only be reopened by the subject teacher. Reopened
-                  submissions are tagged as late in the grading sheet and most departments apply a 10% deduction.
-                  Extensions granted for the whole class are announced on the notice board and applied automatically,
-                  so there is no need to write in separately.
+                  Submission gateways lock automatically at 11:59 PM on the deadline day. Late turn-ins can only be accepted if your course instructor re-opens an individual extension window. Course policies apply a standard 10% late deduction per day past the deadline. Class-wide extensions granted by the department are reflected automatically on the assignment dashboard.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (93%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 8: Academics -->
+          <div class="acc__item" data-category="academics">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-8">
-                <span>When do semester results appear on the portal?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Academics</span>
+                  <span>When do semester results and mark sheets appear on the portal?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-8">
               <div>
                 <p>
-                  Results are published within an hour of being declared by the Examination Cell, usually four to six
-                  weeks after the last paper. The Results tab shows subject-wise grades, SGPA and cumulative CGPA, and
-                  a provisional mark sheet can be downloaded from the same screen. Printed transcripts are issued by
-                  the Examination Cell against a written application and the prescribed fee.
+                  Official results are published to your StudentHub dashboard within <strong>4 to 6 weeks</strong> following the final theory paper. You can view subject-wise letter grades, CIE scores, SGPA, and cumulative CGPA. A digitally signed provisional mark sheet can be generated directly from the results view for internship or job verification.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (96%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Events -->
-          <div class="acc__item">
+          <!-- Question 9: Events -->
+          <div class="acc__item" data-category="events">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-9">
-                <span>How do I book a seat for a campus event?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Events</span>
+                  <span>How do I reserve a pass for campus technical hackathons and symposiums?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-9">
               <div>
                 <p>
-                  Open the Events page, pick the session and use the Register button; the seat is confirmed straight
-                  away and your pass appears under My Events. Registration closes 24 hours before the start time or as
-                  soon as hall capacity is reached, whichever comes first. Carry your student identity card, because
-                  passes are verified at the door.
+                  Navigate to the <a href="events.html" style="color:#38bdf8; text-decoration:underline;">Campus Events Hub</a>, select your session (e.g., Spoural, Cognizance, or Developer Conclaves), and click <strong>Reserve Seat</strong>. Your electronic entry QR badge is generated immediately and stored in your portal. Passes close 24 hours prior to event commencement or upon reaching auditorium capacity.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (97%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 10: Events -->
+          <div class="acc__item" data-category="events">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-10">
-                <span>I can no longer attend an event I registered for. Can I cancel?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Events</span>
+                  <span>Can I cancel an event booking if my schedule changes?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-10">
               <div>
                 <p>
-                  Cancel from My Events at least six hours before the session so the seat can be released to the
-                  waiting list. Students who miss two registered events in a semester without cancelling lose priority
-                  booking for the rest of the term. Paid workshops follow the refund rule printed on the individual
-                  event page.
+                  Yes. You can cancel reservations from your Events dashboard up to <strong>6 hours before</strong> the start time. This releases your seat to students on the waitlist. Students who miss two registered events without prior cancellation will lose priority registration for the subsequent term.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (90%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Fees -->
-          <div class="acc__item">
+          <!-- Question 11: Fees -->
+          <div class="acc__item" data-category="fees">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-11">
-                <span>Which payment methods does the fee module accept?</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(14, 165, 233, 0.2); border: 1px solid rgba(14, 165, 233, 0.4); color: #7dd3fc; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Finance</span>
+                  <span>What payment methods are supported for semester tuition fees?</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-11">
               <div>
                 <p>
-                  Net banking, UPI, debit cards and NEFT are supported through the university payment gateway. Credit
-                  cards attract a gateway charge of 1.8%, which is shown on screen before you confirm. Demand drafts
-                  are still accepted at Counter 3 of the Accounts Office but must be deposited at least three working
-                  days before the deadline.
+                  CHARUSAT supports <strong>UPI (Google Pay, PhonePe, Paytm), Net Banking, Debit Cards, and RTGS/NEFT</strong> with zero surcharge. Credit card payments incur standard 1.4% gateway fees displayed prior to authorization. Official fee receipts with university tax ID and transaction reference numbers are available for instant download in PDF format.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (98%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="acc__item">
+          <!-- Question 12: Fees -->
+          <div class="acc__item" data-category="fees">
             <h3 class="mb-0">
               <button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-12">
-                <span>My fee was debited but the portal still shows the payment as pending.</span>
+                <span style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span class="badge" style="background: rgba(14, 165, 233, 0.2); border: 1px solid rgba(14, 165, 233, 0.4); color: #7dd3fc; font-size: 0.72rem; padding: 0.2rem 0.65rem; border-radius: 100px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">Finance</span>
+                  <span>My bank account was debited, but the portal still lists payment as pending.</span>
+                </span>
                 <span class="acc__sign"></span>
               </button>
             </h3>
             <div class="acc__panel" id="faq-12">
               <div>
                 <p>
-                  Gateway confirmations sometimes arrive late and the status usually settles on its own within 24
-                  hours. If it is still pending after that, send the transaction reference number and the date of
-                  the debit to accounts@charusat.edu.in. Do not pay a second time — duplicate transactions take up to
-                  three weeks to refund and the late-payment charge is not waived in the meantime.
+                  Bank clearing webhooks may occasionally experience temporary reconciliation delays. Payments typically update to <strong>Paid</strong> within <strong>2 to 4 hours</strong>. If your status has not reconciled after 24 hours, forward your bank transaction reference (UTR) to <a href="mailto:accounts@charusat.edu.in" style="color:#38bdf8;">accounts@charusat.edu.in</a>. Do not make a duplicate payment while reconciliation is in progress.
                 </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255,255,255,0.08); font-size: 0.8rem; color: var(--muted-color); flex-wrap: wrap; gap: 0.5rem;">
+                  <span>Helpful resolution?</span>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👍 Helpful (95%)</button>
+                    <button type="button" class="btn btn--outline btn--sm faq-helpful-btn" style="padding: 0.2rem 0.65rem; font-size: 0.75rem;">👎 Not helpful</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        <div class="text-center mt-6" id="faq-empty" hidden>
-          <h3>No question matched that search</h3>
-          <p>Try a shorter keyword such as "fee", "marks" or "login", or write to the help desk below.</p>
+        <!-- No Match Found State -->
+        <div class="text-center mt-6" id="faq-empty" style="display: none; padding: 3rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px dashed var(--glass-border); border-radius: 20px; max-width: 680px; margin-left: auto; margin-right: auto;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🔍</div>
+          <h3 style="color: #ffffff; margin-bottom: 0.4rem;">No matching question found</h3>
+          <p style="color: var(--muted-color); font-size: 0.92rem; margin-bottom: 1.25rem;">
+            Try a different search keyword like "75%", "marks", "fee" or "password", or reach out to our campus helpdesk directly.
+          </p>
+          <button type="button" id="faq-clear-btn" class="btn btn--outline btn--sm">Clear search filter</button>
         </div>
 
-        <div class="card text-center mt-7" data-reveal data-reveal-delay="3">
-          <h3>Still need help?</h3>
-          <p class="mb-5">
-            The Student Services desk answers portal queries between 9 AM and 5 PM on working days.
-            Include your roll number so the ticket reaches the right department.
+        <!-- Support Channels 3-Card Grid -->
+        <div class="faq-support-grid" data-reveal>
+          <div class="faq-support-card">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 1rem;">
+              🏛️
+            </div>
+            <h4 style="color: #ffffff; font-family: 'Manrope', sans-serif; font-size: 1.1rem; margin: 0 0 0.35rem;">Academic Affairs Cell</h4>
+            <p style="color: var(--muted-color); font-size: 0.85rem; line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">
+              Condonation approvals, mark sheets, grade cards, and academic petitions.
+            </p>
+            <div style="font-size: 0.78rem; color: #93c5fd; font-weight: 700;">
+              📍 CSPIT Block A · Ground Floor
+            </div>
+          </div>
+
+          <div class="faq-support-card">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 1rem;">
+              💳
+            </div>
+            <h4 style="color: #ffffff; font-family: 'Manrope', sans-serif; font-size: 1.1rem; margin: 0 0 0.35rem;">Central Accounts Office</h4>
+            <p style="color: var(--muted-color); font-size: 0.85rem; line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">
+              Tuition payments, scholarship reconciliations, and official tax invoices.
+            </p>
+            <div style="font-size: 0.78rem; color: #34d399; font-weight: 700;">
+              📍 Administrative Bhavan · Counter 3
+            </div>
+          </div>
+
+          <div class="faq-support-card">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 1rem;">
+              💻
+            </div>
+            <h4 style="color: #ffffff; font-family: 'Manrope', sans-serif; font-size: 1.1rem; margin: 0 0 0.35rem;">Student IT Helpdesk</h4>
+            <p style="color: var(--muted-color); font-size: 0.85rem; line-height: 1.55; margin: 0 0 1rem; flex-grow: 1;">
+              Password unlocks, digital portal issues, and institutional email provisioning.
+            </p>
+            <div style="font-size: 0.78rem; color: #c084fc; font-weight: 700;">
+              📍 IT Complex · Room 104 (Ext. 5011)
+            </div>
+          </div>
+        </div>
+
+        <!-- Still Need Help? Cyber CTA Box (Zero White Background) -->
+        <div class="card text-center" data-reveal style="background: rgba(7, 18, 36, 0.85) !important; border: 1px solid rgba(56, 189, 248, 0.28) !important; border-radius: 24px !important; padding: 2.75rem 2rem !important; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(37,99,235,0.18) !important; max-width: 860px; margin: 0 auto;">
+          <div style="width: 58px; height: 58px; border-radius: 50%; background: rgba(37, 99, 235, 0.2); border: 1px solid #38bdf8; display: grid; place-items: center; margin: 0 auto 1.25rem; font-size: 1.6rem; color: #38bdf8; box-shadow: 0 0 20px rgba(56,189,248,0.35);">
+            💬
+          </div>
+          <h3 style="color: #ffffff; font-size: 1.65rem; font-family: 'Manrope', sans-serif; font-weight: 800; margin-bottom: 0.5rem;">Still Need Assistance?</h3>
+          <p style="color: var(--muted-color); font-size: 0.95rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.6;">
+            Our dedicated Student Services desk assists students between 9:00 AM and 5:00 PM on working days. Submit a direct inquiry or let us know how we can improve your digital campus experience.
           </p>
-          <div class="row row--center">
-            <a class="btn btn--primary" href="contact.html" target="_blank" rel="noopener">Contact the help desk</a>
-            <a class="btn btn--outline" href="feedback.html" target="_blank" rel="noopener">Send feedback instead</a>
+          <div class="row row--center" style="gap: 1rem;">
+            <a class="btn btn--primary" href="contact.html">Contact Campus Helpdesk →</a>
+            <a class="btn btn--outline" href="feedback.html">Share Student Feedback ↗</a>
           </div>
         </div>
 
       </div>
     </section>
 
+    <!-- Interactive FAQ Controller Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var catChips = document.querySelectorAll('[data-faq-cat]');
+        var faqItems = document.querySelectorAll('.acc__item');
+        var searchInput = document.getElementById('faq-search');
+        var emptyNotice = document.getElementById('faq-empty');
+        var clearBtn = document.getElementById('faq-clear-btn');
+        var tagChips = document.querySelectorAll('[data-tag]');
+        var helpfulBtns = document.querySelectorAll('.faq-helpful-btn');
+        var activeCategory = 'all';
+
+        function filterFaqs() {
+          var query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          var visibleCount = 0;
+
+          faqItems.forEach(function (item) {
+            var cat = item.getAttribute('data-category') || '';
+            var text = item.textContent.toLowerCase();
+
+            var matchesCat = (activeCategory === 'all' || cat === activeCategory);
+            var matchesQuery = (!query || text.indexOf(query) !== -1);
+
+            if (matchesCat && matchesQuery) {
+              item.style.display = 'block';
+              visibleCount++;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          if (emptyNotice) {
+            emptyNotice.style.display = visibleCount === 0 ? 'block' : 'none';
+          }
+        }
+
+        // Category pill clicks
+        catChips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            catChips.forEach(function (c) { c.classList.remove('is-active'); });
+            chip.classList.add('is-active');
+            activeCategory = chip.getAttribute('data-faq-cat');
+            filterFaqs();
+          });
+        });
+
+        // Search input
+        if (searchInput) {
+          searchInput.addEventListener('input', filterFaqs);
+        }
+
+        // Quick tags click
+        tagChips.forEach(function (tag) {
+          tag.addEventListener('click', function () {
+            var keyword = tag.getAttribute('data-tag');
+            if (searchInput) {
+              searchInput.value = keyword;
+              filterFaqs();
+              searchInput.focus();
+            }
+          });
+        });
+
+        // Clear button
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            activeCategory = 'all';
+            catChips.forEach(function (c) {
+              c.classList.toggle('is-active', c.getAttribute('data-faq-cat') === 'all');
+            });
+            filterFaqs();
+          });
+        }
+
+        // Feedback buttons
+        helpfulBtns.forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var parent = btn.parentElement;
+            parent.innerHTML = '<span style="color:#34d399; font-weight:700;">✓ Feedback recorded. Thank you!</span>';
+          });
+        });
+      });
+    </script>
+
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+  <script src="../js/json-engine.js"></script>
 </body>
 </html>

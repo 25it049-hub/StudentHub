@@ -1,0 +1,135 @@
+[
+    {
+        "ref_id": "SH-FB-2026-B875",
+        "timestamp": "2026-10-14 14:59:05",
+        "rating": 5,
+        "feedback_type": "suggestion",
+        "topics": [
+            "general"
+        ],
+        "student_name": "Diagnostic Student",
+        "enrolment": "25IT001",
+        "email": "",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Automated diagnostic test: Portal is lightning fast!",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-E94B",
+        "timestamp": "2026-10-14 15:09:04",
+        "rating": 5,
+        "feedback_type": "compliment",
+        "topics": [
+            "general"
+        ],
+        "student_name": "Tirth",
+        "enrolment": "25IT049",
+        "email": "",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Redesigned feedback page works flawlessly with cyber-glassmorphism visuals and rapid council logging.",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-9593",
+        "timestamp": "2026-10-14 18:20:41",
+        "rating": 5,
+        "feedback_type": "portal",
+        "topics": [
+            "ui",
+            "speed"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Automated diagnostic feedback test. System running smoothly.",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-6B14",
+        "timestamp": "2026-10-14 18:33:59",
+        "rating": 5,
+        "feedback_type": "portal",
+        "topics": [
+            "ui",
+            "dashboard",
+            "performance"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Verification test for deployment audit. System validated.",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-56F2",
+        "timestamp": "2026-10-14 18:40:15",
+        "rating": 5,
+        "feedback_type": "portal",
+        "topics": [
+            "ui",
+            "dashboard",
+            "performance"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Verification test for deployment audit. System validated.",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-4B84",
+        "timestamp": "2026-10-16 06:45:14",
+        "rating": 5,
+        "feedback_type": "praise",
+        "topics": [
+            "general"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Automated test verification: Backend connectivity and database persistence operating at peak performance!",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-8401",
+        "timestamp": "2026-10-16 06:48:00",
+        "rating": 5,
+        "feedback_type": "praise",
+        "topics": [
+            "general"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Automated test verification: Backend connectivity and database persistence operating at peak performance!",
+        "ip_address": "::1"
+    },
+    {
+        "ref_id": "SH-FB-2026-ABE0",
+        "timestamp": "2026-10-16 07:09:38",
+        "rating": 5,
+        "feedback_type": "praise",
+        "topics": [
+            "general"
+        ],
+        "student_name": "Tirth Ladani",
+        "enrolment": "25IT049",
+        "email": "25it049@charusat.edu.in",
+        "department": "Information Technology",
+        "is_anonymous": 0,
+        "comments": "Automated test verification: Backend connectivity and database persistence operating at peak performance!",
+        "ip_address": "::1"
+    }
+]

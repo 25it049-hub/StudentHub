@@ -1,0 +1,9 @@
+"Ref ID",Timestamp,Rating,Type,Topics,"Student Name",Enrolment,Email,Department,"Is Anonymous",Comments,"IP Address"
+SH-FB-2026-B875,"2026-10-14 14:59:05",5,suggestion,general,"Diagnostic Student",25IT001,,"Information Technology",No,"Automated diagnostic test: Portal is lightning fast!",::1
+SH-FB-2026-E94B,"2026-10-14 15:09:04",5,compliment,general,Tirth,25IT049,,"Information Technology",No,"Redesigned feedback page works flawlessly with cyber-glassmorphism visuals and rapid council logging.",::1
+SH-FB-2026-9593,"2026-10-14 18:20:41",5,portal,"ui, speed","Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Automated diagnostic feedback test. System running smoothly.",::1
+SH-FB-2026-6B14,"2026-10-14 18:33:59",5,portal,"ui, dashboard, performance","Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Verification test for deployment audit. System validated.",::1
+SH-FB-2026-56F2,"2026-10-14 18:40:15",5,portal,"ui, dashboard, performance","Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Verification test for deployment audit. System validated.",::1
+SH-FB-2026-4B84,"2026-10-16 06:45:14",5,praise,general,"Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Automated test verification: Backend connectivity and database persistence operating at peak performance!",::1
+SH-FB-2026-8401,"2026-10-16 06:48:00",5,praise,general,"Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Automated test verification: Backend connectivity and database persistence operating at peak performance!",::1
+SH-FB-2026-ABE0,"2026-10-16 07:09:38",5,praise,general,"Tirth Ladani",25IT049,25it049@charusat.edu.in,"Information Technology",No,"Automated test verification: Backend connectivity and database persistence operating at peak performance!",::1

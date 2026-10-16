@@ -4,57 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reach the StudentHub help desk, the Accounts Office and the Examination Cell. Campus address, phone numbers and office hours.">
-  <title>Contact Student Services — StudentHub</title>
+  <title>Contact Student Services — CHARUSAT StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- This page lives in /pages/, so ../ climbs out to the repo root.
-       Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item active" aria-current="page">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
@@ -64,84 +64,171 @@
     <section class="banner banner--plain">
       <div class="banner__bg" aria-hidden="true"></div>
       <div class="shell">
-        <div class="banner__inner">
+        <div class="banner__inner" style="max-width: 840px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
           <nav aria-label="Breadcrumb">
-            <ul class="crumbs">
-              <li><a href="index.html">Home</a></li>
+            <ul class="crumbs" style="justify-content: center; margin-bottom: 1rem;">
+              <li><a href="../index.html">Home</a></li>
               <li>Contact</li>
             </ul>
           </nav>
-          <span class="eyebrow">Student services</span>
-          <h1>Contact the help desk</h1>
-          <p>
-            One desk for portal problems, fee queries and examination paperwork. Written queries are answered
-            within two working days; anything marked urgent is picked up the same day.
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">📞</span> Central Campus Helpdesk
+            </span>
+          </div>
+          <h1 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: clamp(2.3rem, 4.5vw, 3.4rem); font-weight: 900; color: #ffffff; margin-bottom: 0.85rem; text-align: center; line-height: 1.18; letter-spacing: -0.02em;">
+            Get in Touch with <span class="accent-text">Student Services</span>
+          </h1>
+          <p style="color: var(--muted-color); font-size: 1.05rem; max-width: 700px; margin: 0 auto; text-align: center; line-height: 1.65;">
+            One centralized contact portal for academic support, fee reconciliation, examination paperwork, and campus inquiries. All tickets are logged with verified SLA turnaround times.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= FORM + DETAILS ================= -->
-    <section class="section">
+    <!-- ================= EMERGENCY HELPLINE RIBBON & SECTION ================= -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 4rem;">
       <div class="shell">
-        <div class="grid grid--split">
 
-          <div class="card form-wrap" data-reveal>
-            <div class="form-body">
-              <h2>Raise a query</h2>
-              <p class="mb-6">
-                Fields marked with an asterisk are required. Quote your roll number in the message so the desk can
-                open your record while replying.
+        <!-- Campus Emergency & Rapid Hotline Ribbon -->
+        <div class="emergency-ribbon" data-reveal>
+          <div class="emergency-ribbon-left">
+            <div class="emergency-ribbon-icon">🚨</div>
+            <div>
+              <div class="emergency-ribbon-title">Campus 24/7 Rapid Helplines &amp; Emergency Dispatch</div>
+              <p class="emergency-ribbon-desc">Direct lines for medical emergency, security control room, and safety response teams.</p>
+            </div>
+          </div>
+          <div class="emergency-quick-buttons">
+            <a href="tel:+912697265222" class="emergency-dial-pill">
+              <span>🚑 Hospital Ambulance: <b>02697 265222</b></span>
+            </a>
+            <a href="tel:+912697265000" class="emergency-dial-pill">
+              <span>🛡️ Campus Security: <b>02697 265000</b></span>
+            </a>
+            <a href="tel:18001805522" class="emergency-dial-pill">
+              <span>⚖️ Women's Safety: <b>1800 180 5522</b></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Intro Head -->
+        <div class="faq-hero-head" data-reveal style="max-width: 820px; margin: 0 auto 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">⚡</span> Instant Ticket Resolution
+            </span>
+          </div>
+          <h2 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 800; color: #ffffff; margin: 0 0 0.85rem; line-height: 1.2; text-align: center; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+            Raise a Support Query or Visit Us
+          </h2>
+          <p style="color: var(--muted-color); max-width: 680px; margin: 0 auto; font-size: 1.02rem; line-height: 1.65; text-align: center;">
+            Dispatch an official helpdesk ticket directly to the Accounts, Exam Cell, or Technical Support team, or reach out to counter extensions during office hours.
+          </p>
+        </div>
+
+        <div class="grid grid--split" style="gap: 2rem; align-items: start;">
+
+          <!-- Left Column: Support Query Ticket Dispatch Form -->
+          <div class="card form-wrap contact-glass" data-reveal style="background: rgba(7, 18, 36, 0.82); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 26px; padding: 2.25rem 2rem; backdrop-filter: blur(24px) saturate(180%);">
+            <div class="form-body contact-glass" style="color: #f8fafc;">
+
+              <!-- Verified / Guest Student Profile Detection Banner (Dynamically Hydrated) -->
+              <div class="verified-student-card is-guest" id="ct-student-banner" style="margin-bottom: 1.5rem;">
+                <div class="verified-student-left">
+                  <div class="verified-student-avatar" id="ct-avatar-badge">👤</div>
+                  <div class="verified-student-info">
+                    <h4>
+                      <span id="ct-display-name">Guest / Visitor Mode</span>
+                      <span class="guest-pulse-pill" id="ct-verified-pill">Unlinked Ticket</span>
+                    </h4>
+                    <p class="verified-student-meta" id="ct-student-status-text">
+                      Submitting as guest. <a href="login.html" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Sign In to StudentHub</a> to auto-link your student ticket.
+                    </p>
+                  </div>
+                </div>
+                <button type="button" id="ct-toggle-fill-btn" class="anon-toggle-btn" title="Sign In or Clear Credentials">
+                  <span>Sign In to Link &rarr;</span>
+                </button>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.65rem; font-weight: 800; color: #ffffff; margin: 0;">
+                  Raise a Support Ticket
+                </h3>
+                <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.75rem; font-weight: 700;">
+                  24–48h SLA
+                </span>
+              </div>
+              <p style="color: var(--muted-color); font-size: 0.9rem; margin-bottom: 1.75rem; line-height: 1.6;">
+                Provide your enrolment number and details so the assigned administrative desk can inspect your student records directly.
               </p>
 
-              <form data-success="contact-success" novalidate>
-                <div class="field">
-                  <label for="ct-name">Full name <span class="req">*</span></label>
-                  <div class="control">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                    </svg>
-                    <input class="input" type="text" id="ct-name" name="name" autocomplete="name" placeholder="Rohit Menon" required>
+              <form data-success="contact-success" id="studentContactForm" novalidate>
+                <!-- 2-Column Responsive Student Credentials Grid -->
+                <div class="feedback-inputs-grid" style="margin-bottom: 1.25rem;">
+                  <!-- Full Name -->
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="ct-name">Full name <span class="req">*</span></label>
+                    <div class="control">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                      </svg>
+                      <input class="input" type="text" id="ct-name" name="name" autocomplete="name" placeholder="Enter your full name" required>
+                    </div>
+                  </div>
+
+                  <!-- Roll / Enrolment No -->
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="ct-enrolment">Roll / Enrolment No. <span class="req">*</span></label>
+                    <div class="control">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="19" y2="8"/><line x1="15" y1="12" x2="19" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/>
+                      </svg>
+                      <input class="input" type="text" id="ct-enrolment" name="enrolment" placeholder="e.g. 25IT049" required>
+                    </div>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="ct-email">College email address <span class="req">*</span></label>
+                    <div class="control">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                      </svg>
+                      <input class="input" type="email" id="ct-email" name="email" autocomplete="email" placeholder="e.g. student@charusat.edu.in" required>
+                    </div>
+                  </div>
+
+                  <!-- Mobile Number -->
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="ct-phone">Mobile number</label>
+                    <div class="control">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+                      </svg>
+                      <input class="input" type="tel" id="ct-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210">
+                    </div>
                   </div>
                 </div>
 
-                <div class="field">
-                  <label for="ct-email">Email address <span class="req">*</span></label>
-                  <div class="control">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
-                    </svg>
-                    <input class="input" type="email" id="ct-email" name="email" autocomplete="email" placeholder="25it049@charusat.edu.in" required>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label for="ct-phone">Mobile number</label>
-                  <div class="control">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
-                    </svg>
-                    <input class="input" type="tel" id="ct-phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" placeholder="98250 00000">
-                  </div>
-                  <p class="hint">Optional. Ten digits, or add the country code with a leading plus sign.</p>
-                </div>
-
-                <div class="field">
+                <!-- Query Subject Category -->
+                <div class="field" style="margin-bottom: 1.25rem;">
                   <label for="ct-subject">What is your query about? <span class="req">*</span></label>
                   <div class="control">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M4 5h16v11H8l-4 4z"/>
                     </svg>
                     <select class="select" id="ct-subject" name="subject" required>
-                      <option value="">Select a subject</option>
-                      <option value="login">Login or account access</option>
-                      <option value="attendance">Attendance correction</option>
-                      <option value="examination">Examination, results or transcripts</option>
-                      <option value="fees">Fee payment or receipt</option>
-                      <option value="hostel">Hostel and transport</option>
-                      <option value="events">Event registration</option>
-                      <option value="technical">Technical problem with the portal</option>
-                      <option value="other">Something else</option>
+                      <option value="">Select a department or query topic</option>
+                      <option value="Examination Cell">Examination Cell — Results, Transcripts &amp; Hall Tickets</option>
+                      <option value="Accounts Office">Accounts Office — Fee Payment, Verification &amp; Receipts</option>
+                      <option value="Academic Section">Academic Section — Biometric Attendance Correction</option>
+                      <option value="IT Helpdesk">IT Helpdesk — StudentHub Account Access &amp; Password</option>
+                      <option value="Campus Living">Campus Living — Hostel Allocation, Mess &amp; Bus Transit</option>
+                      <option value="Student Council">Student Council — Campus Events &amp; Club Registrations</option>
+                      <option value="Technical Portal Bug">Technical Bug / Mobile View Glitch</option>
+                      <option value="General University Inquiry">General University Inquiry</option>
                     </select>
                     <span class="control__caret" aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -149,231 +236,844 @@
                   </div>
                 </div>
 
-                <div class="field">
-                  <label for="ct-message">Your message <span class="req">*</span></label>
-                  <textarea class="textarea" id="ct-message" name="message" autocomplete="off" placeholder="Roll number 21CE045. The fee receipt for the current semester is not downloading; the button returns an error after payment on 6 August." required></textarea>
-                  <p class="hint">Attachments cannot be sent through this form. The desk will ask for documents by email if they are needed.</p>
+                <!-- Priority / Urgency Selector Matrix -->
+                <div class="field" style="margin-bottom: 1.25rem;">
+                  <label style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+                    Query Priority &amp; Urgency Level
+                  </label>
+                  <div class="priority-selector-grid" role="radiogroup" aria-label="Priority level">
+                    <label class="priority-label-card">
+                      <input type="radio" name="priority" value="normal" checked>
+                      <div class="priority-inner">
+                        <span class="priority-title">🟢 Routine</span>
+                        <span class="priority-sla">48h SLA response</span>
+                      </div>
+                    </label>
+                    <label class="priority-label-card">
+                      <input type="radio" name="priority" value="high">
+                      <div class="priority-inner">
+                        <span class="priority-title">🟡 High Priority</span>
+                        <span class="priority-sla">24h SLA deadline</span>
+                      </div>
+                    </label>
+                    <label class="priority-label-card">
+                      <input type="radio" name="priority" value="urgent">
+                      <div class="priority-inner">
+                        <span class="priority-title">🔴 Urgent Critical</span>
+                        <span class="priority-sla">Same-day turnaround</span>
+                      </div>
+                    </label>
+                  </div>
                 </div>
 
-                <label class="check mt-5" for="ct-copy">
-                  <input type="checkbox" id="ct-copy" name="copy" value="yes">
-                  <span>Send a copy of this query to my email address.</span>
+                <!-- Message Textarea with Quick-insert Pills -->
+                <div class="field" style="margin-bottom: 1.25rem;">
+                  <label for="ct-message">Detailed description <span class="req">*</span></label>
+                  <textarea class="textarea" id="ct-message" name="message" rows="4" maxlength="800" autocomplete="off" placeholder="Please describe the issue with dates or transaction details. For example: Fee payment of Rs. 65,000 completed on 8 Oct via UPI, but the receipt status still displays as pending." required></textarea>
+                  
+                  <div class="textarea-footer-row">
+                    <span style="font-size: 0.75rem;">Describe clearly with reference IDs if applicable.</span>
+                    <span id="ct-char-counter">0 / 800 characters</span>
+                  </div>
+
+                  <!-- Quick Prompt Tags -->
+                  <div class="feedback-quick-tags" style="margin-top: 0.85rem;">
+                    <span style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); align-self: center; margin-right: 0.2rem;">Quick templates:</span>
+                    <button type="button" class="feedback-tag-pill" data-insert="Fee payment completed but receipt PDF returns error. Transaction ID: ">+ Fee Receipt</button>
+                    <button type="button" class="feedback-tag-pill" data-insert="Biometric attendance marked absent for Lecture 2 on date: ">+ Attendance Discrepancy</button>
+                    <button type="button" class="feedback-tag-pill" data-insert="Hall ticket download button is disabled for upcoming end-sem exam.">+ Hall Ticket Locked</button>
+                    <button type="button" class="feedback-tag-pill" data-insert="Please reset two-factor authentication on my student portal account.">+ 2FA Reset</button>
+                  </div>
+                </div>
+
+                <!-- Checkbox -->
+                <label class="check mt-5" for="ct-copy" style="margin-top: 1.25rem;">
+                  <input type="checkbox" id="ct-copy" name="copy" value="yes" checked>
+                  <span>Send a carbon copy (CC) of this ticket to my registered student email address.</span>
                 </label>
 
-                <button class="btn btn--primary btn--block mt-5" type="submit">Send query</button>
+                <!-- Submit Button -->
+                <button class="btn btn--primary btn--block mt-5" type="submit" id="ct-submit-btn" style="padding: 1.05rem 2rem; font-size: 1.02rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.75rem; letter-spacing: 0.02em; margin-top: 1.5rem; border-radius: 14px;">
+                  <span id="ct-btn-text">Dispatch Support Ticket</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
               </form>
             </div>
 
+            <!-- Digital Ticket Receipt Confirmation Screen -->
             <div class="success" id="contact-success">
               <div class="success__ring">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="m5 12.5 4.6 4.6L19 7.7"/>
                 </svg>
               </div>
-              <h3>Query sent to the help desk</h3>
-              <p>
-                Your ticket number is SH-2026-4418, also sent to your email address. The desk replies within two
-                working days; quote the ticket number if you need to follow up sooner.
+              <div style="display: inline-block; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 1.15rem; border-radius: 100px; margin-bottom: 0.85rem;">
+                Ticket Dispatched &amp; Queued
+              </div>
+              <h3 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">
+                Helpdesk Ticket Logged
+              </h3>
+              <p style="color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; max-width: 540px; margin: 0 auto 1.25rem; line-height: 1.65;">
+                Your query has been assigned to the Student Services resolution queue. A copy has been dispatched to your email address with the receipt below.
               </p>
-              <button class="btn btn--outline" data-reset type="button">Raise another query</button>
+
+              <!-- Digital Ticket Card -->
+              <div class="digital-receipt-modern">
+                <div class="receipt-header-row">
+                  <div>
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5);">Ticket Tracking ID</span>
+                    <div style="margin-top: 0.25rem;">
+                      <span class="receipt-code-pill">
+                        <span id="ticket-id">SH-TKT-2026-4418</span>
+                        <button type="button" class="receipt-copy-btn" id="ticket-copy-btn" title="Copy tracking reference">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                          </svg>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div style="text-align: right;">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #34d399; font-weight: 800;">Desk Status</span>
+                    <div style="color: #ffffff; font-weight: 700; font-size: 0.88rem; margin-top: 0.2rem;">ASSIGNED TO QUEUE</div>
+                  </div>
+                </div>
+
+                <div class="receipt-item-row">
+                  <span>Submitter:</span>
+                  <strong id="ticket-student">CHARUSAT Student (25IT049)</strong>
+                </div>
+                <div class="receipt-item-row">
+                  <span>Query Category:</span>
+                  <strong id="ticket-subject">Examination Cell</strong>
+                </div>
+                <div class="receipt-item-row">
+                  <span>Assigned Urgency:</span>
+                  <strong id="ticket-priority" style="color: #38bdf8;">🟢 Routine (48h SLA)</strong>
+                </div>
+                <div class="receipt-item-row">
+                  <span>Dispatch Timestamp:</span>
+                  <strong id="ticket-time">14 Oct 2026, 06:35 PM</strong>
+                </div>
+                <div class="receipt-item-row">
+                  <span>Target SLA:</span>
+                  <strong style="color: #34d399;">Resolved within 1–2 working days</strong>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn--outline" id="print-ticket-btn" type="button" style="padding: 0.75rem 1.8rem; border-radius: 100px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                  </svg>
+                  <span>Print Ticket</span>
+                </button>
+                <button class="btn btn--primary" data-reset type="button" style="padding: 0.75rem 2rem; border-radius: 100px; font-weight: 800;">
+                  Raise Another Query
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="stack">
-            <article class="card card--lift contact-card" data-reveal data-reveal-delay="1">
-              <span class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Email</h4>
-                <p>
-                  Portal and general queries: <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a><br>
-                  Fees and receipts: <a href="mailto:accounts@charusat.edu.in">accounts@charusat.edu.in</a><br>
-                  Results and transcripts: <a href="mailto:exams@charusat.edu.in">exams@charusat.edu.in</a>
-                </p>
-              </div>
-            </article>
+          <!-- Right Column: Campus Department Directory Cards & Live Desk Status -->
+          <div class="stack" style="display: flex; flex-direction: column; gap: 1.25rem;">
 
-            <article class="card card--lift contact-card" data-reveal data-reveal-delay="2">
-              <span class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Phone</h4>
-                <p>
-                  Help desk: <a href="tel:+917900000000">+91 79 0000 0000</a>, extension 214<br>
-                  Accounts Office: extension 231<br>
-                  Lines are busiest in the week a fee deadline closes.
-                </p>
+            <!-- Live Campus Desk Status Badge -->
+            <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 18px; padding: 1.1rem 1.4rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.12); flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <span class="pulse-dot-green"></span>
+                <span style="color: #34d399; font-weight: 800; font-size: 0.88rem; font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: 0.02em;">
+                  Helpdesk Counters: ONLINE NOW
+                </span>
               </div>
-            </article>
+              <span style="color: rgba(255, 255, 255, 0.75); font-size: 0.8rem; font-weight: 600;">
+                Mon–Fri: 9:00 AM – 5:00 PM &bull; Sat: 9:00 AM – 1:00 PM
+              </span>
+            </div>
 
-            <article class="card card--lift contact-card" data-reveal data-reveal-delay="3">
-              <span class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Address</h4>
-                <p>
-                  Student Services, Ground Floor, Academic Block A<br>
-                  University Road, Changa, Anand 388421, Gujarat<br>
-                  Entrance next to the main library gate.
-                </p>
-              </div>
-            </article>
+            <!-- Department Directory List -->
+            <div class="contact-directory-grid">
 
-            <article class="card card--lift contact-card" data-reveal data-reveal-delay="4">
-              <span class="contact-card__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
-                </svg>
-              </span>
-              <div>
-                <h4>Office hours</h4>
-                <p>
-                  Monday to Friday, 9:00 AM to 5:00 PM<br>
-                  Saturday, 9:00 AM to 1:00 PM<br>
-                  Closed on Sundays and gazetted holidays.
-                </p>
-              </div>
-            </article>
+              <!-- Card 1: Registrar & Student Section -->
+              <article class="dept-directory-card" data-reveal data-reveal-delay="1">
+                <div class="dept-directory-icon">🏛️</div>
+                <div class="dept-directory-body">
+                  <div class="dept-directory-header">
+                    <h4>Registrar &amp; Student Section</h4>
+                    <span class="dept-hours-pill">Block A &bull; Ground Floor</span>
+                  </div>
+                  <p class="dept-directory-desc">
+                    Bonafide certificates, official student ID issuance, admission verifications, and academic migration certificates.
+                  </p>
+                  <div class="dept-contact-links">
+                    <a href="tel:+912697265011" class="dept-link-btn">
+                      <span>📞 +91 2697 265011 (Ext. 201)</span>
+                    </a>
+                    <a href="mailto:registrar@charusat.ac.in" class="dept-link-btn">
+                      <span>✉️ registrar@charusat.ac.in</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Examination Cell & Transcripts -->
+              <article class="dept-directory-card" data-reveal data-reveal-delay="2">
+                <div class="dept-directory-icon">📝</div>
+                <div class="dept-directory-body">
+                  <div class="dept-directory-header">
+                    <h4>Examination Cell &amp; Transcripts</h4>
+                    <span class="dept-hours-pill">Block B &bull; 1st Floor</span>
+                  </div>
+                  <p class="dept-directory-desc">
+                    Grade sheet corrections, official transcripts, end-semester exam hall tickets, and re-evaluation applications.
+                  </p>
+                  <div class="dept-contact-links">
+                    <a href="tel:+912697265011" class="dept-link-btn">
+                      <span>📞 Ext. 108</span>
+                    </a>
+                    <a href="mailto:exams@charusat.ac.in" class="dept-link-btn">
+                      <span>✉️ exams@charusat.ac.in</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: Accounts & Fee Reconciliation -->
+              <article class="dept-directory-card" data-reveal data-reveal-delay="3">
+                <div class="dept-directory-icon">💳</div>
+                <div class="dept-directory-body">
+                  <div class="dept-directory-header">
+                    <h4>Accounts &amp; Fee Reconciliation</h4>
+                    <span class="dept-hours-pill">Counter 3 &bull; Central Admin</span>
+                  </div>
+                  <p class="dept-directory-desc">
+                    Tuition payment receipts, net-banking reconciliation, fee structure certificates, and scholarship disbursements.
+                  </p>
+                  <div class="dept-contact-links">
+                    <a href="tel:+912697265011" class="dept-link-btn">
+                      <span>📞 Ext. 231</span>
+                    </a>
+                    <a href="mailto:accounts@charusat.ac.in" class="dept-link-btn">
+                      <span>✉️ accounts@charusat.ac.in</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4: IT Helpdesk & Portal Support -->
+              <article class="dept-directory-card" data-reveal data-reveal-delay="4">
+                <div class="dept-directory-icon">💻</div>
+                <div class="dept-directory-body">
+                  <div class="dept-directory-header">
+                    <h4>IT Helpdesk &amp; Portal Support</h4>
+                    <span class="dept-hours-pill">DEPSTAR &bull; Lab 03</span>
+                  </div>
+                  <p class="dept-directory-desc">
+                    StudentHub account lockout, biometric attendance terminal sync, campus Wi-Fi MAC onboarding, and 2FA resets.
+                  </p>
+                  <div class="dept-contact-links">
+                    <a href="tel:+912697265011" class="dept-link-btn">
+                      <span>📞 Ext. 412</span>
+                    </a>
+                    <a href="mailto:helpdesk@charusat.edu.in" class="dept-link-btn">
+                      <span>✉️ helpdesk@charusat.edu.in</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5: Campus Transit, Bus & Hostel Desk -->
+              <article class="dept-directory-card" data-reveal data-reveal-delay="5">
+                <div class="dept-directory-icon">🚌</div>
+                <div class="dept-directory-body">
+                  <div class="dept-directory-header">
+                    <h4>Hostel &amp; Transportation Desk</h4>
+                    <span class="dept-hours-pill">Student Amenity &bull; Room 12</span>
+                  </div>
+                  <p class="dept-directory-desc">
+                    Hostel wing allotment, mess pass issuance, and bus route registration between Ahmedabad, Vadodara, Nadiad, and Anand.
+                  </p>
+                  <div class="dept-contact-links">
+                    <a href="tel:+912697265011" class="dept-link-btn">
+                      <span>📞 Ext. 315</span>
+                    </a>
+                    <a href="mailto:transit@charusat.edu.in" class="dept-link-btn">
+                      <span>✉️ transit@charusat.edu.in</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ================= MAP + HOURS ================= -->
-    <section class="section section--parchment">
+    <!-- ================= CAMPUS NAVIGATION & MAP ================= -->
+    <section class="section" id="finding-us" style="padding-top: 2rem; padding-bottom: 5rem;">
       <div class="shell">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Finding us</span>
-          <h2>Walk in to the Student Services counter</h2>
-          <p>
-            The campus is a 12-minute walk from Gurukul Road and is served by AMTS route 42. Visitor parking is
-            behind Block D.
+
+        <!-- Centered Section Head for Finding Us -->
+        <div class="faq-hero-head" data-reveal style="max-width: 820px; margin: 0 auto 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">📍</span> Campus Map &amp; Navigation
+            </span>
+          </div>
+          <h2 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 800; color: #ffffff; margin: 0 0 0.85rem; line-height: 1.2; text-align: center; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+            Finding Us at CHARUSAT Changa
+          </h2>
+          <p style="color: var(--muted-color); max-width: 680px; margin: 0 auto; font-size: 1.02rem; line-height: 1.65; text-align: center;">
+            Charotar University of Science and Technology is situated in Changa, Anand. Explore the official campus master plan, take a live 360° virtual tour, or navigate via Google Maps.
           </p>
         </div>
 
-        <div class="grid grid--split">
-          <div class="map" data-reveal>
-            <div class="map__pin" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Master Plan Card -->
+        <div class="campus-finding-card" data-reveal style="background: rgba(7, 18, 36, 0.82); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 28px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);">
+          <!-- Left: Official Campus Map Image -->
+          <div class="campus-map-preview-wrap">
+            <span class="campus-map-overlay-badge">
+              <span class="pulse-dot-green"></span>
+              CHARUSAT Master Plan
+            </span>
+            <a href="https://360-virtual-tour.charusat.ac.in/" target="_blank" rel="noopener" title="Open 360° Virtual Campus Tour">
+              <img class="campus-map-img" src="../images/charusat-campus-map.png" alt="Official CHARUSAT University Campus Layout">
+            </a>
+          </div>
+
+          <!-- Right: Campus Info & Interactive Links -->
+          <div class="campus-info-pane">
+            <span class="badge badge--primary mb-2" style="background: rgba(37, 99, 235, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8;">Campus Location</span>
+            <h3 style="font-size: 1.85rem; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; margin: 0.5rem 0 1rem; color: #ffffff;">CHARUSAT Campus, Changa</h3>
+            <p style="color: var(--muted-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              Off. Nadiad-Petlad Highway, Changa, Dist: Anand &ndash; 388421, Gujarat, India. 
+              Home to over 10,000+ students across engineering, computer applications, pharmacy, applied sciences, and healthcare.
+            </p>
+
+            <div class="campus-landmarks-grid">
+              <div class="campus-landmark-item">
+                <span>🏛️</span>
+                <span><b>CSPIT</b> &ndash; Tech Institute</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>💻</span>
+                <span><b>DEPSTAR</b> &ndash; Advanced Tech</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>🔬</span>
+                <span><b>PDPIAS</b> &ndash; Applied Sciences</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>💊</span>
+                <span><b>RPCP</b> &ndash; Pharmacy</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>🏥</span>
+                <span><b>Hospital</b> &ndash; 450-Bed Center</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>⚽</span>
+                <span><b>Sports Complex</b> &amp; Hostels</span>
+              </div>
+            </div>
+
+            <div class="campus-actions-row">
+              <a href="https://360-virtual-tour.charusat.ac.in/" target="_blank" rel="noopener" class="campus-btn campus-btn--primary">
+                <span>🌐 360° Virtual Campus Tour</span>
+              </a>
+              <a href="https://maps.app.goo.gl/zqZKyZSgVok7JNGn8" target="_blank" rel="noopener" class="campus-btn campus-btn--glass">
+                <span>📍 Google Maps Directions</span>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="campus-btn campus-btn--glass">
+                <span>🏛️ Official University Site</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Symmetrical 2-Column Directions & Timings Grid -->
+        <div class="grid grid--split mt-8" style="gap: 2rem; margin-top: 2.75rem;">
+          <!-- Map Pin Direction Card -->
+          <div class="map" data-reveal style="display: flex; gap: 1.25rem; align-items: flex-start;">
+            <div class="map__pin" aria-hidden="true" style="width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; flex-shrink: 0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
             <div class="map__body">
-              <h4>Academic Block A, University Campus</h4>
-              <p>
-                University Road, Changa, Anand 388421, Gujarat<br>
-                Counter 1 and 2, ground floor, opposite the notice board.
+              <h4 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.4rem;">
+                Central Administrative Building, CHARUSAT
+              </h4>
+              <p style="color: var(--muted-color); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                Changa &ndash; Valvod Road, Changa, Anand 388421, Gujarat.<br>
+                Student Services Desk: Ground floor, Academic Block A (East Wing). Nearest railway junctions: Nadiad (22 km) and Anand (25 km).
               </p>
-              <a class="btn btn--primary btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=University+Road+Ahmedabad+380015" target="_blank" rel="noopener">Get directions</a>
+              <a class="btn btn--primary btn--sm" href="https://maps.app.goo.gl/zqZKyZSgVok7JNGn8" target="_blank" rel="noopener" style="padding: 0.65rem 1.4rem; border-radius: 100px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <span>Get Directions on Google Maps</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
             </div>
           </div>
 
-          <div class="card" data-reveal data-reveal-delay="1">
-            <h3>Counter timings</h3>
-            <ul class="hours">
+          <!-- Counter Timings Card -->
+          <div class="card feedback-info-card" data-reveal data-reveal-delay="1" style="background: rgba(7, 18, 36, 0.82); border: 1px solid rgba(56, 189, 248, 0.22); border-radius: 22px; padding: 2rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <span style="width: 40px; height: 40px; border-radius: 12px; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.35); display: grid; place-items: center; color: #38bdf8; font-size: 1.2rem;">⏱️</span>
+              <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 800; color: #ffffff; margin: 0;">
+                Counter Walk-in Timings
+              </h3>
+            </div>
+            <ul class="hours" style="list-style: none; padding: 0; margin: 0;">
               <li><span>Student Services desk</span><b>9:00 AM &ndash; 5:00 PM</b></li>
               <li><span>Accounts Office, Counter 3</span><b>10:00 AM &ndash; 3:00 PM</b></li>
               <li><span>Examination Cell walk-ins</span><b>2:00 PM &ndash; 4:00 PM</b></li>
               <li><span>Hostel and transport office</span><b>11:00 AM &ndash; 4:00 PM</b></li>
               <li><span>Saturday, all counters</span><b>9:00 AM &ndash; 1:00 PM</b></li>
-              <li><span>Sunday and holidays</span><b>Closed</b></li>
+              <li><span>Sunday and holidays</span><b style="color: #f87171;">Closed</b></li>
             </ul>
-            <p class="hint mt-4">
-              Counters close 30 minutes early on the last working day of each month for account reconciliation.
+            <p class="hint mt-4" style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem; margin-top: 1rem;">
+              Counters close 30 minutes early on the last working day of each month for reconciliation.
             </p>
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
+  <!-- Unified Data and Scripts -->
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+
+  <!-- Interactive Contact Script -->
+  <script>
+    (function () {
+      'use strict';
+
+      var form = document.getElementById('studentContactForm');
+      var nameInput = document.getElementById('ct-name');
+      var rollInput = document.getElementById('ct-enrolment');
+      var emailInput = document.getElementById('ct-email');
+      var phoneInput = document.getElementById('ct-phone');
+      var subjectSelect = document.getElementById('ct-subject');
+      var messageTextarea = document.getElementById('ct-message');
+      var charCounter = document.getElementById('ct-char-counter');
+      var clearBtn = document.getElementById('ct-toggle-fill-btn');
+      var avatarBadge = document.getElementById('ct-avatar-badge');
+      var displayName = document.getElementById('ct-display-name');
+      var displayRoll = document.getElementById('ct-display-roll');
+      var copyTicketBtn = document.getElementById('ticket-copy-btn');
+      var printTicketBtn = document.getElementById('print-ticket-btn');
+
+      var isCleared = false;
+      var activeStudent = null;
+
+      // 1. Auto-fill from StudentHubData (ONLY if genuinely logged in)
+      function loadStudentProfile() {
+        var isAuth = false;
+        activeStudent = null;
+
+        var sessionActive = (localStorage.getItem('charusat_student_session') === 'active');
+        if (sessionActive) {
+          if (window.StudentHubData && typeof window.StudentHubData.getLoggedInUser === 'function') {
+            activeStudent = window.StudentHubData.getLoggedInUser();
+          }
+          if (!activeStudent) {
+            try {
+              var raw = localStorage.getItem('charusat_active_user');
+              if (raw) activeStudent = JSON.parse(raw);
+            } catch (e) {}
+          }
+          if (activeStudent) {
+            isAuth = true;
+          }
+        }
+
+        var isAdmin = (localStorage.getItem('charusat_admin_session') === 'active');
+
+        if (isAuth && activeStudent) {
+          var sName = activeStudent.fullName || activeStudent.name || activeStudent.full_name || 'CHARUSAT Student';
+          var sRoll = activeStudent.enrolment || activeStudent.roll || activeStudent.student_id || '';
+          var sEmail = activeStudent.email || '';
+          var sPhone = activeStudent.phone || activeStudent.mobile || '';
+
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card';
+            studentBanner.style.display = 'flex';
+          }
+          if (displayName) displayName.textContent = sName;
+          if (displayRoll) displayRoll.textContent = sRoll;
+
+          if (verifiedPill) {
+            verifiedPill.className = 'verified-pulse-pill';
+            verifiedPill.innerHTML = '<span class="verified-pulse-dot"></span> Verified Student';
+            verifiedPill.style.display = 'inline-flex';
+          }
+
+          var statusText = document.getElementById('ct-student-status-text');
+          if (statusText) {
+            statusText.innerHTML = 'Ticket linked to <b style="color: #38bdf8;">' + (sRoll || 'Verified') + '</b>';
+          }
+
+          if (avatarBadge && sName) {
+            var parts = sName.trim().split(/\s+/);
+            var inits = parts[0].charAt(0) + (parts.length > 1 ? parts[parts.length - 1].charAt(0) : '');
+            avatarBadge.textContent = inits.toUpperCase();
+          }
+
+          if (clearBtn) {
+            clearBtn.style.display = 'inline-flex';
+            clearBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Clear Credentials</span>';
+            clearBtn.onclick = null;
+          }
+
+          if (nameInput) nameInput.value = sName;
+          if (rollInput) rollInput.value = sRoll;
+          if (emailInput) emailInput.value = sEmail;
+          if (phoneInput && sPhone) phoneInput.value = sPhone;
+        } else if (isAdmin) {
+          var adminName = localStorage.getItem('charusat_admin_user') || 'Administrator';
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card';
+            studentBanner.style.display = 'flex';
+          }
+          if (displayName) displayName.textContent = adminName;
+          if (avatarBadge) avatarBadge.textContent = '🛡️';
+          if (verifiedPill) {
+            verifiedPill.className = 'verified-pulse-pill';
+            verifiedPill.innerHTML = '<span class="verified-pulse-dot"></span> Admin Session';
+            verifiedPill.style.display = 'inline-flex';
+          }
+          var statusText = document.getElementById('ct-student-status-text');
+          if (statusText) statusText.innerHTML = 'Administrative Staff &bull; Desk Operator';
+          if (clearBtn) clearBtn.style.display = 'none';
+        } else {
+          // GUEST / NOT LOGGED IN
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card is-guest';
+            studentBanner.style.display = 'flex';
+          }
+          if (avatarBadge) avatarBadge.textContent = '👤';
+          if (displayName) displayName.textContent = 'Guest / Visitor Mode';
+          if (verifiedPill) {
+            verifiedPill.className = 'guest-pulse-pill';
+            verifiedPill.innerHTML = 'Unlinked Ticket';
+            verifiedPill.style.display = 'inline-flex';
+          }
+          var statusText = document.getElementById('ct-student-status-text');
+          if (statusText) {
+            statusText.innerHTML = 'Submitting as guest. <a href="login.html" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Sign In to StudentHub</a> to auto-link your student ticket.';
+          }
+          if (clearBtn) {
+            clearBtn.style.display = 'inline-flex';
+            clearBtn.innerHTML = '<span>Sign In to Link &rarr;</span>';
+            clearBtn.onclick = function() { window.location.href = 'login.html'; };
+          }
+
+          // Leave inputs empty for the guest
+          if (nameInput) nameInput.value = '';
+          if (rollInput) rollInput.value = '';
+          if (emailInput) emailInput.value = '';
+          if (phoneInput) phoneInput.value = '';
+        }
+      }
+
+      loadStudentProfile();
+
+      // 2. Character counter for message
+      if (messageTextarea && charCounter) {
+        messageTextarea.addEventListener('input', function () {
+          var len = messageTextarea.value.length;
+          charCounter.textContent = len + ' / 800 characters';
+          if (len >= 750) {
+            charCounter.style.color = '#fbbf24';
+          } else {
+            charCounter.style.color = 'rgba(255, 255, 255, 0.5)';
+          }
+        });
+      }
+
+      // 3. Clear / Auto-fill Toggle Button
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function () {
+          if (!activeStudent) {
+            window.location.href = 'login.html';
+            return;
+          }
+          isCleared = !isCleared;
+          if (isCleared) {
+            clearBtn.innerHTML = '<span>Auto-fill My Profile</span>';
+            clearBtn.style.borderColor = '#38bdf8';
+            clearBtn.style.color = '#38bdf8';
+            if (nameInput) nameInput.value = '';
+            if (rollInput) rollInput.value = '';
+            if (emailInput) emailInput.value = '';
+            if (phoneInput) phoneInput.value = '';
+            if (displayName) displayName.textContent = 'Manual Entry';
+            var statusText = document.getElementById('ct-student-status-text');
+            if (statusText) statusText.innerHTML = 'Manual entry mode active';
+          } else {
+            clearBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Clear Credentials</span>';
+            clearBtn.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+            clearBtn.style.color = '#ffffff';
+            loadStudentProfile();
+          }
+        });
+      }
+
+      // 4. Quick Template Insertion
+      document.querySelectorAll('.feedback-tag-pill').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          var insertText = pill.getAttribute('data-insert');
+          if (!insertText || !messageTextarea) return;
+          if (messageTextarea.value.trim().length > 0) {
+            messageTextarea.value = messageTextarea.value.trim() + '\n' + insertText;
+          } else {
+            messageTextarea.value = insertText;
+          }
+          messageTextarea.dispatchEvent(new Event('input'));
+          messageTextarea.focus();
+        });
+      });
+
+      // 5. 1-Click Copy Ticket Code
+      if (copyTicketBtn) {
+        copyTicketBtn.addEventListener('click', function () {
+          var ticketElem = document.getElementById('ticket-id');
+          if (ticketElem && navigator.clipboard) {
+            navigator.clipboard.writeText(ticketElem.textContent.trim()).then(function () {
+              copyTicketBtn.style.color = '#34d399';
+              setTimeout(function () { copyTicketBtn.style.color = '#38bdf8'; }, 1800);
+            });
+          }
+        });
+      }
+
+      // 6. Print Ticket Button
+      if (printTicketBtn) {
+        printTicketBtn.addEventListener('click', function () {
+          window.print();
+        });
+      }
+
+      // 7. Intercept Form Submission to build Digital Ticket & AJAX Dispatch
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          if (!form.checkValidity()) return;
+
+          // Ticket Code: SH-TKT-2026-XXXX
+          var randomTicket = 'SH-TKT-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+          var now = new Date();
+          var timeStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ', ' +
+                        now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+
+          var studentName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'CHARUSAT Student';
+          var studentRoll = rollInput && rollInput.value.trim() ? rollInput.value.trim() : '25IT049';
+          var selectedSubject = subjectSelect && subjectSelect.selectedIndex > 0 ? subjectSelect.options[subjectSelect.selectedIndex].text.split('—')[0].trim() : 'General Inquiry';
+
+          // Urgency selection
+          var checkedPriority = form.querySelector('input[name="priority"]:checked');
+          var priorityVal = checkedPriority ? checkedPriority.value : 'normal';
+          var priorityText = priorityVal === 'urgent' ? '🔴 Urgent Critical (Same-day SLA)' : (priorityVal === 'high' ? '🟡 High Priority (24h SLA)' : '🟢 Routine (48h SLA)');
+
+          // Update Receipt Card in DOM
+          var ticketIdElem = document.getElementById('ticket-id');
+          var studentElem = document.getElementById('ticket-student');
+          var subjectElem = document.getElementById('ticket-subject');
+          var priorityElem = document.getElementById('ticket-priority');
+          var timeElem = document.getElementById('ticket-time');
+
+          if (ticketIdElem) ticketIdElem.textContent = randomTicket;
+          if (studentElem) studentElem.textContent = studentName + ' (' + studentRoll + ')';
+          if (subjectElem) subjectElem.textContent = selectedSubject;
+          if (priorityElem) {
+            priorityElem.textContent = priorityText;
+            if (priorityVal === 'urgent') priorityElem.style.color = '#f87171';
+            else if (priorityVal === 'high') priorityElem.style.color = '#fbbf24';
+            else priorityElem.style.color = '#38bdf8';
+          }
+          if (timeElem) timeElem.textContent = timeStr;
+
+          // Dispatch to Backend PHP (process_contact.php with CSRF & DB logging)
+          try {
+            var formData = new FormData();
+            formData.append('fullname', studentName);
+            formData.append('email', emailInput ? emailInput.value : '');
+            formData.append('phone', phoneInput ? phoneInput.value : '');
+            formData.append('subject', selectedSubject);
+            formData.append('category', priorityVal);
+            formData.append('message', messageTextarea ? messageTextarea.value : '');
+
+            fetch('../backend/csrf_token.php')
+              .then(function (r) { return r.json(); })
+              .then(function (tok) {
+                if (tok && tok.csrf_token) formData.append('csrf_token', tok.csrf_token);
+                return fetch('../backend/process_contact.php', {
+                  method: 'POST',
+                  body: formData
+                });
+              }).then(function (r) { return r.json(); })
+              .then(function (res) {
+                if (res && res.ticket_id && ticketIdElem) {
+                  ticketIdElem.textContent = res.ticket_id;
+                }
+              }).catch(function (e) {
+                /* local simulation fallback */
+              });
+          } catch (netErr) {}
+
+          // Save into LocalStorage for session persistence
+          try {
+            var rawTickets = localStorage.getItem('charusat_contact_tickets');
+            var tickets = rawTickets ? JSON.parse(rawTickets) : [];
+            tickets.unshift({
+              ticketId: randomTicket,
+              student: studentName,
+              roll: studentRoll,
+              email: emailInput ? emailInput.value : '',
+              phone: phoneInput ? phoneInput.value : '',
+              subject: selectedSubject,
+              priority: priorityVal,
+              message: messageTextarea ? messageTextarea.value : '',
+              timestamp: now.toISOString(),
+              timeFormatted: timeStr
+            });
+            localStorage.setItem('charusat_contact_tickets', JSON.stringify(tickets));
+          } catch (err) {
+            console.warn('Ticket persistence error:', err);
+          }
+        });
+      }
+
+      // 8. Reset button handler
+      var resetBtn = document.querySelector('[data-reset]');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          setTimeout(function () {
+            isCleared = false;
+            loadStudentProfile();
+            if (charCounter) charCounter.textContent = '0 / 800 characters';
+            if (clearBtn) {
+              clearBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Clear Credentials</span>';
+              clearBtn.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+              clearBtn.style.color = '#ffffff';
+            }
+          }, 50);
+        });
+      }
+
+    })();
+  </script>
 </body>
 </html>

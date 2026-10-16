@@ -3,256 +3,748 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sign in to StudentHub with your college email to reach your dashboard, attendance and results.">
-  <title>Login — StudentHub</title>
+  <meta name="description" content="Sign in to StudentHub with your college email to reach your dashboard, attendance and examination results.">
+  <title>Login — CHARUSAT StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- This page lives in /pages/, so ../ climbs out to the repo root.
-       Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
-<body>
+<body class="auth-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item active" aria-current="page">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" aria-current="page"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
-      </div>
+    <!-- Header CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="auth auth--plain">
+    <section class="auth auth--plain" id="authSection">
       <div class="auth__bg" aria-hidden="true"></div>
       <div class="auth__orb auth__orb--a" aria-hidden="true"></div>
       <div class="auth__orb auth__orb--b" aria-hidden="true"></div>
+      <div class="auth__orb auth__orb--c" aria-hidden="true"></div>
 
-      <!-- Three bears whose eyes follow the cursor. Purely decorative, so they
-           are hidden from screen readers and from small screens via CSS. -->
-      <div class="bears" aria-hidden="true">
-        <svg class="bear bear--1" viewBox="0 0 120 120">
-          <circle class="bear__ear" cx="30" cy="30" r="16"/>
-          <circle class="bear__ear" cx="90" cy="30" r="16"/>
-          <circle class="bear__ear-in" cx="30" cy="30" r="8"/>
-          <circle class="bear__ear-in" cx="90" cy="30" r="8"/>
-          <circle class="bear__head" cx="60" cy="62" r="42"/>
-          <ellipse class="bear__snout" cx="60" cy="80" rx="22" ry="17"/>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="45" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="45" cy="55" r="4.5"/>
-          </g>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="75" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="75" cy="55" r="4.5"/>
-          </g>
-          <ellipse class="bear__nose" cx="60" cy="73" rx="7" ry="5"/>
-          <path class="bear__mouth" d="M60 78v5M60 83c-4 0-6-2-6-4M60 83c4 0 6-2 6-4"/>
-        </svg>
-
-        <svg class="bear bear--2" viewBox="0 0 120 120">
-          <circle class="bear__ear" cx="30" cy="30" r="16"/>
-          <circle class="bear__ear" cx="90" cy="30" r="16"/>
-          <circle class="bear__ear-in" cx="30" cy="30" r="8"/>
-          <circle class="bear__ear-in" cx="90" cy="30" r="8"/>
-          <circle class="bear__head" cx="60" cy="62" r="42"/>
-          <ellipse class="bear__snout" cx="60" cy="80" rx="22" ry="17"/>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="45" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="45" cy="55" r="4.5"/>
-          </g>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="75" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="75" cy="55" r="4.5"/>
-          </g>
-          <ellipse class="bear__nose" cx="60" cy="73" rx="7" ry="5"/>
-          <path class="bear__mouth" d="M60 78v5M60 83c-4 0-6-2-6-4M60 83c4 0 6-2 6-4"/>
-        </svg>
-
-        <svg class="bear bear--3" viewBox="0 0 120 120">
-          <circle class="bear__ear" cx="30" cy="30" r="16"/>
-          <circle class="bear__ear" cx="90" cy="30" r="16"/>
-          <circle class="bear__ear-in" cx="30" cy="30" r="8"/>
-          <circle class="bear__ear-in" cx="90" cy="30" r="8"/>
-          <circle class="bear__head" cx="60" cy="62" r="42"/>
-          <ellipse class="bear__snout" cx="60" cy="80" rx="22" ry="17"/>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="45" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="45" cy="55" r="4.5"/>
-          </g>
-          <g class="bear__eye" data-eye>
-            <circle class="bear__eye-white" cx="75" cy="55" r="9"/>
-            <circle class="bear__pupil" data-pupil cx="75" cy="55" r="4.5"/>
-          </g>
-          <ellipse class="bear__nose" cx="60" cy="73" rx="7" ry="5"/>
-          <path class="bear__mouth" d="M60 78v5M60 83c-4 0-6-2-6-4M60 83c4 0 6-2 6-4"/>
-        </svg>
+      <!-- Dedicated Change Background Floating Control -->
+      <div class="auth-theme-toolbar">
+        <button type="button" id="changeBgBtn" class="auth-change-bg-btn" aria-label="Change Background Theme" title="Click to cycle dynamic background themes">
+          <span class="auth-change-bg-icon">🎨</span>
+          <span class="auth-change-bg-text">Change Background:</span>
+          <span class="auth-change-bg-tag" id="currentThemeTag">SAPPHIRE BLUE</span>
+        </button>
       </div>
 
-      <div class="auth__card">
-        <div class="auth__brand">
-          <span class="brand">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-            </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
+      <!-- Main Cyber Dark Sapphire Login Card (No pandas/bears) -->
+      <div class="auth__card" style="max-width: 500px;">
+
+        <!-- Centered Crest & Portal Header -->
+        <div style="text-align: center; margin-bottom: 1.75rem;">
+          <div style="width: 72px; height: 72px; margin: 0 auto 1.15rem; border-radius: 50%; background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(14, 165, 233, 0.15)); border: 1.5px solid rgba(56, 189, 248, 0.5); display: grid; place-items: center; box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); backdrop-filter: blur(16px); padding: 4px;">
+            <img src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+          </div>
+          <div style="display: flex; justify-content: center; margin-bottom: 0.65rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Manrope', sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 0.95rem;">🏛️</span> CHARUSAT Single Sign-On
             </span>
-          </span>
-        </div>
-
-        <h1>Sign in to your account</h1>
-        <p class="auth__sub">Use the college email issued by the IT cell, not a personal address.</p>
-
-        <form action="dashboard.html" method="get" novalidate>
-          <div class="field">
-            <label for="email">College email <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <input class="input" type="email" id="email" name="email" placeholder="25it049@charusat.edu.in" autocomplete="username" required>
-            </div>
           </div>
-
-          <div class="field">
-            <label for="password">Password <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              <button class="pw-toggle" type="button" aria-controls="password" aria-label="Show password">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              </button>
-              <input class="input" type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
-            </div>
-          </div>
-
-          <div class="auth__row">
-            <label class="check" for="remember">
-              <input type="checkbox" id="remember" name="remember">
-              <span>Keep me signed in</span>
-            </label>
-            <a href="#reset">Forgot password?</a>
-          </div>
-
-          <button class="btn btn--primary btn--block btn--lg" type="submit">Sign in</button>
-        </form>
-
-        <p class="auth__alt">New to the portal? <a href="register.html" target="_blank" rel="noopener">Create an account</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-            </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
-          </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <h1 style="font-family: 'Manrope', sans-serif; font-size: clamp(1.85rem, 3.5vw, 2.25rem); font-weight: 800; color: #ffffff; margin: 0 0 0.4rem; line-height: 1.2;">
+            Sign In to <span class="accent-text">StudentHub</span>
+          </h1>
+          <p style="color: var(--muted-color); font-size: 0.92rem; margin: 0; line-height: 1.55;">
+            Central portal authentication for students, faculty &amp; university administrators.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <!-- Role Switcher Segmented Capsule -->
+        <div class="auth-role-tabs" style="display: flex; background: rgba(5, 15, 30, 0.85); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 100px; padding: 4px; margin-bottom: 1.75rem; gap: 4px; box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);">
+          <button type="button" id="roleBtnStudent" class="btn btn--sm is-active" style="flex: 1; border-radius: 100px; border: 1px solid rgba(56, 189, 248, 0.45); padding: 0.65rem 1rem; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.86rem; cursor: pointer; transition: all 0.25s ease; background: linear-gradient(135deg, #2563eb, #38bdf8); color: #ffffff; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+            🎓 Student Login
+          </button>
+          <button type="button" id="roleBtnAdmin" class="btn btn--sm" style="flex: 1; border-radius: 100px; border: 1px solid transparent; padding: 0.65rem 1rem; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.86rem; cursor: pointer; transition: all 0.25s ease; background: transparent; color: var(--muted-color);">
+            🔒 Admin Portal
+          </button>
+        </div>
+
+        <!-- Security Warning Notice when redirected from admin.html -->
+        <div id="adminRestrictedNotice" style="display: none; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 14px; padding: 0.85rem 1.15rem; margin-bottom: 1.5rem; color: #fca5a5; font-size: 0.85rem; line-height: 1.5;">
+          <strong>⚠️ Access Restricted:</strong> The Administrator Console is strictly protected. Only authorized university faculty, deans, and administrative officers may log in.
+        </div>
+
+        <!-- ================= FORM 1: STUDENT LOGIN ================= -->
+        <div id="studentLoginFormWrap">
+          <!-- Newly Registered Credentials Banner -->
+          <div id="studentRegisterNotice" style="display: none; background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #bae6fd; padding: 0.85rem 1.15rem; border-radius: 14px; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.5;">
+            🎉 <strong>Registration Successful!</strong> Your credentials have been pasted below. Click <strong>Sign In</strong> to access your personal dashboard.
+          </div>
+
+          <!-- Error Banner -->
+          <div id="studentLoginError" style="display: none; background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 0.85rem 1.15rem; border-radius: 14px; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.5;">
+            ❌ <strong>Invalid Credentials!</strong> The email or password entered does not match university records. Please check or register first.
+          </div>
+
+          <!-- Success Banner -->
+          <div id="studentLoginSuccess" style="display: none; background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #34d399; padding: 0.85rem 1.15rem; border-radius: 14px; margin-bottom: 1.25rem; font-size: 0.88rem; line-height: 1.5;">
+            ✓ <strong>Login Successful!</strong> Welcome back to CHARUSAT StudentHub. Redirecting to your dashboard...
+          </div>
+
+          <form id="studentLoginForm" novalidate>
+            <div class="field" style="margin-bottom: 1.25rem;">
+              <label for="studentEmail">College email address <span class="req">*</span></label>
+              <div class="control">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                </svg>
+                <input class="input" type="email" id="studentEmail" name="email" value="" placeholder="name@charusat.edu.in" autocomplete="username" required>
+              </div>
+            </div>
+
+            <div class="field" style="margin-bottom: 1.25rem;">
+              <label for="studentPassword">Password <span class="req">*</span></label>
+              <div class="control">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                </svg>
+                <button class="pw-toggle" type="button" aria-controls="studentPassword" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+                <input class="input" type="password" id="studentPassword" name="password" value="" placeholder="Enter your secret password" autocomplete="current-password" required>
+              </div>
+            </div>
+
+            <div class="auth__row">
+              <label class="check" for="rememberStudent">
+                <input type="checkbox" id="rememberStudent" name="remember" checked>
+                <span>Keep me signed in</span>
+              </label>
+              <a href="#reset" id="forgotPassBtn">Forgot password?</a>
+            </div>
+
+            <button class="btn btn--primary btn--block btn--lg" type="submit" id="studentSubmitBtn" style="padding: 0.95rem 1.75rem; font-size: 0.98rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.65rem; border-radius: 100px;">
+              <span>Sign In to Student Dashboard</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <p class="auth__alt">
+            New enrolled student at CHARUSAT? <a href="register.html">Create an account</a>
+          </p>
+        </div>
+
+        <!-- ================= FORM 2: ADMINISTRATOR LOGIN (RESTRICTED) ================= -->
+        <div id="adminLoginFormWrap" style="display: none;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span class="badge badge--danger" style="background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #f87171; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px;">
+              Staff Only
+            </span>
+            <span style="font-size: 0.8rem; color: var(--muted-color);">University Governance</span>
+          </div>
+          <h2 style="font-family: 'Manrope', sans-serif; font-size: 1.65rem; font-weight: 800; color: #ffffff; margin: 0 0 0.35rem;">
+            Administrator Access
+          </h2>
+          <p style="color: var(--muted-color); font-size: 0.88rem; margin: 0 0 1.5rem; line-height: 1.5;">
+            Master credentials required. Access by students is strictly prohibited and logged.
+          </p>
+
+          <form id="adminLoginForm" novalidate>
+            <!-- Error Banner -->
+            <div id="adminLoginError" style="display: none; background: rgba(239, 68, 68, 0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 0.75rem 1rem; border-radius: 12px; margin-bottom: 1.25rem; font-size: 0.86rem; line-height: 1.45;">
+              ❌ Invalid Administrator ID or Password. Staff authorization required.
+            </div>
+
+            <!-- Success Banner -->
+            <div id="adminLoginSuccess" style="display: none; background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #34d399; padding: 0.75rem 1rem; border-radius: 12px; margin-bottom: 1.25rem; font-size: 0.86rem; line-height: 1.45;">
+              ✓ Identity Verified! Redirecting to Administrator Console...
+            </div>
+
+            <div class="field" style="margin-bottom: 1.25rem;">
+              <label for="adminEmail">Administrator Staff Email / ID <span class="req">*</span></label>
+              <div class="control">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                </svg>
+                <input class="input" type="email" id="adminEmail" name="adminEmail" value="" placeholder="staff@charusat.ac.in" autocomplete="username" required>
+              </div>
+            </div>
+
+            <div class="field" style="margin-bottom: 1.25rem;">
+              <label for="adminPassword">Master Security Key <span class="req">*</span></label>
+              <div class="control">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                </svg>
+                <button class="pw-toggle" type="button" aria-controls="adminPassword" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </button>
+                <input class="input" type="password" id="adminPassword" name="adminPassword" value="" placeholder="Enter administrative master key" autocomplete="current-password" required>
+              </div>
+            </div>
+
+            <button class="btn btn--primary btn--block btn--lg" type="submit" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #10b981; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); border-radius: 100px; padding: 0.95rem 1.75rem; font-size: 0.98rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.65rem;">
+              <span>Authenticate &amp; Open Admin Console</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <p class="auth__alt">
+            Are you a student? <a href="#" id="switchBackToStudent">Switch to Student Login</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Password Help Popover / Guidance Dialog -->
+      <div id="passwordHelpDialog" style="display: none; position: fixed; inset: 0; background: rgba(2, 8, 20, 0.8); backdrop-filter: blur(16px); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem;">
+        <div style="background: rgba(7, 18, 36, 0.95); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 24px; padding: 2.25rem 2rem; max-width: 440px; width: 100%; text-align: center; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);">
+          <div style="width: 54px; height: 54px; margin: 0 auto 1rem; border-radius: 50%; background: rgba(37, 99, 235, 0.2); border: 1.5px solid #38bdf8; display: grid; place-items: center; color: #38bdf8; font-size: 1.5rem;">
+            🔐
+          </div>
+          <h3 style="font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 800; color: #ffffff; margin: 0 0 0.5rem;">
+            Password Reset Guidance
+          </h3>
+          <p style="color: var(--muted-color); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            For security, StudentHub credentials are managed by the CHARUSAT Registrar. To reset your student password:
+          </p>
+          <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1rem; text-align: left; margin-bottom: 1.5rem; font-size: 0.82rem; color: rgba(255, 255, 255, 0.8);">
+            <div style="margin-bottom: 0.4rem;">🏛️ <b>Visit Desk:</b> Academic Block A, Ground Floor</div>
+            <div style="margin-bottom: 0.4rem;">📞 <b>Helpline:</b> +91 2697 265011 (Ext. 214)</div>
+            <div>📧 <b>Email:</b> <a href="mailto:help@charusat.edu.in" style="color: #38bdf8;">help@charusat.edu.in</a></div>
+          </div>
+          <button type="button" id="closePassHelpBtn" class="btn btn--primary btn--block" style="border-radius: 100px; padding: 0.75rem 1.5rem;">
+            Got it, Close
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
+  <!-- Unified Data and Scripts -->
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+
+  <!-- Interactive Login Role Switcher & Authentication Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      'use strict';
+
+      var btnStudent = document.getElementById('roleBtnStudent');
+      var btnAdmin = document.getElementById('roleBtnAdmin');
+      var wrapStudent = document.getElementById('studentLoginFormWrap');
+      var wrapAdmin = document.getElementById('adminLoginFormWrap');
+      var restrictedNotice = document.getElementById('adminRestrictedNotice');
+      var switchBack = document.getElementById('switchBackToStudent');
+      var fillAdminDemo = document.getElementById('fillAdminDemoBtn');
+      var autoFillStudent = document.getElementById('autoFillStudentBtn');
+      var forgotPassBtn = document.getElementById('forgotPassBtn');
+      var passDialog = document.getElementById('passwordHelpDialog');
+      var closePassHelp = document.getElementById('closePassHelpBtn');
+      var authSection = document.getElementById('authSection') || document.querySelector('.auth');
+      var changeBgBtn = document.getElementById('changeBgBtn');
+      var currentThemeTag = document.getElementById('currentThemeTag');
+
+      var themeOrder = ['blue', 'green', 'aurora', 'midnight'];
+      var themeLabels = {
+        blue: 'SAPPHIRE BLUE',
+        green: 'EMERALD GREEN',
+        aurora: 'COSMIC AURORA',
+        midnight: 'MIDNIGHT STEALTH'
+      };
+
+      function updateThemeTag(themeKey) {
+        if (!currentThemeTag) return;
+        if (authSection && authSection.classList.contains('is-admin-mode')) {
+          currentThemeTag.textContent = 'CRIMSON VAULT';
+        } else {
+          var key = themeKey || ((window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue');
+          currentThemeTag.textContent = themeLabels[key] || 'SAPPHIRE BLUE';
+        }
+      }
+
+      // 1. Role Toggle Handler
+      function setRole(role) {
+        if (role === 'admin') {
+          btnAdmin.classList.add('is-active');
+          btnAdmin.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+          btnAdmin.style.borderColor = '#10b981';
+          btnAdmin.style.color = '#ffffff';
+          btnAdmin.style.boxShadow = '0 4px 15px rgba(16, 185, 129, 0.4)';
+
+          btnStudent.classList.remove('is-active');
+          btnStudent.style.background = 'transparent';
+          btnStudent.style.borderColor = 'transparent';
+          btnStudent.style.color = 'var(--muted-color)';
+          btnStudent.style.boxShadow = 'none';
+
+          wrapStudent.style.display = 'none';
+          wrapAdmin.style.display = 'block';
+
+          if (authSection) authSection.classList.add('is-admin-mode');
+          updateThemeTag();
+        } else {
+          btnStudent.classList.add('is-active');
+          btnStudent.style.background = 'linear-gradient(135deg, #2563eb, #38bdf8)';
+          btnStudent.style.borderColor = 'rgba(56, 189, 248, 0.45)';
+          btnStudent.style.color = '#ffffff';
+          btnStudent.style.boxShadow = '0 4px 15px rgba(56, 189, 248, 0.4)';
+
+          btnAdmin.classList.remove('is-active');
+          btnAdmin.style.background = 'transparent';
+          btnAdmin.style.borderColor = 'transparent';
+          btnAdmin.style.color = 'var(--muted-color)';
+          btnAdmin.style.boxShadow = 'none';
+
+          wrapStudent.style.display = 'block';
+          wrapAdmin.style.display = 'none';
+          if (restrictedNotice) restrictedNotice.style.display = 'none';
+
+          if (authSection) authSection.classList.remove('is-admin-mode');
+          updateThemeTag();
+        }
+      }
+
+      // Dedicated Change Background Button Click Handler
+      if (changeBgBtn) {
+        changeBgBtn.addEventListener('click', function () {
+          // If in admin mode, reset admin mode first
+          if (authSection && authSection.classList.contains('is-admin-mode')) {
+            authSection.classList.remove('is-admin-mode');
+          }
+          var cur = (window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue';
+          var curIdx = themeOrder.indexOf(cur);
+          var nextTheme = themeOrder[(curIdx + 1) % themeOrder.length];
+          if (window.StudentHubTheme && typeof window.StudentHubTheme.apply === 'function') {
+            window.StudentHubTheme.apply(nextTheme);
+          }
+          updateThemeTag(nextTheme);
+        });
+      }
+
+      window.addEventListener('themeChanged', function (e) {
+        if (e.detail && e.detail.themeName) {
+          updateThemeTag(e.detail.themeName);
+        }
+      });
+
+      // Initial tag sync
+      var initialActiveTheme = (window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue';
+      updateThemeTag(initialActiveTheme);
+
+      if (btnStudent) btnStudent.addEventListener('click', function () { setRole('student'); });
+      if (btnAdmin) btnAdmin.addEventListener('click', function () { setRole('admin'); });
+      if (switchBack) switchBack.addEventListener('click', function (e) { e.preventDefault(); setRole('student'); });
+
+      // 2. Demo Credentials Auto-Fill
+      if (autoFillStudent) {
+        autoFillStudent.addEventListener('click', function () {
+          var emailEl = document.getElementById('studentEmail');
+          var passEl = document.getElementById('studentPassword');
+          if (emailEl) emailEl.value = '25it049@charusat.edu.in';
+          if (passEl) passEl.value = 'charusat@2026';
+        });
+      }
+
+      if (fillAdminDemo) {
+        fillAdminDemo.addEventListener('click', function () {
+          var adminEmailEl = document.getElementById('adminEmail');
+          var adminPassEl = document.getElementById('adminPassword');
+          if (adminEmailEl) adminEmailEl.value = 'admin@charusat.ac.in';
+          if (adminPassEl) adminPassEl.value = 'admin2026';
+        });
+      }
+
+      // 3. Password Help Modal
+      if (forgotPassBtn && passDialog) {
+        forgotPassBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          passDialog.style.display = 'flex';
+        });
+      }
+      if (closePassHelp && passDialog) {
+        closePassHelp.addEventListener('click', function () {
+          passDialog.style.display = 'none';
+        });
+      }
+      if (passDialog) {
+        passDialog.addEventListener('click', function (e) {
+          if (e.target === passDialog) passDialog.style.display = 'none';
+        });
+      }
+
+      // 4. URL Parameter Inspection: ?role=admin, ?restricted=1, or ?logged_out=1
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('logged_out') === '1') {
+        localStorage.removeItem('charusat_active_user');
+        localStorage.removeItem('charusat_student_session');
+        localStorage.removeItem('charusat_student_login_time');
+        localStorage.removeItem('charusat_admin_session');
+        localStorage.removeItem('charusat_admin_user');
+        localStorage.removeItem('charusat_admin_login_time');
+        try { sessionStorage.clear(); } catch(err) {}
+        var logoutNotice = document.getElementById('studentLoginSuccess');
+        if (logoutNotice) {
+          logoutNotice.innerHTML = '✓ <strong>Session Ended:</strong> You have securely signed out of CHARUSAT StudentHub.';
+          logoutNotice.style.display = 'block';
+        }
+      }
+
+      if (urlParams.get('role') === 'admin' || urlParams.get('restricted') === '1') {
+        setRole('admin');
+        if (urlParams.get('restricted') === '1' && restrictedNotice) {
+          restrictedNotice.style.display = 'block';
+        }
+      } else {
+        setRole('student');
+      }
+
+      // 4b. Auto-paste newly registered student credentials if available
+      var regCredsRaw = sessionStorage.getItem('charusat_registered_creds');
+      var regNoticeEl = document.getElementById('studentRegisterNotice');
+      if (regCredsRaw) {
+        try {
+          var regCreds = JSON.parse(regCredsRaw);
+          if (regCreds && regCreds.email) {
+            var emailInp = document.getElementById('studentEmail');
+            var passInp = document.getElementById('studentPassword');
+            if (emailInp) emailInp.value = regCreds.email;
+            if (passInp && regCreds.password) passInp.value = regCreds.password;
+            if (regNoticeEl) regNoticeEl.style.display = 'block';
+            sessionStorage.removeItem('charusat_registered_creds');
+          }
+        } catch(err) {}
+      }
+
+      // 5. Student Login Form Submission (Practical 10: PHP Session Auth & password_verify)
+      var studentForm = document.getElementById('studentLoginForm');
+      if (studentForm) {
+        studentForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('studentEmail').value.trim();
+          var pass = document.getElementById('studentPassword').value.trim();
+          var errBox = document.getElementById('studentLoginError');
+          var successBox = document.getElementById('studentLoginSuccess');
+
+          if (errBox) errBox.style.display = 'none';
+          if (successBox) successBox.style.display = 'none';
+          if (regNoticeEl) regNoticeEl.style.display = 'none';
+
+          if (!email || !pass) {
+            if (errBox) {
+              errBox.innerHTML = '⚠ <strong>Incomplete Details!</strong> Please enter both your college email and password.';
+              errBox.style.display = 'block';
+            }
+            return;
+          }
+
+          var submitBtn = document.getElementById('studentSubmitBtn');
+          if (submitBtn) {
+            submitBtn.innerHTML = '<span>Verifying Credentials with Server...</span>';
+            submitBtn.style.opacity = '0.85';
+          }
+
+          // Dispatch to Backend PHP (Practical 10)
+          var loginData = new FormData();
+          loginData.append('email', email);
+          loginData.append('password', pass);
+
+          fetch('../backend/login.php', {
+            method: 'POST',
+            body: loginData
+          }).then(function (r) {
+            return r.json().catch(function () {
+              return { success: false, message: 'Invalid response from authentication server.' };
+            });
+          }).then(function (res) {
+            if (res && res.success) {
+              // Identity Verified!
+              if (errBox) errBox.style.display = 'none';
+              if (successBox) {
+                successBox.innerHTML = '✓ <strong>Login Successful!</strong> Welcome to your personalized dashboard...';
+                successBox.style.display = 'block';
+              }
+
+              // Persist authenticated student session and active profile
+              localStorage.setItem('charusat_student_session', 'active');
+              localStorage.setItem('charusat_student_login_time', new Date().toISOString());
+
+              if (res.student) {
+                localStorage.setItem('charusat_active_user', JSON.stringify(res.student));
+                localStorage.setItem('charusat_student_data', JSON.stringify(res.student));
+                if (window.StudentHubData && typeof window.StudentHubData.saveStudent === 'function') {
+                  window.StudentHubData.saveStudent(res.student);
+                }
+              }
+
+              setTimeout(function () {
+                window.location.href = res.redirect_url || 'dashboard.html';
+              }, 600);
+            } else {
+              // Authentication failed: DO NOT REDIRECT!
+              if (submitBtn) {
+                submitBtn.innerHTML = '<span>Sign In to Student Dashboard</span>';
+                submitBtn.style.opacity = '1';
+              }
+              if (errBox) {
+                errBox.innerHTML = '❌ <strong>Authentication Failed!</strong> ' + ((res && res.message) || 'The email or password entered does not match university records. Please check or register first.');
+                errBox.style.display = 'block';
+              }
+            }
+          }).catch(function (networkErr) {
+            console.warn('Backend login fetch note:', networkErr);
+
+            // Client-side fallback check (for file:// protocol or offline testing)
+            var regCreds = null;
+            try { regCreds = JSON.parse(sessionStorage.getItem('charusat_registered_creds') || '{}'); } catch(e){}
+            var savedStudent = null;
+            try { savedStudent = JSON.parse(localStorage.getItem('charusat_student_data') || '{}'); } catch(e){}
+
+            var matchRegistered = (regCreds && regCreds.email && (regCreds.email.toLowerCase() === email.toLowerCase()) && regCreds.password === pass);
+            var matchDefaultStudent = (
+              (email.toLowerCase() === '25it049@charusat.edu.in' || email.toUpperCase() === '25IT049') &&
+              (pass === 'Charusat@2026' || pass === 'Student@123' || pass === 'Tirth@2026')
+            );
+            var matchSavedStudent = (
+              savedStudent && savedStudent.email && (savedStudent.email.toLowerCase() === email.toLowerCase() || (savedStudent.enrolment && savedStudent.enrolment.toUpperCase() === email.toUpperCase())) &&
+              (pass === 'Charusat@2026' || pass === 'Student@123' || pass.length >= 8)
+            );
+
+            if (matchRegistered || matchDefaultStudent || matchSavedStudent) {
+              if (errBox) errBox.style.display = 'none';
+              if (successBox) {
+                successBox.innerHTML = '✓ <strong>Login Verified!</strong> Redirecting to your dashboard...';
+                successBox.style.display = 'block';
+              }
+              localStorage.setItem('charusat_student_session', 'active');
+              localStorage.setItem('charusat_student_login_time', new Date().toISOString());
+
+              var studentObj = savedStudent || {
+                fullName: 'Tirth Ladani',
+                enrolment: '25IT049',
+                email: '25it049@charusat.edu.in',
+                department: 'Information Technology',
+                programme: 'B.Tech Information Technology',
+                semester: '5',
+                cgpa: 8.64,
+                sgpa: 8.85,
+                overallAttendance: 92.5
+              };
+              localStorage.setItem('charusat_active_user', JSON.stringify(studentObj));
+              localStorage.setItem('charusat_student_data', JSON.stringify(studentObj));
+
+              setTimeout(function () {
+                window.location.href = 'dashboard.html';
+              }, 500);
+            } else {
+              if (submitBtn) {
+                submitBtn.innerHTML = '<span>Sign In to Student Dashboard</span>';
+                submitBtn.style.opacity = '1';
+              }
+              if (errBox) {
+                errBox.innerHTML = '❌ <strong>Server Error!</strong> Could not reach authentication server. Please check your credentials or verify that Apache/MySQL is active.';
+                errBox.style.display = 'block';
+              }
+            }
+          });
+        });
+      }
+
+      // 6. Admin Login Form Submission (Practical 10: RBAC Session Auth)
+      var adminForm = document.getElementById('adminLoginForm');
+      if (adminForm) {
+        adminForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('adminEmail').value.trim();
+          var pass = document.getElementById('adminPassword').value.trim();
+          var errBox = document.getElementById('adminLoginError');
+          var successBox = document.getElementById('adminLoginSuccess');
+
+          var adminFormData = new FormData();
+          adminFormData.append('email', email);
+          adminFormData.append('password', pass);
+
+          fetch('../backend/login.php', {
+            method: 'POST',
+            body: adminFormData
+          }).then(function (r) { return r.json(); })
+            .then(function (res) {
+              if (res && res.success) {
+                if (errBox) errBox.style.display = 'none';
+                if (successBox) successBox.style.display = 'block';
+                localStorage.setItem('charusat_admin_session', 'active');
+                localStorage.setItem('charusat_admin_user', 'Dr. M. Sharma · Dean of Academics (CSPIT)');
+                localStorage.setItem('charusat_admin_login_time', new Date().toISOString());
+                setTimeout(function () {
+                  window.location.href = res.redirect_url || 'admin.html';
+                }, 500);
+              } else {
+                if (successBox) successBox.style.display = 'none';
+                if (errBox) {
+                  errBox.style.display = 'block';
+                  errBox.textContent = '❌ Access Denied: ' + (res.message || 'Invalid Administrator ID or Security Key.');
+                }
+              }
+            }).catch(function () {
+              // Fallback client check
+              var isValid = (
+                (email === 'admin@charusat.ac.in' || email === 'admin' || email === 'dean.cspit@charusat.ac.in' || email === 'admin@charusat.edu.in') &&
+                (pass === 'admin2026' || pass === 'Admin@2026' || pass === 'admin123' || pass === 'admin')
+              );
+              if (isValid) {
+                if (errBox) errBox.style.display = 'none';
+                if (successBox) successBox.style.display = 'block';
+                localStorage.setItem('charusat_admin_session', 'active');
+                localStorage.setItem('charusat_admin_user', 'Dr. M. Sharma · Dean of Academics (CSPIT)');
+                setTimeout(function () { window.location.href = 'admin.html'; }, 500);
+              } else {
+                if (successBox) successBox.style.display = 'none';
+                if (errBox) {
+                  errBox.style.display = 'block';
+                  errBox.textContent = '❌ Access Denied: Invalid Administrator ID or Security Key.';
+                }
+              }
+            });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

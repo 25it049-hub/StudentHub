@@ -6,531 +6,883 @@
   <meta name="description" content="StudentHub administration console — manage student records, approvals, events and portal activity.">
   <meta name="robots" content="noindex, nofollow">
   <title>Admin Console — StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- This page lives in /pages/, so ../ climbs out to the repo root.
        Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="admin.html" class="nav-item active" aria-current="page">Admin</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
   <main id="main">
-    <section class="section">
-      <div class="shell">
-
-        <div class="page-head" data-reveal>
-          <div>
-            <p class="eyebrow">Restricted area</p>
-            <h1>Administration console</h1>
-            <p class="lead mb-0">
-              Records, approvals and portal activity for the current academic session.
-              Changes made here are written to the student information system overnight.
-            </p>
-          </div>
-          <span class="admin-badge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            Staff access
-          </span>
+    <!-- ================= ACCESS RESTRICTION GATEWAY OVERLAY ================= -->
+    <div id="adminAuthBarrier" style="display:none; position:fixed; inset:0; z-index:999999; background:radial-gradient(circle at 50% 30%, #031326 0%, #010811 100%); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
+      <div style="max-width:560px; width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(239,68,68,0.4); border-radius:26px; padding:2.5rem; text-align:center; box-shadow:0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(239,68,68,0.2); backdrop-filter:blur(24px);">
+        <div style="width:72px; height:72px; border-radius:50%; background:rgba(239,68,68,0.15); border:1px solid #ef4444; display:grid; place-items:center; margin:0 auto 1.25rem; font-size:2rem;">
+          🔒
         </div>
-
-        <div class="grid grid--4 mt-6">
-          <article class="card tile" data-reveal>
-            <p class="tile__label">Enrolled students</p>
-            <b data-count="12400">0</b>
-            <small><span class="trend">+318</span> since last term</small>
-          </article>
-          <article class="card tile" data-reveal>
-            <p class="tile__label">Pending approvals</p>
-            <b data-count="27">0</b>
-            <small>9 waiting more than 48 hours</small>
-          </article>
-          <article class="card tile" data-reveal>
-            <p class="tile__label">Events this month</p>
-            <b data-count="14">0</b>
-            <small>3 awaiting venue confirmation</small>
-          </article>
-          <article class="card tile" data-reveal>
-            <p class="tile__label">Portal uptime</p>
-            <b data-count="99.8" data-suffix="%">0</b>
-            <small>Rolling 30-day average</small>
-          </article>
-        </div>
-
-        <div class="grid grid--split mt-6">
-          <article class="card" data-reveal>
-            <div class="split-head">
-              <h3>Enrolment by department</h3>
-              <span class="pill pill--gold">2026&ndash;27 intake</span>
-            </div>
-            <div class="dist">
-              <div class="dist__row">
-                <div class="dist__top"><span>Information Technology</span><b>3,180</b></div>
-                <div class="bar"><i data-fill="92"></i></div>
-              </div>
-              <div class="dist__row">
-                <div class="dist__top"><span>Computer Engineering</span><b>2,940</b></div>
-                <div class="bar"><i data-fill="85"></i></div>
-              </div>
-              <div class="dist__row">
-                <div class="dist__top"><span>Electronics &amp; Communication</span><b>2,105</b></div>
-                <div class="bar"><i data-fill="61"></i></div>
-              </div>
-              <div class="dist__row">
-                <div class="dist__top"><span>Mechanical Engineering</span><b>1,860</b></div>
-                <div class="bar"><i data-fill="54"></i></div>
-              </div>
-              <div class="dist__row">
-                <div class="dist__top"><span>Civil Engineering</span><b>1,415</b></div>
-                <div class="bar bar--warn"><i data-fill="41"></i></div>
-              </div>
-              <div class="dist__row">
-                <div class="dist__top"><span>Applied Sciences</span><b>900</b></div>
-                <div class="bar bar--warn"><i data-fill="26"></i></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <div class="split-head">
-              <h3>Quick actions</h3>
-            </div>
-            <p class="muted">Common tasks for the registrar's office.</p>
-            <div class="stack mt-5">
-              <button class="btn btn--primary btn--block" type="button">Add a student record</button>
-              <button class="btn btn--light btn--block" type="button">Publish an event</button>
-              <button class="btn btn--light btn--block" type="button">Upload results (CSV)</button>
-              <button class="btn btn--light btn--block" type="button">Send portal notice</button>
-              <button class="btn btn--ghost btn--block" type="button">Export attendance report</button>
-            </div>
-            <p class="note mt-5">
-              Bulk uploads run at 21:00 IST. Anything submitted after 20:45 is queued for the next cycle.
-            </p>
-          </article>
-        </div>
-
-        <article class="card mt-6" data-reveal>
-          <div class="split-head">
-            <h3>Student records</h3>
-            <span class="muted">Showing 6 of 12,400</span>
-          </div>
-
-          <div class="toolbar">
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              <label class="sr-only" for="admin-search">Search student records</label>
-              <input class="input" type="search" id="admin-search" name="q" placeholder="Search by name or roll number">
-            </div>
-            <label class="sr-only" for="admin-dept">Filter by department</label>
-            <select class="select" id="admin-dept" name="department">
-              <option>All departments</option>
-              <option>Information Technology</option>
-              <option>Computer Engineering</option>
-              <option>Electronics &amp; Communication</option>
-              <option>Mechanical Engineering</option>
-              <option>Civil Engineering</option>
-            </select>
-            <button class="btn btn--light btn--sm" type="button">Export CSV</button>
-          </div>
-
-          <div class="table-wrap">
-            <table class="table">
-              <caption>Active enrolments, semester 5</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Student</th>
-                  <th scope="col">Roll number</th>
-                  <th scope="col">Department</th>
-                  <th scope="col">Attendance</th>
-                  <th scope="col">Status</th>
-                  <th scope="col" class="right">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-1.jpg" alt="">
-                      <span><b>Tirth Ladani</b><small>25it049@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">25IT049</td>
-                  <td>Information Technology</td>
-                  <td class="num">92%</td>
-                  <td><span class="pill pill--ok">Active</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-2.jpg" alt="">
-                      <span><b>Priya Nair</b><small>priya.nair@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">25CE112</td>
-                  <td>Computer Engineering</td>
-                  <td class="num">88%</td>
-                  <td><span class="pill pill--ok">Active</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-3.jpg" alt="">
-                      <span><b>Rohan Desai</b><small>rohan.desai@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">24EC087</td>
-                  <td>Electronics &amp; Communication</td>
-                  <td class="num">71%</td>
-                  <td><span class="pill pill--warn">Low attendance</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-1.jpg" alt="">
-                      <span><b>Ishita Shah</b><small>ishita.shah@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">25ME203</td>
-                  <td>Mechanical Engineering</td>
-                  <td class="num">95%</td>
-                  <td><span class="pill pill--ok">Active</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-2.jpg" alt="">
-                      <span><b>Kabir Joshi</b><small>kabir.joshi@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">24CI055</td>
-                  <td>Civil Engineering</td>
-                  <td class="num">64%</td>
-                  <td><span class="pill pill--live">Detained</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="table__user">
-                      <img class="avatar" src="images/student-3.jpg" alt="">
-                      <span><b>Ananya Rao</b><small>ananya.rao@charusat.edu.in</small></span>
-                    </div>
-                  </td>
-                  <td class="num">25IT018</td>
-                  <td>Information Technology</td>
-                  <td class="num">90%</td>
-                  <td><span class="pill">On exchange</span></td>
-                  <td class="right"><button class="btn btn--ghost btn--sm" type="button">Edit</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="row row--between mt-5">
-            <span class="muted">Page 1 of 2,067</span>
-            <span class="row">
-              <button class="btn btn--light btn--sm" type="button" disabled>Previous</button>
-              <button class="btn btn--light btn--sm" type="button">Next</button>
-            </span>
-          </div>
-        </article>
-
-        <article class="card mt-6" data-reveal>
-          <div class="split-head">
-            <h3>Pending approvals</h3>
-            <span class="pill pill--warn">27 in queue</span>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <caption>Requests routed to the registrar</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Request</th>
-                  <th scope="col">Raised by</th>
-                  <th scope="col">Submitted</th>
-                  <th scope="col">Age</th>
-                  <th scope="col" class="right">Decision</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><b>Bonafide certificate</b><small>For passport application</small></td>
-                  <td>Tirth Ladani &middot; 25IT049</td>
-                  <td>07 Aug 2026</td>
-                  <td class="num">2 days</td>
-                  <td class="right">
-                    <button class="btn btn--primary btn--sm" type="button">Approve</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Elective change</b><small>Cloud Computing &rarr; Data Mining</small></td>
-                  <td>Priya Nair &middot; 25CE112</td>
-                  <td>06 Aug 2026</td>
-                  <td class="num">3 days</td>
-                  <td class="right">
-                    <button class="btn btn--primary btn--sm" type="button">Approve</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Medical leave</b><small>11&ndash;18 Aug, certificate attached</small></td>
-                  <td>Rohan Desai &middot; 24EC087</td>
-                  <td>05 Aug 2026</td>
-                  <td class="num">4 days</td>
-                  <td class="right">
-                    <button class="btn btn--primary btn--sm" type="button">Approve</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Hostel transfer</b><small>Block C to Block A</small></td>
-                  <td>Kabir Joshi &middot; 24CI055</td>
-                  <td>02 Aug 2026</td>
-                  <td class="num">7 days</td>
-                  <td class="right">
-                    <button class="btn btn--primary btn--sm" type="button">Approve</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Transcript re-issue</b><small>Semester 1&ndash;4 consolidated</small></td>
-                  <td>Ananya Rao &middot; 25IT018</td>
-                  <td>01 Aug 2026</td>
-                  <td class="num">8 days</td>
-                  <td class="right">
-                    <button class="btn btn--primary btn--sm" type="button">Approve</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        <div class="grid grid--split mt-6">
-          <article class="card" data-reveal>
-            <div class="split-head">
-              <h3>Event management</h3>
-              <a class="btn btn--ghost btn--sm" href="events.html" target="_blank" rel="noopener">View public page</a>
-            </div>
-            <div class="table-wrap">
-              <table class="table">
-                <caption>Scheduled for August 2026</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Event</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Seats</th>
-                    <th scope="col">Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><b>TechFest 2026</b><small>Main auditorium</small></td>
-                    <td>14 Aug</td>
-                    <td class="num">480 / 500</td>
-                    <td><span class="pill pill--live">Filling fast</span></td>
-                  </tr>
-                  <tr>
-                    <td><b>Placement drive &mdash; Infosys</b><small>Seminar hall 2</small></td>
-                    <td>19 Aug</td>
-                    <td class="num">210 / 300</td>
-                    <td><span class="pill pill--ok">Open</span></td>
-                  </tr>
-                  <tr>
-                    <td><b>Robotics workshop</b><small>Lab 4, IT block</small></td>
-                    <td>22 Aug</td>
-                    <td class="num">60 / 60</td>
-                    <td><span class="pill pill--warn">Waitlist</span></td>
-                  </tr>
-                  <tr>
-                    <td><b>Annual sports meet</b><small>Ground A</small></td>
-                    <td>28 Aug</td>
-                    <td class="num">—</td>
-                    <td><span class="pill">Draft</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <article class="card" data-reveal>
-            <div class="split-head">
-              <h3>Recent activity</h3>
-            </div>
-            <ul class="feed">
-              <li>
-                <span class="feed__dot" aria-hidden="true"></span>
-                <div>
-                  <p><b>Results published</b> for semester 4, Information Technology.</p>
-                  <small>Today, 09:42 &middot; R. Patel</small>
-                </div>
-              </li>
-              <li>
-                <span class="feed__dot" aria-hidden="true"></span>
-                <div>
-                  <p><b>318 records imported</b> from the GTU admission portal.</p>
-                  <small>Today, 08:15 &middot; System</small>
-                </div>
-              </li>
-              <li>
-                <span class="feed__dot" aria-hidden="true"></span>
-                <div>
-                  <p><b>TechFest 2026</b> registration cap raised to 500.</p>
-                  <small>Yesterday, 17:30 &middot; M. Iyer</small>
-                </div>
-              </li>
-              <li>
-                <span class="feed__dot" aria-hidden="true"></span>
-                <div>
-                  <p><b>Attendance lock</b> applied to semester 5 sections.</p>
-                  <small>08 Aug, 20:00 &middot; System</small>
-                </div>
-              </li>
-              <li>
-                <span class="feed__dot" aria-hidden="true"></span>
-                <div>
-                  <p><b>Portal notice</b> sent to 12,400 students about fee deadlines.</p>
-                  <small>07 Aug, 11:05 &middot; Accounts</small>
-                </div>
-              </li>
-            </ul>
-            <p class="note mt-5">
-              Full audit history is retained for seven years and is available to the IT cell on request.
-            </p>
-          </article>
-        </div>
-
-        <aside class="card mt-6" data-reveal>
-          <h3>Before you edit records</h3>
-          <p class="muted mb-0">
-            This console is a front-end demonstration: the tables above are static markup and no
-            request is sent anywhere. In a live deployment every action on this page would sit behind
-            server-side authentication and role checks, because hiding a page from the navigation is
-            not access control. Wire it to a real session before putting student data behind it.
-          </p>
-        </aside>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-            </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
+        <span class="badge badge--danger" style="background:rgba(239,68,68,0.2); border:1px solid #ef4444; color:#f87171; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; padding:0.3rem 0.85rem; border-radius:100px;">
+          Restricted Area · University Staff Only
+        </span>
+        <h2 style="font-family:'Manrope',sans-serif; font-size:1.85rem; font-weight:800; color:#fff; margin:1rem 0 0.5rem;">
+          Administrator Authorization Required
+        </h2>
+        <p style="color:var(--muted-color); font-size:0.92rem; line-height:1.65; margin:0 auto 1.75rem; max-width:440px;">
+          This console is strictly restricted to authorized CHARUSAT University faculty and administrative officers. Students and unauthorized visitors are not permitted into this portal.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <a href="login.html?role=admin" class="btn btn--primary btn--block" style="background:linear-gradient(135deg, #10b981, #059669); border-color:#10b981; box-shadow:0 6px 20px rgba(16,185,129,0.35);">
+            🔐 Sign In to Administrator Portal →
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
-          </p>
+          <a href="dashboard.html" class="btn btn--outline btn--block">
+            🎓 Return to Student Dashboard
+          </a>
+          <button type="button" id="adminDemoUnlockBtn" class="btn btn--ghost btn--block" style="font-size:0.8rem; color:var(--muted-color); margin-top:0.5rem;">
+            ⚡ Demo: Quick Unlock with Dean Credentials (Authorized Evaluation)
+          </button>
         </div>
-
-        <div>
-          <h4>Quick links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Support</h4>
-          <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
       </div>
     </div>
-  </footer>
 
-  <script src="../script.js"></script>
+    <!-- ================= MAIN ADMIN CONSOLE CONTENT ================= -->
+    <div id="adminProtectedContent" style="display:none;">
+      <section class="section" style="padding-top: 7rem !important;">
+        <div class="shell" style="max-width: 1440px;">
+
+          <!-- Authenticated Admin Status Capsule & Top Bar -->
+          <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 20px; padding: 1.25rem 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; backdrop-filter: blur(16px);" data-reveal>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #10b981, #059669); border: 1px solid rgba(255,255,255,0.3); display: grid; place-items: center; font-size: 1.4rem; color: #fff;">
+                🏛️
+              </div>
+              <div>
+                <b style="color: #fff; font-family: 'Manrope', sans-serif; font-size: 1.05rem;" id="adminCurrentUserName">Dr. M. Sharma · Dean of Academic Affairs</b>
+                <div style="color: var(--muted-color); font-size: 0.82rem; margin-top: 2px;">
+                  Staff ID: <span style="color:#34d399; font-weight:700;">ADM-CSPIT-01</span> · Session: <span class="badge badge--success" style="font-size:0.7rem; padding:0.15rem 0.5rem;">Active 🟢</span>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <a href="dashboard.html" class="btn btn--outline btn--sm">View Student Dashboard ↗</a>
+              <button type="button" id="adminLogoutBtn" class="btn btn--outline btn--sm" style="border-color: rgba(239,68,68,0.5); color: #f87171;">
+                🚪 Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Page Headline -->
+          <div class="page-head" data-reveal style="margin-bottom: 1.5rem; padding-top: 0 !important;">
+            <div>
+              <p class="eyebrow" style="color: #34d399;">Central Academic Governance</p>
+              <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin: 0.2rem 0 0.5rem;">University Administration Console</h1>
+              <p class="lead mb-0" style="color: var(--muted-color); max-width: 820px;">
+                Manage student records, continuous evaluation marks, attendance ledgers, fee structures, and approvals in real time. Changes sync immediately to student dashboards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Admin Multi-Page Module Tabs Bar -->
+          <div class="dash-tabs-bar" style="margin-bottom: 2rem;" data-reveal>
+            <button class="dash-tab-btn is-active" type="button" data-admin-pane-trigger="overview">🏛️ Overview &amp; Analytics</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="students">👥 Student Directory</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="marks">📊 Marks &amp; CGPA Suite</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="attendance">⏱️ Biometric Attendance</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="fees">💳 Fee Reconciliations</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="approvals">📋 Registrar Approvals</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="timetable">📅 Class Timetable</button>
+            <button class="dash-tab-btn" type="button" data-admin-pane-trigger="broadcast">📢 Broadcast Notices</button>
+          </div>
+
+          <!-- ================= PANE 1: OVERVIEW & ANALYTICS ================= -->
+          <div id="pane-admin-overview" data-admin-pane class="dash-pane-active">
+            <div class="grid grid--4">
+              <article class="card tile" data-reveal>
+                <p class="tile__label">Enrolled students</p>
+                <b data-count="12400" style="color:#fff;">12,400</b>
+                <small><span class="trend" style="color:#34d399;">+318</span> since last term</small>
+              </article>
+              <article class="card tile" data-reveal>
+                <p class="tile__label">Pending approvals</p>
+                <b data-count="27" style="color:#fbbf24;" id="adminPendingCount">5</b>
+                <small>Requires registrar sign-off</small>
+              </article>
+              <article class="card tile" data-reveal>
+                <p class="tile__label">Events this month</p>
+                <b data-count="14" style="color:#60a5fa;">14</b>
+                <small>3 campus drives scheduled</small>
+              </article>
+              <article class="card tile" data-reveal>
+                <p class="tile__label">Portal uptime</p>
+                <b data-count="99.8" style="color:#34d399;">99.8%</b>
+                <small>Rolling 30-day average</small>
+              </article>
+            </div>
+
+            <div class="grid grid--split mt-6">
+              <article class="card" data-reveal>
+                <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                  <h3 style="margin:0;">Enrolment by department</h3>
+                  <span class="pill pill--gold">2026–27 intake</span>
+                </div>
+                <div class="dist" style="display:flex; flex-direction:column; gap:1rem;">
+                  <div class="dist__row">
+                    <div class="dist__top" style="display:flex; justify-content:space-between; margin-bottom:0.35rem; font-size:0.9rem;"><span>Information Technology</span><b style="color:#fff;">3,180</b></div>
+                    <div class="bar"><i data-fill="92" style="width:92%;"></i></div>
+                  </div>
+                  <div class="dist__row">
+                    <div class="dist__top" style="display:flex; justify-content:space-between; margin-bottom:0.35rem; font-size:0.9rem;"><span>Computer Engineering</span><b style="color:#fff;">2,940</b></div>
+                    <div class="bar"><i data-fill="85" style="width:85%;"></i></div>
+                  </div>
+                  <div class="dist__row">
+                    <div class="dist__top" style="display:flex; justify-content:space-between; margin-bottom:0.35rem; font-size:0.9rem;"><span>Electronics &amp; Communication</span><b style="color:#fff;">2,105</b></div>
+                    <div class="bar"><i data-fill="61" style="width:61%;"></i></div>
+                  </div>
+                  <div class="dist__row">
+                    <div class="dist__top" style="display:flex; justify-content:space-between; margin-bottom:0.35rem; font-size:0.9rem;"><span>Mechanical Engineering</span><b style="color:#fff;">1,860</b></div>
+                    <div class="bar"><i data-fill="54" style="width:54%;"></i></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-reveal>
+                <div class="split-head" style="margin-bottom:1rem;">
+                  <h3 style="margin:0;">Quick Administrator Actions</h3>
+                </div>
+                <p style="color:var(--muted-color); font-size:0.9rem; margin-bottom:1.25rem;">Direct shortcuts to active administrative functions.</p>
+                <div class="stack" style="display:flex; flex-direction:column; gap:0.75rem;">
+                  <button class="btn btn--primary btn--block" type="button" data-admin-open-editor="true">🎓 Manage Student Academic Records &amp; Marks</button>
+                  <button class="btn btn--outline btn--block" type="button" data-admin-pane-trigger="approvals">📋 Review Registrar Approvals Queue</button>
+                  <button class="btn btn--outline btn--block" type="button" data-admin-pane-trigger="fees">💳 View Term Fee Reconciliations</button>
+                  <button class="btn btn--outline btn--block" type="button" data-admin-pane-trigger="broadcast">📢 Broadcast Campus Notice</button>
+                </div>
+              </article>
+            </div>
+            <!-- Practical 14 Advanced Extension: Event Registration Analytics Chart by Month -->
+            <article class="card mt-6" data-reveal style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.25rem; padding: 1.75rem;">
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem; font-size:1.25rem; color:#fff;">Event Registrations Analytics (Monthly Trend)</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">Real-time student participation volume across Academic Year 2026–27</span>
+                </div>
+                <div style="display:flex; gap:0.5rem; align-items:center;">
+                  <span class="badge" style="background:rgba(56, 189, 248, 0.15); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8; font-weight:700;">Academic Year 2026</span>
+                  <span class="badge" style="background:rgba(16, 185, 129, 0.15); border:1px solid rgba(16, 185, 129, 0.4); color:#34d399; font-weight:700;">+28% Growth</span>
+                </div>
+              </div>
+              <div style="position:relative; width:100%; height:200px; display:flex; align-items:flex-end; justify-content:space-between; gap:0.75rem; padding:1.5rem 0.5rem 0.5rem; border-bottom:1px solid rgba(255,255,255,0.12); border-left:1px solid rgba(255,255,255,0.12);">
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">120</span>
+                  <div style="width:100%; max-width:36px; height:48%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Jan</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">185</span>
+                  <div style="width:100%; max-width:36px; height:74%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Feb</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">240</span>
+                  <div style="width:100%; max-width:36px; height:96%; background:linear-gradient(180deg, #818cf8, #4f46e5); border-radius:6px 6px 0 0; box-shadow:0 0 15px rgba(129,140,248,0.4);"></div>
+                  <span style="font-size:0.75rem; color:#fff; font-weight:700; margin-top:6px;">Mar</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">160</span>
+                  <div style="width:100%; max-width:36px; height:64%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Apr</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">95</span>
+                  <div style="width:100%; max-width:36px; height:38%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">May</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">140</span>
+                  <div style="width:100%; max-width:36px; height:56%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Jun</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">210</span>
+                  <div style="width:100%; max-width:36px; height:84%; background:linear-gradient(180deg, #34d399, #059669); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Jul</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">250</span>
+                  <div style="width:100%; max-width:36px; height:100%; background:linear-gradient(180deg, #34d399, #059669); border-radius:6px 6px 0 0; box-shadow:0 0 15px rgba(52,211,153,0.4);"></div>
+                  <span style="font-size:0.75rem; color:#fff; font-weight:700; margin-top:6px;">Aug</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">175</span>
+                  <div style="width:100%; max-width:36px; height:70%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Sep</span>
+                </div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;">
+                  <span style="font-size:0.72rem; color:#38bdf8; font-weight:700; margin-bottom:4px;">190</span>
+                  <div style="width:100%; max-width:36px; height:76%; background:linear-gradient(180deg, #38bdf8, #0284c7); border-radius:6px 6px 0 0;"></div>
+                  <span style="font-size:0.75rem; color:var(--muted-color); margin-top:6px;">Oct</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 2: STUDENT DIRECTORY ================= -->
+          <div id="pane-admin-students" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Active Student Records Directory</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">Official student database · Semester 5 B.Tech (2026–2027)</span>
+                </div>
+                <div style="display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center;">
+                  <a href="../api/students.php?export=csv" class="btn btn--outline btn--sm" style="border-radius:100px; text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem; font-weight:700;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Export CSV</span>
+                  </a>
+                  <button class="btn btn--primary btn--sm" type="button" data-admin-open-editor="true">
+                    + Edit Active Student Data
+                  </button>
+                </div>
+              </div>
+
+              <div class="toolbar" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+                <div class="control" style="flex:1; min-width:240px;">
+                  <input class="input" type="search" id="adminStudentSearchInput" placeholder="Search by name, roll number, or email...">
+                </div>
+                <select class="select" id="adminStudentDeptFilter" style="max-width:260px;">
+                  <option value="all">All Departments</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Computer Engineering">Computer Engineering</option>
+                  <option value="Electronics & Communication">Electronics &amp; Communication</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                </select>
+              </div>
+
+              <div class="table-wrap" style="overflow-x:auto;">
+                <table class="dash-glass-table">
+                  <thead>
+                    <tr>
+                      <th>Student</th>
+                      <th>Roll Number</th>
+                      <th>Department</th>
+                      <th>Attendance</th>
+                      <th>Status</th>
+                      <th style="text-align:right;">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminStudentTableBody">
+                    <tr data-admin-active-student-row="true">
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">TL</div>
+                          <div><b style="color:#fff;">User Profile</b><br><small style="color:var(--muted-color);">25it049@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>25IT049</b></td>
+                      <td>Information Technology</td>
+                      <td><span style="color:#34d399; font-weight:700;">86%</span></td>
+                      <td><span class="badge badge--success admin-status-toggle" data-id="1" data-status="Active" title="Click to toggle status (Practical 14)" style="cursor:pointer;">Active ✓</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--primary btn--sm" type="button" data-admin-open-editor="true" style="background:#10b981; border-color:#10b981;">Edit Records &amp; Marks</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">PN</div>
+                          <div><b style="color:#fff;">Priya Nair</b><br><small style="color:var(--muted-color);">priya.nair@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>25CE112</b></td>
+                      <td>Computer Engineering</td>
+                      <td><span style="color:#34d399; font-weight:700;">88%</span></td>
+                      <td><span class="badge badge--success admin-status-toggle" data-id="2" data-status="Active" title="Click to toggle status (Practical 14)" style="cursor:pointer;">Active ✓</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--outline btn--sm" type="button" onclick="alert('Viewing record for Priya Nair (25CE112)')">View</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">RD</div>
+                          <div><b style="color:#fff;">Rohan Desai</b><br><small style="color:var(--muted-color);">rohan.desai@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>24EC087</b></td>
+                      <td>Electronics &amp; Communication</td>
+                      <td><span style="color:#f87171; font-weight:700;">71%</span></td>
+                      <td><span class="badge badge--danger admin-status-toggle" data-id="3" data-status="Inactive" title="Click to toggle status (Practical 14)" style="cursor:pointer;">Inactive ✕</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--outline btn--sm" type="button" onclick="alert('Viewing record for Rohan Desai (24EC087)')">View</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">IS</div>
+                          <div><b style="color:#fff;">Ishita Shah</b><br><small style="color:var(--muted-color);">ishita.shah@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>25ME203</b></td>
+                      <td>Mechanical Engineering</td>
+                      <td><span style="color:#34d399; font-weight:700;">95%</span></td>
+                      <td><span class="badge badge--success admin-status-toggle" data-id="4" data-status="Active" title="Click to toggle status (Practical 14)" style="cursor:pointer;">Active ✓</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--outline btn--sm" type="button" onclick="alert('Viewing record for Ishita Shah (25ME203)')">View</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">KJ</div>
+                          <div><b style="color:#fff;">Kabir Joshi</b><br><small style="color:var(--muted-color);">kabir.joshi@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>24CI055</b></td>
+                      <td>Civil Engineering</td>
+                      <td><span style="color:#f87171; font-weight:700;">64%</span></td>
+                      <td><span class="badge badge--danger">Detained</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--outline btn--sm" type="button" onclick="alert('Viewing record for Kabir Joshi (24CI055)')">View</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:0.75rem;">
+                          <div class="dash-avatar-ring" style="width:38px;height:38px;font-size:0.95rem;border-radius:10px;">AR</div>
+                          <div><b style="color:#fff;">Ananya Rao</b><br><small style="color:var(--muted-color);">ananya.rao@charusat.edu.in</small></div>
+                        </div>
+                      </td>
+                      <td><b>25IT018</b></td>
+                      <td>Information Technology</td>
+                      <td><span style="color:#34d399; font-weight:700;">90%</span></td>
+                      <td><span class="badge badge--primary">Exchange</span></td>
+                      <td style="text-align:right;">
+                        <button class="btn btn--outline btn--sm" type="button" onclick="alert('Viewing record for Ananya Rao (25IT018)')">View</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 3: MARKS & CGPA SUITE ================= -->
+          <div id="pane-admin-marks" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Semester 5 CIE &amp; Examination Marks Controller</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">Live sync to student dashboard (Tirth Ladani · 25IT049)</span>
+                </div>
+                <button class="btn btn--primary btn--sm" type="button" data-admin-open-editor="true">
+                  ⚙️ Open Interactive Marks Matrix
+                </button>
+              </div>
+
+              <div class="grid grid--3 mb-5">
+                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.25rem;">
+                  <span style="color:var(--muted-color); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Current CGPA</span>
+                  <div style="font-size:2rem; font-weight:800; color:#3b82f6; font-family:'Manrope',sans-serif;" data-admin-disp-cgpa>8.64</div>
+                  <small style="color:var(--muted-color);">Cumulative Grade Point Average</small>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.25rem;">
+                  <span style="color:var(--muted-color); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Semester 5 SGPA</span>
+                  <div style="font-size:2rem; font-weight:800; color:#a855f7; font-family:'Manrope',sans-serif;" data-admin-disp-sgpa>8.85</div>
+                  <small style="color:var(--muted-color);">Semester Grade Point Average</small>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.25rem;">
+                  <span style="color:var(--muted-color); font-size:0.8rem; text-transform:uppercase; font-weight:700;">Academic Distinction</span>
+                  <div style="font-size:1.6rem; font-weight:800; color:#34d399; font-family:'Manrope',sans-serif;">First Class</div>
+                  <small style="color:var(--muted-color);">0 active backlogs</small>
+                </div>
+              </div>
+
+              <p style="color:var(--muted-color); font-size:0.9rem; margin-bottom:1rem;">
+                Click "Open Interactive Marks Matrix" above to edit individual subject internal (30), mid-sem (50), and assignment (20) marks for all courses.
+              </p>
+            </article>
+          </div>
+
+          <!-- ================= PANE 4: BIOMETRIC ATTENDANCE ================= -->
+          <div id="pane-admin-attendance" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Biometric Attendance Ledger &amp; Thresholds</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">CHARUSAT 75% Attendance Bar Compliance</span>
+                </div>
+                <button class="btn btn--primary btn--sm" type="button" data-admin-open-editor="true">
+                  ⚙️ Update Student Attendance %
+                </button>
+              </div>
+
+              <div class="grid grid--2 mb-4">
+                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.5rem;">
+                  <h4 style="margin:0 0 0.5rem; color:#fff;">Your Profile Overall: <span style="color:#34d399;">86%</span></h4>
+                  <p style="color:var(--muted-color); font-size:0.88rem; margin:0 0 1rem;">Status: Safe (11% above the required 75% bar). 128 of 149 lectures held.</p>
+                  <ul class="legend">
+                    <li><span>DBMS (IT301)</span><b style="color:#34d399;">92%</b></li>
+                    <li><span>Operating Systems (IT302)</span><b style="color:#34d399;">89%</b></li>
+                    <li><span>DSA (IT303)</span><b style="color:#34d399;">87%</b></li>
+                    <li><span>Computer Networks (IT304)</span><b style="color:#34d399;">81%</b></li>
+                    <li><span>Discrete Mathematics (IT305)</span><b style="color:#f87171;">74% (Flagged)</b></li>
+                  </ul>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid var(--glass-border); border-radius:16px; padding:1.5rem;">
+                  <h4 style="margin:0 0 0.5rem; color:#fff;">Attendance Actions</h4>
+                  <p style="color:var(--muted-color); font-size:0.88rem; margin:0 0 1rem;">Administrative actions for semester 5 IT cohort:</p>
+                  <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                    <button type="button" class="btn btn--outline btn--sm" onclick="alert('Exporting biometric attendance CSV for Semester 5 IT...')">📥 Export Biometric Ledger (CSV)</button>
+                    <button type="button" class="btn btn--outline btn--sm" onclick="alert('Notification sent to 3 students below 75% attendance threshold.')">⚠️ Send Warning Notice to &lt;75% Students</button>
+                    <button type="button" class="btn btn--primary btn--sm" data-admin-open-editor="true">✏️ Edit Subject-wise Attendance</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 5: ACCOUNTS & FEE PORTAL ================= -->
+          <div id="pane-admin-fees" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Academic Accounts &amp; Term Fee Reconciliations</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">CHARUSAT Accounts Office · Academic Session 2026–2027</span>
+                </div>
+                <button class="btn btn--primary btn--sm" type="button" data-admin-open-editor="true">
+                  💳 Reconcile Fee &amp; Generate Receipt
+                </button>
+              </div>
+
+              <div class="fee-invoice-card" style="margin-bottom:1.5rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                  <b style="color:#fff; font-size:1.1rem;">Your Profile — Term Fee Record</b>
+                  <span class="badge badge--success">Reconciled / Paid</span>
+                </div>
+                <div class="fee-breakdown-row"><span>Semester 5 Tuition Fee</span><b style="color:#fff;">₹65,000</b></div>
+                <div class="fee-breakdown-row"><span>University Examination &amp; Evaluation Fee</span><b style="color:#fff;">₹3,500</b></div>
+                <div class="fee-breakdown-row"><span>Campus Amenities &amp; Digital Access</span><b style="color:#fff;">₹4,000</b></div>
+                <div class="fee-breakdown-row total"><span>Total Payable</span><span style="color:var(--accent-color);">₹72,500</span></div>
+                <div class="fee-breakdown-row" style="color:#34d399; font-weight:700;"><span>Amount Credited</span><span>₹72,500</span></div>
+                <div class="fee-breakdown-row" style="color:#fbbf24; font-weight:700;"><span>Outstanding Balance</span><span>₹0</span></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 6: REGISTRAR APPROVALS ================= -->
+          <div id="pane-admin-approvals" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Registrar Approvals &amp; Petitions Queue</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">5 requests pending administrative decision</span>
+                </div>
+              </div>
+
+              <div class="table-wrap" style="overflow-x:auto;">
+                <table class="dash-glass-table">
+                  <thead>
+                    <tr>
+                      <th>Request</th>
+                      <th>Raised By</th>
+                      <th>Submitted Date</th>
+                      <th>Status</th>
+                      <th style="text-align:right;">Decision</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminApprovalsTableBody">
+                    <tr>
+                      <td><b>Bonafide Certificate</b><br><small style="color:var(--muted-color);">For passport application</small></td>
+                      <td>Tirth Ladani · 25IT049</td>
+                      <td>07 Aug 2026</td>
+                      <td><span class="badge badge--primary">In Queue</span></td>
+                      <td style="text-align:right;">
+                        <div style="display:inline-flex; gap:0.4rem;">
+                          <button class="btn btn--primary btn--sm admin-approve-btn" style="background:#10b981; border-color:#10b981; padding:0.35rem 0.75rem;">Approve</button>
+                          <button class="btn btn--outline btn--sm admin-reject-btn" style="color:#f87171; border-color:rgba(239,68,68,0.5); padding:0.35rem 0.65rem;">Reject</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Elective Course Change</b><br><small style="color:var(--muted-color);">Cloud Computing → Data Mining</small></td>
+                      <td>Priya Nair · 25CE112</td>
+                      <td>06 Aug 2026</td>
+                      <td><span class="badge badge--primary">In Queue</span></td>
+                      <td style="text-align:right;">
+                        <div style="display:inline-flex; gap:0.4rem;">
+                          <button class="btn btn--primary btn--sm admin-approve-btn" style="background:#10b981; border-color:#10b981; padding:0.35rem 0.75rem;">Approve</button>
+                          <button class="btn btn--outline btn--sm admin-reject-btn" style="color:#f87171; border-color:rgba(239,68,68,0.5); padding:0.35rem 0.65rem;">Reject</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Medical Leave Application</b><br><small style="color:var(--muted-color);">11–18 Aug, hospital certificate attached</small></td>
+                      <td>Rohan Desai · 24EC087</td>
+                      <td>05 Aug 2026</td>
+                      <td><span class="badge badge--primary">In Queue</span></td>
+                      <td style="text-align:right;">
+                        <div style="display:inline-flex; gap:0.4rem;">
+                          <button class="btn btn--primary btn--sm admin-approve-btn" style="background:#10b981; border-color:#10b981; padding:0.35rem 0.75rem;">Approve</button>
+                          <button class="btn btn--outline btn--sm admin-reject-btn" style="color:#f87171; border-color:rgba(239,68,68,0.5); padding:0.35rem 0.65rem;">Reject</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Hostel Room Transfer</b><br><small style="color:var(--muted-color);">Block C to Block A</small></td>
+                      <td>Kabir Joshi · 24CI055</td>
+                      <td>02 Aug 2026</td>
+                      <td><span class="badge badge--primary">In Queue</span></td>
+                      <td style="text-align:right;">
+                        <div style="display:inline-flex; gap:0.4rem;">
+                          <button class="btn btn--primary btn--sm admin-approve-btn" style="background:#10b981; border-color:#10b981; padding:0.35rem 0.75rem;">Approve</button>
+                          <button class="btn btn--outline btn--sm admin-reject-btn" style="color:#f87171; border-color:rgba(239,68,68,0.5); padding:0.35rem 0.65rem;">Reject</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Official Transcript Re-issue</b><br><small style="color:var(--muted-color);">Semesters 1–4 consolidated</small></td>
+                      <td>Ananya Rao · 25IT018</td>
+                      <td>01 Aug 2026</td>
+                      <td><span class="badge badge--primary">In Queue</span></td>
+                      <td style="text-align:right;">
+                        <div style="display:inline-flex; gap:0.4rem;">
+                          <button class="btn btn--primary btn--sm admin-approve-btn" style="background:#10b981; border-color:#10b981; padding:0.35rem 0.75rem;">Approve</button>
+                          <button class="btn btn--outline btn--sm admin-reject-btn" style="color:#f87171; border-color:rgba(239,68,68,0.5); padding:0.35rem 0.65rem;">Reject</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 7: TIMETABLE & ROOM ALLOCATION ================= -->
+          <div id="pane-admin-timetable" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                <div>
+                  <h3 style="margin:0 0 0.25rem;">Academic Schedule &amp; Lab Allocations</h3>
+                  <span style="color:var(--muted-color); font-size:0.88rem;">Semester 5 Timetable Matrix (B.Tech IT Division A)</span>
+                </div>
+                <button class="btn btn--outline btn--sm" onclick="alert('Semester 5 Timetable published and synced with student calendar.')">📢 Publish to Student Calendar</button>
+              </div>
+
+              <div class="table-wrap" style="overflow-x:auto;">
+                <table class="timetable-matrix-table">
+                  <thead>
+                    <tr>
+                      <th>Slot</th>
+                      <th>Monday</th>
+                      <th>Tuesday</th>
+                      <th>Wednesday</th>
+                      <th>Thursday</th>
+                      <th>Friday</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:700; color:var(--accent-color);">09:00–10:00</td>
+                      <td><div class="tt-cell-item"><strong>DBMS (IT301)</strong><small>B-204</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Networks (IT304)</strong><small>R-201</small></div></td>
+                      <td><div class="tt-cell-item"><strong>DSA (IT303)</strong><small>R-105</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Disc. Math (IT305)</strong><small>R-102</small></div></td>
+                      <td><div class="tt-cell-item"><strong>OS &amp; Linux (IT302)</strong><small>R-302</small></div></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:700; color:#a855f7;">01:30–03:30 (Labs)</td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>DBMS Lab (Lab 4)</strong></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>OS Lab (Lab 2)</strong></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>Network Lab (NetLab)</strong></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>DSA Lab (Lab 1)</strong></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>Capstone Project (DevLab)</strong></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= PANE 8: BROADCAST NOTICE CENTER ================= -->
+          <div id="pane-admin-broadcast" data-admin-pane style="display:none;">
+            <article class="card" data-reveal>
+              <div class="split-head" style="margin-bottom:1.5rem;">
+                <h3 style="margin:0 0 0.25rem;">Broadcast Campus Notice to Student Portals</h3>
+                <span style="color:var(--muted-color); font-size:0.88rem;">Push instant announcements to 12,400 student dashboards</span>
+              </div>
+
+              <form id="adminNoticeForm" style="display:flex; flex-direction:column; gap:1.25rem;">
+                <div class="field">
+                  <label for="noticeTitle">Notice Title <span class="req">*</span></label>
+                  <input class="input" type="text" id="noticeTitle" placeholder="e.g. Mid-Semester Exam Schedule Announced" required>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.25rem;">
+                  <div class="field">
+                    <label for="noticeCategory">Category</label>
+                    <select class="select" id="noticeCategory">
+                      <option>Academic Affairs</option>
+                      <option>Examination Cell</option>
+                      <option>Accounts &amp; Fees</option>
+                      <option>Training &amp; Placement</option>
+                      <option>Campus Life &amp; Events</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="noticePriority">Priority Level</label>
+                    <select class="select" id="noticePriority">
+                      <option>High (Banner Notification)</option>
+                      <option>Normal (Activity Feed)</option>
+                      <option>Urgent (Alert Flag)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="noticeBody">Notice Content / Instructions <span class="req">*</span></label>
+                  <textarea class="textarea" id="noticeBody" rows="3" placeholder="Enter official announcement details..." required></textarea>
+                </div>
+
+                <div style="display:flex; justify-content:flex-end;">
+                  <button type="submit" class="btn btn--primary btn--lg" style="background:linear-gradient(135deg, #10b981, #059669); border-color:#10b981;">
+                    📢 Broadcast Notice to All Students
+                  </button>
+                </div>
+              </form>
+              <div style="margin-top:2.5rem; border-top:1px solid var(--glass-border); padding-top:1.5rem;">
+                <h4 style="margin:0 0 0.25rem; color:#fff;">Active Published Broadcasts</h4>
+                <p style="color:var(--muted-color); font-size:0.85rem; margin:0 0 1rem;">Announcements currently active across student accounts.</p>
+                <div id="adminNoticeListContainer"></div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Interactive Script for Admin Auth Barrier & Multi-Pane Navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var barrier = document.getElementById('adminAuthBarrier');
+      var content = document.getElementById('adminProtectedContent');
+      var unlockBtn = document.getElementById('adminDemoUnlockBtn');
+      var logoutBtn = document.getElementById('adminLogoutBtn');
+
+      function checkAuth() {
+        var isAuth = localStorage.getItem('charusat_admin_session') === 'active';
+        if (isAuth) {
+          if (barrier) barrier.style.display = 'none';
+          if (content) content.style.display = 'block';
+          var adminUser = localStorage.getItem('charusat_admin_user');
+          var nameEl = document.getElementById('adminCurrentUserName');
+          if (adminUser && nameEl) nameEl.textContent = adminUser;
+        } else {
+          if (barrier) barrier.style.display = 'flex';
+          if (content) content.style.display = 'none';
+        }
+      }
+
+      checkAuth();
+
+      if (unlockBtn) {
+        unlockBtn.addEventListener('click', function () {
+          localStorage.setItem('charusat_admin_session', 'active');
+          localStorage.setItem('charusat_admin_user', 'Dr. M. Sharma · Dean of Academic Affairs (CSPIT)');
+          checkAuth();
+        });
+      }
+
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function () {
+          localStorage.removeItem('charusat_admin_session');
+          localStorage.removeItem('charusat_admin_user');
+          window.location.href = '../backend/logout.php';
+        });
+      }
+
+      // Admin Multi-Page Tabs Switcher
+      var paneTriggers = document.querySelectorAll('[data-admin-pane-trigger]');
+      var panes = document.querySelectorAll('[data-admin-pane]');
+
+      function switchAdminPane(target) {
+        paneTriggers.forEach(function (btn) {
+          var t = btn.getAttribute('data-admin-pane-trigger');
+          btn.classList.toggle('is-active', t === target);
+        });
+
+        panes.forEach(function (p) {
+          var pId = p.id.replace('pane-admin-', '');
+          if (pId === target) {
+            p.style.display = 'block';
+            p.classList.remove('dash-pane-active');
+            void p.offsetWidth;
+            p.classList.add('dash-pane-active');
+          } else {
+            p.style.display = 'none';
+            p.classList.remove('dash-pane-active');
+          }
+        });
+      }
+
+      paneTriggers.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-admin-pane-trigger');
+          switchAdminPane(target);
+        });
+      });
+    });
+  </script>
+
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Services</h4>
+          <ul>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+  <script src="../js/admin-sync.js"></script>
+  <script src="../js/json-engine.js"></script>
 </body>
 </html>

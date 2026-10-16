@@ -1,0 +1,8 @@
+"Ticket ID",Timestamp,"Full Name",Email,Phone,Subject,Category,Message,"IP Address"
+TKT-20261013-51F1D,"2026-10-13 14:49:41","Test Student",test@charusat.edu.in,9876543210,"Exam Query",General,"This is a test inquiry for Practical 7 verification.",127.0.0.1
+TKT-20261013-98837,"2026-10-13 14:52:32","Tirth Ladani",25it049@charusat.edu.in,9876543210,"Query regarding Practical 7",General,"Testing real server-side validation and storage into CSV and JSON.",127.0.0.1
+TKT-20261013-61E08,"2026-10-13 15:41:37","Tirth Deployment Test",25it049@charusat.edu.in,9876543210,"Live Apache Deployment Verification",General,"Testing Apache on port 80 directly through XAMPP.",::1
+TKT-20261014-9DC58,"2026-10-14 18:25:24","Tirth Ladani",25it049@charusat.edu.in,9876543210,"Audit Verification",Technical,"Automated verification test from audit suite.",::1
+TKT-20261014-7F7B9,"2026-10-14 18:34:00","Tirth Ladani",25it049@charusat.edu.in,9876543210,"Pre-Deployment Verification",Technical,"Automated verification test message from deployment audit.",::1
+TKT-20261014-3E443,"2026-10-14 18:40:16","Tirth Ladani",25it049@charusat.edu.in,9876543210,"Pre-Deployment Verification",Technical,"Automated verification test message from deployment audit.",::1
+TKT-20261016-7C283,"2026-10-16 06:45:25","Tirth Ladani",25it049@charusat.edu.in,9876543210,"Deployment Readiness Check","Technical Support","Automated end-to-end inquiry verification testing contact form processing with CSRF.",::1

@@ -4,57 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Your StudentHub dashboard — Semester 5 attendance, assignment deadlines, results and campus notifications in a single view.">
-  <title>StudentHub — Student Dashboard</title>
+  <title>CHARUSAT StudentHub — Student Dashboard</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- This page lives in /pages/, so ../ climbs out to the repo root.
        Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <!-- Student Authentication Guard -->
+  <script>
+    (function () {
+      var isAuth = localStorage.getItem('charusat_student_session') === 'active';
+      var activeUser = localStorage.getItem('charusat_active_user');
+      if (!isAuth || !activeUser) {
+        window.location.replace('register.html?notice=unregistered');
+      }
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item active" aria-current="page">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" aria-current="page">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
@@ -65,62 +77,85 @@
         <!-- ================= SIDEBAR ================= -->
         <aside class="side" data-reveal>
           <div class="side__user">
-            <img class="avatar" src="images/avatar.jpg" alt="" aria-hidden="true">
+            <div class="dash-avatar-ring" data-dash-side-avatar style="width:48px;height:48px;font-size:1.15rem;border-radius:14px;">TL</div>
             <div>
-              <b>Tirth Ladani</b>
-              <small>25IT049 · Semester 5</small>
+              <b data-dash-side-name>User Profile</b>
+              <small data-dash-side-meta>25IT049 · Semester 5 (CSPIT)</small>
             </div>
           </div>
 
           <nav aria-label="Dashboard sections">
             <ul class="side__nav">
               <li>
-                <a class="is-active" href="#overview" aria-current="true">
+                <a class="is-active" href="#overview" data-dash-tab="overview" aria-current="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
                   <span>Overview</span>
                 </a>
               </li>
               <li>
-                <a href="#attendance">
+                <a href="#results" data-dash-tab="results">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.6 9 2.6 12 0v-5.5"/></svg>
+                  <span>Marks &amp; Results</span>
+                </a>
+              </li>
+              <li>
+                <a href="#attendance" data-dash-tab="attendance">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
                   <span>Attendance</span>
                 </a>
               </li>
               <li>
-                <a href="#assignments">
+                <a href="#fees" data-dash-tab="fees">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M7 15h4"/></svg>
+                  <span>Fee Structure</span>
+                </a>
+              </li>
+              <li>
+                <a href="#assignments" data-dash-tab="assignments">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14h6M9 18h4"/></svg>
                   <span>Assignments</span>
                 </a>
               </li>
               <li>
-                <a href="#calendar">
+                <a href="#calendar" data-dash-tab="calendar">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
                   <span>Timetable</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.6 9 2.6 12 0v-5.5"/></svg>
-                  <span>Results</span>
+                <a href="#notes" data-dash-tab="notes">
+                  <span style="font-size: 1.1rem; line-height: 1;">📚</span>
+                  <span>Lecture Notes</span>
                 </a>
               </li>
               <li>
-                <a href="#notifications">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-                  <span>Notifications</span>
-                  <span class="count">3<span class="sr-only"> unread</span></span>
+                <a href="#papers" data-dash-tab="papers">
+                  <span style="font-size: 1.1rem; line-height: 1;">📄</span>
+                  <span>Exam Papers</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M7 15h4"/></svg>
-                  <span>Fees</span>
+                <a href="#coding" data-dash-tab="coding">
+                  <span style="font-size: 1.1rem; line-height: 1;">💻</span>
+                  <span>Coding Hub</span>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M2 12h3m14 0h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
-                  <span>Settings</span>
+                <a href="#practicals" data-dash-tab="practicals">
+                  <span style="font-size: 1.1rem; line-height: 1;">🧪</span>
+                  <span>Lab Practicals</span>
+                </a>
+              </li>
+              <li>
+                <a href="#placement" data-dash-tab="placement">
+                  <span style="font-size: 1.1rem; line-height: 1;">🚀</span>
+                  <span>Placement Prep</span>
+                </a>
+              </li>
+              <li style="margin-top: 0.75rem; border-top: 1px solid var(--glass-border); padding-top: 0.5rem;">
+                <a href="../backend/logout.php" id="studentLogoutBtn" style="color: #f87171; display: flex; align-items: center; gap: 0.65rem;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                  <span>Sign Out</span>
                 </a>
               </li>
             </ul>
@@ -129,76 +164,380 @@
           <div class="side__note">
             <b>Placement drive is open</b>
             <p>27 companies confirmed for the autumn cycle. Minimum eligibility is 6.5 CGPA — you qualify.</p>
-            <a class="btn btn--light btn--sm" href="events.html" target="_blank" rel="noopener">See the list</a>
+            <a class="btn btn--light btn--sm" href="events.html" >See the list</a>
           </div>
         </aside>
-        <!-- ================= MAIN COLUMN ================= -->
-        <div>
 
-          <!-- page head -->
-          <div class="page-head" data-reveal>
-            <div>
-              <h1>Good morning, Tirth</h1>
-              <p>Sunday, 9 August 2026 · Semester 5 · Department of Information Technology</p>
+        <!-- ================= MAIN COLUMN ================= -->
+        <div class="dash-main-col">
+
+          <!-- Real-Time Student Header Banner -->
+          <div class="dash-main-head" data-reveal>
+            <div class="dash-student-badge-wrap">
+              <div class="dash-avatar-ring" data-dash-head-avatar>TL</div>
+              <div class="dash-student-info">
+                <h1 data-dash-greet-name>Welcome back, Tirth 👋</h1>
+                <div class="dash-student-meta">
+                  <span data-dash-greet-sub>25IT049 · Semester 5 · Information Technology (B.Tech)</span>
+                  <span class="dash-tag dash-tag--accent">CHARUSAT Verified</span>
+                </div>
+              </div>
             </div>
-            <div class="row">
-              <a class="btn btn--outline btn--sm" href="profile.html" target="_blank" rel="noopener">View profile</a>
-              <a class="btn btn--primary btn--sm" href="events.html" target="_blank" rel="noopener">Book a seat</a>
+            <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+              <a class="btn-3d btn-3d--glass" style="padding:0.6rem 1.3rem; font-size:0.85rem;" href="profile.html">Edit Profile</a>
+              <a class="btn-3d btn-3d--primary" style="padding:0.6rem 1.3rem; font-size:0.85rem;" href="events.html">Campus Events</a>
             </div>
           </div>
 
-          <!-- ---------- stat tiles ---------- -->
-          <section aria-labelledby="sum-h" id="overview">
+          <!-- Quick Navigation View Filter Pills -->
+          <div class="dash-tabs-bar" data-reveal>
+            <button class="dash-tab-btn is-active" type="button" data-dash-tab="overview">✨ Overview</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="attendance">⏱️ Attendance</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="results">📊 Marks &amp; CGPA</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="fees">💳 Fee Structure</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="calendar">📅 Timetable &amp; Calendar</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="assignments">📝 Assignments</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="notes">📚 Lecture Notes</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="papers">📄 Exam Papers</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="coding">💻 Coding Hub</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="practicals">🧪 Practicals</button>
+            <button class="dash-tab-btn" type="button" data-dash-tab="placement">🚀 Placement</button>
+          </div>
+
+          <!-- ---------- Overview Pane: 4-Grid Dynamic Stat Metric Cards & Shortcuts ---------- -->
+          <section aria-labelledby="sum-h" id="overview" data-dash-pane="overview">
             <h2 class="sr-only" id="sum-h">Semester summary</h2>
-            <div class="tiles">
-              <article class="card tile" data-reveal data-reveal-delay="1">
-                <div class="tile__top">
-                  <span class="tile__label">Attendance</span>
-                  <span class="tile__icon" aria-hidden="true">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/><path d="m9 15 2 2 4-4"/></svg>
-                  </span>
+            <div class="dash-metric-cards-grid">
+
+              <!-- 1. Live Attendance (Clickable -> Opens Attendance) -->
+              <article class="dash-metric-card" data-dash-tab="attendance" title="Click to open Attendance view" data-reveal data-reveal-delay="1">
+                <div class="dash-metric-card__header">
+                  <span class="dash-metric-card__label">Attendance</span>
+                  <div class="dash-metric-card__icon" style="color:#10b981;">⏱️</div>
                 </div>
-                <b>86%</b>
-                <small><span class="trend trend--up">+2.4%</span> since the July review</small>
+                <div class="dash-metric-card__val" data-dash-val-attendance>86%</div>
+                <div class="dash-metric-card__sub">
+                  <span class="trend trend--up" style="color:#10b981; font-weight:700;">Safe</span> Above 75% required bar
+                </div>
               </article>
 
-              <article class="card tile" data-reveal data-reveal-delay="2">
-                <div class="tile__top">
-                  <span class="tile__label">Assignments due</span>
-                  <span class="tile__icon" aria-hidden="true">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14h6M9 18h4"/></svg>
-                  </span>
+              <!-- 2. CGPA (Clickable -> Opens Marks) -->
+              <article class="dash-metric-card" data-dash-tab="results" title="Click to open Marks and Results" data-reveal data-reveal-delay="2">
+                <div class="dash-metric-card__header">
+                  <span class="dash-metric-card__label">Cumulative CGPA</span>
+                  <div class="dash-metric-card__icon" style="color:#3b82f6;">🎓</div>
                 </div>
-                <b>4</b>
-                <small><span class="trend trend--down">2 overdue</span> in the next seven days</small>
+                <div class="dash-metric-card__val" data-dash-val-cgpa>8.64</div>
+                <div class="dash-metric-card__sub">
+                  <span class="trend trend--up" style="color:#3b82f6; font-weight:700;">Top 5%</span> Rank 4 in Department
+                </div>
               </article>
 
-              <article class="card tile" data-reveal data-reveal-delay="3">
-                <div class="tile__top">
-                  <span class="tile__label">CGPA</span>
-                  <span class="tile__icon" aria-hidden="true">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.6 9 2.6 12 0v-5.5M22 9v6"/></svg>
-                  </span>
+              <!-- 3. Semester SGPA (Clickable -> Opens Marks) -->
+              <article class="dash-metric-card" data-dash-tab="results" title="Click to open Marks and Results" data-reveal data-reveal-delay="3">
+                <div class="dash-metric-card__header">
+                  <span class="dash-metric-card__label">Semester 5 SGPA</span>
+                  <div class="dash-metric-card__icon" style="color:#a855f7;">📈</div>
                 </div>
-                <b>8.42</b>
-                <small><span class="trend trend--up">+0.16</span> after the Semester 4 result</small>
+                <div class="dash-metric-card__val" data-dash-val-sgpa>8.85</div>
+                <div class="dash-metric-card__sub">
+                  <span class="trend trend--up" style="color:#a855f7; font-weight:700;">Distinction</span> 0 Backlogs
+                </div>
               </article>
 
-              <article class="card tile" data-reveal data-reveal-delay="4">
-                <div class="tile__top">
-                  <span class="tile__label">Credits earned</span>
-                  <span class="tile__icon" aria-hidden="true">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.1 8.3 22 9.3l-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/></svg>
-                  </span>
+              <!-- 4. Fee Status (Clickable -> Opens Fees) -->
+              <article class="dash-metric-card" data-dash-tab="fees" title="Click to open Fee Structure" data-reveal data-reveal-delay="4">
+                <div class="dash-metric-card__header">
+                  <span class="dash-metric-card__label">Term Fees Status</span>
+                  <div class="dash-metric-card__icon" style="color:#fbbf24;">💳</div>
                 </div>
-                <b>96</b>
-                <small><span class="trend trend--up">24 added</span> of 180 required to graduate</small>
+                <div class="dash-metric-card__val" data-dash-val-fees style="color:#34d399;">Paid</div>
+                <div class="dash-metric-card__sub">
+                  <span>₹72,500 Reconciled</span> · Receipt ready
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Quick Direct Access Hub on Overview -->
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 20px; padding: 1.25rem 1.5rem; margin-top: 1.5rem; margin-bottom: 2rem;" data-reveal>
+              <div style="font-family:'Manrope',sans-serif; font-size:0.82rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted-color); margin-bottom:0.85rem;">
+                ⚡ Quick Access Modules
+              </div>
+              <div style="display:flex; gap:0.65rem; flex-wrap:wrap;">
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="attendance">⏱️ Biometric Attendance →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="results">📊 Evaluation Marks &amp; CGPA →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="fees">💳 Academic Fee Receipts →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="calendar">📅 Interactive Timetable &amp; Calendar →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="assignments">📝 Pending Assignments (4 Due) →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="notes">📚 Lecture Notes &amp; Slides →</button>
+                <button type="button" class="btn btn--outline btn--sm" data-dash-tab="coding">💻 Coding Hub &amp; Arena →</button>
+              </div>
+            </div>
+
+            <!-- Semester Progress & Recent Activity Integrated -->
+            <div class="grid grid--2" style="margin-top: 1.5rem;">
+              <article class="card full-height" data-reveal data-reveal-delay="1">
+                <h3>Semester 5 progress</h3>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Semester completed</b>
+                    <span>4 of 16 weeks</span>
+                  </div>
+                  <div class="bar"><i data-fill="25"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — DBMS</b>
+                    <span>72%</span>
+                  </div>
+                  <div class="bar"><i data-fill="72"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — Computer Networks</b>
+                    <span>54%</span>
+                  </div>
+                  <div class="bar bar--warn"><i data-fill="54"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Syllabus covered — Discrete Mathematics</b>
+                    <span>38%</span>
+                  </div>
+                  <div class="bar bar--danger"><i data-fill="38"></i></div>
+                </div>
+
+                <div class="skill-row">
+                  <div class="skill-row__top">
+                    <b>Credits towards the degree</b>
+                    <span>96 of 180</span>
+                  </div>
+                  <div class="bar"><i data-fill="53"></i></div>
+                </div>
+
+                <p class="hint mt-5">Syllabus coverage is reported by each subject teacher at the end of every teaching week.</p>
+              </article>
+
+              <article class="card full-height" data-reveal data-reveal-delay="2">
+                <h3>Recent activity</h3>
+
+                <ul class="feed">
+                  <li>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+                    </span>
+                    <div>
+                      <p>You submitted <strong>Process scheduling worksheet</strong> for Operating Systems.</p>
+                      <time datetime="2026-08-08T21:48">Yesterday, 9:48 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+                    </span>
+                    <div>
+                      <p>Issued <strong>Computer Networks: A Top-Down Approach</strong> from the Central Library. Return by 22 August.</p>
+                      <time datetime="2026-08-07T15:20">Fri, 7 Aug, 3:20 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                    </span>
+                    <div>
+                      <p>Registered for the <strong>36-Hour Campus Hackathon</strong> on 17 August as part of Team Bitwise.</p>
+                      <time datetime="2026-08-06T19:05">Thu, 6 Aug, 7:05 PM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+                    </span>
+                    <div>
+                      <p>Updated your profile — added the <strong>Oracle SQL Fundamentals</strong> certificate.</p>
+                      <time datetime="2026-08-04T11:12">Tue, 4 Aug, 11:12 AM</time>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span class="feed__dot feed__dot--warn" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                    </span>
+                    <div>
+                      <p>Semester 4 fee receipt <strong>#GTU-24-118904</strong> was downloaded from the Accounts tab.</p>
+                      <time datetime="2026-07-30T09:26">Thu, 30 Jul, 9:26 AM</time>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="row row--center mt-5">
+                  <a class="btn btn--outline btn--sm" href="#">See the full log</a>
+                </div>
               </article>
             </div>
           </section>
 
+          <!-- ================= ACADEMIC RESULTS & MARKS SECTION ================= -->
+          <section id="results" data-dash-pane="results" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>📊 Academic Performance &amp; Evaluation Marks</h2>
+                <p>Official continuous internal evaluation, mid-semester exams and assignment marks for Semester 5</p>
+              </div>
+              <div style="display:flex; gap:0.5rem; align-items:center;">
+                <span class="badge badge--primary">Semester 5</span>
+                <button type="button" class="btn btn--outline btn--sm" onclick="window.print()">Print Marksheet</button>
+              </div>
+            </div>
+
+            <div class="card" style="padding: 0; overflow: hidden; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;">
+              <div class="table-wrap" style="overflow-x: auto;">
+                <table class="dash-glass-table" style="width: 100%; border-collapse: collapse;">
+                  <thead>
+                    <tr>
+                      <th style="padding: 1.1rem 1.25rem;">Course Code</th>
+                      <th style="padding: 1.1rem 1.25rem;">Subject Name &amp; Faculty</th>
+                      <th style="padding: 1.1rem 1.25rem;">Attendance</th>
+                      <th style="padding: 1.1rem 1.25rem;">Internal (30)</th>
+                      <th style="padding: 1.1rem 1.25rem;">Mid-Sem (50)</th>
+                      <th style="padding: 1.1rem 1.25rem;">Assignments (20)</th>
+                      <th style="padding: 1.1rem 1.25rem;">Total (100)</th>
+                      <th style="padding: 1.1rem 1.25rem;">Grade</th>
+                    </tr>
+                  </thead>
+                  <tbody data-dash-marks-body>
+                    <!-- Populated dynamically via StudentHubData -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="grid grid--3 mt-4">
+              <div class="card" style="padding: 1.25rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="font-size:0.85rem; color:var(--muted-color); text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Degree Credits</span>
+                  <span style="font-size:1.25rem;">🎯</span>
+                </div>
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Manrope',sans-serif; color:#ffffff;">96 / 180</div>
+                <small style="color:var(--muted-color);">53.3% Degree completion progress</small>
+              </div>
+
+              <div class="card" style="padding: 1.25rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="font-size:0.85rem; color:var(--muted-color); text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Academic Status</span>
+                  <span style="font-size:1.25rem;">⭐</span>
+                </div>
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Manrope',sans-serif; color:#34d399;">First Class Distinction</div>
+                <small style="color:var(--muted-color);">0 active or pending backlogs</small>
+              </div>
+
+              <div class="card" style="padding: 1.25rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                  <span style="font-size:0.85rem; color:var(--muted-color); text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Department Rank</span>
+                  <span style="font-size:1.25rem;">🏆</span>
+                </div>
+                <div style="font-size:1.6rem; font-weight:800; font-family:'Manrope',sans-serif; color:#60a5fa;">Top 5% (Rank 4)</div>
+                <small style="color:var(--muted-color);">Among 128 students in IT Dept</small>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= FEE STRUCTURE & ACCOUNTS SECTION ================= -->
+          <section id="fees" data-dash-pane="fees" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>💳 Academic Fee Structure &amp; Receipts</h2>
+                <p>Term fee breakdown, transaction receipts and accounts clearance status</p>
+              </div>
+              <div>
+                <span data-dash-fee-status-badge class="badge badge--success">Paid</span>
+              </div>
+            </div>
+
+            <div class="fee-invoice-card">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.5rem; margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+                <div>
+                  <span style="font-family:'Manrope',sans-serif; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-color); font-weight:800;">CHARUSAT Accounts Office</span>
+                  <h3 style="margin:0.35rem 0 0.5rem 0; font-size:1.4rem;">Academic Term Invoice — 2026–2027</h3>
+                  <div style="font-size:0.9rem; color:var(--muted-color);">
+                    Receipt No: <strong data-dash-fee-receipt style="color:#ffffff;">CHARUSAT-FEE-2026-99412</strong>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:0.85rem; color:var(--muted-color);">Payment Date</div>
+                  <strong data-dash-fee-date style="font-size:1rem; color:#ffffff;">28 July 2026</strong>
+                  <div style="font-size:0.85rem; color:var(--muted-color); margin-top:0.35rem;">Method: <span data-dash-fee-method style="color:#ffffff;">Online Gateway</span></div>
+                </div>
+              </div>
+
+              <!-- Itemized breakdown -->
+              <div style="margin-bottom: 1.5rem;">
+                <div class="fee-breakdown-row">
+                  <span>Semester 5 Tuition Fee (CSPIT - IT Dept)</span>
+                  <strong style="color:#ffffff;">₹65,000</strong>
+                </div>
+                <div class="fee-breakdown-row">
+                  <span>University Examination &amp; Evaluation Fee</span>
+                  <strong style="color:#ffffff;">₹3,500</strong>
+                </div>
+                <div class="fee-breakdown-row">
+                  <span>Campus Library, Digital Access &amp; Amenities</span>
+                  <strong style="color:#ffffff;">₹4,000</strong>
+                </div>
+                <div class="fee-breakdown-row total">
+                  <span>Total Payable Amount</span>
+                  <span data-dash-fee-total style="color:var(--accent-color);">₹72,500</span>
+                </div>
+                <div class="fee-breakdown-row" style="color:#34d399; font-weight:700;">
+                  <span>Amount Credited &amp; Reconciled</span>
+                  <span data-dash-fee-paid>₹72,500</span>
+                </div>
+                <div class="fee-breakdown-row" style="color:#fbbf24; font-weight:700;">
+                  <span>Outstanding Dues</span>
+                  <span data-dash-fee-due>₹0</span>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.08);">
+                <div style="font-size:0.85rem; color:var(--muted-color);">
+                  🔒 Digitally verified by Charotar University of Science and Technology Accounts Department.
+                </div>
+                <div style="display:flex; gap:0.75rem;">
+                  <button type="button" class="btn btn--outline btn--sm" onclick="alert('Downloading official digitally signed fee receipt PDF...')">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF Receipt
+                  </button>
+                  <button type="button" class="btn btn--primary btn--sm" onclick="window.print()">
+                    Print Statement
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <!-- ---------- attendance + calendar ---------- -->
-          <section aria-labelledby="att-h" id="attendance">
+          <section aria-labelledby="att-h" id="attendance" data-dash-pane="attendance" class="mt-8">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>⏱️ Biometric Attendance &amp; Lecture Ledger</h2>
+                <p>Official continuous evaluation attendance for Semester 5 · Minimum 75% required by CHARUSAT</p>
+              </div>
+              <div>
+                <span class="badge badge--success">Safe Overall: <span data-dash-val-attendance>86%</span></span>
+              </div>
+            </div>
             <h2 class="sr-only" id="att-h">Attendance and schedule</h2>
             <div class="grid grid--2">
               <article class="card full-height" data-reveal data-reveal-delay="1">
@@ -217,12 +556,12 @@
                         </linearGradient>
                       </defs>
                       <circle class="ring__track" cx="60" cy="60" r="50"/>
-                      <circle class="ring__bar" data-ring="86" cx="60" cy="60" r="50"/>
+                      <circle class="ring__bar" data-dash-ring-circle data-ring="86" cx="60" cy="60" r="50"/>
                     </svg>
-                    <b>86%</b>
+                    <b data-dash-ring-val>86%</b>
                   </div>
 
-                  <ul class="legend">
+                  <ul class="legend" data-dash-attendance-list>
                     <li><span>Database Management Systems</span><b>92%</b></li>
                     <li><span>Operating Systems</span><b>89%</b></li>
                     <li><span>Data Structures &amp; Algorithms</span><b>87%</b></li>
@@ -234,41 +573,199 @@
                 <p class="hint mt-5">Counted from 128 of 149 lectures held between 15 July and 8 August. Discrete Mathematics is below the 75% bar — three more lectures will clear it.</p>
               </article>
 
-              <article class="card full-height" id="calendar" data-reveal data-reveal-delay="2">
-                <div class="cal__head">
-                  <h3 class="mb-0">August 2026</h3>
-                  <div class="cal__nav">
-                    <button type="button" aria-label="Show July 2026">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
-                    </button>
-                    <button type="button" aria-label="Show September 2026">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-                    </button>
+              <article class="card full-height" data-reveal data-reveal-delay="2">
+                <div class="row row--between mb-4">
+                  <h3 class="mb-0">Academic Schedule &amp; Timetable</h3>
+                  <button type="button" class="btn btn--outline btn--sm" data-dash-tab="calendar">Full Calendar &amp; Matrix →</button>
+                </div>
+                <div class="cal-controls-bar" style="margin-bottom:0.75rem; padding-bottom:0.75rem;">
+                  <span style="font-weight:700; color:#fff;" data-cal-title>August 2026</span>
+                  <div style="display:flex; gap:0.4rem;">
+                    <button type="button" class="cal-month-nav-btn" data-cal-prev aria-label="Previous Month">‹</button>
+                    <button type="button" class="cal-month-nav-btn" data-cal-next aria-label="Next Month">›</button>
                   </div>
                 </div>
-
-                <div class="cal__grid">
-                  <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
-                  <b class="muted">26</b><b class="muted">27</b><b class="muted">28</b><b class="muted">29</b><b class="muted">30</b><b class="muted">31</b><b>1</b>
-                  <b>2</b><b>3</b><b class="has-event">4</b><b>5</b><b>6</b><b class="has-event">7</b><b>8</b>
-                  <b class="today has-event">9</b><b>10</b><b class="has-event">11</b><b>12</b><b>13</b><b class="has-event">14</b><b>15</b>
-                  <b>16</b><b class="has-event">17</b><b>18</b><b class="has-event">19</b><b>20</b><b>21</b><b class="has-event">22</b>
-                  <b>23</b><b>24</b><b>25</b><b class="has-event">26</b><b>27</b><b>28</b><b>29</b>
-                  <b>30</b><b>31</b><b class="muted">1</b><b class="muted">2</b><b class="muted">3</b><b class="muted">4</b><b class="muted">5</b>
+                <div class="cal__grid" data-cal-grid></div>
+                <div class="mt-4" style="text-align:center;">
+                  <button type="button" class="btn btn--primary btn--sm" style="width:100%;" data-dash-tab="calendar">
+                    📅 Open Interactive Timetable &amp; Schedule
+                  </button>
                 </div>
-
-                <ul class="legend mt-5">
-                  <li><span>11 Aug · DBMS internal test</span><b>10:00 AM</b></li>
-                  <li><span>14 Aug · Orientation Week opens</span><b>9:00 AM</b></li>
-                  <li><span>19 Aug · Semester fee deadline</span><b>5:00 PM</b></li>
-                  <li><span>26 Aug · Networks lab viva</span><b>2:30 PM</b></li>
-                </ul>
               </article>
             </div>
           </section>
 
+          <!-- ================= DYNAMIC ALL-MONTHS CALENDAR & TIMETABLE SECTION ================= -->
+          <section id="calendar" data-dash-pane="calendar" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>📅 Academic Calendar, Timetable &amp; Schedule</h2>
+                <p>Browse all months, view upcoming academic milestones, exam dates and daily class timetable</p>
+              </div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button class="btn btn--primary btn--sm is-active" type="button" data-cal-view-toggle="calendar">🗓️ Month Calendar &amp; Agenda</button>
+                <button class="btn btn--outline btn--sm" type="button" data-cal-view-toggle="matrix">⏱️ Weekly Class Timetable</button>
+              </div>
+            </div>
+
+            <!-- VIEW 1: All-Months Interactive Calendar & Daily Agenda Grid -->
+            <div id="calMonthViewArea" class="grid grid--2">
+
+              <!-- Left Column: Calendar Card -->
+              <article class="cal-interactive-card">
+                <div class="cal-controls-bar">
+                  <div class="cal-controls-left">
+                    <button type="button" class="cal-month-nav-btn" data-cal-prev aria-label="Previous Month">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <select class="cal-select" data-cal-month-select aria-label="Select Month">
+                      <option value="0">January</option>
+                      <option value="1">February</option>
+                      <option value="2">March</option>
+                      <option value="3">April</option>
+                      <option value="4">May</option>
+                      <option value="5">June</option>
+                      <option value="6">July</option>
+                      <option value="7" selected>August</option>
+                      <option value="8">September</option>
+                      <option value="9">October</option>
+                      <option value="10">November</option>
+                      <option value="11">December</option>
+                    </select>
+                    <select class="cal-select" data-cal-year-select aria-label="Select Year">
+                      <option value="2025">2025</option>
+                      <option value="2026" selected>2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                    </select>
+                    <button type="button" class="cal-month-nav-btn" data-cal-next aria-label="Next Month">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn--outline btn--sm" data-cal-today-btn style="padding:0.35rem 0.75rem; font-size:0.8rem;">
+                      Today
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 7-Col Days Grid Dynamically Generated -->
+                <div class="cal__grid" data-cal-grid>
+                  <!-- Populated dynamically via calendar-engine.js -->
+                </div>
+
+                <!-- Legend & hints -->
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.06); font-size:0.8rem; color:var(--muted-color);">
+                  <div style="display:flex; align-items:center; gap:0.5rem;">
+                    <span style="width:10px; height:10px; border-radius:50%; background:var(--accent-color); display:inline-block;"></span>
+                    <span>Academic Event / Exam</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:0.5rem;">
+                    <span style="width:10px; height:10px; border-radius:4px; border:1px solid var(--accent-color); display:inline-block;"></span>
+                    <span>Today's Date</span>
+                  </div>
+                  <span style="color:var(--accent-color); font-weight:700;">👆 Click any date to view classes</span>
+                </div>
+              </article>
+
+              <!-- Right Column: Interactive Daily Agenda & Lecture Schedule -->
+              <article class="cal-interactive-card">
+                <div data-cal-agenda>
+                  <!-- Dynamic Daily Agenda & Lecture Schedule generated via calendar-engine.js -->
+                </div>
+              </article>
+            </div>
+
+            <!-- VIEW 2: Complete Weekly Timetable Matrix -->
+            <div id="calMatrixViewArea" style="display:none;" class="card">
+              <div class="row row--between mb-3">
+                <div>
+                  <h3 class="mb-0">Semester 5 Weekly Class Timetable (B.Tech IT)</h3>
+                  <small class="text-muted">CSPIT · Academic Year 2026–2027 · Division A</small>
+                </div>
+                <button type="button" class="btn btn--outline btn--sm" onclick="window.print()">Print Timetable</button>
+              </div>
+
+              <div class="table-wrap" style="overflow-x:auto;">
+                <table class="timetable-matrix-table">
+                  <thead>
+                    <tr>
+                      <th style="width:110px;">Time / Day</th>
+                      <th>Monday</th>
+                      <th>Tuesday</th>
+                      <th>Wednesday</th>
+                      <th>Thursday</th>
+                      <th>Friday</th>
+                      <th>Saturday</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight:700; color:var(--accent-color);">09:00 – 10:00</td>
+                      <td><div class="tt-cell-item"><strong>DBMS (IT301)</strong><small>Prof. K. Patel · B-204</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Networks (IT304)</strong><small>Dr. S. Verma · R-201</small></div></td>
+                      <td><div class="tt-cell-item"><strong>DSA (IT303)</strong><small>Prof. R. Joshi · R-105</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Disc. Math (IT305)</strong><small>Prof. A. Trivedi · R-102</small></div></td>
+                      <td><div class="tt-cell-item"><strong>OS &amp; Linux (IT302)</strong><small>Dr. M. Sharma · R-302</small></div></td>
+                      <td rowspan="2"><div class="tt-cell-item" style="border-left-color:#38bdf8; height:100%;"><strong>Placement Prep</strong><small>Aptitude &amp; Verbal · Aud-B</small></div></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:700; color:var(--accent-color);">10:15 – 11:15</td>
+                      <td><div class="tt-cell-item"><strong>OS &amp; Linux (IT302)</strong><small>Dr. M. Sharma · R-302</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Disc. Math (IT305)</strong><small>Prof. A. Trivedi · R-102</small></div></td>
+                      <td><div class="tt-cell-item"><strong>OS &amp; Linux (IT302)</strong><small>Dr. M. Sharma · R-302</small></div></td>
+                      <td><div class="tt-cell-item"><strong>DBMS (IT301)</strong><small>Prof. K. Patel · B-204</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Networks (IT304)</strong><small>Dr. S. Verma · R-201</small></div></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:700; color:var(--accent-color);">11:30 – 12:30</td>
+                      <td><div class="tt-cell-item"><strong>DSA (IT303)</strong><small>Prof. R. Joshi · R-105</small></div></td>
+                      <td><div class="tt-cell-item"><strong>DBMS (IT301)</strong><small>Prof. K. Patel · B-204</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Networks (IT304)</strong><small>Dr. S. Verma · R-201</small></div></td>
+                      <td><div class="tt-cell-item"><strong>DSA (IT303)</strong><small>Prof. R. Joshi · R-105</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Disc. Math (IT305)</strong><small>Prof. A. Trivedi · R-102</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Code Arena</strong><small>LeetCode / Contests · Lab 3</small></div></td>
+                    </tr>
+                    <tr>
+                      <td colspan="7" class="tt-cell-break">☕ Lunch Break &amp; Campus Recess (12:30 PM – 01:30 PM)</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:700; color:#a855f7;">01:30 – 03:30 (Labs)</td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>DBMS Practical Lab</strong><small>Oracle SQL · Lab 4</small></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>OS Kernel Lab</strong><small>Linux Shells · Lab 2</small></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>Network Lab</strong><small>Wireshark · NetLab</small></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>DSA Lab</strong><small>C++ Advanced · Lab 1</small></div></td>
+                      <td><div class="tt-cell-item tt-cell-lab"><strong>Capstone Project</strong><small>Web Dev · Project Lab</small></div></td>
+                      <td><div class="tt-cell-item" style="border-left-color:#10b981;"><strong>Sports &amp; Clubs</strong><small>Student Council</small></div></td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight:700; color:var(--muted-color);">03:45 – 04:45</td>
+                      <td><div class="tt-cell-item"><strong>Tutorial / Remedial</strong><small>Mentors · Room B-204</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Library Study</strong><small>Self Reading</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Faculty Consultation</strong><small>Faculty Cabins</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Club Activities</strong><small>Student Center</small></div></td>
+                      <td><div class="tt-cell-item"><strong>Weekend Wrap-up</strong><small>Class Rep</small></div></td>
+                      <td style="text-align:center; color:var(--muted-color); font-size:0.8rem;">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </section>
+
           <!-- ---------- assignments + notifications ---------- -->
-          <section aria-labelledby="work-h" class="mt-5" id="assignments">
+          <section aria-labelledby="work-h" class="mt-5" id="assignments" data-dash-pane="assignments">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>📝 Course Assignments &amp; Submission Tasks</h2>
+                <p>Continuous evaluation problem sets, lab records, and upcoming deadlines</p>
+              </div>
+              <span class="pill pill--warn">4 Open Submissions</span>
+            </div>
             <h2 class="sr-only" id="work-h">Assignments and notifications</h2>
             <div class="grid grid--2">
               <article class="card full-height" data-reveal data-reveal-delay="1">
@@ -395,113 +892,321 @@
             </div>
           </section>
 
-          <!-- ---------- progress + activity ---------- -->
-          <section aria-labelledby="prog-h" class="mt-5">
-            <h2 class="sr-only" id="prog-h">Progress and recent activity</h2>
+
+          <!-- ================= 1. NOTES SECTION ================= -->
+          <section id="notes" data-dash-pane="notes" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>📚 Lecture Notes &amp; Study Materials</h2>
+                <p>Curated chapter notes, lecture slides and faculty summaries for Semester 5</p>
+              </div>
+              <div>
+                <span class="badge badge--primary">Updated August 2026</span>
+              </div>
+            </div>
+
             <div class="grid grid--2">
-              <article class="card full-height" data-reveal data-reveal-delay="1">
-                <h3>Semester 5 progress</h3>
-
-                <div class="skill-row">
-                  <div class="skill-row__top">
-                    <b>Semester completed</b>
-                    <span>4 of 16 weeks</span>
-                  </div>
-                  <div class="bar"><i data-fill="25"></i></div>
+              <article class="card">
+                <div class="row row--between mb-3">
+                  <span class="badge badge--success">IT301 · Core</span>
+                  <small class="text-muted">Prof. K. Patel</small>
                 </div>
-
-                <div class="skill-row">
-                  <div class="skill-row__top">
-                    <b>Syllabus covered — DBMS</b>
-                    <span>72%</span>
-                  </div>
-                  <div class="bar"><i data-fill="72"></i></div>
+                <h3>Data Structures &amp; Algorithms</h3>
+                <p class="text-muted mb-4">Complete notes on Trees, AVL Balances, Graph Traversals, Dynamic Programming and Greedy Algorithms.</p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                  <span class="badge">Unit 1-5 Complete</span>
+                  <span class="badge">48 Lecture Slides</span>
+                  <span class="badge">Cheat Sheet Included</span>
                 </div>
-
-                <div class="skill-row">
-                  <div class="skill-row__top">
-                    <b>Syllabus covered — Computer Networks</b>
-                    <span>54%</span>
-                  </div>
-                  <div class="bar bar--warn"><i data-fill="54"></i></div>
+                <div class="row row--between mt-auto">
+                  <button type="button" class="btn btn--outline btn--sm">Preview Slides</button>
+                  <a href="#" class="btn btn--primary btn--sm">Download PDF (14 MB)</a>
                 </div>
-
-                <div class="skill-row">
-                  <div class="skill-row__top">
-                    <b>Syllabus covered — Discrete Mathematics</b>
-                    <span>38%</span>
-                  </div>
-                  <div class="bar bar--danger"><i data-fill="38"></i></div>
-                </div>
-
-                <div class="skill-row">
-                  <div class="skill-row__top">
-                    <b>Credits towards the degree</b>
-                    <span>96 of 180</span>
-                  </div>
-                  <div class="bar"><i data-fill="53"></i></div>
-                </div>
-
-                <p class="hint mt-5">Syllabus coverage is reported by each subject teacher at the end of every teaching week.</p>
               </article>
 
-              <article class="card full-height" data-reveal data-reveal-delay="2">
-                <h3>Recent activity</h3>
+              <article class="card">
+                <div class="row row--between mb-3">
+                  <span class="badge badge--success">IT302 · Core</span>
+                  <small class="text-muted">Dr. M. Sharma</small>
+                </div>
+                <h3>Operating Systems</h3>
+                <p class="text-muted mb-4">Process scheduling, semaphores, deadlock detection, virtual memory management and Linux kernel internals.</p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                  <span class="badge">Unit 1-4 Uploaded</span>
+                  <span class="badge">Scheduling Visualizer</span>
+                  <span class="badge">Formula Sheet</span>
+                </div>
+                <div class="row row--between mt-auto">
+                  <button type="button" class="btn btn--outline btn--sm">Preview Slides</button>
+                  <a href="#" class="btn btn--primary btn--sm">Download PDF (9.8 MB)</a>
+                </div>
+              </article>
 
-                <ul class="feed">
+              <article class="card">
+                <div class="row row--between mb-3">
+                  <span class="badge badge--success">IT303 · Core</span>
+                  <small class="text-muted">Prof. R. Joshi</small>
+                </div>
+                <h3>Database Management Systems</h3>
+                <p class="text-muted mb-4">Relational algebra, ER modeling, B+ Trees indexing, ACID properties, transaction concurrency and SQL query tuning.</p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                  <span class="badge">All 6 Units</span>
+                  <span class="badge">SQL Queries Pack</span>
+                  <span class="badge">Normalization Guide</span>
+                </div>
+                <div class="row row--between mt-auto">
+                  <button type="button" class="btn btn--outline btn--sm">Preview Slides</button>
+                  <a href="#" class="btn btn--primary btn--sm">Download PDF (12.2 MB)</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="row row--between mb-3">
+                  <span class="badge badge--success">IT304 · Core</span>
+                  <small class="text-muted">Prof. N. Desai</small>
+                </div>
+                <h3>Computer Networks</h3>
+                <p class="text-muted mb-4">OSI &amp; TCP/IP protocols, IP subnetting, routing algorithms, transport layer congestion control and socket programming.</p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                  <span class="badge">Unit 1-5 Slides</span>
+                  <span class="badge">Wireshark Lab Notes</span>
+                  <span class="badge">Subnetting Cheat Sheet</span>
+                </div>
+                <div class="row row--between mt-auto">
+                  <button type="button" class="btn btn--outline btn--sm">Preview Slides</button>
+                  <a href="#" class="btn btn--primary btn--sm">Download PDF (11.4 MB)</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ================= 2. PAPERS SECTION ================= -->
+          <section id="papers" data-dash-pane="papers" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>📄 University Previous Exam Papers (PYQs)</h2>
+                <p>Official CHARUSAT University mid-semester and end-semester question papers with solution keys</p>
+              </div>
+              <div>
+                <a href="#" class="btn btn--outline btn--sm">Filter by Subject</a>
+              </div>
+            </div>
+
+            <div class="card" style="padding: 0; overflow: hidden; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px;">
+              <div class="table-wrap" style="overflow-x: auto;">
+                <table class="dash-glass-table" style="width: 100%; border-collapse: collapse;">
+                  <thead>
+                    <tr style="text-align: left; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                      <th style="padding: 0.85rem;">Paper Title</th>
+                      <th style="padding: 0.85rem;">Term</th>
+                      <th style="padding: 0.85rem;">Year</th>
+                      <th style="padding: 0.85rem;">Solutions</th>
+                      <th style="padding: 0.85rem; text-align: right;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.06));">
+                      <td style="padding: 0.85rem;"><strong>IT301: Data Structures &amp; Algorithms</strong></td>
+                      <td style="padding: 0.85rem;"><span class="badge">End Semester</span></td>
+                      <td style="padding: 0.85rem;">Winter 2025</td>
+                      <td style="padding: 0.85rem;"><span class="badge badge--success">Verified Key Available</span></td>
+                      <td style="padding: 0.85rem; text-align: right;"><a href="#" class="btn btn--light btn--sm">Download PDF</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.06));">
+                      <td style="padding: 0.85rem;"><strong>IT302: Operating Systems</strong></td>
+                      <td style="padding: 0.85rem;"><span class="badge">End Semester</span></td>
+                      <td style="padding: 0.85rem;">Summer 2025</td>
+                      <td style="padding: 0.85rem;"><span class="badge badge--success">Verified Key Available</span></td>
+                      <td style="padding: 0.85rem; text-align: right;"><a href="#" class="btn btn--light btn--sm">Download PDF</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.06));">
+                      <td style="padding: 0.85rem;"><strong>IT303: Database Management Systems</strong></td>
+                      <td style="padding: 0.85rem;"><span class="badge">End Semester</span></td>
+                      <td style="padding: 0.85rem;">Winter 2024</td>
+                      <td style="padding: 0.85rem;"><span class="badge badge--success">Verified Key Available</span></td>
+                      <td style="padding: 0.85rem; text-align: right;"><a href="#" class="btn btn--light btn--sm">Download PDF</a></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.06));">
+                      <td style="padding: 0.85rem;"><strong>IT304: Computer Networks</strong></td>
+                      <td style="padding: 0.85rem;"><span class="badge">Mid Semester 1</span></td>
+                      <td style="padding: 0.85rem;">Autumn 2025</td>
+                      <td style="padding: 0.85rem;"><span class="badge badge--success">Step-by-step Solution</span></td>
+                      <td style="padding: 0.85rem; text-align: right;"><a href="#" class="btn btn--light btn--sm">Download PDF</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= 3. CODING SECTION ================= -->
+          <section id="coding" data-dash-pane="coding" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>💻 Coding Hub &amp; Technical Arena</h2>
+                <p>Level up your programming skills, track LeetCode benchmarks and participate in campus coding challenges</p>
+              </div>
+              <a href="#" class="btn btn--primary btn--sm">Launch Code Arena</a>
+            </div>
+
+            <div class="grid grid--3">
+              <article class="card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">⚡</div>
+                <h3>CHARUSAT Weekly Challenge</h3>
+                <p class="text-muted">Round #28: Graphs, Dijkstra shortest path and Minimum Spanning Trees.</p>
+                <div class="mt-3 mb-4">
+                  <small style="color: var(--accent-color); font-weight: 700;">Closing in 2 days · 128 registered</small>
+                </div>
+                <a href="#" class="btn btn--outline btn--sm" style="width: 100%; text-align: center;">Enter Contest</a>
+              </article>
+
+              <article class="card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🧩</div>
+                <h3>DSA Problem Roadmap</h3>
+                <p class="text-muted">Curated list of 150 essential interview questions sorted by company tags and patterns.</p>
+                <div class="mt-3 mb-4">
+                  <small class="text-muted">Your progress: <strong>48 / 150</strong> solved</small>
+                </div>
+                <a href="#" class="btn btn--outline btn--sm" style="width: 100%; text-align: center;">View Problem Sheet</a>
+              </article>
+
+              <article class="card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🐙</div>
+                <h3>Project Repositories</h3>
+                <p class="text-muted">Pre-configured full-stack starter templates with CI/CD for Semester 5 capstone projects.</p>
+                <div class="mt-3 mb-4">
+                  <small class="text-muted">Node.js · Python FastAPI · React · Docker</small>
+                </div>
+                <a href="#" class="btn btn--outline btn--sm" style="width: 100%; text-align: center;">Explore GitHub Repos</a>
+              </article>
+            </div>
+          </section>
+
+          <!-- ================= 4. PRACTICALS SECTION ================= -->
+          <section id="practicals" data-dash-pane="practicals" class="mt-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>🧪 Lab Practicals &amp; Manuals</h2>
+                <p>Verified source codes, write-ups, circuit diagrams and viva-voce preparations</p>
+              </div>
+              <span class="badge">Semester 5 Labs</span>
+            </div>
+
+            <div class="grid grid--2">
+              <article class="card">
+                <div class="row row--between mb-2">
+                  <span class="badge badge--success">Lab 1 · Complete</span>
+                  <small class="text-muted">OS Lab</small>
+                </div>
+                <h4>Linux Shell Scripting &amp; System Calls</h4>
+                <p class="text-muted mb-3">Implementation of fork(), exec(), wait() process management calls and shell pipelines.</p>
+                <div class="row row--between mt-3">
+                  <span class="badge">12 Exercises with Code</span>
+                  <a href="#" class="btn btn--outline btn--sm">View Lab Code</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="row row--between mb-2">
+                  <span class="badge badge--success">Lab 2 · Complete</span>
+                  <small class="text-muted">DBMS Lab</small>
+                </div>
+                <h4>PL/SQL Procedures, Triggers &amp; Views</h4>
+                <p class="text-muted mb-3">Complex triggers, stored procedures, cursor loops and transaction rollbacks in Oracle.</p>
+                <div class="row row--between mt-3">
+                  <span class="badge">10 SQL Scripts</span>
+                  <a href="#" class="btn btn--outline btn--sm">View Lab Code</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="row row--between mb-2">
+                  <span class="badge badge--warn">Lab 3 · In Progress</span>
+                  <small class="text-muted">Network Lab</small>
+                </div>
+                <h4>Socket Programming &amp; Packet Analysis</h4>
+                <p class="text-muted mb-3">TCP/UDP client-server architecture in C and Wireshark HTTP/DNS traffic capture.</p>
+                <div class="row row--between mt-3">
+                  <span class="badge">8 Programs</span>
+                  <a href="#" class="btn btn--outline btn--sm">View Lab Code</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="row row--between mb-2">
+                  <span class="badge badge--primary">Viva Voce Guide</span>
+                  <small class="text-muted">All Subjects</small>
+                </div>
+                <h4>Semester 5 External Viva Question Bank</h4>
+                <p class="text-muted mb-3">Top 100 questions asked by university external examiners with crisp answers.</p>
+                <div class="row row--between mt-3">
+                  <span class="badge">Updated for 2026</span>
+                  <a href="#" class="btn btn--primary btn--sm">Download Viva Prep</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ================= 5. PLACEMENT SECTION ================= -->
+          <section id="placement" data-dash-pane="placement" class="mt-8 mb-8" data-reveal style="scroll-margin-top: 100px;">
+            <button type="button" class="dash-back-btn" data-dash-tab="overview">← Back to Overview</button>
+            <div class="page-head" style="margin-bottom: 1.5rem;">
+              <div>
+                <h2>🚀 Placement &amp; Career Preparation</h2>
+                <p>Campus recruitment drives, training workshops, mock interviews and alumni track records</p>
+              </div>
+              <a href="#" class="btn btn--primary btn--sm">Update Placement Resume</a>
+            </div>
+
+            <div class="grid grid--2">
+              <article class="card">
+                <h3>Upcoming Campus Drives</h3>
+                <p class="text-muted mb-4">Eligible companies visiting CHARUSAT campus in the next 30 days:</p>
+
+                <ul class="feed" style="margin-bottom: 1rem;">
                   <li>
-                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
-                    </span>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">🏢</span>
                     <div>
-                      <p>You submitted <strong>Process scheduling worksheet</strong> for Operating Systems.</p>
-                      <time datetime="2026-08-08T21:48">Yesterday, 9:48 PM</time>
+                      <p><strong>Crest Data Systems</strong> — Software Engineer (₹8.5 LPA)</p>
+                      <small class="text-muted">Drive Date: 24 August 2026 · Eligibility: 7.0+ CGPA (Eligible)</small>
                     </div>
                   </li>
-
                   <li>
-                    <span class="feed__dot" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
-                    </span>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">🏢</span>
                     <div>
-                      <p>Issued <strong>Computer Networks: A Top-Down Approach</strong> from the Central Library. Return by 22 August.</p>
-                      <time datetime="2026-08-07T15:20">Fri, 7 Aug, 3:20 PM</time>
+                      <p><strong>Sophos Cyber Security</strong> — Trainee DevSecOps (₹10.2 LPA)</p>
+                      <small class="text-muted">Drive Date: 2 September 2026 · Eligibility: 7.5+ CGPA (Eligible)</small>
                     </div>
                   </li>
-
                   <li>
-                    <span class="feed__dot feed__dot--ok" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                    </span>
+                    <span class="feed__dot feed__dot--ok" aria-hidden="true">🏢</span>
                     <div>
-                      <p>Registered for the <strong>36-Hour Campus Hackathon</strong> on 17 August as part of Team Bitwise.</p>
-                      <time datetime="2026-08-06T19:05">Thu, 6 Aug, 7:05 PM</time>
-                    </div>
-                  </li>
-
-                  <li>
-                    <span class="feed__dot" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-                    </span>
-                    <div>
-                      <p>Updated your profile — added the <strong>Oracle SQL Fundamentals</strong> certificate.</p>
-                      <time datetime="2026-08-04T11:12">Tue, 4 Aug, 11:12 AM</time>
-                    </div>
-                  </li>
-
-                  <li>
-                    <span class="feed__dot feed__dot--warn" aria-hidden="true">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-                    </span>
-                    <div>
-                      <p>Semester 4 fee receipt <strong>#GTU-24-118904</strong> was downloaded from the Accounts tab.</p>
-                      <time datetime="2026-07-30T09:26">Thu, 30 Jul, 9:26 AM</time>
+                      <p><strong>Bacancy Technology</strong> — Full Stack Associate (₹6.8 LPA)</p>
+                      <small class="text-muted">Drive Date: 12 September 2026 · Eligibility: 6.5+ CGPA (Eligible)</small>
                     </div>
                   </li>
                 </ul>
+              </article>
 
-                <div class="row row--center mt-5">
-                  <a class="btn btn--outline btn--sm" href="#">See the full log</a>
+              <article class="card">
+                <h3>Aptitude &amp; Technical Mock Test</h3>
+                <p class="text-muted mb-3">Practice timed quantitative aptitude, logical reasoning and coding rounds formatted as per university recruitment patterns.</p>
+                
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.08)); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                  <div class="row row--between mb-2">
+                    <strong>Recent Mock Score</strong>
+                    <span class="badge badge--success">84% · Top 10%</span>
+                  </div>
+                  <small class="text-muted">Quantitative: 26/30 · Logical: 28/30 · Technical MCQ: 24/30</small>
+                </div>
+
+                <div class="row row--between">
+                  <button type="button" class="btn btn--outline btn--sm">View Solution Analysis</button>
+                  <a href="#" class="btn btn--primary btn--sm">Start New Mock Test</a>
                 </div>
               </article>
             </div>
@@ -513,82 +1218,109 @@
     </div>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="profile.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>My Student Profile</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+  <script src="../js/calendar-engine.js"></script>
+  <script src="../js/dashboard-sync.js"></script>
+  <script src="../js/dashboard-actions.js"></script>
 </body>
 </html>

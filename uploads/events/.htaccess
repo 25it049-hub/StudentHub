@@ -1,0 +1,26 @@
+# =============================================================================
+# Practical 12 Advanced Extension: Upload Directory Security Hardening
+# Blocks script execution and restricts file access to valid image formats.
+# =============================================================================
+
+Options -ExecCGI -Indexes
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Deny execution of any server-side script
+<FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|php8|phps|cgi|pl|py|sh|bash|exe|bat)$">
+    Require all denied
+</FilesMatch>
+
+# Allow only standard web image formats
+<FilesMatch "(?i)\.(jpg|jpeg|png|webp|gif|svg)$">
+    Require all granted
+</FilesMatch>

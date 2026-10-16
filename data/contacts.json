@@ -1,0 +1,79 @@
+[
+    {
+        "ticket_id": "TKT-20261013-51F1D",
+        "timestamp": "2026-10-13 14:49:41",
+        "full_name": "Test Student",
+        "email": "test@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Exam Query",
+        "category": "General",
+        "message": "This is a test inquiry for Practical 7 verification.",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "ticket_id": "TKT-20261013-98837",
+        "timestamp": "2026-10-13 14:52:32",
+        "full_name": "Tirth Ladani",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Query regarding Practical 7",
+        "category": "General",
+        "message": "Testing real server-side validation and storage into CSV and JSON.",
+        "ip_address": "127.0.0.1"
+    },
+    {
+        "ticket_id": "TKT-20261013-61E08",
+        "timestamp": "2026-10-13 15:41:37",
+        "full_name": "Tirth Deployment Test",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Live Apache Deployment Verification",
+        "category": "General",
+        "message": "Testing Apache on port 80 directly through XAMPP.",
+        "ip_address": "::1"
+    },
+    {
+        "ticket_id": "TKT-20261014-9DC58",
+        "timestamp": "2026-10-14 18:25:24",
+        "full_name": "Tirth Ladani",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Audit Verification",
+        "category": "Technical",
+        "message": "Automated verification test from audit suite.",
+        "ip_address": "::1"
+    },
+    {
+        "ticket_id": "TKT-20261014-7F7B9",
+        "timestamp": "2026-10-14 18:34:00",
+        "full_name": "Tirth Ladani",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Pre-Deployment Verification",
+        "category": "Technical",
+        "message": "Automated verification test message from deployment audit.",
+        "ip_address": "::1"
+    },
+    {
+        "ticket_id": "TKT-20261014-3E443",
+        "timestamp": "2026-10-14 18:40:16",
+        "full_name": "Tirth Ladani",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Pre-Deployment Verification",
+        "category": "Technical",
+        "message": "Automated verification test message from deployment audit.",
+        "ip_address": "::1"
+    },
+    {
+        "ticket_id": "TKT-20261016-7C283",
+        "timestamp": "2026-10-16 06:45:25",
+        "full_name": "Tirth Ladani",
+        "email": "25it049@charusat.edu.in",
+        "phone": "9876543210",
+        "subject": "Deployment Readiness Check",
+        "category": "Technical Support",
+        "message": "Automated end-to-end inquiry verification testing contact form processing with CSRF.",
+        "ip_address": "::1"
+    }
+]

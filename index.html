@@ -3,15 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Hub | CHARUSAT IT Portal</title>
-    <meta name="description" content="Student Hub — events, dashboard, profile and feedback for CHARUSAT IT students, all in one place.">
-    <link rel="icon" href="images/studenthublogo.png">
+    <title>CHARUSAT StudentHub — Campus Portal</title>
+    <meta name="description" content="CHARUSAT StudentHub — events, dashboard, profile and feedback for CHARUSAT students, all in one place.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/studenthublogo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/studenthublogo.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/studenthublogo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b4f8a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="images/studenthublogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700&family=Galada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/premium.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/animations.js" defer></script>
     <style>
         :root {
             --text-color: #ffffff;
@@ -21,7 +32,7 @@
             --accent-pink: #fbcfe8;
             --accent-ink: #011d17;
             --font-main: 'Inter', sans-serif;
-            --font-heading: 'Galada', cursive;
+            --font-heading: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
             /* Dynamic background — tweened by the theme switcher */
             --bg-inner: #0b8a78;
@@ -39,8 +50,8 @@
             background: radial-gradient(circle at center, var(--bg-inner) 0%, var(--bg-mid) 50%, var(--bg-outer) 100%);
             color: var(--text-color);
             font-family: var(--font-main);
-            overflow: hidden;
-            height: 100vh;
+            overflow-x: hidden;
+            min-height: 100vh;
             transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -48,6 +59,26 @@
             --bg-inner: #0b4f8a;
             --bg-mid: #04294e;
             --bg-outer: #010c14;
+        }
+
+        body.purple-theme,
+        body.aurora-theme {
+            --bg-inner: #4c1d95;
+            --bg-mid: #2e1065;
+            --bg-outer: #0f051d;
+        }
+
+        body.green-theme,
+        body.classic-theme {
+            --bg-inner: #0b8a78;
+            --bg-mid: #044e3b;
+            --bg-outer: #011411;
+        }
+
+        body.midnight-theme {
+            --bg-inner: #1e293b;
+            --bg-mid: #0f172a;
+            --bg-outer: #030712;
         }
 
         .visually-hidden {
@@ -194,12 +225,13 @@
 
         /* ============ HERO ============ */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0 4%;
             padding-top: 5rem;
+            position: relative;
         }
 
         .hero-content {
@@ -214,16 +246,32 @@
         .main-title,
         .side-title {
             font-family: var(--font-heading);
-            font-size: clamp(4rem, 9vw, 11rem);
-            line-height: 0.8;
-            font-weight: 400;
+            font-size: clamp(3.8rem, 8vw, 9.8rem);
+            line-height: 0.88;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
             white-space: nowrap;
-            color: white;
+            color: #ffffff;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+        }
+
+        .side-title {
+            align-self: flex-end;
+            text-align: right;
         }
 
         .outline {
-            color: var(--text-color);
-            opacity: 0.55;
+            color: transparent;
+            -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.82);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            transition: -webkit-text-stroke 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .main-title:hover .outline,
+        .side-title:hover .outline {
+            -webkit-text-stroke: 2.5px #ffffff;
+            text-shadow: 0 0 45px rgba(255, 255, 255, 0.5);
         }
 
         /* ============ FAR-BACKGROUND SPARKS ============ */
@@ -350,7 +398,7 @@
             opacity: 0;
             animation: fadeIn 1.5s ease-out 0.3s forwards, float 6s ease-in-out infinite;
             pointer-events: none;
-            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
         }
 
         @keyframes fadeIn { to { opacity: 1; } }
@@ -367,7 +415,7 @@
             --progress-bar-color: transparent;
             --poster-color: transparent;
             z-index: 1;
-            position: fixed;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(12deg);
@@ -430,7 +478,8 @@
             height: 100%;
             padding: 6rem 0;
             z-index: 100;
-            width: 450px;
+            width: auto;
+            max-width: 48%;
             pointer-events: none;
         }
 
@@ -442,86 +491,11 @@
             pointer-events: auto;
         }
 
-        .picker-cards { display: flex; gap: 1rem; }
-
-        .card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 1rem;
-            padding-top: 5rem;
-            border-radius: 28px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            cursor: pointer;
-            font-family: inherit;
-            color: inherit;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            width: 135px;
-            position: relative;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            text-align: center;
+        /* 3D Color Toggle Engine Alignment */
+        .theme-3d-toggle-wrap {
+            align-items: flex-end;
+            pointer-events: auto;
         }
-
-        .card:hover,
-        .card:focus-visible {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .card.active {
-            border-color: var(--accent-pink);
-            background: var(--glass-bg);
-        }
-
-        .card img {
-            width: 130px;
-            height: auto;
-            margin-top: -7.5rem;
-            filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5));
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-            display: block;
-            will-change: transform;
-            pointer-events: none;
-        }
-
-        .card:hover img,
-        .card:focus-visible img {
-            transform: translateY(-30px) rotate(-12deg) scale(1.15) !important;
-        }
-
-        .card-info {
-            display: flex;
-            flex-direction: column;
-            font-size: 0.7rem;
-            width: 100%;
-            word-wrap: break-word;
-        }
-
-        .card-info span:first-child { font-weight: 600; }
-        .card-info span:last-child { color: var(--muted-color); }
-
-        .picker-nav { display: flex; gap: 1rem; }
-
-        .nav-arrow {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-        }
-
-        .nav-arrow:hover,
-        .nav-arrow:focus-visible { background: rgba(255, 255, 255, 0.1); }
 
         .side-title { align-self: flex-end; text-align: right; }
 
@@ -532,14 +506,16 @@
 
         @media (max-width: 1200px) {
             .main-product-3d { width: 100vw; height: 60vh; top: 40%; }
-            .header { flex-wrap: wrap; justify-content: center; padding: 1rem 4%; }
+            .header { flex-wrap: nowrap; justify-content: space-between; padding: 1.2rem 4%; }
             .hero { padding-top: 9rem; }
             .hero-content { flex-direction: column; align-items: center; justify-content: space-between; }
             .hero-left { padding: 0; align-items: center; text-align: center; height: auto; gap: 1.25rem; }
             .description { max-width: 90%; }
             .award-badge { margin-top: 1rem; }
-            .main-title, .side-title { font-size: 4rem; }
+            .main-title,
+            .side-title { font-size: clamp(2.8rem, 7vw, 4.2rem); }
             .hero-right { align-items: center; text-align: center; width: 100%; height: auto; padding: 0; }
+            .theme-3d-toggle-wrap { align-items: center; margin-bottom: 1.5rem; }
             .side-title { align-self: center; text-align: center; }
             .orb { opacity: 0.5 !important; }
         }
@@ -557,46 +533,64 @@
 
     <header class="header">
         <a class="logo" href="index.html">
-            <img class="logo-mark" src="images/studenthublogo.png" alt="">
-            <span>Student Hub</span>
+            <img class="logo-mark" src="images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
         </a>
         <nav class="nav" aria-label="Main">
             <a href="index.html" class="nav-item active">Home</a>
-            <a href="pages/about.html" class="nav-item" target="_blank" rel="noopener">About</a>
-            <a href="pages/events.html" class="nav-item" target="_blank" rel="noopener">Events</a>
-            <a href="pages/dashboard.html" class="nav-item" target="_blank" rel="noopener">Dashboard</a>
-            <a href="pages/profile.html" class="nav-item" target="_blank" rel="noopener">Profile</a>
-            <a href="pages/faq.html" class="nav-item" target="_blank" rel="noopener">FAQ</a>
-            <a href="pages/feedback.html" class="nav-item" target="_blank" rel="noopener">Feedback</a>
-            <a href="pages/contact.html" class="nav-item" target="_blank" rel="noopener">Contact</a>
-            <a href="pages/login.html" class="nav-item" target="_blank" rel="noopener">Login</a>
-            <a href="pages/register.html" class="nav-item" target="_blank" rel="noopener">Register</a>
+            <a href="pages/about.html" class="nav-item">About</a>
+            <a href="pages/events.html" class="nav-item">Events</a>
+            <a href="pages/dashboard.html" class="nav-item">Dashboard</a>
+            <a href="pages/profile.html" class="nav-item">Profile</a>
+            <a href="pages/faq.html" class="nav-item">FAQ</a>
+            <a href="pages/feedback.html" class="nav-item">Feedback</a>
+            <a href="pages/contact.html" class="nav-item">Contact</a>
+            <a href="pages/login.html" class="nav-item">Login</a>
+            <a href="pages/register.html" class="nav-item">Register</a>
         </nav>
-        <a class="contact-btn" href="pages/contact.html" target="_blank" rel="noopener">Contact Us</a>
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+            <div class="theme-3d-toggle-wrap" style="margin: 0;">
+                <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+                    <span class="gem-3d-orb gem-3d-orb--blue"></span>
+                    <span class="gem-3d-label">BLUE</span>
+                    <span class="gem-3d-icon" aria-hidden="true">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <a class="contact-btn" href="pages/contact.html">Contact Us</a>
+        </div>
     </header>
 
     <main class="hero">
+        <!-- 3D Ground Perspective Grid -->
+        <div class="hero-perspective-grid" aria-hidden="true">
+            <div class="hero-perspective-grid-plane"></div>
+        </div>
+
         <div class="hero-content">
 
-            <div class="sparks-container">
+            <div class="sparks-container" aria-hidden="true">
                 <div class="spark s1"></div>
                 <div class="spark s2"></div>
                 <div class="spark s3"></div>
                 <div class="spark s4"></div>
             </div>
 
+            <!-- Left Hero Column -->
             <div class="hero-left">
                 <h1 class="main-title">
                     <span class="outline">Student</span><br>
                     Hub
                 </h1>
                 <p class="description">
-                    One place for your whole semester. <br>
-                    Events, dashboard, profile and feedback — <br>
-                    built for CHARUSAT IT.
+                    <strong>Your Student Life, Connected.</strong><br>
+                    A unified digital space where CHARUSAT students learn, build, prepare and grow.
                 </p>
                 <div class="cta-group">
-                    <a class="primary-btn" href="pages/dashboard.html" target="_blank" rel="noopener">
+                    <a class="primary-btn" href="pages/dashboard.html">
                         Open Dashboard
                         <span class="plus-icon" aria-hidden="true">+</span>
                     </a>
@@ -609,18 +603,20 @@
                         </svg>
                     </div>
                     <div class="award-text">
-                        <span class="award-title">FACULTY OF TECHNOLOGY</span>
-                        <span class="award-subtitle">INFORMATION TECHNOLOGY 2026</span>
+                        <span class="award-title">CHARUSAT UNIVERSITY</span>
+                        <span class="award-subtitle">STUDENT PORTAL 2026</span>
                     </div>
                 </div>
             </div>
 
+            <!-- 3D Rotating Model Background Orbs -->
             <div class="orbs-container-bg">
                 <model-viewer class="orb o7" data-model="gem" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="-20deg 110deg 105%"></model-viewer>
                 <model-viewer class="orb o8" data-model="gem" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="160deg 45deg 105%"></model-viewer>
                 <model-viewer class="orb o9" data-model="gem" environment-image="neutral" exposure="1.0" interaction-prompt="none" camera-orbit="45deg 20deg 105%"></model-viewer>
             </div>
 
+            <!-- Central Rotating 3D Centerpiece -->
             <div class="hero-center">
                 <model-viewer id="product-model" alt="Rotating 3D graduation cap" camera-controls
                     disable-zoom shadow-intensity="0" environment-image="neutral" exposure="1.45"
@@ -629,6 +625,7 @@
                 </model-viewer>
             </div>
 
+            <!-- 3D Foreground Interactive Rotating Orbs -->
             <div class="orbs-container">
                 <model-viewer class="orb o1" data-model="cap" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="45deg 120deg 105%"></model-viewer>
                 <model-viewer class="orb o2" data-model="gem" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="-120deg 45deg 105%"></model-viewer>
@@ -638,29 +635,8 @@
                 <model-viewer class="orb o6" data-model="cap" environment-image="neutral" exposure="1.2" interaction-prompt="none" camera-orbit="80deg 75deg 105%"></model-viewer>
             </div>
 
+            <!-- Right Hero Column -->
             <div class="hero-right">
-                <div class="theme-picker">
-                    <div class="picker-cards">
-                        <button class="card active" type="button" data-flavor="classic" aria-pressed="true">
-                            <img src="images/studenthublogo.png" alt="">
-                            <span class="card-info">
-                                <span>Campus Teal</span>
-                                <span>Default</span>
-                            </span>
-                        </button>
-                        <button class="card" type="button" data-flavor="blue" aria-pressed="false">
-                            <img src="images/studenthub2.png" alt="">
-                            <span class="card-info">
-                                <span>Night Blue</span>
-                                <span>Dark mode</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="picker-nav">
-                        <button class="nav-arrow" type="button" data-step="-1" aria-label="Previous theme">&#8592;</button>
-                        <button class="nav-arrow" type="button" data-step="1" aria-label="Next theme">&#8594;</button>
-                    </div>
-                </div>
                 <h2 class="side-title">
                     <span class="outline">Study</span><br>
                     Smarter
@@ -669,6 +645,145 @@
 
         </div>
     </main>
+
+    <!-- ======================================================================
+         Cinematic Reveal Motion Footer
+         ====================================================================== -->
+    <div class="cinematic-footer-wrapper">
+        <!-- Animated Diagonal / Horizontal Marquee Strip -->
+        <div class="footer-marquee-strip" aria-hidden="true">
+            <div class="footer-marquee-track">
+                <span class="footer-marquee-item">
+                    <span>CHARUSAT STUDENT HUB</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <b>CAMPUS PORTAL 2026</b>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <span>EXCELLENCE IN EDUCATION</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <b>CENTRALIZED STUDENT SERVICES</b>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <span>EMPOWERING FUTURE LEADERS</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                </span>
+                <span class="footer-marquee-item">
+                    <span>CHARUSAT STUDENT HUB</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <b>CAMPUS PORTAL 2026</b>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <span>EXCELLENCE IN EDUCATION</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <b>CENTRALIZED STUDENT SERVICES</b>
+                    <span class="footer-marquee-sparkle">✦</span>
+                    <span>EMPOWERING FUTURE LEADERS</span>
+                    <span class="footer-marquee-sparkle">✦</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Main Cinematic Footer Container -->
+        <footer class="cinematic-footer">
+            <div class="footer-aurora-glow" aria-hidden="true"></div>
+            <div class="footer-grid-overlay" aria-hidden="true"></div>
+            <!-- Large CHARUSAT Background Typography Mask with GSAP ScrollTrigger Scrub (Bottom Background) -->
+            <div class="charusat-parallax-bg-wrapper" aria-hidden="true">
+                <div class="charusat-giant-mask-text" id="giantParallaxText">CHARUSAT</div>
+            </div>
+
+            <!-- Top Call-to-Action Section -->
+            <div class="footer-hero-actions">
+                <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+                <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+                <p class="footer-hero-desc">
+                    Connect to academics, real-time campus events, centralized student support, 
+                    and club communities all in one seamless modern workspace.
+                </p>
+                <div class="footer-pill-btn-group">
+                    <a href="pages/dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+                        <span>Launch Dashboard</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="pages/events.html" class="footer-glass-pill">
+                        <span>Browse Campus Events</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </a>
+                    <a href="pages/faq.html" class="footer-glass-pill">
+                        <span>Student Handbook</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Columns Grid -->
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="logo" href="index.html">
+                        <img class="logo-mark" src="images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+                        <span>CHARUSAT StudentHub</span>
+                    </a>
+                    <p>
+                        The unified student digital experience platform for Charotar University of Science and Technology.
+                        Simplifying campus life, one semester at a time.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About Portal</a></li>
+                        <li><a href="pages/events.html">Campus Events</a></li>
+                        <li><a href="pages/dashboard.html">Student Dashboard</a></li>
+                        <li><a href="pages/profile.html">My Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Student Services</h4>
+                    <ul>
+                        <li><a href="pages/feedback.html">Share Feedback</a></li>
+                        <li><a href="pages/faq.html">Help & FAQ</a></li>
+                        <li><a href="pages/contact.html">Campus Helpdesk</a></li>
+                        <li><a href="pages/login.html">Student Portal Login</a></li>
+                        <li><a href="pages/register.html">New Registration</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>CHARUSAT Campus</h4>
+                    <ul>
+                        <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+                        <li><a href="pages/about.html">Changa Campus Guide</a></li>
+                        <li><a href="pages/contact.html">Exam Section Support</a></li>
+                        <li><a href="pages/admin.html">Administrator Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="footer-bottom-bar">
+                <div>
+                    &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+                </div>
+                <button type="button" class="back-to-top-btn" aria-label="Back to top">
+                    <span>Back to Top</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
 
     <svg class="offscreen-svg" aria-hidden="true" focusable="false">
         <filter id="frosted">
@@ -684,32 +799,107 @@
            Each string appears exactly once and is assigned to every viewer.
         ------------------------------------------------------------------ */
         const MODEL_CAP = 'data:model/gltf-binary;base64,Z2xURgIAAACUHgAAGAYAAEpTT057ImFzc2V0Ijp7InZlcnNpb24iOiIyLjAiLCJnZW5lcmF0b3IiOiJzdHVkZW50aHViLWlubGluZS1nbGIifSwic2NlbmUiOjAsInNjZW5lcyI6W3sibm9kZXMiOlswXX1dLCJub2RlcyI6W3sibWVzaCI6MCwibmFtZSI6IkdyYWR1YXRpb25DYXAifV0sIm1lc2hlcyI6W3sibmFtZSI6IkdyYWR1YXRpb25DYXAiLCJwcmltaXRpdmVzIjpbeyJhdHRyaWJ1dGVzIjp7IlBPU0lUSU9OIjowLCJOT1JNQUwiOjF9LCJpbmRpY2VzIjoyLCJtYXRlcmlhbCI6MH0seyJhdHRyaWJ1dGVzIjp7IlBPU0lUSU9OIjozLCJOT1JNQUwiOjR9LCJpbmRpY2VzIjo1LCJtYXRlcmlhbCI6MX1dfV0sIm1hdGVyaWFscyI6W3sibmFtZSI6ImJvZHkiLCJwYnJNZXRhbGxpY1JvdWdobmVzcyI6eyJiYXNlQ29sb3JGYWN0b3IiOlswLjA0MywwLjgzMSwwLjcwNiwxLjBdLCJtZXRhbGxpY0ZhY3RvciI6MC4zNSwicm91Z2huZXNzRmFjdG9yIjowLjMyfX0seyJuYW1lIjoiYWNjZW50IiwicGJyTWV0YWxsaWNSb3VnaG5lc3MiOnsiYmFzZUNvbG9yRmFjdG9yIjpbMC45ODQsMC44MTIsMC45MDYsMS4wXSwibWV0YWxsaWNGYWN0b3IiOjAuMTUsInJvdWdobmVzc0ZhY3RvciI6MC40NX19XSwiYnVmZmVycyI6W3siYnl0ZUxlbmd0aCI6NjI0MH1dLCJidWZmZXJWaWV3cyI6W3siYnVmZmVyIjowLCJieXRlT2Zmc2V0IjowLCJieXRlTGVuZ3RoIjo4NjQsInRhcmdldCI6MzQ5NjJ9LHsiYnVmZmVyIjowLCJieXRlT2Zmc2V0Ijo4NjQsImJ5dGVMZW5ndGgiOjg2NCwidGFyZ2V0IjozNDk2Mn0seyJidWZmZXIiOjAsImJ5dGVPZmZzZXQiOjE3MjgsImJ5dGVMZW5ndGgiOjE0NCwidGFyZ2V0IjozNDk2M30seyJidWZmZXIiOjAsImJ5dGVPZmZzZXQiOjE4NzIsImJ5dGVMZW5ndGgiOjIwMTYsInRh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AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAAAAAAAAAAACAvwAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgL8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAgD8AAACAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAMODgb6jrlg+dK1xv8ODgb6jrlg+dK1xv8ODgb6jrlg+dK1xv8ODgb6jrlg+dK1xv8ODgb6jrlg+dK1xv8ODgb6jrlg+dK1xv5TrMD+jrlg+mOswv5TrMD+jrlg+mOswv5TrMD+jrlg+mOswv5TrMD+jrlg+mOswv5TrMD+jrlg+mOswv5TrMD+jrlg+mOswv3WtcT+jrlg+uYOBPnWtcT+jrlg+uYOBPnWtcT+jrlg+uYOBPnWtcT+jrlg+uYOBPnWtcT+jrlg+uYOBPnWtcT+jrlg+uYOBPsODgT6jrlg+dK1xP8ODgT6jrlg+dK1xP8ODgT6jrlg+dK1xP8ODgT6jrlg+dK1xP8ODgT6jrlg+dK1xP8ODgT6jrlg+dK1xP5TrML+jrlg+mOswP5TrML+jrlg+mOswP5TrML+jrlg+mOswP5TrML+jrlg+mOswP5TrML+jrlg+mOswP5TrML+jrlg+mOswP3Wtcb+jrlg+uYOBvnWtcb+jrlg+uYOBvnWtcb+jrlg+uYOBvnWtcb+jrlg+uYOBvnWtcb+jrlg+uYOBvnWtcb+jrlg+uYOBvgAAAIAAAIC/AAAAAAAAAIAAAIC/AAAAAAAAAIAAAIC/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIC/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIC/AAAAgAAAAAAAAIC/AAAAgAAAAAAAAIC/AAAAgAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAQACAAMABAAFAAYABwAIAAkACgALAAwADQAOAA8AEAARABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEAIgAjACQAJQAmACcAKAApACoAKwAsAC0ALgAvADAAMQAyADMANAA1ADYANwA4ADkAOgA7ADwAPQA+AD8AQABBAEIAQwBEAEUARgBHAEgASQBKAEsATABNAE4ATwBQAFEAUgBTAFQAVQBWAFcAWABZAFoAWwBcAF0AXgBfAGAAYQBiAGMAZABlAGYAZwBoAGkAagBrAGwAbQBuAG8AcABxAHIAcwB0AHUAdgB3AHgAeQB6AHsAfAB9AH4AfwCAAIEAggCDAIQAhQCGAIcAiACJAIoAiwCMAI0AjgCPAJAAkQCSAJMAlACVAJYAlwCYAJkAmgCbAJwAnQCeAJ8AoAChAKIAowCkAKUApgCnAA==';
-        const MODEL_GEM = 'data:model/gltf-binary;base64,Z2xURgIAAADQKAAAJAQAAEpTT057ImFzc2V0Ijp7InZlcnNpb24iOiIyLjAiLCJnZW5lcmF0b3IiOiJzdHVkZW50aHViLWlubGluZS1nbGIifSwic2NlbmUiOjAsInNjZW5lcyI6W3sibm9kZXMiOlswXX1dLCJub2RlcyI6W3sibWVzaCI6MCwibmFtZSI6IkdlbSJ9XSwibWVzaGVzIjpbeyJuYW1lIjoiR2VtIiwicHJpbWl0aXZlcyI6W3siYXR0cmlidXRlcyI6eyJQT1NJVElPTiI6MCwiTk9STUFMIjoxfSwiaW5kaWNlcyI6MiwibWF0ZXJpYWwiOjB9XX1dLCJtYXRlcmlhbHMiOlt7Im5hbWUiOiJib2R5IiwicGJyTWV0YWxsaWNSb3VnaG5lc3MiOnsiYmFzZUNvbG9yRmFjdG9yIjpbMC4wNDMsMC44MzEsMC43MDYsMS4wXSwibWV0YWxsaWNGYWN0b3IiOjAuMzUsInJvdWdobmVzc0ZhY3RvciI6MC4zMn19LHsibmFtZSI6ImFjY2VudCIsInBick1ldGFsbGljUm91Z2huZXNzIjp7ImJhc2VDb2xvckZhY3RvciI6WzAuOTg0LDAuODEyLDAuOTA2LDEuMF0sIm1ldGFsbGljRmFjdG9yIjowLjE1LCJyb3VnaG5lc3NGYWN0b3IiOjAuNDV9fV0sImJ1ZmZlcnMiOlt7ImJ5dGVMZW5ndGgiOjkzNjB9XSwiYnVmZmVyVmlld3MiOlt7ImJ1ZmZlciI6MCwiYnl0ZU9mZnNldCI6MCwiYnl0ZUxlbmd0aCI6NDMyMCwidGFyZ2V0IjozNDk2Mn0seyJidWZmZXIiOjAsImJ5dGVPZmZzZXQiOjQzMjAsImJ5dGVMZW5ndGgiOjQzMjAsInRhcmdldCI6MzQ5NjJ9LHsiYnVmZmVyIjowLCJieXRlT2Zmc2V0Ijo4NjQwLCJieXRlTGVuZ3RoIjo3MjAsInRhcmdldCI6MzQ5NjN9XSwiYWNjZXNzb3JzIjpbeyJidWZmZXJWaWV3IjowLCJjb21wb25lbnRUeXBlIjo1MTI2LCJjb3VudCI6MzYwLCJ0eXBlIjoiVkVDMyIsIm1pbiI6Wy0wLjQ4NzQ2Mzk1NjA5MDkxMTgsLTAuNSwtMC40NjM2MDU3NzE4OTkyNzYzXSwibWF4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VgBXAFgAWQBaAFsAXABdAF4AXwBgAGEAYgBjAGQAZQBmAGcAaABpAGoAawBsAG0AbgBvAHAAcQByAHMAdAB1AHYAdwB4AHkAegB7AHwAfQB+AH8AgACBAIIAgwCEAIUAhgCHAIgAiQCKAIsAjACNAI4AjwCQAJEAkgCTAJQAlQCWAJcAmACZAJoAmwCcAJ0AngCfAKAAoQCiAKMApAClAKYApwCoAKkAqgCrAKwArQCuAK8AsACxALIAswC0ALUAtgC3ALgAuQC6ALsAvAC9AL4AvwDAAMEAwgDDAMQAxQDGAMcAyADJAMoAywDMAM0AzgDPANAA0QDSANMA1ADVANYA1wDYANkA2gDbANwA3QDeAN8A4ADhAOIA4wDkAOUA5gDnAOgA6QDqAOsA7ADtAO4A7wDwAPEA8gDzAPQA9QD2APcA+AD5APoA+wD8AP0A/gD/AAABAQECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQEOAQ8BEAERARIBEwEUARUBFgEXARgBGQEaARsBHAEdAR4BHwEgASEBIgEjASQBJQEmAScBKAEpASoBKwEsAS0BLgEvATABMQEyATMBNAE1ATYBNwE4ATkBOgE7ATwBPQE+AT8BQAFBAUIBQwFEAUUBRgFHAUgBSQFKAUsBTAFNAU4BTwFQAVEBUgFTAVQBVQFWAVcBWAFZAVoBWwFcAV0BXgFfAWABYQFiAWMBZAFlAWYBZwE=';
+        const MODEL_GEM = 'data:model/gltf-binary;base64,Z2xURgIAAADQKAAAJAQAAEpTT057ImFzc2V0Ijp7InZlcnNpb24iOiIyLjAiLCJnZW5lcmF0b3IiOiJzdHVkZW50aHViLWlubGluZS1nbGIifSwic2NlbmUiOjAsInNjZW5lcyI6W3sibm9kZXMiOlswXX1dLCJub2RlcyI6W3sibWVzaCI6MCwibmFtZSI6IkdlbSJ9XSwibWVzaGVzIjpbeyJuYW1lIjoiR2VtIiwicHJpbWl0aXZlcyI6W3siYXR0cmlidXRlcyI6eyJQT1NJVElPTiI6MCwiTk9STUFMIjoxfSwiaW5kaWNlcyI6MiwibWF0ZXJpYWwiOjB9XX1dLCJtYXRlcmlhbHMiOlt7Im5hbWUiOiJib2R5IiwicGJyTWV0YWxsaWNSb3VnaG5lc3MiOnsiYmFzZUNvbG9yRmFjdG9yIjpbMC4wNDMsMC44MzEsMC43MDYsMS4wXSwibWV0YWxsaWNGYWN0b3IiOjAuMzUsInJvdWdobmVzc0ZhY3RvciI6MC4zMn19LHsibmFtZSI6ImFjY2VudCIsInBick1ldGFsbGljUm91Z2huZXNzIjp7ImJhc2VDb2xvckZhY3RvciI6WzAuOTg0LDAuODEyLDAuOTA2LDEuMF0sIm1ldGFsbGljRmFjdG9yIjowLjE1LCJyb3VnaG5lc3NGYWN0b3IiOjAuNDV9fV0sImJ1ZmZlcnMiOlt7ImJ5dGVMZW5ndGgiOjkzNjB9XSwiYnVmZmVyVmlld3MiOlt7ImJ1ZmZlciI6MCwiYnl0ZU9mZnNldCI6MCwiYnl0ZUxlbmd0aCI6NDMyMCwidGFyZ2V0IjozNDk2Mn0seyJidWZmZXIiOjAsImJ5dGVPZmZzZXQiOjQzMjAsImJ5dGVMZW5ndGgiOjQzMjAsInRhcmdldCI6MzQ5NjJ9LHsiYnVmZmVyIjowLCJieXRlT2Zmc2V0Ijo4NjQwLCJieXRlTGVuZ3RoIjo3MjAsInRhcmdldCI6MzQ5NjN9XSwiYWNjZXNzb3JzIjpbeyJidWZmZXJWaWV3IjowLCJjb21wb25lbnRUeXBlIjo1MTI2LCJjb3VudCI6MzYwLCJ0eXBlIjoiVkVDMyIsIm1pbiI6Wy0wLjQ4NzQ2Mzk1NjA5MDkxMTgsLTAuNSwtMC40NjM2MDU3NzE4OTkyNzYzXSwibWF4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VgBXAFgAWQBaAFsAXABdAF4AXwBgAGEAYgBjAGQAZQBmAGcAaABpAGoAawBsAG0AbgBvAHAAcQByAHMAdAB1AHYAdwB4AHkAegB7AHwAfQB+AH8AgACBAIIAgwCEAIUAhgCHAIgAiQCKAIsAjACNAI4AjwCQAJEAkgCTAJQAlQCWAJcAmACZAJoAmwCcAJ0AngCfAKAAoQCiAKMApAClAKYApwCoAKkAqgCrAKwArQCuAK8AsACxALIAswC0ALUAtgC3ALgAuQC6ALsAvAC9AL4AvwDAAMEAwgDDAMQAxQDGAMcAyADJAMoAywDMAM0AzgDPANAA0QDSANMA1ADVANYA1wDYANkA2gDbANwA3QDeAN8A4ADhAOIA4wDkAOUA5gDnAOgA6QDqAOsA7ADtAO4A7wDwAPEA8gDzAPQA9QD2APcA+AD5APoA+wD8AP0A/gD/AAABAQECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQEOAQ8BEAERARIBEwEUARUBFgEXARgBGQEaARsBHAEdAR4BHwEgASEBIgEjASQBJQEmAScBKAEpASoBKwEsAS0BLgEvATABMQEyATMBNAE1ATYBNwE4ATkBOgE7ATwBPQE+AT8BQAFBAUIBQwFEAUUBRgFHAUgBSQFKAUsBTAFNAU4BTwFQAVEBUgFTAVQBVQFWAVcBWAFZAVoBWwFcAV0BXgFfAWABYQFiAWMBZAFlAWYBZwE=';
         const MODELS = { cap: MODEL_CAP, gem: MODEL_GEM };
 
         const THEMES = {
-            classic: { inner: '#0b8a78', mid: '#044e3b', outer: '#011411', body: [0.043, 0.831, 0.706, 1] },
-            blue: { inner: '#0b4f8a', mid: '#04294e', outer: '#010c14', body: [0.243, 0.616, 1.0, 1] }
+            blue: {
+                name: 'BLUE',
+                inner: '#0b4f8a',
+                mid: '#04294e',
+                outer: '#010c14',
+                accent: '#2563eb',
+                accentRgb: '37, 99, 235',
+                body: [0.145, 0.388, 0.92, 1],
+                glow: 'rgba(37, 99, 235, 0.65)'
+            },
+            purple: {
+                name: 'PURPLE',
+                inner: '#4c1d95',
+                mid: '#2e1065',
+                outer: '#0f051d',
+                accent: '#a855f7',
+                accentRgb: '168, 85, 247',
+                body: [0.658, 0.333, 0.968, 1],
+                glow: 'rgba(168, 85, 247, 0.75)'
+            },
+            green: {
+                name: 'GREEN',
+                inner: '#0b8a78',
+                mid: '#044e3b',
+                outer: '#011411',
+                accent: '#10b981',
+                accentRgb: '16, 185, 129',
+                body: [0.063, 0.725, 0.506, 1],
+                glow: 'rgba(16, 185, 129, 0.65)'
+            },
+            midnight: {
+                name: 'MIDNIGHT',
+                inner: '#1e293b',
+                mid: '#0f172a',
+                outer: '#030712',
+                accent: '#38bdf8',
+                accentRgb: '56, 189, 248',
+                body: [0.22, 0.74, 0.97, 1],
+                glow: 'rgba(56, 189, 248, 0.65)'
+            }
         };
+        THEMES.aurora = THEMES.purple;
+        THEMES.classic = THEMES.green;
 
         const modelViewer = document.querySelector('#product-model');
         const orbsFG = document.querySelector('.orbs-container');
         const orbsBG = document.querySelector('.orbs-container-bg');
         const sparksBG = document.querySelector('.sparks-container');
         const allOrbs = document.querySelectorAll('.orb');
-        const cards = document.querySelectorAll('.card');
-        const arrows = document.querySelectorAll('.nav-arrow');
-
         let isSwitching = false;
         let switchSpin = 0;
-        let currentFlavor = 'classic';
+        let currentFlavor = 'blue';
+
+        try {
+            const saved = localStorage.getItem('charusat-studenthub-theme') || localStorage.getItem('selected-theme');
+            if (saved && THEMES[saved]) {
+                currentFlavor = (saved === 'classic') ? 'green' : ((saved === 'aurora') ? 'purple' : saved);
+            }
+        } catch(e) {}
+
+        function updateColorButtonUI(flavor) {
+            const norm = (flavor === 'aurora') ? 'purple' : ((flavor === 'classic') ? 'green' : flavor);
+            document.body.classList.toggle('blue-theme', norm === 'blue');
+            document.body.classList.toggle('purple-theme', norm === 'purple');
+            document.body.classList.toggle('aurora-theme', norm === 'purple');
+            document.body.classList.toggle('green-theme', norm === 'green');
+            document.body.classList.toggle('midnight-theme', norm === 'midnight');
+            document.documentElement.dataset.theme = norm;
+
+            const label = norm.toUpperCase();
+            document.querySelectorAll('.theme-3d-gem-btn').forEach(btn => {
+                btn.setAttribute('aria-label', `Cycle 3D Atmosphere: Current is ${label}`);
+                const orb = btn.querySelector('.gem-3d-orb');
+                if (orb) orb.className = `gem-3d-orb gem-3d-orb--${norm}`;
+                const lbl = btn.querySelector('.gem-3d-label');
+                if (lbl) lbl.textContent = label;
+            });
+        }
+
+        // Apply saved theme variables right away
+        const initTarget = THEMES[currentFlavor] || THEMES.blue;
+        document.body.style.setProperty('--bg-inner', initTarget.inner);
+        document.body.style.setProperty('--bg-mid', initTarget.mid);
+        document.body.style.setProperty('--bg-outer', initTarget.outer);
+        document.documentElement.style.setProperty('--accent-color', initTarget.accent);
+        document.documentElement.style.setProperty('--accent-glow', initTarget.glow);
+        updateColorButtonUI(currentFlavor);
 
         // Hand every viewer its embedded model
-        modelViewer.src = MODEL_CAP;
+        if (modelViewer) {
+            modelViewer.src = MODEL_CAP;
+        }
         allOrbs.forEach(orb => { orb.src = MODELS[orb.dataset.model] || MODEL_GEM; });
 
         // Recolour the "body" material of a loaded viewer (no textures needed)
         function paint(viewer, rgba) {
+            if (!viewer) return;
             const model = viewer.model;
             if (!model) return;
             model.materials.forEach(material => {
@@ -719,81 +909,71 @@
             });
         }
 
-        function selectCard(flavor) {
-            cards.forEach(c => {
-                const on = c.dataset.flavor === flavor;
-                c.classList.toggle('active', on);
-                c.setAttribute('aria-pressed', String(on));
-            });
-        }
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                if (isSwitching || card.dataset.flavor === currentFlavor) return;
-                selectCard(card.dataset.flavor);
-                switchFlavor(card.dataset.flavor);
-            });
-        });
-
-        arrows.forEach(arrow => {
-            arrow.addEventListener('click', () => {
-                if (isSwitching) return;
-                const next = currentFlavor === 'classic' ? 'blue' : 'classic';
-                selectCard(next);
-                switchFlavor(next);
-            });
+        // Listen for global themeChanged events (from single 3D gem button or API)
+        window.addEventListener('themeChanged', (e) => {
+            const tName = e.detail && e.detail.themeName;
+            const norm = (tName === 'aurora') ? 'purple' : ((tName === 'classic') ? 'green' : tName);
+            const targetFlavor = (norm && THEMES[norm]) ? norm : 'blue';
+            if (targetFlavor !== currentFlavor && !isSwitching) {
+                switchFlavor(targetFlavor);
+            }
         });
 
         function switchFlavor(flavor) {
             if (isSwitching) return;
             isSwitching = true;
             currentFlavor = flavor;
+            updateColorButtonUI(flavor);
 
             const body = document.body;
             const orbs = document.querySelectorAll('.orb');
             const heroCenter = document.querySelector('.hero-center');
-            const target = THEMES[flavor];
+            const target = THEMES[flavor] || THEMES.blue;
 
-            // 1. Background morph
-            gsap.to(body, {
+            // 1. Background gradient & accent morph via GSAP
+            gsap.to([document.documentElement, body], {
                 '--bg-inner': target.inner,
                 '--bg-mid': target.mid,
                 '--bg-outer': target.outer,
-                duration: 1.5,
+                '--accent-color': target.accent,
+                '--accent-glow': target.glow,
+                duration: 1.3,
                 ease: 'power2.inOut'
             });
 
             // 2. Centrepiece: 360 spin + blur, recolour at the peak, settle to 720
             const spinObj = { val: 0, blur: 0 };
-            gsap.to(spinObj, {
-                val: 360,
-                blur: 15,
-                duration: 0.6,
-                ease: 'power2.in',
-                onUpdate: () => {
-                    switchSpin = spinObj.val;
-                    modelViewer.style.filter = `blur(${spinObj.blur}px)`;
-                },
-                onComplete: () => {
-                    body.classList.toggle('blue-theme', flavor === 'blue');
-                    paint(modelViewer, target.body);
+            if (modelViewer) {
+                gsap.to(spinObj, {
+                    val: 360,
+                    blur: 16,
+                    duration: 0.55,
+                    ease: 'power2.in',
+                    onUpdate: () => {
+                        switchSpin = spinObj.val;
+                        modelViewer.style.filter = `blur(${spinObj.blur}px) drop-shadow(0 0 25px ${target.glow})`;
+                    },
+                    onComplete: () => {
+                        updateColorButtonUI(flavor);
+                        paint(modelViewer, target.body);
 
-                    gsap.to(spinObj, {
-                        val: 720,
-                        blur: 0,
-                        duration: 1.5,
-                        ease: 'back.out(0.7)',
-                        onUpdate: () => {
-                            switchSpin = spinObj.val;
-                            modelViewer.style.filter = `blur(${spinObj.blur}px)`;
-                        },
-                        onComplete: () => {
-                            switchSpin = 0;
-                            modelViewer.style.filter = 'none';
-                        }
-                    });
-                }
-            });
+                        gsap.to(spinObj, {
+                            val: 720,
+                            blur: 0,
+                            duration: 1.35,
+                            ease: 'back.out(0.75)',
+                            onUpdate: () => {
+                                switchSpin = spinObj.val;
+                                modelViewer.style.filter = `blur(${spinObj.blur}px) drop-shadow(0 0 20px ${target.glow})`;
+                            },
+                            onComplete: () => {
+                                switchSpin = 0;
+                                modelViewer.style.filter = `drop-shadow(0 0 16px ${target.glow})`;
+                            }
+                        });
+                    }
+                });
+            }
 
             // 3. Orbs implode to centre, swap model, explode back out
             let completedOrbs = 0;
@@ -807,8 +987,8 @@
                 const currentBaseX = parseFloat(orb.dataset.baseX) || 0;
                 const currentBaseY = parseFloat(orb.dataset.baseY) || 0;
 
-                const nextBaseX = (Math.random() - 0.5) * 200;
-                const nextBaseY = (Math.random() - 0.5) * 200;
+                const nextBaseX = (Math.random() - 0.5) * 220;
+                const nextBaseY = (Math.random() - 0.5) * 220;
 
                 gsap.set(orb, { rotation: startAngle, x: currentBaseX, y: currentBaseY });
 
@@ -819,19 +999,20 @@
                         rotation: startAngle + 45,
                         scale: 0.1,
                         opacity: 0,
-                        duration: 0.5,
+                        duration: 0.45,
                         ease: 'power2.in',
                         onComplete: () => {
                             const nextModel = orb.dataset.model === 'cap' ? 'gem' : 'cap';
                             orb.dataset.model = nextModel;
                             orb.src = MODELS[nextModel];
                             paint(orb, target.body);
-                            heroCenter.style.zIndex = 50;
+                            orb.style.filter = `drop-shadow(0 0 16px ${target.glow})`;
+                            if (heroCenter) heroCenter.style.zIndex = 50;
                         }
                     })
-                    .to(orb, { duration: 0.3 })
+                    .to(orb, { duration: 0.25 })
                     .to(orb, {
-                        onStart: () => { heroCenter.style.zIndex = 1; },
+                        onStart: () => { if (heroCenter) heroCenter.style.zIndex = 1; },
                         x: nextBaseX,
                         y: nextBaseY,
                         rotation: startAngle + 90,
@@ -861,11 +1042,38 @@
             b.dataset.baseY = 0;
         });
 
-        // Repaint each orb once its model finishes loading
+        // Repaint each orb and centerpiece cap once its model finishes loading
         allOrbs.forEach(orb => {
-            orb.addEventListener('load', () => paint(orb, THEMES[currentFlavor].body));
+            if (orb.model) paint(orb, (THEMES[currentFlavor] || THEMES.blue).body);
+            orb.addEventListener('load', () => paint(orb, (THEMES[currentFlavor] || THEMES.blue).body));
         });
-        modelViewer.addEventListener('load', () => paint(modelViewer, THEMES[currentFlavor].body));
+        if (modelViewer) {
+            if (modelViewer.model) paint(modelViewer, (THEMES[currentFlavor] || THEMES.blue).body);
+            modelViewer.addEventListener('load', () => paint(modelViewer, (THEMES[currentFlavor] || THEMES.blue).body));
+        }
+
+        // GSAP ScrollTrigger Parallax Scrub on Large CHARUSAT Typography Mask
+        if (window.gsap && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+            const giantText = document.getElementById('giantParallaxText');
+            if (giantText) {
+                gsap.fromTo(giantText,
+                    { x: '6%', opacity: 0.75, scale: 0.99 },
+                    {
+                        x: '-6%',
+                        opacity: 1,
+                        scale: 1.01,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: '.cinematic-footer',
+                            start: 'top 85%',
+                            end: 'bottom bottom',
+                            scrub: 1.2
+                        }
+                    }
+                );
+            }
+        }
 
         let mouse = { x: 0, y: 0, px: -9999, py: -9999 };
         let currentMouse = { x: 0, y: 0 };
@@ -884,11 +1092,13 @@
             currentMouse.y += (mouse.y - currentMouse.y) * 0.05;
 
             // Cursor tilt on the centrepiece + any transition spin
-            modelViewer.cameraOrbit = `${(currentMouse.x * 40) + switchSpin}deg ${90 + (currentMouse.y * 20)}deg 380%`;
+            if (modelViewer) {
+                modelViewer.cameraOrbit = `${(currentMouse.x * 40) + switchSpin}deg ${90 + (currentMouse.y * 20)}deg 380%`;
+            }
 
-            orbsFG.style.transform = `translate(${currentMouse.x * 60}px, ${currentMouse.y * 60}px)`;
-            orbsBG.style.transform = `translate(${currentMouse.x * -30}px, ${currentMouse.y * -30}px)`;
-            sparksBG.style.transform = `translate(${currentMouse.x * -15}px, ${currentMouse.y * -15}px)`;
+            if (orbsFG) orbsFG.style.transform = `translate(${currentMouse.x * 60}px, ${currentMouse.y * 60}px)`;
+            if (orbsBG) orbsBG.style.transform = `translate(${currentMouse.x * -30}px, ${currentMouse.y * -30}px)`;
+            if (sparksBG) sparksBG.style.transform = `translate(${currentMouse.x * -15}px, ${currentMouse.y * -15}px)`;
 
             if (!isSwitching) {
                 allOrbs.forEach((orb, i) => {
@@ -944,6 +1154,7 @@
 
         // Endless rising bubbles (pure CSS, no image asset)
         const bubblesContainer = document.getElementById('bubbles-container');
+        window.__studentHubBubblesActive = true;
 
         function createBubble() {
             if (!bubblesContainer) return;

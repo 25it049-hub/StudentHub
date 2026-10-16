@@ -1,427 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Who runs StudentHub and the institute behind it — mission, accreditation, the office team and every milestone since 1998.">
-  <title>About — StudentHub, Charotar University of Science and Technology</title>
+  <meta name="description" content="About CHARUSAT StudentHub � Academic excellence, institutional milestones, leadership team, and digital campus infrastructure.">
+  <title>About Us | CHARUSAT StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
+
+  <!-- Google Fonts: Manrope + Inter + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- This page lives in /pages/, so ../ climbs out to the repo root.
-       Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item active" aria-current="page">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" aria-current="page">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- ================= PAGE BANNER ================= -->
-    <section class="banner">
-      <div class="banner__bg">
-        <img src="images/about-campus-aerial.jpg" alt="" aria-hidden="true">
-      </div>
+    <!-- ================= SUBPAGE HERO SECTION ================= -->
+    <section class="about-hero-section">
+      <div class="about-hero-glow" aria-hidden="true"></div>
 
-      <div class="shell">
-        <div class="banner__inner" data-reveal>
-          <nav aria-label="Breadcrumb">
-            <ol class="crumbs">
-              <li><a href="index.html">Home</a></li>
-              <li>About</li>
-            </ol>
-          </nav>
-          <h1>The office behind the portal</h1>
-          <p>
-            StudentHub is the student services portal of Charotar University of Science and Technology, Ahmedabad.
-            It went live on 15 July 2024 and now carries attendance, results, fee receipts, event
-            registration and grievances for 12,400 students across 38 departments and centres.
-          </p>
+      <div class="about-hero-content" data-reveal>
+        <div class="about-hero-badge">
+          <span class="pulse-dot-green"></span>
+          <span>Institutional Profile &amp; Platform</span>
+        </div>
+
+        <h1 class="about-hero-title">
+          <span class="outline">About</span> CHARUSAT<br>
+          <span class="about-hero-accent">StudentHub</span>
+        </h1>
+
+        <p class="about-hero-desc">
+          StudentHub is the unified digital experience platform for Charotar University of Science and Technology. 
+          Connecting 12,400+ students across 38 departments with real-time academic records, proactive examination updates, 
+          and centralized student services all behind a single secure login.
+        </p>
+
+        <div class="about-hero-pills">
+          <span class="about-pill-item">??? NAAC A+ Accredited</span>
+          <span class="about-pill-item">?? 12,400+ Active Students</span>
+          <span class="about-pill-item">?? 28 Years of Excellence</span>
+          <span class="about-pill-item">?? Changa Campus, Anand</span>
         </div>
       </div>
     </section>
 
-    <!-- ================= MISSION + VISION ================= -->
+    <!-- ================= MISSION & VISION PILLARS ================= -->
     <section class="section">
       <div class="shell">
         <div class="section-head" data-reveal>
-          <span class="eyebrow">Why we built it</span>
-          <h2>One portal, because four of them was three too many</h2>
+          <span class="eyebrow">Our Purpose</span>
+          <h2><span class="outline">Our</span> Purpose &amp; Mission</h2>
           <p>
-            Until 2024 attendance sat in a desktop application, results in a PDF on the notice board,
-            fees at Counter 3 and everything else in a WhatsApp group. This is what replaced that.
+            Bridging academic administration with cutting-edge engineering so every student can focus on building, learning, and innovating.
           </p>
         </div>
 
-        <div class="grid grid--2">
-          <article class="pillar" data-reveal>
-            <span class="pillar__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.1"/></svg>
-            </span>
-            <h3>Our mission</h3>
+        <div class="about-pillars-grid">
+          <article class="about-pillar-card" data-reveal>
+            <div class="about-pillar-header">
+              <div class="about-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                </svg>
+              </div>
+              <h3>Our Mission</h3>
+            </div>
             <p>
-              Cut the time a student spends walking between offices down to nothing. Every record,
-              form, notice and payment sits behind one login, and every request raised through the
-              portal gets a written reply — with a ticket number — inside two working days.
+              Eliminate campus administrative friction entirely. Every mark sheet, fee receipt, timetable notice, and grievance 
+              operates behind one intuitive interface. Requests submitted through the portal receive a verified, trackable ticket 
+              with guaranteed resolution updates inside two working days.
             </p>
           </article>
 
-          <article class="pillar pillar--vision" data-reveal data-reveal-delay="1">
-            <span class="pillar__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.6 12S5.3 5.6 12 5.6 22.4 12 22.4 12 18.7 18.4 12 18.4 1.6 12 1.6 12Z"/><circle cx="12" cy="12" r="3.2"/></svg>
-            </span>
-            <h3>Our vision</h3>
+          <article class="about-pillar-card" data-reveal data-reveal-delay="1">
+            <div class="about-pillar-header">
+              <div class="about-pillar-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <h3>Our Vision</h3>
+            </div>
             <p>
-              By 2028, every departmental circular, examination form and grievance should begin and
-              close inside StudentHub, with paper kept only where a GTU or AICTE statute still demands
-              a wet signature. Nobody should miss a deadline for reading the wrong board.
+              Foster a paperless, instantaneous digital ecosystem across the entire 120-acre CHARUSAT campus. By integrating 
+              cloud intelligence, real-time sync, and modern UI/UX, we ensure no student ever misses a scholarship, examination 
+              deadline, or campus opportunity due to outdated noticeboards.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHY STUDENTHUB ================= -->
-    <section class="section section--parchment">
+    <!-- ================= WHY STUDENTHUB & DIGITAL BLUEPRINT ================= -->
+    <section class="section">
       <div class="shell">
-        <div class="grid grid--split">
-          <div data-reveal>
-            <span class="eyebrow">Why StudentHub</span>
-            <h2>Five things it does that the old system did not</h2>
-            <p class="lede mb-6">
-              None of this is clever. It is mostly a matter of putting the same information in one
-              place and keeping it current.
-            </p>
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Platform Innovations</span>
+          <h2><span class="outline">Why</span> StudentHub</h2>
+          <p>
+            Replacing fragmented WhatsApp groups, noticeboards, and desktop legacy apps with unified cloud precision.
+          </p>
+        </div>
 
-            <ul class="checks">
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
-                <span>
-                  <b>One login, eight offices</b>
-                  Accounts, Examination, Library, Hostel, Transport, Training &amp; Placement, your
-                  department office and the student council all publish to the same feed.
-                </span>
+        <div class="grid grid--split" style="align-items: center;">
+          <!-- Left: 5 Pillars List -->
+          <div data-reveal>
+            <ul class="about-features-list">
+              <li class="about-feature-item">
+                <div class="about-feature-check" aria-hidden="true">?</div>
+                <div>
+                  <h4>Unified Multi-Department Feed</h4>
+                  <p>Accounts, Examination Cell, Library, Training &amp; Placement, and Dean's Office communicate through a single authoritative channel.</p>
+                </div>
               </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
-                <span>
-                  <b>Attendance that warns you early</b>
-                  Subject-wise percentages refresh by 8 PM the same day and flag you at 78%, not at 74%
-                  when the detention list has already gone up.
-                </span>
+              <li class="about-feature-item">
+                <div class="about-feature-check" aria-hidden="true">?</div>
+                <div>
+                  <h4>Proactive Attendance Intelligence</h4>
+                  <p>Refreshes every evening by 8:00 PM and automatically cautions students at 78% before mandatory minimums are breached.</p>
+                </div>
               </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
-                <span>
-                  <b>Records that outlive the semester</b>
-                  Marksheets, fee receipts, bonafide letters and workshop certificates stay
-                  downloadable for six years after you graduate.
-                </span>
+              <li class="about-feature-item">
+                <div class="about-feature-check" aria-hidden="true">?</div>
+                <div>
+                  <h4>Persistent Cloud Credential Vault</h4>
+                  <p>Grade sheets, bonafide letters, fee receipts, and event credentials remain permanently accessible for 6+ years post-graduation.</p>
+                </div>
               </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
-                <span>
-                  <b>Built here, fixed here</b>
-                  Two full-time developers and four interns from the IT department maintain it. A bug
-                  report joins the same queue as a fee query and is answered the same way.
-                </span>
+              <li class="about-feature-item">
+                <div class="about-feature-check" aria-hidden="true">?</div>
+                <div>
+                  <h4>Engineered by CHARUSAT IT Minds</h4>
+                  <p>Architected and maintained in-house by university software developers and student research fellows from CSPIT &amp; CMPICA.</p>
+                </div>
               </li>
-              <li>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.3 12.4 2.5 2.5 4.9-5.4"/></svg>
-                <span>
-                  <b>Light enough for hostel Wi-Fi</b>
-                  Every page stays under 400 KB, works without JavaScript for reading, and does not
-                  need an app install to check a result at midnight.
-                </span>
+              <li class="about-feature-item">
+                <div class="about-feature-check" aria-hidden="true">?</div>
+                <div>
+                  <h4>Optimized for Hostel Wi-Fi &amp; Mobile</h4>
+                  <p>Sub-second payload delivery, full client-side caching, and responsive glass UI that runs flawlessly on any student phone.</p>
+                </div>
               </li>
             </ul>
           </div>
 
-          <div class="media media--ratio" data-reveal data-reveal-delay="2">
-            <img src="images/about-campus.jpg" alt="Students on the steps of the Central Library block during a change of lecture">
+          <!-- Right: Digital Architecture Blueprint Card -->
+          <div data-reveal data-reveal-delay="2">
+            <div class="about-blueprint-card">
+              <div class="about-blueprint-status-bar">
+                <div class="about-blueprint-status-tag">
+                  <span class="pulse-dot-green"></span>
+                  <span>System Architecture 2.0</span>
+                </div>
+                <span class="badge badge--success">99.98% Uptime</span>
+              </div>
+
+              <div class="about-blueprint-metrics-row">
+                <div class="about-metric-box">
+                  <div class="about-metric-val">45ms</div>
+                  <div class="about-metric-lbl">API Latency</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="about-metric-val">256-bit</div>
+                  <div class="about-metric-lbl">TLS 1.3 Security</div>
+                </div>
+                <div class="about-metric-box">
+                  <div class="about-metric-val">38</div>
+                  <div class="about-metric-lbl">Departments</div>
+                </div>
+              </div>
+
+              <div class="about-blueprint-nodes">
+                <div class="about-node-row">
+                  <span><span>?</span> Dynamic UI Engine</span>
+                  <span style="color: var(--accent-color); font-weight: 700;">GSAP + CSS3</span>
+                </div>
+                <div class="about-node-row">
+                  <span><span>???</span> Security &amp; Identity</span>
+                  <span style="color: var(--accent-color); font-weight: 700;">Zero-Trust SSO</span>
+                </div>
+                <div class="about-node-row">
+                  <span><span>??</span> Student Data Sync</span>
+                  <span style="color: var(--accent-color); font-weight: 700;">GTU / CHARUSAT DB</span>
+                </div>
+                <div class="about-node-row">
+                  <span><span>??</span> 3D Visualization</span>
+                  <span style="color: var(--accent-color); font-weight: 700;">WebGL / WebXR</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= TEAM ================= -->
+    <!-- ================= LEADERSHIP & TEAM ================= -->
     <section class="section">
       <div class="shell">
         <div class="section-head section-head--center" data-reveal>
-          <span class="eyebrow">Who runs it</span>
-          <h2>The people who answer when you raise a ticket</h2>
-          <p>Office hours are 10:00 AM to 5:00 PM, Monday to Saturday, second Saturday closed.</p>
+          <span class="eyebrow">University Leadership</span>
+          <h2><span class="outline">Campus</span> Leadership &amp; Mentors</h2>
+          <p>
+            Dedicated administrators, professors, and technology leaders ensuring smooth campus governance every single day.
+          </p>
         </div>
 
-        <div class="grid grid--4">
-          <article class="card card--lift member full-height" data-reveal>
-            <div class="media media--square">
-              <img src="images/team-1.jpg" alt="Dr. Meera Vasavada, Principal">
+        <div class="about-team-grid">
+          <!-- Member 1 -->
+          <article class="about-member-card" data-reveal>
+            <div class="about-avatar-shield" aria-label="Dr. Trushit Upadhyaya">TU</div>
+            <h4>Dr. Trushit Upadhyaya </h4>
+            <span class="about-member-role">Principal &amp; Academic Chair</span>
+            <p>Leads the Academic Council and mentors senior civil engineering research alongside institutional governance.</p>
+            <div class="about-member-links">
+              <a href="mailto:principal@charusat.edu.in" class="about-icon-btn" aria-label="Email Principal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="about-icon-btn" aria-label="Faculty Profile">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
-            <h4>Dr. Meera Vasavada</h4>
-            <small>Principal</small>
-            <p>Chairs the academic council and still takes the Tuesday 8 AM Structural Analysis lecture for final-year Civil.</p>
-            <ul class="member__social">
-              <li><a href="#" aria-label="Dr. Meera Vasavada on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
-              <li><a href="mailto:principal@charusat.edu.in" aria-label="Email the Principal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
-            </ul>
           </article>
 
-          <article class="card card--lift member full-height" data-reveal data-reveal-delay="1">
-            <div class="media media--square">
-              <img src="images/team-2.jpg" alt="Ms. Falguni Shah, Registrar">
+          <!-- Member 2 -->
+          <article class="about-member-card" data-reveal data-reveal-delay="1">
+            <div class="about-avatar-shield" aria-label="Mr. Sagar Patel">SP</div>
+            <h4>Mr. Sagar Patel</h4>
+            <span class="about-member-role">Registrar</span>
+            <p>Directs student records authentication, official transcripts, migration certifications, and examination formalities.</p>
+            <div class="about-member-links">
+              <a href="mailto:registrar@charusat.edu.in" class="about-icon-btn" aria-label="Email Registrar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="about-icon-btn" aria-label="Official Portal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
-            <h4>Ms. Falguni Shah</h4>
-            <small>Registrar</small>
-            <p>Signs every transcript, bonafide letter and migration certificate the portal issues — roughly 300 a month.</p>
-            <ul class="member__social">
-              <li><a href="#" aria-label="Ms. Falguni Shah on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
-              <li><a href="mailto:registrar@charusat.edu.in" aria-label="Email the Registrar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
-            </ul>
           </article>
 
-          <article class="card card--lift member full-height" data-reveal data-reveal-delay="2">
-            <div class="media media--square">
-              <img src="images/team-3.jpg" alt="Prof. Nilesh Patel, Head of the Department of Information Technology">
+          <!-- Member 3 -->
+          <article class="about-member-card" data-reveal data-reveal-delay="2">
+            <div class="about-avatar-shield" aria-label="Prof. Purvi Prajapati">PP</div>
+            <h4>Prof. Purvi Prajapati</h4>
+            <span class="about-member-role">Head, Information Technology</span>
+            <p>Chief Architect of the StudentHub platform roadmap, cloud services deployment, and cybersecurity standards.</p>
+            <div class="about-member-links">
+              <a href="mailto:hod.it@charusat.edu.in" class="about-icon-btn" aria-label="Email Head of IT">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="about-icon-btn" aria-label="Department Page">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
-            <h4>Prof. Nilesh Patel</h4>
-            <small>Head, Information Technology</small>
-            <p>Owns the portal roadmap and reviews every release before it goes out on a Friday evening.</p>
-            <ul class="member__social">
-              <li><a href="#" aria-label="Prof. Nilesh Patel on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
-              <li><a href="mailto:hod.it@charusat.edu.in" aria-label="Email the Head of Information Technology"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
-            </ul>
           </article>
 
-          <article class="card card--lift member full-height" data-reveal data-reveal-delay="3">
-            <div class="media media--square">
-              <img src="images/team-4.jpg" alt="Mr. Arjun Iyer, Training and Placement Officer">
+          <!-- Member 4 -->
+          <article class="about-member-card" data-reveal data-reveal-delay="3">
+            <div class="about-avatar-shield" aria-label="Mrs. Priyanka Patel">PP</div>
+            <h4>Mrs. Priyanka Patel</h4>
+            <span class="about-member-role">Training &amp; Placement Head</span>
+            <p>Manages Fortune 500 recruiter drives, technical internship pipelines, and career preparation across all engineering batches.</p>
+            <div class="about-member-links">
+              <a href="mailto:tpo@charusat.edu.in" class="about-icon-btn" aria-label="Email TPO">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="about-icon-btn" aria-label="Placement Cell">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
             </div>
-            <h4>Mr. Arjun Iyer</h4>
-            <small>Training &amp; Placement Officer</small>
-            <p>Handles company invites, eligibility lists and the 27-recruiter autumn cycle out of Block A.</p>
-            <ul class="member__social">
-              <li><a href="#" aria-label="Mr. Arjun Iyer on LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8H3.8v12h2.7V8Zm-1.35-4.3A1.6 1.6 0 1 0 5.15 7a1.6 1.6 0 0 0 0-3.3ZM20.2 20h-2.7v-6.3c0-1.6-.6-2.4-1.8-2.4-1 0-1.6.6-1.8 1.3-.1.2-.1.6-.1.9V20h-2.7s.04-9.9 0-12h2.7v1.7c.4-.8 1.4-1.9 3.3-1.9 2.3 0 3.1 1.6 3.1 4.6V20Z"/></svg></a></li>
-              <li><a href="mailto:tpo@charusat.edu.in" aria-label="Email the Training and Placement Officer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg></a></li>
-            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= INSTITUTE AT A GLANCE ================= -->
-    <section class="section section--tight section--surface">
+    <!-- ================= INSTITUTE AT A GLANCE (METRICS) ================= -->
+    <section class="section section--tight">
       <div class="shell">
-        <aside aria-label="Institute at a glance">
-          <div class="section-head" data-reveal>
-            <span class="eyebrow">At a glance</span>
-            <h2>Institute record, as filed with GTU</h2>
-            <p>Figures below are from the 2025&ndash;26 self-assessment report submitted in June 2026.</p>
-          </div>
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrowun Iye">Institutional Benchmarks</span>
+          <h2><span class="outline">CHARUSAT</span> by the Numbers</h2>
+          <p>Key highlights filed under our latest NAAC accreditation and university self-assessment audit.</p>
+        </div>
 
-          <div class="grid grid--4">
-            <dl class="info-card" data-reveal>
-              <dt>Established</dt>
-              <dd>1998</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="1">
-              <dt>Affiliation</dt>
-              <dd>GTU, Ahmedabad</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="2">
-              <dt>Accreditation</dt>
-              <dd>NAAC A+</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="3">
-              <dt>Campus</dt>
-              <dd>42 acres</dd>
-            </dl>
-            <dl class="info-card" data-reveal>
-              <dt>Programmes</dt>
-              <dd>26</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="1">
-              <dt>Teaching staff</dt>
-              <dd>412</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="2">
-              <dt>Students on roll</dt>
-              <dd>12,400</dd>
-            </dl>
-            <dl class="info-card" data-reveal data-reveal-delay="3">
-              <dt>Placed, 2025 batch</dt>
-              <dd>94%</dd>
-            </dl>
+        <div class="about-stats-grid">
+          <div class="about-stat-box" data-reveal>
+            <div class="about-stat-num">1998</div>
+            <div class="about-stat-label">Year Established</div>
           </div>
-        </aside>
+          <div class="about-stat-box" data-reveal data-reveal-delay="1">
+            <div class="about-stat-num">NAAC A+</div>
+            <div class="about-stat-label">Accreditation (3.42)</div>
+          </div>
+          <div class="about-stat-box" data-reveal data-reveal-delay="2">
+            <div class="about-stat-num">120+</div>
+            <div class="about-stat-label">Acres Green Campus</div>
+          </div>
+          <div class="about-stat-box" data-reveal data-reveal-delay="3">
+            <div class="about-stat-num">12,400+</div>
+            <div class="about-stat-label">Students on Roll</div>
+          </div>
+          <div class="about-stat-box" data-reveal>
+            <div class="about-stat-num">94%</div>
+            <div class="about-stat-label">Placement Record</div>
+          </div>
+          <div class="about-stat-box" data-reveal data-reveal-delay="1">
+            <div class="about-stat-num">412</div>
+            <div class="about-stat-label">Distinguished Faculty</div>
+          </div>
+          <div class="about-stat-box" data-reveal data-reveal-delay="2">
+            <div class="about-stat-num">26+</div>
+            <div class="about-stat-label">UG / PG Degrees</div>
+          </div>
+          <div class="about-stat-box" data-reveal data-reveal-delay="3">
+            <div class="about-stat-num">450-Bed</div>
+            <div class="about-stat-label">Teaching Hospital</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ================= MILESTONES ================= -->
-    <section class="section section--parchment">
+    <!-- ================= 28-YEAR MILESTONES ================= -->
+    <section class="section">
       <div class="shell shell--narrow">
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Milestones</span>
-          <h2>Twenty-eight years, in short</h2>
-          <p>The dates the institute marks in its calendar. Everything else is in the annual report.</p>
+        <div class="section-head section-head--center" data-reveal>
+          <span class="eyebrow">Historic Milestones</span>
+          <h2><span class="outline">Twenty-Eight</span> Years of Excellence</h2>
+          <p>From an ambitious educational foundation in 1998 to a premier global university campus.</p>
         </div>
 
-        <ol class="timeline">
-          <li data-reveal>
-            <time datetime="1998-07">1998</time>
-            <h4>Three branches, one rented block</h4>
-            <p>Founded on Drive-In Road with 180 sanctioned seats in Civil, Mechanical and Electrical Engineering. Eleven faculty members, no library of its own.</p>
-          </li>
-          <li data-reveal data-reveal-delay="1">
-            <time datetime="2003-06">2003</time>
-            <h4>Move to the University Road campus</h4>
-            <p>Forty-two acres, four academic blocks and the first hostel. Computer Engineering and Information Technology admitted their first intake the same July.</p>
-          </li>
-          <li data-reveal data-reveal-delay="2">
-            <time datetime="2008-09">2008</time>
-            <h4>Affiliation transferred to GTU</h4>
-            <p>Along with every other engineering college in the state after Gujarat Technological University was constituted. Semester pattern replaced the annual examination.</p>
-          </li>
-          <li data-reveal data-reveal-delay="3">
-            <time datetime="2016-02">2016</time>
-            <h4>Central Placement Cell set up</h4>
-            <p>Recruitment moved from individual departments to one office in Block A. The 2016 season closed with 214 offers from 31 companies.</p>
-          </li>
-          <li data-reveal data-reveal-delay="4">
-            <time datetime="2024-07-15">2024</time>
-            <h4>StudentHub goes live</h4>
-            <p>Attendance, results, fees, event booking and grievances moved onto one login on 15 July, retiring four separate systems and the paper leave register.</p>
-          </li>
-          <li data-reveal data-reveal-delay="5">
-            <time datetime="2026-01">2026</time>
-            <h4>NAAC A+ in the third cycle</h4>
-            <p>Re-accredited in January with a CGPA of 3.42, and the Innovation Lab in Block D opened to all departments rather than final-year projects alone.</p>
-          </li>
-        </ol>
+        <div class="about-timeline-wrap">
+          <!-- 1998 -->
+          <div class="about-timeline-item" data-reveal>
+            <span class="about-timeline-year">1998</span>
+            <div class="about-timeline-card">
+              <h4>Three Foundational Branches</h4>
+              <p>Founded on Drive-In Road with 180 sanctioned seats in Civil, Mechanical and Electrical Engineering under visionary educational trusts.</p>
+            </div>
+          </div>
+
+          <!-- 2003 -->
+          <div class="about-timeline-item" data-reveal data-reveal-delay="1">
+            <span class="about-timeline-year">2003</span>
+            <div class="about-timeline-card">
+              <h4>Move to Changa University Road Campus</h4>
+              <p>Inaugurated the 120-acre lush green campus with modern academic blocks, research labs, hostels, and first intakes for Computer &amp; IT Engineering.</p>
+            </div>
+          </div>
+
+          <!-- 2008 -->
+          <div class="about-timeline-item" data-reveal data-reveal-delay="2">
+            <span class="about-timeline-year">2008</span>
+            <div class="about-timeline-card">
+              <h4>Transition to Autonomous University System</h4>
+              <p>Established autonomous academic curriculum with rigorous semester evaluations, international collaborative research, and industrial electives.</p>
+            </div>
+          </div>
+
+          <!-- 2016 -->
+          <div class="about-timeline-item" data-reveal data-reveal-delay="3">
+            <span class="about-timeline-year">2016</span>
+            <div class="about-timeline-card">
+              <h4>Central Placement &amp; Innovation Cell</h4>
+              <p>Launched the unified Training &amp; Placement headquarters in Academic Block A, expanding to 100+ national and multinational hiring partners.</p>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="about-timeline-item" data-reveal data-reveal-delay="4">
+            <span class="about-timeline-year">2024</span>
+            <div class="about-timeline-card">
+              <h4>Launch of Unified StudentHub Portal</h4>
+              <p>Retired fragmented legacy paper registers; combined attendance, examination results, fee receipts, and digital ticketing into one secure web system.</p>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="about-timeline-item" data-reveal data-reveal-delay="5">
+            <span class="about-timeline-year">2026</span>
+            <div class="about-timeline-card">
+              <h4>NAAC A+ Accreditation &amp; 3D Portal Upgrade</h4>
+              <p>Re-accredited with a 3.42 CGPA. Upgraded StudentHub with interactive 3D WebGL visualizations, real-time performance, and multi-theme experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAMPUS NAVIGATION & 360 TOUR ================= -->
+    <section class="section section--tight" id="campus-map">
+      <div class="shell">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">CHARUSAT Campus</span>
+          <h2><span class="outline">Campus</span> Master Plan &amp; Navigation</h2>
+          <p>
+            Explore the 120+ acre eco-friendly campus at Changa, Anand. Launch the live 360� virtual tour or locate key institutes on Google Maps.
+          </p>
+        </div>
+
+        <div class="campus-finding-card" data-reveal>
+          <!-- Left: Official Campus Map Image -->
+          <div class="campus-map-preview-wrap">
+            <span class="campus-map-overlay-badge">
+              <span class="pulse-dot-green"></span>
+              Official Campus Map
+            </span>
+            <a href="https://360-virtual-tour.charusat.ac.in/" target="_blank" rel="noopener" title="Launch 360� Virtual Campus Tour">
+              <img class="campus-map-img" src="../images/charusat-campus-map.png" alt="Official CHARUSAT University Campus and Healthcare Campus Map Layout">
+            </a>
+          </div>
+
+          <!-- Right: Campus Info & Interactive Links -->
+          <div class="campus-info-pane">
+            <span class="badge badge--primary mb-2">Changa Campus</span>
+            <h3 style="font-size: 1.8rem; margin: 0.5rem 0 1rem; color: #ffffff;">Charotar University Campus</h3>
+            <p style="color: var(--muted-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              Encompassing CSPIT (Technology), CMPICA (Computer Applications), PDPIAS (Applied Sciences), RPCP (Pharmacy), IIIM (Management), and the 450-bed CHARUSAT Multi-Speciality Hospital.
+            </p>
+
+            <div class="campus-landmarks-grid">
+              <div class="campus-landmark-item">
+                <span>???</span>
+                <span><b>CSPIT</b> &ndash; Tech Institute</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>??</span>
+                <span><b>CMPICA</b> &ndash; Computer Apps</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>??</span>
+                <span><b>PDPIAS</b> &ndash; Sciences</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>??</span>
+                <span><b>RPCP</b> &ndash; Pharmacy</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>??</span>
+                <span><b>Hospital</b> &ndash; 450 Beds</span>
+              </div>
+              <div class="campus-landmark-item">
+                <span>?</span>
+                <span><b>Sports Complex</b> &amp; Hostels</span>
+              </div>
+            </div>
+
+            <div class="campus-actions-row">
+              <a href="https://360-virtual-tour.charusat.ac.in/" target="_blank" rel="noopener" class="campus-btn campus-btn--primary">
+                <span>?? 360� Virtual Campus Tour</span>
+              </a>
+              <a href="https://maps.app.goo.gl/zqZKyZSgVok7JNGn8" target="_blank" rel="noopener" class="campus-btn campus-btn--glass">
+                <span>?? Google Maps Location</span>
+              </a>
+              <a href="https://www.charusat.ac.in/" target="_blank" rel="noopener" class="campus-btn campus-btn--glass">
+                <span>??? Official Website</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= CINEMATIC MOTION FOOTER ================= -->
+  <div class="cinematic-footer-wrapper">
+    <!-- Animated Marquee Strip -->
+    <div class="footer-marquee-strip" aria-hidden="true">
+      <div class="footer-marquee-track">
+        <span class="footer-marquee-item">
+          <span>CHARUSAT STUDENT HUB</span>
+          <span class="footer-marquee-sparkle">?</span>
+          <b>CAMPUS PORTAL 2026</b>
+          <span class="footer-marquee-sparkle">?</span>
+          <span>EXCELLENCE IN EDUCATION</span>
+          <span class="footer-marquee-sparkle">?</span>
+          <b>CENTRALIZED STUDENT SERVICES</b>
+          <span class="footer-marquee-sparkle">?</span>
+          <span>EMPOWERING FUTURE LEADERS</span>
+          <span class="footer-marquee-sparkle">?</span>
+        </span>
+        <span class="footer-marquee-item">
+          <span>CHARUSAT STUDENT HUB</span>
+          <span class="footer-marquee-sparkle">?</span>
+          <b>CAMPUS PORTAL 2026</b>
+          <span class="footer-marquee-sparkle">?</span>
+          <span>EXCELLENCE IN EDUCATION</span>
+          <span class="footer-marquee-sparkle">?</span>
+          <b>CENTRALIZED STUDENT SERVICES</b>
+          <span class="footer-marquee-sparkle">?</span>
+          <span>EMPOWERING FUTURE LEADERS</span>
+          <span class="footer-marquee-sparkle">?</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Main Cinematic Footer Container -->
+    <footer class="cinematic-footer">
+      <div class="footer-aurora-glow" aria-hidden="true"></div>
+      <div class="footer-grid-overlay" aria-hidden="true"></div>
+
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Launch Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Browse Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Student Handbook</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
-  <script src="../js/script.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>

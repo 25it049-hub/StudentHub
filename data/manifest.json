@@ -1,0 +1,19 @@
+{
+  "name": "CHARUSAT StudentHub",
+  "short_name": "StudentHub",
+  "description": "CHARUSAT Campus Portal 2026 — Unified academics, attendance, examination results, events and student services.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#010c14",
+  "theme_color": "#0b4f8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/studenthublogo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"]
+}

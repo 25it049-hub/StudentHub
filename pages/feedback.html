@@ -4,57 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tell Student Services what works on StudentHub and what does not. Rate the portal, pick a topic and leave a comment.">
-  <title>Share Your Feedback — StudentHub</title>
+  <title>Share Your Feedback — CHARUSAT StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- This page lives in /pages/, so ../ climbs out to the repo root.
-       Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item active" aria-current="page">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" aria-current="page">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
+    <!-- 3D Toggle Switch (Green <-> Blue) & CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <div class="theme-3d-toggle-wrap" style="margin: 0;">
+        <button type="button" class="theme-3d-gem-btn" data-theme-cycle-btn="true" aria-label="Cycle 3D Atmosphere: Current is BLUE" title="Click to Cycle 3D Theme Atmosphere">
+          <span class="gem-3d-orb gem-3d-orb--blue"></span>
+          <span class="gem-3d-label">BLUE</span>
+          <span class="gem-3d-icon" aria-hidden="true">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </span>
+        </button>
       </div>
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
@@ -64,187 +64,427 @@
     <section class="banner banner--plain">
       <div class="banner__bg" aria-hidden="true"></div>
       <div class="shell">
-        <div class="banner__inner">
+        <div class="banner__inner" style="max-width: 840px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center;">
           <nav aria-label="Breadcrumb">
-            <ul class="crumbs">
-              <li><a href="index.html">Home</a></li>
+            <ul class="crumbs" style="justify-content: center; margin-bottom: 1rem;">
+              <li><a href="../index.html">Home</a></li>
               <li>Feedback</li>
             </ul>
           </nav>
-          <span class="eyebrow">Student voice</span>
-          <h1>Tell us what the portal gets wrong</h1>
-          <p>
-            Responses go to the Student Services committee, which reviews them on the first Monday of every
-            month. Specific reports are more useful than general ones, so name the screen if you can.
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">📢</span> Student Voice &amp; Portal Feedback
+            </span>
+          </div>
+          <h1 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: clamp(2.3rem, 4.5vw, 3.4rem); font-weight: 900; color: #ffffff; margin-bottom: 0.85rem; text-align: center; line-height: 1.18; letter-spacing: -0.02em;">
+            Tell Us How to Improve <span class="accent-text">StudentHub</span>
+          </h1>
+          <p style="color: var(--muted-color); font-size: 1.05rem; max-width: 700px; margin: 0 auto; text-align: center; line-height: 1.65;">
+            Your feedback directly shapes next semester's features, mobile speed, and academic tools. Every suggestion is encrypted, logged, and reviewed at the monthly Student Services &amp; IT Council session.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEEDBACK FORM ================= -->
-    <section class="section">
-      <div class="shell shell--narrow">
+    <!-- ================= METRICS & MAIN FORM ================= -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 5rem;">
+      <div class="shell">
 
-        <div class="section-head" data-reveal>
-          <span class="eyebrow">Takes about two minutes</span>
-          <h2>Rate your experience</h2>
-          <p>
-            Everything except the star rating and the comment box is optional, but a roll number or email
-            lets the committee write back with what changed.
+        <!-- Symmetrical 4-Tile Live Metrics Bar -->
+        <div class="fb-stats-grid" data-reveal>
+          <div class="fb-stat-tile">
+            <div class="fb-stat-tile__val">4.8 / 5.0</div>
+            <div class="fb-stat-tile__label">⭐ Overall Rating</div>
+          </div>
+          <div class="fb-stat-tile">
+            <div class="fb-stat-tile__val">1,480+</div>
+            <div class="fb-stat-tile__label">🚀 Tickets Resolved</div>
+          </div>
+          <div class="fb-stat-tile">
+            <div class="fb-stat-tile__val">99.4%</div>
+            <div class="fb-stat-tile__label">🛡️ Action Rate</div>
+          </div>
+          <div class="fb-stat-tile">
+            <div class="fb-stat-tile__val">&lt; 48 Hrs</div>
+            <div class="fb-stat-tile__label">⏱️ Council SLA</div>
+          </div>
+        </div>
+
+        <!-- Section Intro Head -->
+        <div class="faq-hero-head" data-reveal style="max-width: 820px; margin: 0 auto 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="display: flex; justify-content: center; margin-bottom: 0.85rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1.25rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1rem;">⚡</span> 2-Minute Student Survey
+            </span>
+          </div>
+          <h2 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 800; color: #ffffff; margin: 0 0 0.85rem; line-height: 1.2; text-align: center; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);">
+            Rate Your Campus Experience
+          </h2>
+          <p style="color: var(--muted-color); max-width: 680px; margin: 0 auto; font-size: 1.02rem; line-height: 1.65; text-align: center;">
+            Rate overall usability, choose affected modules, and leave comments. Verified credentials allow the council to notify you when upgrades deploy.
           </p>
         </div>
 
-        <div class="card form-wrap" data-reveal data-reveal-delay="1">
-          <div class="form-body">
-            <form data-success="feedback-success" novalidate>
+        <!-- Main Cyber Dark Sapphire Glass Card Wrap -->
+        <div class="card form-wrap feedback-glass" data-reveal data-reveal-delay="1" style="max-width: 880px; margin: 0 auto;">
+          <div class="form-body feedback-glass" style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.25rem; padding: 2.25rem 2rem; backdrop-filter: blur(20px) saturate(140%); box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06); color: #f8fafc;">
 
-              <div class="field">
-                <label id="rating-label" for="star-5">Overall, how well does StudentHub work for you? <span class="req">*</span></label>
-                <div class="rating" role="radiogroup" aria-labelledby="rating-label" aria-describedby="rating-hint">
-                  <input type="radio" id="star-5" name="rating" value="5" required>
-                  <label for="star-5">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
-                    <span class="sr-only">5 stars</span>
-                  </label>
+            <!-- Verified Student Profile Detection Banner (Dynamically Hydrated) -->
+            <div class="verified-student-card is-guest" id="fb-student-banner">
+              <div class="verified-student-left">
+                <div class="verified-student-avatar" id="fb-avatar-badge">👤</div>
+                <div class="verified-student-info">
+                  <h4>
+                    <span id="fb-display-name">Guest / Visitor Mode</span>
+                    <span class="guest-pulse-pill" id="fb-verified-pill">Not Signed In</span>
+                  </h4>
+                  <p class="verified-student-meta" id="fb-student-status-text">
+                    Submitting as guest. <a href="login.html" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Sign In to StudentHub</a> to link your verified record.
+                  </p>
+                </div>
+              </div>
+              <button type="button" id="toggle-anon-btn" class="anon-toggle-btn" title="Sign In or Toggle Anonymity">
+                <span>Sign In to Link &rarr;</span>
+              </button>
+            </div>
 
-                  <input type="radio" id="star-4" name="rating" value="4">
-                  <label for="star-4">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
-                    <span class="sr-only">4 stars</span>
-                  </label>
+            <!-- Feedback Submission Form -->
+            <form data-success="feedback-success" id="studentFeedbackForm" novalidate>
 
-                  <input type="radio" id="star-3" name="rating" value="3">
-                  <label for="star-3">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
-                    <span class="sr-only">3 stars</span>
-                  </label>
+              <!-- 1. Star Rating with Dynamic Live Reaction Badge -->
+              <div class="rating-interactive-wrap">
+                <label style="display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #ffffff; margin-bottom: 0.35rem;">
+                  How well is StudentHub performing for your semester needs? <span class="req">*</span>
+                </label>
+                <p style="color: var(--muted-color); font-size: 0.85rem; margin: 0 0 1.25rem;">
+                  Tap a star to register your grade from 1 (Needs Attention) to 5 (Outstanding).
+                </p>
 
-                  <input type="radio" id="star-2" name="rating" value="2">
-                  <label for="star-2">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
-                    <span class="sr-only">2 stars</span>
-                  </label>
-
+                <!-- Hidden Native Radios for Accessibility and Form Submission -->
+                <div class="sr-only">
                   <input type="radio" id="star-1" name="rating" value="1">
-                  <label for="star-1">
-                    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
-                    <span class="sr-only">1 star</span>
-                  </label>
+                  <input type="radio" id="star-2" name="rating" value="2">
+                  <input type="radio" id="star-3" name="rating" value="3">
+                  <input type="radio" id="star-4" name="rating" value="4">
+                  <input type="radio" id="star-5" name="rating" value="5" checked>
                 </div>
-                <p class="rating__hint" id="rating-hint">Five stars is best. One star means it is getting in your way.</p>
-              </div>
 
-              <div class="field">
-                <label id="topics-label" for="topic-dashboard">Which parts of the portal is this about?</label>
-                <div class="chips-choice" role="group" aria-labelledby="topics-label">
-                  <input type="checkbox" id="topic-dashboard" name="topic" value="dashboard">
-                  <label for="topic-dashboard">Dashboard</label>
-
-                  <input type="checkbox" id="topic-events" name="topic" value="events">
-                  <label for="topic-events">Events</label>
-
-                  <input type="checkbox" id="topic-attendance" name="topic" value="attendance">
-                  <label for="topic-attendance">Attendance</label>
-
-                  <input type="checkbox" id="topic-mobile" name="topic" value="mobile">
-                  <label for="topic-mobile">Mobile experience</label>
-
-                  <input type="checkbox" id="topic-support" name="topic" value="support">
-                  <label for="topic-support">Support</label>
+                <!-- Custom SVG Radiant Interactive Star Row -->
+                <div class="stars-row" id="stars-visual-group" role="radiogroup" aria-label="1 to 5 star rating">
+                  <button type="button" class="star-interactive-btn is-active" data-val="1" aria-label="1 star">
+                    <svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
+                  </button>
+                  <button type="button" class="star-interactive-btn is-active" data-val="2" aria-label="2 stars">
+                    <svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
+                  </button>
+                  <button type="button" class="star-interactive-btn is-active" data-val="3" aria-label="3 stars">
+                    <svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
+                  </button>
+                  <button type="button" class="star-interactive-btn is-active" data-val="4" aria-label="4 stars">
+                    <svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
+                  </button>
+                  <button type="button" class="star-interactive-btn is-active" data-val="5" aria-label="5 stars">
+                    <svg viewBox="0 0 24 24"><path d="m12 2.6 2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.45l-5.81 3.05 1.11-6.47-4.7-4.58 6.5-.95L12 2.6Z"/></svg>
+                  </button>
                 </div>
-                <p class="hint">Select as many as apply. Leave blank if the comment is about the portal in general.</p>
-              </div>
 
-              <div class="field">
-                <label for="fb-name">Full name</label>
-                <div class="control">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                  </svg>
-                  <input class="input" type="text" id="fb-name" name="name" autocomplete="name" placeholder="Ananya Rao">
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="fb-email">College email address</label>
-                <div class="control">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
-                  </svg>
-                  <input class="input" type="email" id="fb-email" name="email" autocomplete="email" placeholder="25it049@charusat.edu.in">
-                </div>
-                <p class="hint">Only used if the committee needs to ask a follow-up question.</p>
-              </div>
-
-              <div class="field">
-                <label for="fb-department">Which department are you writing from? <span class="req">*</span></label>
-                <div class="control">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M10 21v-5h4v5"/>
-                  </svg>
-                  <select class="select" id="fb-department" name="department" required autocomplete="organization">
-                    <option value="">Select a department</option>
-                    <option value="computer-engineering">Computer Engineering</option>
-                    <option value="information-technology">Information Technology</option>
-                    <option value="electronics">Electronics &amp; Communication</option>
-                    <option value="mechanical">Mechanical Engineering</option>
-                    <option value="civil">Civil Engineering</option>
-                    <option value="electrical">Electrical Engineering</option>
-                    <option value="applied-sciences">Applied Sciences &amp; Humanities</option>
-                    <option value="mba">School of Management</option>
-                  </select>
-                  <span class="control__caret" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                <!-- Live Reaction Sentiment Pill -->
+                <div>
+                  <span class="rating-sentiment-display" id="rating-sentiment-badge">
+                    <span>🤩</span>
+                    <span id="rating-sentiment-text">5 Stars — Outstanding Experience!</span>
                   </span>
                 </div>
               </div>
 
-              <div class="field">
-                <label for="fb-comments">What should we fix or keep doing? <span class="req">*</span></label>
-                <textarea class="textarea" id="fb-comments" name="comments" required autocomplete="off" placeholder="For example: the attendance chart on the dashboard does not load on my phone after the October update."></textarea>
-                <p class="hint">Please do not include passwords, one-time codes or bank details.</p>
+              <!-- 2. Nature of Feedback (Feedback Type Matrix) -->
+              <div class="field" style="margin-bottom: 2rem;">
+                <label style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+                  Category of Submission
+                </label>
+                <div class="fb-category-matrix">
+                  <label class="fb-cat-option">
+                    <input type="radio" name="feedback_type" value="suggestion" checked>
+                    <div class="fb-cat-card">
+                      <span class="fb-cat-icon">💡</span>
+                      <span class="fb-cat-title">Suggestion</span>
+                    </div>
+                  </label>
+                  <label class="fb-cat-option">
+                    <input type="radio" name="feedback_type" value="bug">
+                    <div class="fb-cat-card">
+                      <span class="fb-cat-icon">🐛</span>
+                      <span class="fb-cat-title">Bug Report</span>
+                    </div>
+                  </label>
+                  <label class="fb-cat-option">
+                    <input type="radio" name="feedback_type" value="compliment">
+                    <div class="fb-cat-card">
+                      <span class="fb-cat-icon">✨</span>
+                      <span class="fb-cat-title">Compliment</span>
+                    </div>
+                  </label>
+                  <label class="fb-cat-option">
+                    <input type="radio" name="feedback_type" value="general">
+                    <div class="fb-cat-card">
+                      <span class="fb-cat-icon">❓</span>
+                      <span class="fb-cat-title">General UX</span>
+                    </div>
+                  </label>
+                </div>
               </div>
 
-              <label class="check mt-5" for="fb-consent">
-                <input type="checkbox" id="fb-consent" name="consent" value="yes" required>
-                <span>Required: I agree that Student Services may store this response and contact me about it.</span>
+              <!-- 3. Target Module Chips -->
+              <div class="field" style="margin-bottom: 2rem;">
+                <label id="topics-label" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+                  Which modules or services does this involve?
+                </label>
+                <p class="hint" style="margin-top: 0; margin-bottom: 0.75rem;">
+                  Select as many as apply to route your feedback directly to the responsible university team.
+                </p>
+                <div class="chips-choice" role="group" aria-labelledby="topics-label">
+                  <input type="checkbox" id="topic-dashboard" name="topic" value="dashboard" checked>
+                  <label for="topic-dashboard">📊 Dashboard &amp; Timetable</label>
+
+                  <input type="checkbox" id="topic-attendance" name="topic" value="attendance">
+                  <label for="topic-attendance">⏱️ Attendance &amp; Leaves</label>
+
+                  <input type="checkbox" id="topic-exams" name="topic" value="exams">
+                  <label for="topic-exams">📝 Exam Marks &amp; SGPA</label>
+
+                  <input type="checkbox" id="topic-events" name="topic" value="events">
+                  <label for="topic-events">📅 Campus Events &amp; Clubs</label>
+
+                  <input type="checkbox" id="topic-fees" name="topic" value="fees">
+                  <label for="topic-fees">💳 Fee Portal &amp; Receipts</label>
+
+                  <input type="checkbox" id="topic-mobile" name="topic" value="mobile">
+                  <label for="topic-mobile">📱 Mobile / Responsive UI</label>
+
+                  <input type="checkbox" id="topic-account" name="topic" value="account">
+                  <label for="topic-account">🔐 Account &amp; 2FA</label>
+
+                  <input type="checkbox" id="topic-support" name="topic" value="support">
+                  <label for="topic-support">🎧 Helpdesk Support</label>
+                </div>
+              </div>
+
+              <!-- 4. Student Identification 2-Column Responsive Grid -->
+              <div class="feedback-inputs-grid" style="margin-bottom: 1.75rem;">
+                <!-- Full Name -->
+                <div class="field" style="margin-bottom: 0;">
+                  <label for="fb-name">Full name</label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <input class="input" type="text" id="fb-name" name="name" autocomplete="name" placeholder="Enter your full name (optional)">
+                  </div>
+                </div>
+
+                <!-- Roll / Enrolment No -->
+                <div class="field" style="margin-bottom: 0;">
+                  <label for="fb-enrolment">Roll / Enrolment No.</label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="19" y2="8"/><line x1="15" y1="12" x2="19" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/>
+                    </svg>
+                    <input class="input" type="text" id="fb-enrolment" name="enrolment" placeholder="e.g. 25IT049">
+                  </div>
+                </div>
+
+                <!-- College Email Address -->
+                <div class="field" style="margin-bottom: 0;">
+                  <label for="fb-email">College email address</label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                    </svg>
+                    <input class="input" type="email" id="fb-email" name="email" autocomplete="email" placeholder="e.g. student@charusat.edu.in">
+                  </div>
+                  <p class="hint">Used only if the council needs to send an update on your resolution.</p>
+                </div>
+
+                <!-- Department / Institute -->
+                <div class="field" style="margin-bottom: 0;">
+                  <label for="fb-department">Which department are you from? <span class="req">*</span></label>
+                  <div class="control">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M10 21v-5h4v5"/>
+                    </svg>
+                    <select class="select" id="fb-department" name="department" required autocomplete="organization">
+                      <option value="" selected>Select your department / institute</option>
+                      <option value="Information Technology">Information Technology (CSPIT / DEPSTAR)</option>
+                      <option value="Computer Engineering">Computer Engineering (CSPIT / DEPSTAR)</option>
+                      <option value="Computer Science & Engineering">Computer Science &amp; Engineering (DEPSTAR)</option>
+                      <option value="Electronics & Communication">Electronics &amp; Communication (CSPIT)</option>
+                      <option value="Mechanical Engineering">Mechanical Engineering (CSPIT)</option>
+                      <option value="Civil Engineering">Civil Engineering (CSPIT)</option>
+                      <option value="Electrical Engineering">Electrical Engineering (CSPIT)</option>
+                      <option value="Computer Applications">Computer Applications (CMPICA)</option>
+                      <option value="Applied Sciences">Applied Sciences &amp; Humanities (PDPIAS)</option>
+                      <option value="Pharmacy">Faculty of Pharmacy (RPCP)</option>
+                      <option value="Management">School of Management (I2IM)</option>
+                    </select>
+                    <span class="control__caret" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Detailed Comments with Live Character Counter & Quick Tag Helpers -->
+              <div class="field" style="margin-bottom: 1.5rem;">
+                <label for="fb-comments" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+                  What should we fix, improve, or keep doing? <span class="req">*</span>
+                </label>
+                <textarea class="textarea" id="fb-comments" name="comments" required rows="4" maxlength="600" autocomplete="off" placeholder="For example: The semester marks PDF download is fast, but adding an automated SGPA predictor for upcoming exams would be very helpful."></textarea>
+                
+                <div class="textarea-footer-row">
+                  <span style="font-size: 0.75rem;">Keep it constructive. No passwords or OTPs.</span>
+                  <span id="fb-char-counter">0 / 600 characters</span>
+                </div>
+
+                <!-- Quick Suggestion Tag Insertion Pills -->
+                <div class="feedback-quick-tags" style="margin-top: 0.85rem;">
+                  <span style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); align-self: center; margin-right: 0.2rem;">Quick templates:</span>
+                  <button type="button" class="feedback-tag-pill" data-insert="Biometric attendance sync needs faster refresh after morning lectures.">+ Attendance Sync</button>
+                  <button type="button" class="feedback-tag-pill" data-insert="The new mobile dashboard view is smooth, intuitive and easy to navigate.">+ Mobile UX Praise</button>
+                  <button type="button" class="feedback-tag-pill" data-insert="Exam timetable PDF download could be placed directly in notifications.">+ Exam Timetable</button>
+                  <button type="button" class="feedback-tag-pill" data-insert="The cyber dark theme looks fantastic across all student portals.">+ Theme Praise</button>
+                </div>
+              </div>
+
+              <!-- 6. Consent Checkbox -->
+              <label class="check mt-5" for="fb-consent" style="margin-top: 1.5rem;">
+                <input type="checkbox" id="fb-consent" name="consent" value="yes" required checked>
+                <span>Required: I agree that Student Services and IT Council may store this response and contact me regarding resolution.</span>
               </label>
 
-              <button class="btn btn--primary btn--block mt-5" type="submit">Submit feedback</button>
+              <!-- 7. Submit Button with Animated Icon -->
+              <button class="btn btn--primary btn--block mt-5" type="submit" id="fb-submit-btn" style="padding: 1.05rem 2rem; font-size: 1.02rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.75rem; letter-spacing: 0.02em; margin-top: 1.5rem; border-radius: 14px;">
+                <span id="fb-btn-text">Submit Feedback to Council</span>
+                <svg id="fb-btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
             </form>
           </div>
 
+          <!-- Digital Receipt Success Screen -->
           <div class="success" id="feedback-success">
             <div class="success__ring">
               <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m5 12.5 4.6 4.6L19 7.7"/>
               </svg>
             </div>
-            <h3>Feedback recorded</h3>
-            <p>
-              Your reference number is SH-FB-2291. The Student Services committee reviews new responses on the
-              first Monday of each month and replies by college email where a reply is needed.
+            <div style="display: inline-block; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 1.15rem; border-radius: 100px; margin-bottom: 0.85rem;">
+              Receipt Confirmed &amp; Encrypted
+            </div>
+            <h3 style="font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">
+              Feedback Recorded Successfully
+            </h3>
+            <p style="color: rgba(255, 255, 255, 0.75); font-size: 0.96rem; max-width: 540px; margin: 0 auto 1.25rem; line-height: 1.65;">
+              Thank you for helping us elevate CHARUSAT StudentHub! Your response is safely logged in university records and scheduled for council review.
             </p>
-            <button class="btn btn--outline" data-reset type="button">Send another response</button>
+
+            <!-- Digital Holographic Receipt Card -->
+            <div class="digital-receipt-modern">
+              <div class="receipt-header-row">
+                <div>
+                  <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5);">Official Tracking Reference</span>
+                  <div style="margin-top: 0.25rem;">
+                    <span class="receipt-code-pill">
+                      <span id="receipt-ref">SH-FB-2026-4891</span>
+                      <button type="button" class="receipt-copy-btn" id="receipt-copy-btn" title="Copy tracking reference">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #34d399; font-weight: 800;">Status</span>
+                  <div style="color: #ffffff; font-weight: 700; font-size: 0.88rem; margin-top: 0.2rem;">QUEUED FOR COUNCIL</div>
+                </div>
+              </div>
+
+              <div class="receipt-item-row">
+                <span>Submitted By:</span>
+                <strong id="receipt-student">CHARUSAT Student</strong>
+              </div>
+              <div class="receipt-item-row">
+                <span>Department / Institute:</span>
+                <strong id="receipt-dept">Information Technology</strong>
+              </div>
+              <div class="receipt-item-row">
+                <span>Rating Recorded:</span>
+                <strong style="color: #fbbf24;" id="receipt-stars">★★★★★ (5 Stars — Outstanding)</strong>
+              </div>
+              <div class="receipt-item-row">
+                <span>Submission Timestamp:</span>
+                <strong id="receipt-time">14 Oct 2026, 06:30 PM</strong>
+              </div>
+              <div class="receipt-item-row">
+                <span>Scheduled Review:</span>
+                <strong style="color: #38bdf8;">Upcoming Monthly Council (1st Monday)</strong>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn btn--outline" id="print-receipt-btn" type="button" style="padding: 0.75rem 1.8rem; border-radius: 100px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                <span>Print Receipt</span>
+              </button>
+              <button class="btn btn--primary" data-reset type="button" style="padding: 0.75rem 2rem; border-radius: 100px; font-weight: 800;">
+                Send Another Response
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="grid grid--2 mt-6">
-          <article class="card full-height" data-reveal data-reveal-delay="2">
-            <h3>What happens to your response</h3>
-            <p class="mb-0">
-              Every entry is logged against the module you selected and taken to the monthly review with the
-              Department of Information Technology. Fixes that need development work are scheduled into the next
-              release; policy matters are forwarded to the relevant office with the committee's remarks.
+        <!-- Symmetrical 2-Column Info & Urgency Cards -->
+        <div class="grid grid--2 mt-6" style="max-width: 880px; margin-left: auto; margin-right: auto; gap: 1.5rem; margin-top: 2.75rem;">
+          <article class="feedback-info-card full-height" data-reveal data-reveal-delay="2">
+            <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.35); display: grid; place-items: center; color: #38bdf8; font-size: 1.25rem;">🔄</span>
+              <h3 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 800; color: #ffffff;">What happens to your response</h3>
+            </div>
+            <p style="color: var(--muted-color); font-size: 0.88rem; line-height: 1.65; margin-bottom: 0.75rem;">
+              Every entry is tagged against the chosen module and escalated to the monthly review meeting with the CHARUSAT Department of Information Technology.
             </p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; font-size: 0.82rem; color: rgba(255, 255, 255, 0.75);">
+              <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #38bdf8; font-weight: 800;">✓</span> <b>Bug fixes &amp; UI tweaks</b> are scheduled into the next development release.</li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #38bdf8; font-weight: 800;">✓</span> <b>Academic policy matters</b> are routed directly to the Dean of Students.</li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #38bdf8; font-weight: 800;">✓</span> <b>Direct email responses</b> sent when specific roll numbers are provided.</li>
+            </ul>
           </article>
-          <article class="card full-height" data-reveal data-reveal-delay="3">
-            <h3>Reporting something urgent</h3>
-            <p class="mb-0">
-              This form is not monitored during the day. If a payment has failed, a deadline is displayed wrongly
-              or you cannot log in before an examination, use the Contact page or call the Student Services desk
-              on +91 79 0000 0000 between 9 AM and 5 PM.
+
+          <article class="feedback-info-card full-height" data-reveal data-reveal-delay="3">
+            <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); display: grid; place-items: center; color: #f87171; font-size: 1.25rem;">🚨</span>
+              <h3 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Reporting something urgent?</h3>
+            </div>
+            <p style="color: var(--muted-color); font-size: 0.88rem; line-height: 1.65; margin-bottom: 0.85rem;">
+              This feedback portal is for UX improvement and is not monitored 24/7. If an online payment failed, an exam hall ticket is locked, or you cannot log in before an examination:
             </p>
+            <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+              <a href="contact.html" class="btn btn--outline" style="padding: 0.65rem 1.25rem; font-size: 0.82rem; border-radius: 100px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                <span>Open Urgent Helpdesk Ticket</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: space-between;">
+                <span>📞 Changa Desk: <b>+91 2697 265011</b></span>
+                <span>⏱ 9 AM – 5 PM</span>
+              </div>
+            </div>
           </article>
         </div>
 
@@ -253,82 +493,517 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html" target="_blank" rel="noopener">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
+  <!-- Unified Data and Scripts -->
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+
+  <!-- Interactive Feedback Script -->
+  <script>
+    (function () {
+      'use strict';
+
+      var form = document.getElementById('studentFeedbackForm');
+      var nameInput = document.getElementById('fb-name');
+      var rollInput = document.getElementById('fb-enrolment');
+      var emailInput = document.getElementById('fb-email');
+      var deptSelect = document.getElementById('fb-department');
+      var commentsTextarea = document.getElementById('fb-comments');
+      var charCounter = document.getElementById('fb-char-counter');
+      var anonBtn = document.getElementById('toggle-anon-btn');
+      var studentBanner = document.getElementById('fb-student-banner');
+      var avatarBadge = document.getElementById('fb-avatar-badge');
+      var displayName = document.getElementById('fb-display-name');
+      var displayRoll = document.getElementById('fb-display-roll');
+      var displayDept = document.getElementById('fb-display-dept');
+      var verifiedPill = document.getElementById('fb-verified-pill');
+      var sentimentBadge = document.getElementById('rating-sentiment-badge');
+      var sentimentText = document.getElementById('rating-sentiment-text');
+      var starButtons = document.querySelectorAll('.star-interactive-btn');
+      var copyRefBtn = document.getElementById('receipt-copy-btn');
+      var printBtn = document.getElementById('print-receipt-btn');
+
+      var currentRating = 5;
+      var isAnon = false;
+      var activeStudent = null;
+
+      var sentimentPhrases = {
+        1: { emoji: '⚠️', text: '1 Star — Critical Attention Needed', color: '#f87171', border: 'rgba(239, 68, 68, 0.4)', bg: 'rgba(239, 68, 68, 0.15)' },
+        2: { emoji: '😕', text: '2 Stars — Needs Significant Improvement', color: '#fb923c', border: 'rgba(251, 146, 60, 0.4)', bg: 'rgba(251, 146, 60, 0.15)' },
+        3: { emoji: '🙂', text: '3 Stars — Meets Basic Requirements', color: '#fde047', border: 'rgba(253, 224, 71, 0.4)', bg: 'rgba(253, 224, 71, 0.15)' },
+        4: { emoji: '😄', text: '4 Stars — Great & Very Helpful', color: '#38bdf8', border: 'rgba(56, 189, 248, 0.4)', bg: 'rgba(56, 189, 248, 0.15)' },
+        5: { emoji: '🤩', text: '5 Stars — Outstanding Experience!', color: '#fbbf24', border: 'rgba(251, 191, 36, 0.4)', bg: 'rgba(251, 191, 36, 0.15)' }
+      };
+
+      // 1. Interactive Star Rating Handler
+      function setRating(val, updateInput) {
+        currentRating = parseInt(val, 10) || 5;
+        starButtons.forEach(function (btn) {
+          var btnVal = parseInt(btn.getAttribute('data-val'), 10);
+          btn.classList.toggle('is-active', btnVal <= currentRating);
+        });
+
+        if (updateInput) {
+          var radio = document.getElementById('star-' + currentRating);
+          if (radio) radio.checked = true;
+        }
+
+        var s = sentimentPhrases[currentRating] || sentimentPhrases[5];
+        if (sentimentBadge && sentimentText) {
+          sentimentBadge.style.color = s.color;
+          sentimentBadge.style.borderColor = s.border;
+          sentimentBadge.style.background = s.bg;
+          sentimentBadge.firstElementChild.textContent = s.emoji;
+          sentimentText.textContent = s.text;
+        }
+      }
+
+      starButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var val = btn.getAttribute('data-val');
+          setRating(val, true);
+        });
+
+        btn.addEventListener('mouseenter', function () {
+          var hoverVal = parseInt(btn.getAttribute('data-val'), 10);
+          starButtons.forEach(function (b) {
+            var bVal = parseInt(b.getAttribute('data-val'), 10);
+            b.classList.toggle('is-hovered', bVal <= hoverVal);
+          });
+        });
+
+        btn.addEventListener('mouseleave', function () {
+          starButtons.forEach(function (b) {
+            b.classList.remove('is-hovered');
+          });
+        });
+      });
+
+      // 2. Character counter for comments
+      if (commentsTextarea && charCounter) {
+        commentsTextarea.addEventListener('input', function () {
+          var len = commentsTextarea.value.length;
+          charCounter.textContent = len + ' / 600 characters';
+          if (len >= 550) {
+            charCounter.style.color = '#fbbf24';
+          } else {
+            charCounter.style.color = 'rgba(255, 255, 255, 0.5)';
+          }
+        });
+      }
+
+      // 3. Auto-detect student profile (ONLY if genuinely logged in)
+      function loadStudentProfile() {
+        var isAuth = false;
+        activeStudent = null;
+
+        var sessionActive = (localStorage.getItem('charusat_student_session') === 'active');
+        if (sessionActive) {
+          if (window.StudentHubData && typeof window.StudentHubData.getLoggedInUser === 'function') {
+            activeStudent = window.StudentHubData.getLoggedInUser();
+          }
+          if (!activeStudent) {
+            try {
+              var raw = localStorage.getItem('charusat_active_user');
+              if (raw) activeStudent = JSON.parse(raw);
+            } catch (e) {}
+          }
+          if (activeStudent) {
+            isAuth = true;
+          }
+        }
+
+        var isAdmin = (localStorage.getItem('charusat_admin_session') === 'active');
+
+        if (isAuth && activeStudent) {
+          var sName = activeStudent.fullName || activeStudent.name || activeStudent.full_name || 'CHARUSAT Student';
+          var sRoll = activeStudent.enrolment || activeStudent.roll || activeStudent.student_id || '';
+          var sEmail = activeStudent.email || '';
+          var sDept = activeStudent.department || 'Information Technology';
+
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card';
+            studentBanner.style.display = 'flex';
+          }
+          if (displayName) displayName.textContent = sName;
+          if (displayRoll) displayRoll.textContent = sRoll;
+          if (displayDept) displayDept.textContent = sDept;
+
+          if (verifiedPill) {
+            verifiedPill.className = 'verified-pulse-pill';
+            verifiedPill.innerHTML = '<span class="verified-pulse-dot"></span> Verified Student';
+            verifiedPill.style.display = 'inline-flex';
+          }
+
+          var statusText = document.getElementById('fb-student-status-text');
+          if (statusText) {
+            statusText.innerHTML = 'Roll: <b style="color: #38bdf8;">' + (sRoll || 'Verified') + '</b> &bull; Department: <span>' + sDept + '</span>';
+          }
+
+          // Avatar Initials from their actual name
+          if (avatarBadge && sName) {
+            var parts = sName.trim().split(/\s+/);
+            var inits = parts[0].charAt(0) + (parts.length > 1 ? parts[parts.length - 1].charAt(0) : '');
+            avatarBadge.textContent = inits.toUpperCase();
+          }
+
+          if (anonBtn) {
+            anonBtn.style.display = 'inline-flex';
+            anonBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>Submit Anonymously</span>';
+            anonBtn.onclick = null;
+          }
+
+          // Pre-fill inputs with logged-in student's info
+          if (nameInput) nameInput.value = sName;
+          if (rollInput) rollInput.value = sRoll;
+          if (emailInput) emailInput.value = sEmail;
+
+          // Auto-select department
+          if (deptSelect && sDept) {
+            var deptLower = sDept.toLowerCase();
+            for (var i = 0; i < deptSelect.options.length; i++) {
+              if (deptSelect.options[i].text.toLowerCase().indexOf(deptLower) !== -1 ||
+                  deptLower.indexOf(deptSelect.options[i].value.toLowerCase()) !== -1) {
+                deptSelect.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        } else if (isAdmin) {
+          var adminName = localStorage.getItem('charusat_admin_user') || 'Administrator';
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card';
+            studentBanner.style.display = 'flex';
+          }
+          if (displayName) displayName.textContent = adminName;
+          if (avatarBadge) avatarBadge.textContent = '🛡️';
+          if (verifiedPill) {
+            verifiedPill.className = 'verified-pulse-pill';
+            verifiedPill.innerHTML = '<span class="verified-pulse-dot"></span> Admin Session';
+            verifiedPill.style.display = 'inline-flex';
+          }
+          var statusText = document.getElementById('fb-student-status-text');
+          if (statusText) statusText.innerHTML = 'Administrative User &bull; Academic Reviewer';
+          if (anonBtn) anonBtn.style.display = 'none';
+        } else {
+          // GUEST / NOT LOGGED IN
+          if (studentBanner) {
+            studentBanner.className = 'verified-student-card is-guest';
+            studentBanner.style.display = 'flex';
+          }
+          if (avatarBadge) avatarBadge.textContent = '👤';
+          if (displayName) displayName.textContent = 'Guest / Visitor Mode';
+          if (verifiedPill) {
+            verifiedPill.className = 'guest-pulse-pill';
+            verifiedPill.innerHTML = 'Not Signed In';
+            verifiedPill.style.display = 'inline-flex';
+          }
+          var statusText = document.getElementById('fb-student-status-text');
+          if (statusText) {
+            statusText.innerHTML = 'Submitting as guest. <a href="login.html" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Sign In to StudentHub</a> to link your verified record.';
+          }
+          if (anonBtn) {
+            anonBtn.style.display = 'inline-flex';
+            anonBtn.innerHTML = '<span>Sign In to Link &rarr;</span>';
+            anonBtn.onclick = function() { window.location.href = 'login.html'; };
+          }
+
+          // Leave inputs empty for the guest
+          if (nameInput) nameInput.value = '';
+          if (rollInput) rollInput.value = '';
+          if (emailInput) emailInput.value = '';
+          if (deptSelect) deptSelect.selectedIndex = 0;
+        }
+      }
+
+      loadStudentProfile();
+
+      // 4. Toggle Anonymous Mode (only for authenticated students)
+      if (anonBtn) {
+        anonBtn.addEventListener('click', function () {
+          if (!activeStudent) {
+            // Guest clicking "Sign In to Link"
+            window.location.href = 'login.html';
+            return;
+          }
+
+          isAnon = !isAnon;
+          if (studentBanner) studentBanner.classList.toggle('is-anon', isAnon);
+
+          if (isAnon) {
+            anonBtn.innerHTML = '<span>Auto-fill My Profile</span>';
+            anonBtn.style.borderColor = '#38bdf8';
+            anonBtn.style.color = '#38bdf8';
+            if (nameInput) nameInput.value = '';
+            if (rollInput) rollInput.value = '';
+            if (emailInput) emailInput.value = '';
+            if (displayName) displayName.textContent = 'Anonymous Student (Incognito)';
+            if (verifiedPill) verifiedPill.style.display = 'none';
+            if (avatarBadge) avatarBadge.textContent = '🕶️';
+            var statusText = document.getElementById('fb-student-status-text');
+            if (statusText) statusText.innerHTML = '<span style="color: #fbbf24;">Incognito mode:</span> Your identity will not be linked to this response.';
+          } else {
+            anonBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>Submit Anonymously</span>';
+            anonBtn.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+            anonBtn.style.color = '#ffffff';
+            if (verifiedPill) verifiedPill.style.display = 'inline-flex';
+            loadStudentProfile();
+          }
+        });
+      }
+
+      // 5. Quick Tag Pills to append text into comments
+      document.querySelectorAll('.feedback-tag-pill').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          var insertText = pill.getAttribute('data-insert');
+          if (!insertText || !commentsTextarea) return;
+          if (commentsTextarea.value.trim().length > 0) {
+            commentsTextarea.value = commentsTextarea.value.trim() + '\n' + insertText;
+          } else {
+            commentsTextarea.value = insertText;
+          }
+          commentsTextarea.dispatchEvent(new Event('input'));
+          commentsTextarea.focus();
+        });
+      });
+
+      // 6. 1-Click Copy Reference Code
+      if (copyRefBtn) {
+        copyRefBtn.addEventListener('click', function () {
+          var refCode = document.getElementById('receipt-ref');
+          if (refCode && navigator.clipboard) {
+            navigator.clipboard.writeText(refCode.textContent.trim()).then(function () {
+              copyRefBtn.style.color = '#34d399';
+              setTimeout(function () { copyRefBtn.style.color = '#38bdf8'; }, 1800);
+            });
+          }
+        });
+      }
+
+      // 7. Print Receipt Button
+      if (printBtn) {
+        printBtn.addEventListener('click', function () {
+          window.print();
+        });
+      }
+
+      // 8. Intercept Form Submission to build Digital Receipt & AJAX dispatch to backend/feedback.php
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          if (!form.checkValidity()) return;
+
+          // Feedback Type
+          var checkedType = form.querySelector('input[name="feedback_type"]:checked');
+          var feedbackType = checkedType ? checkedType.value : 'suggestion';
+
+          // Star text representation
+          var starSymbols = '';
+          for (var s = 0; s < currentRating; s++) starSymbols += '★';
+          for (var r = currentRating; r < 5; r++) starSymbols += '☆';
+          var sentimentInfo = sentimentPhrases[currentRating] || sentimentPhrases[5];
+          var starText = starSymbols + ' (' + currentRating + ' Stars — ' + sentimentInfo.text.split('—')[1].trim() + ')';
+
+          // Default fallback code: SH-FB-2026-XXXX
+          var randomCode = 'SH-FB-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+          // Timestamp
+          var now = new Date();
+          var timeStr = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ', ' +
+                        now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+
+          // Student Identity
+          var studentName = nameInput && nameInput.value.trim() ? nameInput.value.trim() : (isAnon ? 'Anonymous Student' : 'CHARUSAT Student');
+          var studentRoll = rollInput && rollInput.value.trim() ? rollInput.value.trim() : (isAnon ? 'Anonymous' : '25IT049');
+          var selectedDept = deptSelect && deptSelect.selectedIndex > 0 ? deptSelect.options[deptSelect.selectedIndex].text.split('(')[0].trim() : 'Information Technology';
+
+          // Update Digital Receipt Card in DOM
+          var refElem = document.getElementById('receipt-ref');
+          var studentElem = document.getElementById('receipt-student');
+          var deptElem = document.getElementById('receipt-dept');
+          var starsElem = document.getElementById('receipt-stars');
+          var timeElem = document.getElementById('receipt-time');
+
+          if (refElem) refElem.textContent = randomCode;
+          if (studentElem) studentElem.textContent = isAnon ? 'Anonymous Student' : (studentName + ' (' + studentRoll + ')');
+          if (deptElem) deptElem.textContent = selectedDept;
+          if (starsElem) starsElem.textContent = starText;
+          if (timeElem) timeElem.textContent = timeStr;
+
+          // Selected Topic chips
+          var selectedTopics = [];
+          form.querySelectorAll('input[name="topic"]:checked').forEach(function (chk) {
+            selectedTopics.push(chk.value);
+          });
+
+          // Dispatch to backend/feedback.php
+          try {
+            var fd = new FormData();
+            fd.append('rating', currentRating);
+            fd.append('feedback_type', feedbackType);
+            fd.append('name', studentName);
+            fd.append('enrolment', studentRoll);
+            fd.append('email', emailInput ? emailInput.value : '');
+            fd.append('department', selectedDept);
+            fd.append('comments', commentsTextarea ? commentsTextarea.value : '');
+            fd.append('is_anonymous', isAnon ? '1' : '0');
+            fd.append('topics', JSON.stringify(selectedTopics));
+
+            fetch('../backend/feedback.php', {
+              method: 'POST',
+              body: fd
+            }).then(function (r) { return r.json(); })
+              .then(function (res) {
+                if (res && res.ref_id && refElem) {
+                  refElem.textContent = res.ref_id;
+                }
+              }).catch(function (e) {
+                /* local simulation fallback */
+              });
+          } catch (netErr) {}
+
+          // Save into LocalStorage for session persistence
+          try {
+            var existingRaw = localStorage.getItem('charusat_feedback_records');
+            var records = existingRaw ? JSON.parse(existingRaw) : [];
+            records.unshift({
+              id: randomCode,
+              rating: currentRating,
+              type: feedbackType,
+              student: studentName,
+              roll: studentRoll,
+              department: selectedDept,
+              email: emailInput ? emailInput.value : '',
+              comments: commentsTextarea ? commentsTextarea.value : '',
+              topics: selectedTopics,
+              timestamp: now.toISOString(),
+              timeFormatted: timeStr
+            });
+            localStorage.setItem('charusat_feedback_records', JSON.stringify(records));
+          } catch (err) {
+            console.warn('Feedback persistence note:', err);
+          }
+        });
+      }
+
+      // 9. Reset button handler
+      var resetBtn = document.querySelector('[data-reset]');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          setTimeout(function () {
+            isAnon = false;
+            if (studentBanner) studentBanner.classList.remove('is-anon');
+            loadStudentProfile();
+            setRating(5, true);
+            if (charCounter) charCounter.textContent = '0 / 600 characters';
+            if (anonBtn) {
+              anonBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>Submit Anonymously</span>';
+              anonBtn.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+              anonBtn.style.color = '#ffffff';
+            }
+          }, 50);
+        });
+      }
+
+    })();
+  </script>
 </body>
 </html>

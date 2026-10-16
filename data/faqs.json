@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "category": "account",
+    "categoryLabel": "Account & Access",
+    "question": "How do I access and log into my CHARUSAT StudentHub portal?",
+    "answer": "Every enrolled student is provisioned with a university email (@charusat.edu.in) and single sign-on (SSO) credentials upon admission. Enter your university email and secure password on the login page. If it is your first time, register your roll number to complete two-factor email verification."
+  },
+  {
+    "id": 2,
+    "category": "account",
+    "categoryLabel": "Account & Access",
+    "question": "What should I do if I forget my password or get locked out?",
+    "answer": "Click the 'Forgot password?' link on the Login screen to initiate an instant password reset token sent directly to your registered @charusat.edu.in mailbox. Alternatively, contact the CSPIT/DEPSTAR System Administration Helpdesk at Block C, Room 102."
+  },
+  {
+    "id": 3,
+    "category": "attendance",
+    "categoryLabel": "Attendance & Leaves",
+    "question": "What is the mandatory attendance criteria to appear in End-Semester Examinations?",
+    "answer": "CHARUSAT academic regulations mandate a minimum of 80% cumulative biometric and lecture attendance in each registered theory course and 85% in laboratory practicals to be eligible for university end-semester examinations. Students with attendance between 70% and 80% due to genuine medical reasons must submit approved medical certificates."
+  },
+  {
+    "id": 4,
+    "category": "attendance",
+    "categoryLabel": "Attendance & Leaves",
+    "question": "How do I apply for on-duty (OD) leave for participating in hackathons or sports?",
+    "answer": "Submit an OD Leave application through the StudentHub Dashboard with proof of participation or official faculty invitation at least 48 hours in advance. Once endorsed by your faculty mentor and approved by the Head of Department, your attendance ledger will be adjusted automatically."
+  },
+  {
+    "id": 5,
+    "category": "attendance",
+    "categoryLabel": "Attendance & Leaves",
+    "question": "What happens if biometric scanner fails to capture my attendance?",
+    "answer": "If a biometric terminal records an error or power disruption, your respective subject faculty will mark manual classroom attendance via the Faculty Portal. Verify your daily ledger on the StudentHub dashboard within 24 hours and report any discrepancies to the department coordinator."
+  },
+  {
+    "id": 6,
+    "category": "academics",
+    "categoryLabel": "Assignments & Results",
+    "question": "How is continuous internal evaluation (CIE) computed each semester?",
+    "answer": "Continuous Internal Evaluation (CIE) accounts for 30% to 50% of total subject credits depending on syllabus regulations. It is comprised of mid-semester tests (20 marks), weekly laboratory assignments & continuous rubrics (10 marks), surprise quizzes (5 marks), and active class participation."
+  },
+  {
+    "id": 7,
+    "category": "academics",
+    "categoryLabel": "Assignments & Results",
+    "question": "When are semester grade cards (SGPA / CGPA) released officially?",
+    "answer": "Provisonal grade cards are published on the StudentHub Examination tab within 15 working days following the conclusion of End-Semester Examinations. Digital signed grade sheets with QR authentication can be downloaded from the student portal."
+  },
+  {
+    "id": 8,
+    "category": "academics",
+    "categoryLabel": "Assignments & Results",
+    "question": "How do I apply for paper re-assessment or marks verification?",
+    "answer": "Re-assessment applications open for 7 calendar days after declaration of examination results. Submit an online application through the Examination Cell section of StudentHub and pay the nominal verification fee of ₹250 per course."
+  },
+  {
+    "id": 9,
+    "category": "events",
+    "categoryLabel": "Campus Events",
+    "question": "Can I earn institutional activity points by participating in campus events?",
+    "answer": "Yes. Active participation in university-approved hackathons, technical conferences, sports leagues, and cultural fests earns between 10 to 30 non-academic activity points required for award of the B.Tech Honours Degree."
+  },
+  {
+    "id": 10,
+    "category": "events",
+    "categoryLabel": "Campus Events",
+    "question": "How do I receive event registration confirmation and e-badges?",
+    "answer": "Once you register for any event on StudentHub, a digital ticket with entry QR code is generated instantly in your Profile Events tab and dispatched to your university email. Show this badge at the venue entry counter."
+  },
+  {
+    "id": 11,
+    "category": "fees",
+    "categoryLabel": "Fees & Transactions",
+    "question": "What digital payment modes are supported for semester tuition fees?",
+    "answer": "StudentHub integrates directly with HDFC and SBI Payment Gateways supporting UPI (Google Pay, PhonePe, Paytm), Net Banking, RuPay/Visa/MasterCard Debit & Credit cards, and NEFT/RTGS challan downloads with zero convenience charge."
+  },
+  {
+    "id": 12,
+    "category": "fees",
+    "categoryLabel": "Fees & Transactions",
+    "question": "How can I obtain an official fee receipt for education loans and scholarships?",
+    "answer": "Upon successful payment, official GST-compliant university fee receipts with digital registrar stamps are generated in PDF format under the 'Fees Ledger & Receipts' tab on your Student Dashboard for instant download."
+  },
+  {
+    "id": 13,
+    "category": "account",
+    "categoryLabel": "Account & Access",
+    "question": "How do I update my profile details, emergency phone number, or address?",
+    "answer": "Navigate to the Profile page, click 'Edit Profile', make your changes, and click 'Save Changes'. Core academic identifiers (such as Enrolment Number and Department) require administrative verification from the Registrar office."
+  },
+  {
+    "id": 14,
+    "category": "academics",
+    "categoryLabel": "Assignments & Results",
+    "question": "What is the policy for clearing backlog examinations?",
+    "answer": "Remedial / Backlog examinations are scheduled alongside regular mid-semester and end-semester cycles. Students must register for remedial courses during the announced enrollment window on the portal and pay the remedial exam fee."
+  },
+  {
+    "id": 15,
+    "category": "events",
+    "categoryLabel": "Campus Events",
+    "question": "Can external college students register for CHARUSAT Hackathons and TechFest?",
+    "answer": "Yes, select national events like the 36-Hour National Hackathon and Cognizance TechFest are open to students from all accredited universities. External participants can register by choosing the 'External Participant' option."
+  },
+  {
+    "id": 16,
+    "category": "fees",
+    "categoryLabel": "Fees & Transactions",
+    "question": "What is the refund policy if I drop a course or apply for transfer?",
+    "answer": "Tuition fee refunds follow UGC guidelines. Applications submitted before the formal commencement of classes are eligible for a 90% refund minus processing fees. Check the Accounts Office guidelines under Student Services."
+  }
+]

@@ -4,243 +4,997 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Create your StudentHub account with your college email, roll number and programme details.">
-  <title>Register — StudentHub</title>
+  <title>Register — CHARUSAT StudentHub</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/studenthublogo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/studenthublogo.png">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../images/studenthublogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- This page lives in /pages/, so ../ climbs out to the repo root.
-       Whichever file really exists wins; the rest 404 harmlessly. -->
-  <link rel="stylesheet" href="../style.css">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/premium.css">
+  <script src="../js/theme.js" defer></script>
+  <script src="../js/animations.js" defer></script>
 </head>
-<body>
+<body class="auth-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav">
-    <div class="shell nav__inner">
-      <a class="brand" href="index.html" aria-label="StudentHub home">
-        <!-- Swap this SVG for your own file: <img class="brand__mark" src="images/logo.png" alt="StudentHub logo"> -->
-        <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-          <rect width="48" height="48" rx="13" fill="#1e40af"/>
-          <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-          <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-        </svg>
-        <span class="brand__text">
-          <span class="brand__name">Student<em>Hub</em></span>
-          <span class="brand__tag">Campus Portal</span>
-        </span>
-      </a>
+  <!-- ================= FLOATING GLASS NAVBAR ================= -->
+  <header class="header">
+    <a class="logo" href="../index.html" aria-label="CHARUSAT StudentHub Home">
+      <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+      <span>CHARUSAT StudentHub</span>
+    </a>
 
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="../index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="events.html" class="nav-item">Events</a>
+      <a href="dashboard.html" class="nav-item">Dashboard</a>
+      <a href="profile.html" class="nav-item">Profile</a>
+      <a href="faq.html" class="nav-item">FAQ</a>
+      <a href="feedback.html" class="nav-item">Feedback</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="login.html" class="nav-item">Login</a>
+      <a href="register.html" class="nav-item active" aria-current="page">Register</a>
+    </nav>
 
-      <div class="nav__menu" id="nav-menu">
-        <nav aria-label="Main">
-          <ul class="nav__links">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a class="nav__link" href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a class="nav__link" href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a class="nav__link" href="profile.html" target="_blank" rel="noopener">Profile</a></li>
-            <li><a class="nav__link" href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a class="nav__link" href="feedback.html" target="_blank" rel="noopener">Feedback</a></li>
-            <li><a class="nav__link" href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav__actions">
-          <a class="btn btn--ghost btn--sm" href="login.html" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>Login</a>
-          <a class="btn btn--primary btn--sm" href="register.html" aria-current="page"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>Register</a>
-        </div>
-      </div>
+    <!-- Header CTA -->
+    <div style="display: flex; align-items: center; gap: 0.9rem;">
+      <a class="contact-btn" href="contact.html">Contact Us</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="auth auth--plain">
+    <section class="auth auth--plain" id="authSection">
       <div class="auth__bg" aria-hidden="true"></div>
       <div class="auth__orb auth__orb--a" aria-hidden="true"></div>
       <div class="auth__orb auth__orb--b" aria-hidden="true"></div>
+      <div class="auth__orb auth__orb--c" aria-hidden="true"></div>
 
-      <div class="auth__card auth__card--wide">
-        <div class="auth__brand">
-          <span class="brand">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
-            </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
+      <!-- Dedicated Change Background Floating Control -->
+      <div class="auth-theme-toolbar">
+        <button type="button" id="changeBgBtn" class="auth-change-bg-btn" aria-label="Change Background Theme" title="Click to cycle dynamic background themes">
+          <span class="auth-change-bg-icon">🎨</span>
+          <span class="auth-change-bg-text">Change Background:</span>
+          <span class="auth-change-bg-tag" id="currentThemeTag">SAPPHIRE BLUE</span>
+        </button>
+      </div>
+
+      <!-- Main Cyber Dark Sapphire Card (Wide 2-Column Responsive Layout) -->
+      <div class="auth__card auth__card--wide" style="max-width: 660px;">
+
+        <!-- Centered Branding & Crest Header -->
+        <div style="text-align: center; margin-bottom: 1.75rem;">
+          <div style="width: 72px; height: 72px; margin: 0 auto 1.15rem; border-radius: 50%; background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(14, 165, 233, 0.15)); border: 1.5px solid rgba(56, 189, 248, 0.5); display: grid; place-items: center; box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); backdrop-filter: blur(16px); padding: 4px;">
+            <img src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+          </div>
+          <div style="display: flex; justify-content: center; margin-bottom: 0.65rem;">
+            <span class="badge" style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-family: 'Manrope', sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; box-shadow: 0 0 16px rgba(37, 99, 235, 0.25); display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 0.95rem;">🏛️</span> CHARUSAT Student Portal
             </span>
-          </span>
+          </div>
+          <h1 style="font-family: 'Manrope', sans-serif; font-size: clamp(1.85rem, 3.5vw, 2.35rem); font-weight: 800; color: #ffffff; margin: 0 0 0.4rem; line-height: 1.2;">
+            Create Your <span class="accent-text">StudentHub</span> Account
+          </h1>
+          <p style="color: var(--muted-color); font-size: 0.92rem; margin: 0; line-height: 1.55;">
+            Enrolled students only. Your roll number is authenticated against registrar records before access is granted.
+          </p>
         </div>
 
-        <h1>Create your account</h1>
-        <p class="auth__sub">Enrolled students only. Your roll number is verified against the registrar's list before access is granted.</p>
+        <!-- Registration Container -->
+        <div id="registerFormContainer">
+          <!-- Unregistered Visitor Redirect Notice Banner -->
+          <div id="unregisteredNotice" style="display: none; background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; color: #fde68a; padding: 0.95rem 1.25rem; border-radius: 14px; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.5;">
+            🎓 <strong>Welcome to CHARUSAT StudentHub!</strong> You must create your student account first to access the Student Dashboard &amp; Profile. Already registered? <a href="login.html" style="color: #38bdf8; text-decoration: underline; font-weight: 700;">Sign in here &rarr;</a>
+          </div>
 
-        <form action="login.html" method="get" novalidate>
-          <div class="field">
-            <label for="fullname">Full name <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <input class="input" type="text" id="fullname" name="fullname" placeholder="As printed on your enrolment record" autocomplete="name" required>
+          <form id="studentRegisterForm" novalidate>
+            <!-- 2-Column Responsive Form Grid -->
+            <div class="feedback-inputs-grid" style="margin-bottom: 1.25rem;">
+              <!-- Field 1: Full Name -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="fullname">Full name <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                  </svg>
+                  <input class="input" type="text" id="fullname" name="fullname" placeholder="As printed on enrolment record" autocomplete="name" required>
+                </div>
+                <span class="field-error-msg" id="err-fullname" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+              </div>
+
+              <!-- Field 2: Roll / Enrolment Number -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="roll">Roll / Enrolment No. <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 13h10M7 17h7"/>
+                  </svg>
+                  <input class="input" type="text" id="roll" name="roll" placeholder="25IT049" autocomplete="off" required>
+                </div>
+                <span class="field-error-msg" id="err-roll" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+              </div>
+
+              <!-- Field 3: College Email Address -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="email">College email <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                  </svg>
+                  <input class="input" type="email" id="email" name="email" placeholder="25it049@charusat.edu.in" autocomplete="email" required>
+                </div>
+                <span class="field-error-msg" id="err-email" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+                <p class="hint">Use your university address (@charusat.edu.in).</p>
+              </div>
+
+              <!-- Field 4: Mobile Number (Required for P5) -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="mobile">Mobile number <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                  <input class="input" type="tel" id="mobile" name="mobile" placeholder="10-digit mobile (e.g. 9876543210)" autocomplete="tel" required maxlength="10">
+                </div>
+                <span class="field-error-msg" id="err-mobile" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+                <p class="hint">10-digit Indian mobile number (6-9 starting).</p>
+              </div>
+
+              <!-- Field 5a: Institute Selection (Practical 6 Intermediate: Dependent Dropdowns) -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="instituteSelect">Institute / Faculty <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/>
+                  </svg>
+                  <select class="select" id="instituteSelect" name="institute" required>
+                    <option value="CSPIT" selected>CSPIT — Faculty of Technology (Engineering)</option>
+                    <option value="DEPSTAR">DEPSTAR — Devang Patel Institute</option>
+                    <option value="CMPICA">CMPICA — Computer Applications (MCA/BCA)</option>
+                    <option value="RPCP">RPCP — Ramanbhai Patel College of Pharmacy</option>
+                    <option value="I2IM">I2IM — Indukaka Ipcowala Management</option>
+                  </select>
+                  <span class="control__caret" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Field 5b: Programme / Course (Populated Dynamically via Dependent Dropdown) -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="programme">Programme / Course <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.5 9 2.5 12 0v-5.5"/>
+                  </svg>
+                  <select class="select" id="programme" name="programme" required>
+                    <option value="B.Tech Information Technology" selected>B.Tech Information Technology</option>
+                    <option value="B.Tech Computer Engineering">B.Tech Computer Engineering</option>
+                    <option value="B.Tech Electronics &amp; Communication">B.Tech Electronics &amp; Communication</option>
+                    <option value="B.Tech Mechanical Engineering">B.Tech Mechanical Engineering</option>
+                    <option value="B.Tech Civil Engineering">B.Tech Civil Engineering</option>
+                    <option value="B.Tech Electrical Engineering">B.Tech Electrical Engineering</option>
+                  </select>
+                  <span class="control__caret" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+                <span class="field-error-msg" id="err-programme" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+              </div>
+
+              <!-- Field 6: Academic Year (Required for P5) -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="year">Academic year <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                  <select class="select" id="year" name="year" required>
+                    <option value="">Select current year</option>
+                    <option value="1st Year (Semester 1 & 2)">1st Year (Semester 1 &amp; 2)</option>
+                    <option value="2nd Year (Semester 3 & 4)">2nd Year (Semester 3 &amp; 4)</option>
+                    <option value="3rd Year (Semester 5 & 6)" selected>3rd Year (Semester 5 &amp; 6)</option>
+                    <option value="4th Year (Semester 7 & 8)">4th Year (Semester 7 &amp; 8)</option>
+                  </select>
+                  <span class="control__caret" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </div>
+                <span class="field-error-msg" id="err-year" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+              </div>
+
+              <!-- Field 7: Gender Radio Group (Required for P5) -->
+              <div class="field" style="margin-bottom: 0; grid-column: 1 / -1;">
+                <label>Gender <span class="req">*</span></label>
+                <div style="display: flex; gap: 2rem; align-items: center; margin-top: 0.35rem; padding: 0.75rem 1.25rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px;">
+                  <label style="display: inline-flex; align-items: center; gap: 0.55rem; color: #ffffff; cursor: pointer; font-size: 0.92rem;">
+                    <input type="radio" name="gender" value="Male" checked style="accent-color: var(--accent-color); width: 17px; height: 17px;">
+                    <span>Male</span>
+                  </label>
+                  <label style="display: inline-flex; align-items: center; gap: 0.55rem; color: #ffffff; cursor: pointer; font-size: 0.92rem;">
+                    <input type="radio" name="gender" value="Female" style="accent-color: var(--accent-color); width: 17px; height: 17px;">
+                    <span>Female</span>
+                  </label>
+                  <label style="display: inline-flex; align-items: center; gap: 0.55rem; color: #ffffff; cursor: pointer; font-size: 0.92rem;">
+                    <input type="radio" name="gender" value="Other" style="accent-color: var(--accent-color); width: 17px; height: 17px;">
+                    <span>Other</span>
+                  </label>
+                </div>
+                <span class="field-error-msg" id="err-gender" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+              </div>
+
+              <!-- Field 8: Create Password -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="password">Create password <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                  </svg>
+                  <button class="pw-toggle" type="button" aria-controls="password" aria-label="Show password">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                  <input class="input" type="password" id="password" name="password" placeholder="Min. 8 characters" autocomplete="new-password" minlength="8" required>
+                </div>
+                <span class="field-error-msg" id="err-password" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+                <!-- Password Strength Meter -->
+                <div class="meter" id="pw-meter" data-score="0">
+                  <div class="meter__track" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                  <span class="meter__label" role="status">Use 8+ characters with a mix of letters, numbers &amp; symbols.</span>
+                </div>
+              </div>
+
+              <!-- Field 9: Confirm Password -->
+              <div class="field" style="margin-bottom: 0;">
+                <label for="confirm-password">Confirm password <span class="req">*</span></label>
+                <div class="control">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><path d="m9.5 16 1.6 1.6 3.4-3.4"/>
+                  </svg>
+                  <button class="pw-toggle" type="button" aria-controls="confirm-password" aria-label="Show password">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                  <input class="input" type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter password" autocomplete="new-password" required>
+                </div>
+                <span class="field-error-msg" id="err-confirm-password" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+                <p class="hint" id="pw-match-hint" style="color: rgba(255, 255, 255, 0.5);">Must match the password entered on the left.</p>
+              </div>
+            </div>
+
+            <!-- Field 10: Canvas Security CAPTCHA (Practical 5 Advanced Extension) -->
+            <div class="field" style="margin-top: 1.25rem; margin-bottom: 0;">
+              <label for="captchaInput">Security Verification (CAPTCHA) <span class="req">*</span></label>
+              <div style="display: flex; gap: 0.85rem; align-items: center; flex-wrap: wrap;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0, 0, 0, 0.35); padding: 5px 10px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.15);">
+                  <canvas id="regCaptchaCanvas" width="140" height="38" style="border-radius: 8px; background: rgba(255, 255, 255, 0.05); vertical-align: middle;"></canvas>
+                  <button type="button" id="refreshCaptchaBtn" title="Refresh CAPTCHA code" aria-label="Refresh CAPTCHA" style="background: none; border: none; color: #38bdf8; cursor: pointer; padding: 4px; display: inline-flex; align-items: center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                  </button>
+                </div>
+                <div class="control" style="flex: 1; min-width: 170px;">
+                  <input class="input" type="text" id="captchaInput" placeholder="Enter code above" maxlength="6" autocomplete="off" required style="letter-spacing: 0.15em; font-weight: 800; text-transform: uppercase;">
+                </div>
+              </div>
+              <span class="field-error-msg" id="err-captcha" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+            </div>
+
+            <!-- Terms Checkbox -->
+            <div style="margin-top: 1.25rem; margin-bottom: 0.5rem;">
+              <label class="check mb-5" for="terms" style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;">
+                <input type="checkbox" id="terms" name="terms" required checked style="margin-top: 3px;">
+                <span style="color: rgba(255, 255, 255, 0.85); font-size: 0.88rem; line-height: 1.5;">
+                  I agree to the <a href="terms.html" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 700;">Terms &amp; Conditions</a>, Student Charter &amp; IT Acceptable Use Policy, and confirm that all details entered match my official university records.
+                </span>
+              </label>
+              <span class="field-error-msg" id="err-terms" style="display:none; color:#f87171; font-size:0.75rem; margin-top:4px;"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn--primary btn--block btn--lg" type="submit" id="registerSubmitBtn" style="padding: 1rem 2rem; font-size: 1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.75rem; border-radius: 100px;">
+              <span>Create StudentHub Account</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+
+          <p class="auth__alt">
+            Already registered? <a href="login.html">Sign in to your portal</a>
+          </p>
+        </div>
+
+        <!-- Registration Success Receipt Screen (Initially Hidden) -->
+        <div id="registerSuccessScreen" style="display: none; text-align: center; padding: 1.5rem 0.5rem;">
+          <div class="success__ring" style="width: 84px; height: 84px; margin: 0 auto 1.5rem; border-radius: 50%; background: rgba(16, 185, 129, 0.18); border: 2px solid #10b981; color: #34d399; box-shadow: 0 0 30px rgba(16, 185, 129, 0.45); display: grid; place-items: center;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12.5 4.6 4.6L19 7.7"/>
+            </svg>
+          </div>
+          <div style="display: inline-block; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 1.15rem; border-radius: 100px; margin-bottom: 0.85rem;">
+            Enrolment Verified
+          </div>
+          <h3 style="font-family: 'Manrope', sans-serif; font-size: 1.85rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">
+            Account Created Successfully!
+          </h3>
+          <p style="color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.65;">
+            Welcome to CHARUSAT StudentHub! Your university credentials have been verified and your student account is active.
+          </p>
+
+          <!-- Digital Confirmation Card -->
+          <div class="feedback-receipt-card" style="margin-bottom: 2rem;">
+            <div class="feedback-receipt-row">
+              <span>Account Confirmation ID:</span>
+              <strong style="color: #38bdf8; font-family: monospace; font-size: 0.95rem;" id="reg-receipt-id">SH-REG-2026-9281</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Student Name:</span>
+              <strong id="reg-receipt-name">Tirth Ladani</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Roll / Enrolment No:</span>
+              <strong style="color: #38bdf8;" id="reg-receipt-roll">25IT049</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Registered Programme:</span>
+              <strong id="reg-receipt-prog">B.Tech Information Technology</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>College Email:</span>
+              <strong id="reg-receipt-email">25it049@charusat.edu.in</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Mobile Number:</span>
+              <strong id="reg-receipt-mobile">+91 9876543210</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Academic Year:</span>
+              <strong id="reg-receipt-year">3rd Year (Semester 5 &amp; 6)</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Gender:</span>
+              <strong id="reg-receipt-gender">Male</strong>
+            </div>
+            <div class="feedback-receipt-row">
+              <span>Account Status:</span>
+              <strong style="color: #34d399;">Active (Access Granted)</strong>
             </div>
           </div>
 
-          <div class="field">
-            <label for="email">College email <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <input class="input" type="email" id="email" name="email" placeholder="25it049@charusat.edu.in" autocomplete="email" required>
-            </div>
-            <p class="hint">Personal Gmail or Yahoo addresses are rejected by the verification step.</p>
-          </div>
+          <a href="login.html" class="btn btn--primary btn--block btn--lg" style="padding: 1rem 2rem; font-size: 1rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.65rem; border-radius: 100px; text-decoration: none;">
+            <span>Proceed to Student Sign In →</span>
+          </a>
+        </div>
 
-          <div class="field">
-            <label for="roll">Roll number <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 13h10M7 17h7"/></svg>
-              <input class="input" type="text" id="roll" name="roll" placeholder="25IT049" pattern="[0-9]{2}[A-Za-z]{2}[0-9]{3}" autocomplete="off" required>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="programme">Programme <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V17c3 2.5 9 2.5 12 0v-5.5"/></svg>
-              <select class="select" id="programme" name="programme" required>
-                <option value="">Select your programme</option>
-                <option>B.Tech Information Technology</option>
-                <option>B.Tech Computer Engineering</option>
-                <option>B.Tech Electronics &amp; Communication</option>
-                <option>B.Tech Mechanical Engineering</option>
-                <option>B.Sc Computer Science</option>
-                <option>M.Tech Computer Engineering</option>
-                <option>MCA</option>
-              </select>
-              <span class="control__caret" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-              </span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="password">Password <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              <button class="pw-toggle" type="button" aria-controls="password" aria-label="Show password">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              </button>
-              <input class="input" type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" minlength="8" required>
-            </div>
-            <div class="meter" id="pw-meter" data-score="0">
-              <div class="meter__track" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-              <span class="meter__label" role="status">Use 8+ characters with a mix of letters, numbers and symbols.</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="confirm-password">Confirm password <span class="req">*</span></label>
-            <div class="control">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><path d="m9.5 16 1.6 1.6 3.4-3.4"/></svg>
-              <button class="pw-toggle" type="button" aria-controls="confirm-password" aria-label="Show password">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              </button>
-              <input class="input" type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" autocomplete="new-password" required>
-            </div>
-          </div>
-
-          <label class="check mb-5" for="terms">
-            <input type="checkbox" id="terms" name="terms" required>
-            <span>I accept the acceptable-use policy and confirm the details above match my enrolment record.</span>
-          </label>
-
-          <button class="btn btn--primary btn--block btn--lg" type="submit">Create account</button>
-        </form>
-
-        <p class="auth__alt">Already registered? <a href="login.html" target="_blank" rel="noopener">Sign in instead</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html" aria-label="StudentHub home">
-            <svg class="brand__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
-              <rect width="48" height="48" rx="13" fill="#1e40af"/>
-              <path d="M24 11 8 18l16 7 12-5.25V29h3V18L24 11Z" fill="#fff"/>
-              <path d="M14 24.5V32c0 2.2 4.5 5 10 5s10-2.8 10-5v-7.5l-10 4.4-10-4.4Z" fill="#7dd3fc"/>
+  <!-- ================= UNIFIED CYBER FOOTER ================= -->
+  <div class="footer-wrap">
+    <footer class="footer">
+      <!-- Top Call-to-Action Section -->
+      <div class="footer-hero-actions">
+        <div class="footer-hero-tag">CHARUSAT UNIVERSITY PORTAL</div>
+        <h3 class="footer-hero-headline">Empowering Every Step of Your Campus Journey</h3>
+        <p class="footer-hero-desc">
+          Connect to academics, real-time campus events, centralized student support, 
+          and club communities all in one seamless modern workspace.
+        </p>
+        <div class="footer-pill-btn-group">
+          <a href="dashboard.html" class="footer-glass-pill footer-glass-pill--primary">
+            <span>Student Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span class="brand__text">
-              <span class="brand__name">Student<em>Hub</em></span>
-              <span class="brand__tag">Campus Portal</span>
-            </span>
           </a>
-          <p class="footer__about">
-            The single portal for academics, events and student services. Built and maintained by the
-            Department of Information Technology.
+          <a href="events.html" class="footer-glass-pill">
+            <span>Campus Events</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </a>
+          <a href="faq.html" class="footer-glass-pill">
+            <span>Help &amp; FAQ</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Columns Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../index.html">
+            <img class="logo-mark" src="../images/studenthublogo.png" alt="CHARUSAT StudentHub Logo">
+            <span>CHARUSAT StudentHub</span>
+          </a>
+          <p>
+            The unified student digital experience platform for Charotar University of Science and Technology.
+            Simplifying campus life, one semester at a time.
           </p>
         </div>
 
-        <div>
-          <h4>Quick links</h4>
+        <div class="footer-col">
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
-            <li><a href="events.html" target="_blank" rel="noopener">Events</a></li>
-            <li><a href="dashboard.html" target="_blank" rel="noopener">Dashboard</a></li>
-            <li><a href="profile.html" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About Portal</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="profile.html">My Profile</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Support</h4>
+        <div class="footer-col">
+          <h4>Student Services</h4>
           <ul>
-            <li><a href="faq.html" target="_blank" rel="noopener">FAQ</a></li>
-            <li><a href="feedback.html" target="_blank" rel="noopener">Give feedback</a></li>
-            <li><a href="contact.html" target="_blank" rel="noopener">Contact us</a></li>
-            <li><a href="login.html" target="_blank" rel="noopener">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="faq.html">Help &amp; FAQ</a></li>
+            <li><a href="contact.html">Campus Helpdesk</a></li>
+            <li><a href="login.html">Student Portal Login</a></li>
+            <li><a href="register.html">New Registration</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4>Reach us</h4>
-          <ul class="footer__contact">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>CHARUSAT Campus, Changa, Anand 388421, Gujarat</span>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg>
-              <a href="mailto:help@charusat.edu.in">help@charusat.edu.in</a>
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-              <a href="tel:+917900000000">+91 79 0000 0000</a>
-            </li>
+        <div class="footer-col">
+          <h4>CHARUSAT Campus</h4>
+          <ul>
+            <li><a href="https://www.charusat.ac.in/" target="_blank" rel="noopener">Official University</a></li>
+            <li><a href="about.html#campus-map">Changa Campus Guide</a></li>
+            <li><a href="contact.html">Exam Section Support</a></li>
+            <li><a href="admin.html">Administrator Portal</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer__bar">
-        <p>&copy; <span data-year>2026</span> StudentHub. All rights reserved.</p>
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Accessibility</a></li>
-        </ul>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 CHARUSAT StudentHub. All rights reserved.
+        </div>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script src="../script.js"></script>
+  <!-- Unified Data and Scripts -->
+  <script src="../js/portal-data.js"></script>
   <script src="../js/script.js"></script>
-  <script src="script.js"></script>
+
+  <!-- Interactive Registration Controller -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      'use strict';
+
+      var form = document.getElementById('studentRegisterForm');
+      var fullnameInput = document.getElementById('fullname');
+      var rollInput = document.getElementById('roll');
+      var emailInput = document.getElementById('email');
+      var mobileInput = document.getElementById('mobile');
+      var instituteSelect = document.getElementById('instituteSelect');
+      var programmeSelect = document.getElementById('programme');
+      var yearSelect = document.getElementById('year');
+      var passwordInput = document.getElementById('password');
+      var confirmPasswordInput = document.getElementById('confirm-password');
+      var captchaInput = document.getElementById('captchaInput');
+      var refreshCaptchaBtn = document.getElementById('refreshCaptchaBtn');
+      var termsCheck = document.getElementById('terms');
+      var formContainer = document.getElementById('registerFormContainer');
+      var successScreen = document.getElementById('registerSuccessScreen');
+      var changeBgBtn = document.getElementById('changeBgBtn');
+      var currentThemeTag = document.getElementById('currentThemeTag');
+
+      // Practical 6 Intermediate Extension: Dependent Dropdown (Institute -> Programme)
+      var PROGRAMMES_BY_INSTITUTE = {
+        CSPIT: [
+          'B.Tech Information Technology',
+          'B.Tech Computer Engineering',
+          'B.Tech Electronics & Communication',
+          'B.Tech Mechanical Engineering',
+          'B.Tech Civil Engineering',
+          'B.Tech Electrical Engineering'
+        ],
+        DEPSTAR: [
+          'B.Tech Computer Science & Engineering',
+          'B.Tech Information Technology',
+          'B.Tech Computer Engineering'
+        ],
+        CMPICA: [
+          'Master of Computer Applications (MCA)',
+          'Bachelor of Computer Applications (BCA)',
+          'M.Sc Information Technology'
+        ],
+        RPCP: [
+          'Bachelor of Pharmacy (B.Pharm)',
+          'Master of Pharmacy (M.Pharm)'
+        ],
+        I2IM: [
+          'Master of Business Administration (MBA)',
+          'Bachelor of Business Administration (BBA)'
+        ]
+      };
+
+      function updateProgrammes(inst) {
+        if (!programmeSelect) return;
+        var list = PROGRAMMES_BY_INSTITUTE[inst] || PROGRAMMES_BY_INSTITUTE.CSPIT;
+        programmeSelect.innerHTML = '';
+        list.forEach(function (prog, idx) {
+          var opt = document.createElement('option');
+          opt.value = prog;
+          opt.textContent = prog;
+          if (idx === 0) opt.selected = true;
+          programmeSelect.appendChild(opt);
+        });
+      }
+
+      if (instituteSelect) {
+        instituteSelect.addEventListener('change', function () {
+          updateProgrammes(instituteSelect.value);
+        });
+        updateProgrammes(instituteSelect.value || 'CSPIT');
+      }
+
+      var themeOrder = ['blue', 'green', 'aurora', 'midnight'];
+      var themeLabels = {
+        blue: 'SAPPHIRE BLUE',
+        green: 'EMERALD GREEN',
+        aurora: 'COSMIC AURORA',
+        midnight: 'MIDNIGHT STEALTH'
+      };
+
+      function updateThemeTag(themeKey) {
+        if (!currentThemeTag) return;
+        var key = themeKey || ((window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue');
+        currentThemeTag.textContent = themeLabels[key] || 'SAPPHIRE BLUE';
+      }
+
+      if (changeBgBtn) {
+        changeBgBtn.addEventListener('click', function () {
+          var cur = (window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue';
+          var curIdx = themeOrder.indexOf(cur);
+          var nextTheme = themeOrder[(curIdx + 1) % themeOrder.length];
+          if (window.StudentHubTheme && typeof window.StudentHubTheme.apply === 'function') {
+            window.StudentHubTheme.apply(nextTheme);
+          }
+          updateThemeTag(nextTheme);
+        });
+      }
+
+      window.addEventListener('themeChanged', function (e) {
+        if (e.detail && e.detail.themeName) {
+          updateThemeTag(e.detail.themeName);
+        }
+      });
+
+      // Initial tag sync
+      var initialActiveTheme = (window.StudentHubTheme && window.StudentHubTheme.get) ? window.StudentHubTheme.get() : 'blue';
+      updateThemeTag(initialActiveTheme);
+
+      // =========================================================================
+      // Practical 5: Robust Frontend Regex Validation & Error Handling Engine
+      // =========================================================================
+      var REGEX = {
+        name: /^[A-Za-z\s]{3,50}$/,
+        roll: /^[0-9]{2}[A-Za-z]{2,3}[0-9]{3}$/i,
+        email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        mobile: /^[6-9]\d{9}$/,
+        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/
+      };
+
+      function setError(element, errId, msg) {
+        if (!element) return;
+        element.style.borderColor = '#ef4444';
+        element.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.35)';
+        var errEl = document.getElementById(errId);
+        if (errEl) {
+          errEl.textContent = '⚠ ' + msg;
+          errEl.style.display = 'block';
+        }
+      }
+
+      function clearError(element, errId) {
+        if (!element) return;
+        element.style.borderColor = '';
+        element.style.boxShadow = '';
+        var errEl = document.getElementById(errId);
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.style.display = 'none';
+        }
+      }
+
+      function getSelectedGender() {
+        var checked = document.querySelector('input[name="gender"]:checked');
+        return checked ? checked.value : '';
+      }
+
+      // Real-time Field Validators
+      function validateName() {
+        var v = fullnameInput.value.trim();
+        if (!v) { setError(fullnameInput, 'err-fullname', 'Full name is required.'); return false; }
+        if (!REGEX.name.test(v)) { setError(fullnameInput, 'err-fullname', 'Enter valid full name (letters & spaces only, 3-50 chars).'); return false; }
+        clearError(fullnameInput, 'err-fullname');
+        return true;
+      }
+
+      function validateRoll() {
+        var v = rollInput.value.trim().toUpperCase();
+        if (!v) { setError(rollInput, 'err-roll', 'Roll / Enrolment number is required.'); return false; }
+        if (!REGEX.roll.test(v)) { setError(rollInput, 'err-roll', 'Invalid roll format. Expected format like 25IT049.'); return false; }
+        clearError(rollInput, 'err-roll');
+        return true;
+      }
+
+      function validateEmail() {
+        var v = emailInput.value.trim();
+        if (!v) { setError(emailInput, 'err-email', 'University email address is required.'); return false; }
+        if (!REGEX.email.test(v)) { setError(emailInput, 'err-email', 'Enter a valid email address (e.g. 25it049@charusat.edu.in).'); return false; }
+        clearError(emailInput, 'err-email');
+        return true;
+      }
+
+      function validateMobile() {
+        var v = mobileInput.value.trim();
+        if (!v) { setError(mobileInput, 'err-mobile', 'Mobile number is required.'); return false; }
+        if (!REGEX.mobile.test(v)) { setError(mobileInput, 'err-mobile', 'Enter a valid 10-digit Indian mobile number starting with 6-9.'); return false; }
+        clearError(mobileInput, 'err-mobile');
+        return true;
+      }
+
+      function validateProgramme() {
+        var v = programmeSelect.value;
+        if (!v) { setError(programmeSelect, 'err-programme', 'Please select your programme / department.'); return false; }
+        clearError(programmeSelect, 'err-programme');
+        return true;
+      }
+
+      function validateYear() {
+        var v = yearSelect.value;
+        if (!v) { setError(yearSelect, 'err-year', 'Please select your academic year.'); return false; }
+        clearError(yearSelect, 'err-year');
+        return true;
+      }
+
+      function validateGender() {
+        var g = getSelectedGender();
+        if (!g) {
+          var errEl = document.getElementById('err-gender');
+          if (errEl) { errEl.textContent = '⚠ Please select a gender.'; errEl.style.display = 'block'; }
+          return false;
+        }
+        var errEl = document.getElementById('err-gender');
+        if (errEl) errEl.style.display = 'none';
+        return true;
+      }
+
+      function validatePassword() {
+        var v = passwordInput.value;
+        if (!v) { setError(passwordInput, 'err-password', 'Password is required.'); return false; }
+        if (v.length < 8) { setError(passwordInput, 'err-password', 'Password must be at least 8 characters long.'); return false; }
+        if (!REGEX.password.test(v)) { setError(passwordInput, 'err-password', 'Password must include uppercase, lowercase, number, and special symbol.'); return false; }
+        clearError(passwordInput, 'err-password');
+        return true;
+      }
+
+      function validateConfirmPassword() {
+        var p = passwordInput.value;
+        var cp = confirmPasswordInput.value;
+        if (!cp) { setError(confirmPasswordInput, 'err-confirm-password', 'Please confirm your password.'); return false; }
+        if (p !== cp) { setError(confirmPasswordInput, 'err-confirm-password', 'Passwords do not match.'); return false; }
+        clearError(confirmPasswordInput, 'err-confirm-password');
+        return true;
+      }
+
+      function validateTerms() {
+        if (!termsCheck.checked) {
+          var errEl = document.getElementById('err-terms');
+          if (errEl) { errEl.textContent = '⚠ You must accept terms and conditions to proceed.'; errEl.style.display = 'block'; }
+          return false;
+        }
+        var errEl = document.getElementById('err-terms');
+        if (errEl) errEl.style.display = 'none';
+        return true;
+      }
+
+      // Practical 5 Advanced Extension: Custom Canvas CAPTCHA Generator & Validator
+      var currentCaptcha = '';
+      function generateCaptcha() {
+        var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        var code = '';
+        for (var i = 0; i < 5; i++) {
+          code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        currentCaptcha = code;
+
+        var cv = document.getElementById('regCaptchaCanvas');
+        if (!cv) return;
+        var ctx = cv.getContext('2d');
+        ctx.clearRect(0, 0, cv.width, cv.height);
+
+        // Cyber glassmorphism dark background
+        ctx.fillStyle = '#061325';
+        ctx.fillRect(0, 0, cv.width, cv.height);
+
+        // Decorative noise lines
+        for (var l = 0; l < 4; l++) {
+          ctx.strokeStyle = 'rgba(56, 189, 248, ' + (0.2 + Math.random() * 0.3) + ')';
+          ctx.lineWidth = 1 + Math.random();
+          ctx.beginPath();
+          ctx.moveTo(Math.random() * cv.width, Math.random() * cv.height);
+          ctx.lineTo(Math.random() * cv.width, Math.random() * cv.height);
+          ctx.stroke();
+        }
+
+        // Render wavy characters
+        ctx.font = 'bold 20px "Plus Jakarta Sans", monospace';
+        for (var c = 0; c < code.length; c++) {
+          ctx.save();
+          var x = 16 + c * 24;
+          var y = 26 + (Math.random() * 6 - 3);
+          var angle = (Math.random() * 24 - 12) * Math.PI / 180;
+          ctx.translate(x, y);
+          ctx.rotate(angle);
+          ctx.fillStyle = ['#38bdf8', '#818cf8', '#34d399', '#f472b6', '#38bdf8'][c % 5];
+          ctx.fillText(code[c], 0, 0);
+          ctx.restore();
+        }
+
+        // Noise dots
+        for (var d = 0; d < 20; d++) {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+          ctx.fillRect(Math.random() * cv.width, Math.random() * cv.height, 1.5, 1.5);
+        }
+      }
+
+      function validateCaptcha() {
+        if (!captchaInput) return true;
+        var val = captchaInput.value.trim().toUpperCase();
+        if (!val) {
+          setError(captchaInput, 'err-captcha', 'Please enter the security verification code.');
+          return false;
+        }
+        if (val !== currentCaptcha) {
+          setError(captchaInput, 'err-captcha', 'Incorrect security code. A new code has been generated.');
+          generateCaptcha();
+          captchaInput.value = '';
+          return false;
+        }
+        clearError(captchaInput, 'err-captcha');
+        return true;
+      }
+
+      // Initialize CAPTCHA
+      generateCaptcha();
+      if (refreshCaptchaBtn) {
+        refreshCaptchaBtn.addEventListener('click', generateCaptcha);
+      }
+      if (captchaInput) {
+        captchaInput.addEventListener('input', function () {
+          if (captchaInput.value.trim().toUpperCase() === currentCaptcha) {
+            clearError(captchaInput, 'err-captcha');
+          }
+        });
+      }
+
+      // Attach Real-time Listeners (keyup, change, blur)
+      if (fullnameInput) { fullnameInput.addEventListener('input', validateName); fullnameInput.addEventListener('blur', validateName); }
+      if (rollInput) { rollInput.addEventListener('input', validateRoll); rollInput.addEventListener('blur', validateRoll); }
+      if (emailInput) { emailInput.addEventListener('input', validateEmail); emailInput.addEventListener('blur', validateEmail); }
+      if (mobileInput) { mobileInput.addEventListener('input', validateMobile); mobileInput.addEventListener('blur', validateMobile); }
+      if (programmeSelect) { programmeSelect.addEventListener('change', validateProgramme); }
+      if (yearSelect) { yearSelect.addEventListener('change', validateYear); }
+      document.querySelectorAll('input[name="gender"]').forEach(function (r) { r.addEventListener('change', validateGender); });
+      if (passwordInput) { passwordInput.addEventListener('input', validatePassword); passwordInput.addEventListener('blur', validatePassword); }
+      if (confirmPasswordInput) { confirmPasswordInput.addEventListener('input', validateConfirmPassword); confirmPasswordInput.addEventListener('blur', validateConfirmPassword); }
+      if (termsCheck) { termsCheck.addEventListener('change', validateTerms); }
+
+      // Form Submission Handler
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var isNameValid = validateName();
+          var isRollValid = validateRoll();
+          var isEmailValid = validateEmail();
+          var isMobileValid = validateMobile();
+          var isProgValid = validateProgramme();
+          var isYearValid = validateYear();
+          var isGenderValid = validateGender();
+          var isPassValid = validatePassword();
+          var isConfirmValid = validateConfirmPassword();
+          var isCaptchaValid = validateCaptcha();
+          var isTermsValid = validateTerms();
+
+          if (!isNameValid || !isRollValid || !isEmailValid || !isMobileValid || !isProgValid || !isYearValid || !isGenderValid || !isPassValid || !isConfirmValid || !isCaptchaValid || !isTermsValid) {
+            // Focus first error field
+            var firstErr = form.querySelector('.input[style*="rgb(239, 68, 68)"], .select[style*="rgb(239, 68, 68)"]');
+            if (firstErr) firstErr.focus();
+            return;
+          }
+
+          var studentName = fullnameInput.value.trim();
+          var rollNo = rollInput.value.trim().toUpperCase();
+          var studentEmail = emailInput.value.trim();
+          var mobileNo = mobileInput.value.trim();
+          var prog = programmeSelect.value;
+          var acadYear = yearSelect.value;
+          var genderVal = getSelectedGender();
+
+          var submitBtn = document.getElementById('registerSubmitBtn');
+          if (submitBtn) {
+            submitBtn.innerHTML = '<span>Verifying Credentials & Enrolling...</span>';
+            submitBtn.style.opacity = '0.85';
+            submitBtn.disabled = true;
+          }
+
+          // Post to Backend PHP (Practical 9: BCrypt password_hash & MySQL/JSON insert)
+          var regFormData = new FormData();
+          regFormData.append('fullname', studentName);
+          regFormData.append('roll', rollNo);
+          regFormData.append('email', studentEmail);
+          regFormData.append('mobile', mobileNo);
+          regFormData.append('programme', prog);
+          regFormData.append('year', acadYear);
+          regFormData.append('gender', genderVal);
+          regFormData.append('password', passwordInput.value);
+          regFormData.append('confirm_password', confirmPasswordInput.value);
+
+          fetch('../backend/csrf_token.php')
+            .then(function (r) { return r.json(); })
+            .then(function (tok) {
+              if (tok && tok.csrf_token) regFormData.append('csrf_token', tok.csrf_token);
+              return fetch('../backend/register.php', {
+                method: 'POST',
+                body: regFormData
+              });
+            }).then(function (r) {
+            return r.json().then(function (data) {
+              return { status: r.status, ok: r.ok, data: data };
+            });
+          }).then(function (res) {
+            if (!res.ok || (res.data && res.data.success === false)) {
+              if (submitBtn) {
+                submitBtn.innerHTML = '<span>Create StudentHub Account</span>';
+                submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
+              }
+
+              if (res.data && res.data.field === 'roll') {
+                setError(rollInput, 'err-roll', res.data.message || 'Roll number or email already registered.');
+                rollInput.focus();
+              } else if (res.data && res.data.errors) {
+                var firstKey = Object.keys(res.data.errors)[0];
+                var errEl = document.getElementById('err-' + firstKey);
+                if (errEl) {
+                  errEl.textContent = '⚠ ' + res.data.errors[firstKey];
+                  errEl.style.display = 'block';
+                }
+              } else {
+                alert(res.data.message || 'Registration failed. Please check your inputs.');
+              }
+              return;
+            }
+
+            var confId = (res.data && res.data.confirmation_id) ? res.data.confirmation_id : ('SH-REG-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000));
+
+            // Populate Receipt elements
+            var recIdEl = document.getElementById('reg-receipt-id');
+            var recNameEl = document.getElementById('reg-receipt-name');
+            var recRollEl = document.getElementById('reg-receipt-roll');
+            var recProgEl = document.getElementById('reg-receipt-prog');
+            var recEmailEl = document.getElementById('reg-receipt-email');
+            var recMobileEl = document.getElementById('reg-receipt-mobile');
+            var recYearEl = document.getElementById('reg-receipt-year');
+            var recGenderEl = document.getElementById('reg-receipt-gender');
+
+            if (recIdEl) recIdEl.textContent = confId;
+            if (recNameEl) recNameEl.textContent = studentName;
+            if (recRollEl) recRollEl.textContent = rollNo;
+            if (recProgEl) recProgEl.textContent = prog;
+            if (recEmailEl) recEmailEl.textContent = studentEmail;
+            if (recMobileEl) recMobileEl.textContent = '+91 ' + mobileNo;
+            if (recYearEl) recYearEl.textContent = acadYear;
+            if (recGenderEl) recGenderEl.textContent = genderVal;
+
+            // Save registered student data into localStorage and prepare auto-paste credentials for login.html
+            try {
+              sessionStorage.setItem('charusat_registered_creds', JSON.stringify({
+                email: studentEmail,
+                password: passwordInput.value
+              }));
+
+              var currentStudent = {};
+              if (window.StudentHubData && typeof window.StudentHubData.getStudent === 'function') {
+                currentStudent = window.StudentHubData.getStudent() || {};
+              }
+              currentStudent.fullName = studentName;
+              currentStudent.enrolment = rollNo;
+              currentStudent.email = studentEmail;
+              currentStudent.phone = '+91 ' + mobileNo;
+              currentStudent.programme = prog;
+              currentStudent.gender = genderVal;
+              currentStudent.semester = acadYear.includes('Semester 5') ? '5' : '1';
+              currentStudent.profileCompleted = true;
+
+              localStorage.setItem('charusat_student_data', JSON.stringify(currentStudent));
+            } catch (err) {
+              console.warn('Student persistence note:', err);
+            }
+
+            // Show Confirmation Receipt
+            if (formContainer) formContainer.style.display = 'none';
+            if (successScreen) {
+              successScreen.style.display = 'block';
+              successScreen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+              var existingCountdown = document.getElementById('regRedirectCountdown');
+              if (existingCountdown) existingCountdown.remove();
+
+              var countdownEl = document.createElement('div');
+              countdownEl.id = 'regRedirectCountdown';
+              countdownEl.style.marginTop = '1.5rem';
+              countdownEl.style.padding = '0.85rem 1.25rem';
+              countdownEl.style.borderRadius = '12px';
+              countdownEl.style.background = 'rgba(56, 189, 248, 0.12)';
+              countdownEl.style.border = '1px solid rgba(56, 189, 248, 0.3)';
+              countdownEl.style.color = '#38bdf8';
+              countdownEl.style.fontWeight = '700';
+              countdownEl.style.fontSize = '0.95rem';
+              countdownEl.style.textAlign = 'center';
+              countdownEl.innerHTML = '⚡ Registration complete! Loading Sign In page in <span id="cdNum">3</span>s...';
+              successScreen.appendChild(countdownEl);
+
+              var secs = 3;
+              var timer = setInterval(function () {
+                secs--;
+                var numSpan = document.getElementById('cdNum');
+                if (numSpan) numSpan.textContent = String(secs);
+                if (secs <= 0) {
+                  clearInterval(timer);
+                  window.location.href = 'login.html';
+                }
+              }, 1000);
+            }
+          }).catch(function (err) {
+            console.error('Registration network error:', err);
+            if (submitBtn) {
+              submitBtn.innerHTML = '<span>Create StudentHub Account</span>';
+              submitBtn.style.opacity = '1';
+              submitBtn.disabled = false;
+            }
+            alert('Could not reach registration server. Please check your network and try again.');
+          });
+        });
+      }
+
+      // Check for unregistered redirect notice
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('notice') === 'unregistered') {
+        var unregEl = document.getElementById('unregisteredNotice');
+        if (unregEl) unregEl.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
