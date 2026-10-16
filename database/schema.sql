@@ -3,8 +3,9 @@
 -- Host: localhost    Database: studenthub
 -- ------------------------------------------------------
 -- Server version	10.4.32-MariaDB
-CREATE DATABASE IF NOT EXISTS `studenthub` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `studenthub`;
+-- If creating database locally in fresh MySQL, run:
+-- CREATE DATABASE IF NOT EXISTS `studenthub` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE `studenthub`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
