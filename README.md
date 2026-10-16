@@ -5,6 +5,7 @@
 > **Semester**: 3rd Semester, Academic Year 2026–27 (ODD)  
 > **Student Lead**: Tirth Ladani (Roll No: **25IT049**)  
 > **Department**: Department of Information Technology, CSPIT  
+> **🌐 Live Production URL**: [studenthub-charusat.infinityfreeapp.com](http://studenthub-charusat.infinityfreeapp.com/)  
 
 ---
 

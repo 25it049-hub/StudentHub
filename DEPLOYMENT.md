@@ -50,6 +50,8 @@ APP_URL=https://your-domain.com
 ## 3. Deployment Options
 
 ### Option A: Shared Hosting / cPanel (Hostinger, InfinityFree, cPanel)
+> **Live Demo**: [studenthub-charusat.infinityfreeapp.com](http://studenthub-charusat.infinityfreeapp.com/)
+
 1. **Upload Files**:
    - Compress the project root files (or clone via Git) and upload into `public_html/`.
 2. **Import Database**:
